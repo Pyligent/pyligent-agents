@@ -27,7 +27,7 @@ Examples live in `examples/`, outside the package.
 
 ## Consequences
 
-**Good.** Nothing to delete, and nothing to fight. `pip install trellis-agents`
+**Good.** Nothing to delete, and nothing to fight. `pip install pyligent-agents`
 adds no transitive dependencies, which matters in exactly the regulated
 environments where the rest of this library is most useful. The absence also
 makes the first design conversation the right one: *what are your tools, and
@@ -42,5 +42,5 @@ read it or scaffold something. For a library whose entire argument is *structure
 you can inspect*, that is an acceptable trade.
 
 **Rejected alternative:** shipping tools behind an extra
-(`pip install trellis-agents[tools]`). It preserves the dependency story and
+(`pip install pyligent-agents[tools]`). It preserves the dependency story and
 loses the design argument, which is the part that matters.

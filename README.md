@@ -13,9 +13,13 @@ decides what shape the growth can take. That is the argument:
 > structure only helps when the task actually needs it.
 
 ```bash
-pip install trellis-agents
-trellis steps          # the ten build steps
-trellis new my_agent   # a project whose guardrail tests already pass
+pip install pyligent-agents     # distribution name
+trellis steps                   # the ten build steps
+trellis new my_agent            # a project whose guardrail tests already pass
+```
+
+```python
+import trellis                  # import name
 ```
 
 **No required dependencies.** **No tools shipped.** **115 tests that run offline

@@ -51,5 +51,7 @@ First public release.
 - Four worked examples, one per rung of the ladder
 
 ### Notes
+- Distribution name: **`pyligent-agents`**. Import name: **`trellis`**.
+  `pip install pyligent-agents` then `import trellis`.
 - The core library has no required third-party dependencies.
 - Trellis ships no tools and no domain, on purpose.

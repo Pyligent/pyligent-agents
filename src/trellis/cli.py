@@ -254,7 +254,8 @@ def cmd_doctor(_a) -> int:
         import anthropic  # noqa: F401  (presence probe, not a usage)
         print("  anthropic sdk      installed")
     except ImportError:
-        print("  anthropic sdk      not installed  (pip install 'trellis[anthropic]')")
+        print("  anthropic sdk      not installed  "
+              "(pip install 'pyligent-agents[anthropic]')")
     print(f"\n  models             orchestrator={s.orchestrator_model}")
     print(f"                     worker={s.worker_model}")
     print(f"                     cheap={s.cheap_model}")
@@ -294,7 +295,7 @@ def cmd_new(a) -> int:
         TEMPLATE_TEST.format(name=name), encoding="utf-8")
     (target / "README.md").write_text(
         f"# {name}\n\nBuilt on [Trellis](https://github.com/pyligent/trellis).\n\n"
-        f"```bash\npip install trellis pytest\npython {name}.py\npytest\n```\n\n"
+        f"```bash\npip install pyligent-agents pytest\npython {name}.py\npytest\n```\n\n"
         f"## The four questions\n\n"
         f"| | |\n|---|---|\n"
         f"| Stop condition | `ModelSaysDone() & Predicate(_grounded, ...)` |\n"

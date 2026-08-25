@@ -117,8 +117,11 @@ template. They are the same four the library makes you answer in code.
 ## Releasing
 
 Maintainers: bump `__version__` and `pyproject.toml`, update `CHANGELOG.md`, tag
-`v0.x.y`. The distribution name is `trellis-agents`; the import name is
-`trellis`.
+`v0.x.y`.
+
+**The distribution name is `pyligent-agents`; the import name is `trellis`.**
+They differ, so say both whenever you write an install line — a reader who
+sees only one of them will get it wrong.
 
 ## Getting help
 
