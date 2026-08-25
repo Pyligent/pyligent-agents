@@ -49,6 +49,9 @@ First public release.
   `assert_capped`, `assert_effects_fire_once`
 - `pyligent-agents` CLI: `steps`, `doctor`, `new`, `graph`, `runs`, `trace`
 - Four worked examples, one per rung of the ladder
+- `examples/document_intake/`: one graph over three document types — an ISDA
+  Credit Support Annex, a supplier invoice and a KYC onboarding pack — showing
+  five shared generic gates plus the cross-field checks each domain needs
 
 ### Notes
 - Repository `pyligent/pyligent-agents`, distribution **`pyligent-agents`**,

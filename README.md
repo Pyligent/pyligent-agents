@@ -25,7 +25,7 @@ pyligent-agents new my_agent    # a project whose guardrail tests already pass
 import pyligent_agents
 ```
 
-**No required dependencies.** **No tools shipped.** **115 tests that run offline
+**No required dependencies.** **No tools shipped.** **145 tests that run offline
 in five seconds with no API key.**
 
 ---
@@ -292,6 +292,7 @@ Four applications on one ordinary domain — a support desk for an online retail
 
 | | What it is | Why the level below broke |
 |---|---|---|
+| **0** | [document intake](examples/document_intake/) — CSA, invoice, KYC | *start here* — one graph, three domains, one gate that catches each flaw |
 | **1** | classify a support ticket | — this is the right final architecture |
 | **2** | "why is order A-1207 late?" | needs live data and a figure the model must not compute |
 | **3** | a refund, ticket to money-moved | spans sessions, needs approval, moves money |

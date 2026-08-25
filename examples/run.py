@@ -6,6 +6,7 @@
     python examples/run.py refund               # pauses at a human gate
     python examples/run.py resume <run_id> --approve
     python examples/run.py invoice [--fabricate | --transposed]
+    python examples/run.py intake csa|invoice|kyc|all [--flaw | --fabricate]
     python examples/run.py demo harness|loop|graph|ladder|all
 
 Everything runs offline against a deterministic backend. Set ANTHROPIC_API_KEY
@@ -39,6 +40,8 @@ from pyligent_agents.testing import build_test_stack, looping, tools_used  # noq
 from level1_triage import app as l1, policy as l1p  # noqa: E402
 from level2_order_agent import app as l2, policy as l2p  # noqa: E402
 from level3_refund_workflow import app as l3, policy as l3p  # noqa: E402
+from document_intake import app as intake, policy as intakep  # noqa: E402
+from document_intake.documents import DOCUMENTS  # noqa: E402
 from level4_invoice_intake import app as l4, policy as l4p  # noqa: E402
 from shopdesk import data  # noqa: E402
 from shopdesk.tools import build_registry  # noqa: E402
@@ -140,6 +143,60 @@ def cmd_invoice(a) -> int:
         rule("ESCALATED"); print(json.dumps(r.state.get("escalation"), indent=2))
     rule("COST"); print(json.dumps(stack.cost(), indent=2))
     return 0 if report.get("passed") else 1
+
+
+def cmd_intake(a) -> int:
+    """Document intake: one graph, three document types."""
+    kinds = ["csa", "invoice", "kyc"] if a.kind == "all" else [a.kind]
+    worst = 0
+
+    for kind in kinds:
+        spec = DOCUMENTS[kind]
+        rule(f"{spec.title.upper()}  ({spec.document_id})")
+
+        stack = _stack(intakep.build_policy(kind, flawed=a.flaw, fabricate=a.fabricate),
+                       state_dir=tempfile.mkdtemp())
+        graph = intake.build_graph(stack.harness, kind, flawed=a.flaw)
+        result = stack.runner(graph).start(f"Intake {kind}", {})
+
+        print(result.render())
+        report = result.state.get("gate_report") or {}
+        generic = 5   # evidence_gated_extraction ships five
+
+        sub(f"GATES — {generic} generic, {len(report.get('results', [])) - generic} for this document")
+        for i, g in enumerate(report.get("results", [])):
+            tag = "generic" if i < generic else "domain "
+            print(f"  [{'PASS' if g['passed'] else 'FAIL'}] {tag}  {g['name']}: {g['message']}")
+
+        if result.state.get("accepted"):
+            sub("ACCEPTED")
+            print(f"  {json.dumps(result.state.get('accepted'))}")
+        else:
+            sub("REFERRED TO A HUMAN")
+            for finding in (result.state.get("referral") or {}).get("findings", []):
+                print(f"  · {finding}")
+            worst = 1
+
+        print(f"\n  cost: ${stack.cost()['spent_usd']:.5f} "
+              f"across {stack.cost()['calls']} model calls")
+
+    if a.flaw or a.fabricate:
+        rule("WHAT JUST HAPPENED", "-")
+        if a.flaw:
+            print(
+                "  Every evidence quote was genuine. The independent verifier approved.\n"
+                "  The five generic gates passed. Only a cross-field gate — one that\n"
+                "  compares two values a schema would happily accept on their own —\n"
+                "  caught it.\n")
+            for kind in kinds:
+                print(f"  {kind:<8} flaw is in the {DOCUMENTS[kind].flaw_origin}: "
+                      f"{DOCUMENTS[kind].what_the_domain_gate_catches}")
+        else:
+            print(
+                "  The verifier approved while citing text that is not in the document.\n"
+                "  Its citation was substring-checked against the source, was not there,\n"
+                "  and the approval did not survive.")
+    return worst
 
 
 # --- the four layer demos --------------------------------------------------
@@ -445,6 +502,15 @@ def main(argv=None) -> int:
     rs.add_argument("run_id")
     rs.add_argument("--approve", action="store_true")
     rs.set_defaults(fn=cmd_resume)
+
+    ik = sub_.add_parser("intake", help="document intake: CSA, invoice or KYC")
+    ik.add_argument("kind", nargs="?", default="all",
+                    choices=["csa", "invoice", "kyc", "all"])
+    ik.add_argument("--flaw", action="store_true",
+                    help="introduce a realistic error the generic gates cannot see")
+    ik.add_argument("--fabricate", action="store_true",
+                    help="make the verifier invent its citation")
+    ik.set_defaults(fn=cmd_intake)
 
     iv = sub_.add_parser("invoice")
     iv.add_argument("--fabricate", action="store_true",

@@ -5,6 +5,9 @@ Four applications on one domain, one per rung of the ladder. The domain —
 deliberately ordinary, so nothing about the *domain* is what you are learning.
 
 ```bash
+python examples/run.py intake all                  # start here
+python examples/run.py intake kyc --flaw           # the demo that lands
+
 python examples/run.py triage                      # Level 1
 python examples/run.py order-agent --trace         # Level 2
 python examples/run.py refund                      # Level 3 — pauses
@@ -16,6 +19,25 @@ python examples/run.py demo harness|loop|graph|ladder|all
 
 Everything runs offline. Set `ANTHROPIC_API_KEY` and `PYLIGENT_AGENTS_BACKEND=anthropic`
 and the identical code runs against the real API.
+
+---
+
+## Start here: `document_intake/`
+
+One graph, three document types — an ISDA Credit Support Annex, a supplier
+invoice and a KYC onboarding pack. They share nothing as documents and
+everything as work.
+
+Five generic gates apply to all three. Each type then adds the checks a JSON
+schema could not make: *MTA within Threshold*, *line items sum to the total*,
+*the name on the passport matches the application*.
+
+Run `--flaw` and every generic gate passes, the independent verifier approves,
+every evidence quote is genuine — and one cross-field gate catches it anyway.
+The KYC case is the sharpest: the extraction is **perfect** and the *document*
+is inconsistent, which no amount of model quality can fix.
+
+📄 [`document_intake/README.md`](document_intake/README.md)
 
 ---
 
