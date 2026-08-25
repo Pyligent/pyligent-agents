@@ -6,7 +6,7 @@ contributing guide that is neither wastes your time.
 ## Getting set up
 
 ```bash
-git clone https://github.com/pyligent/trellis && cd trellis
+git clone https://github.com/pyligent/pyligent-agents && cd pyligent-agents
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
@@ -119,9 +119,16 @@ template. They are the same four the library makes you answer in code.
 Maintainers: bump `__version__` and `pyproject.toml`, update `CHANGELOG.md`, tag
 `v0.x.y`.
 
-**The distribution name is `pyligent-agents`; the import name is `trellis`.**
-They differ, so say both whenever you write an install line — a reader who
-sees only one of them will get it wrong.
+**Three names, and they differ:**
+
+| | |
+|---|---|
+| Repository | `pyligent/pyligent-agents` |
+| Distribution | `pyligent-agents` |
+| Import name / CLI | `trellis` |
+
+Say both the distribution and the import name whenever you write an install
+line. A reader who sees only one of them will get it wrong.
 
 ## Getting help
 

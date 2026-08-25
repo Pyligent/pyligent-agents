@@ -294,7 +294,7 @@ def cmd_new(a) -> int:
     (target / "tests" / f"test_{name}.py").write_text(
         TEMPLATE_TEST.format(name=name), encoding="utf-8")
     (target / "README.md").write_text(
-        f"# {name}\n\nBuilt on [Trellis](https://github.com/pyligent/trellis).\n\n"
+        f"# {name}\n\nBuilt on [Trellis](https://github.com/pyligent/pyligent-agents).\n\n"
         f"```bash\npip install pyligent-agents pytest\npython {name}.py\npytest\n```\n\n"
         f"## The four questions\n\n"
         f"| | |\n|---|---|\n"

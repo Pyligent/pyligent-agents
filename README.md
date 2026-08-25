@@ -2,7 +2,7 @@
 
 **Harness, loop and graph engineering for production AI agents.**
 
-[![ci](https://github.com/pyligent/trellis/actions/workflows/ci.yml/badge.svg)](https://github.com/pyligent/trellis/actions/workflows/ci.yml)
+[![ci](https://github.com/pyligent/pyligent-agents/actions/workflows/ci.yml/badge.svg)](https://github.com/pyligent/pyligent-agents/actions/workflows/ci.yml)
 [![python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -21,6 +21,12 @@ trellis new my_agent            # a project whose guardrail tests already pass
 ```python
 import trellis                  # import name
 ```
+
+| | |
+|---|---|
+| Repository | `github.com/pyligent/pyligent-agents` |
+| Distribution (`pip install`) | `pyligent-agents` |
+| Import name / CLI | `trellis` |
 
 **No required dependencies.** **No tools shipped.** **115 tests that run offline
 in five seconds with no API key.**

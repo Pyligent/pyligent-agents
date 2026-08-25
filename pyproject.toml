@@ -31,10 +31,10 @@ anthropic = ["anthropic>=0.69"]
 dev = ["pytest>=8.0", "ruff>=0.4"]
 
 [project.urls]
-Homepage = "https://github.com/pyligent/trellis"
-Documentation = "https://github.com/pyligent/trellis/tree/main/docs"
-Issues = "https://github.com/pyligent/trellis/issues"
-Changelog = "https://github.com/pyligent/trellis/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/pyligent/pyligent-agents"
+Documentation = "https://github.com/pyligent/pyligent-agents/tree/main/docs"
+Issues = "https://github.com/pyligent/pyligent-agents/issues"
+Changelog = "https://github.com/pyligent/pyligent-agents/blob/main/CHANGELOG.md"
 
 [project.scripts]
 trellis = "trellis.cli:main"
