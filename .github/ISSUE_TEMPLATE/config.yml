@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Design question or "how do I ...?"
+    url: https://github.com/pyligent/trellis/discussions
+    about: Discussions are a better fit than issues for design conversations.
