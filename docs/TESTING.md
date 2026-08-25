@@ -1,6 +1,6 @@
 # Testing agents
 
-The most useful thing Trellis gives you is that **agent behaviour is testable**.
+The most useful thing Pyligent Agents gives you is that **agent behaviour is testable**.
 
 Turn caps, error recovery, permission denials, compaction triggers and
 idempotency guarantees cannot be tested against a live model: it behaves
@@ -14,7 +14,7 @@ exact `build_stack` path production uses. There is no separate test harness,
 because a separate test harness is a harness you are not testing.
 
 ```python
-from trellis.testing import build_test_stack, calls, turn, tools_used
+from pyligent_agents.testing import build_test_stack, calls, turn, tools_used
 ```
 
 ---
@@ -182,7 +182,7 @@ Everything above runs offline. When you want a live smoke test:
 
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-...
-TRELLIS_BACKEND=anthropic pytest tests/test_smoke_live.py
+PYLIGENT_AGENTS_BACKEND=anthropic pytest tests/test_smoke_live.py
 ```
 
 Keep those tests separate and few. They tell you the wiring is right; they cannot

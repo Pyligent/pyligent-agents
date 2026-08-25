@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import json
 
-from trellis.testing import ScriptedCall, ScriptedTurn, turn
+from pyligent_agents.testing import ScriptedCall, ScriptedTurn, turn
 
 RULES = (
     ("missing_order", "critical", ("chargeback", "nobody answers", "where is my order")),

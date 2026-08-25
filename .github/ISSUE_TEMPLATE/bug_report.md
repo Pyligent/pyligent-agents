@@ -12,7 +12,7 @@ labels: bug
 
 <!-- Ideally a scripted policy, so it reproduces without a credential:
 
-from trellis.testing import build_test_stack, turn
+from pyligent_agents.testing import build_test_stack, turn
 stack = build_test_stack(lambda call: turn("..."), tools=my_registry)
 -->
 
@@ -21,7 +21,7 @@ stack = build_test_stack(lambda call: turn("..."), tools=my_registry)
 
 ## Environment
 
-<!-- Paste the output of `trellis doctor`. It reports backend, model routing,
+<!-- Paste the output of `pyligent-agents doctor`. It reports backend, model routing,
      pricing coverage and governors, which answers most of the follow-ups. -->
 
 ```

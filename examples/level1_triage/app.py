@@ -18,9 +18,9 @@ import json
 from dataclasses import dataclass
 from typing import Any
 
-from trellis import Phase
-from trellis.harness import Harness
-from trellis.loop import AgentContract, Budget, ModelSaysDone, no_verification
+from pyligent_agents import Phase
+from pyligent_agents.harness import Harness
+from pyligent_agents.loop import AgentContract, Budget, ModelSaysDone, no_verification
 
 from shopdesk.data import Ticket
 

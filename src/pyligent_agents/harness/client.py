@@ -37,7 +37,7 @@ class AnthropicLLM(LLMClient):
                 import anthropic
             except ImportError as exc:  # pragma: no cover
                 raise RuntimeError(
-                    "`pip install anthropic`, or run with TRELLIS_BACKEND=scripted."
+                    "`pip install anthropic`, or run with PYLIGENT_AGENTS_BACKEND=scripted."
                 ) from exc
             # Zero-arg: resolves ANTHROPIC_API_KEY, then ANTHROPIC_AUTH_TOKEN,
             # then an `ant auth login` profile.

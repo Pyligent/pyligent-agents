@@ -3,7 +3,7 @@
 Everything in this repo can be assembled by hand — that is the point of the
 layering. But nobody should have to, to get started:
 
-    from trellis import build_stack
+    from pyligent_agents import build_stack
     stack = build_stack()                       # offline, deterministic
     stack = build_stack(policy=my_policy)       # scripted behaviour you control
     stack = build_stack(backend="anthropic")    # the real API
@@ -78,7 +78,7 @@ def build_stack(
     uses. There is no separate test harness, because a separate test harness is
     a harness you are not testing.
 
-    `registry` defaults to empty. Trellis ships no tools — your tools are your
+    `registry` defaults to empty. Pyligent Agents ships no tools — your tools are your
     domain, and a library that guesses at them is a library you fight.
     """
     s = settings or get_settings()

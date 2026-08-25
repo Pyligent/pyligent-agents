@@ -13,8 +13,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from trellis.harness import Harness
-from trellis.loop import (
+from pyligent_agents.harness import Harness
+from pyligent_agents.loop import (
     Agent,
     AgentContract,
     Budget,

@@ -23,11 +23,11 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from trellis import idempotency_key
-from trellis.graph import GateNode, Graph, MapNode, NodeContext, ReduceNode, Step
-from trellis.graph.state import GraphState
-from trellis.harness import Harness
-from trellis.loop import (
+from pyligent_agents import idempotency_key
+from pyligent_agents.graph import GateNode, Graph, MapNode, NodeContext, ReduceNode, Step
+from pyligent_agents.graph.state import GraphState
+from pyligent_agents.harness import Harness
+from pyligent_agents.loop import (
     Agent,
     AgentContract,
     Budget,
@@ -36,7 +36,7 @@ from trellis.loop import (
     Produced,
     no_verification,
 )
-from trellis.verify import (
+from pyligent_agents.verify import (
     DocumentVerifier,
     GateSet,
     cross_field,
@@ -228,7 +228,7 @@ def _due_after_invoice_date(artifact: dict[str, Any]) -> bool:
 
 
 def invoice_gates() -> GateSet:
-    """Five generic gates from Trellis, plus three this domain had to write."""
+    """Five generic gates from Pyligent Agents, plus three this domain had to write."""
     return (
         evidence_gated_extraction(
             "invoice_number", "invoice_date", "due_date", "net_total",

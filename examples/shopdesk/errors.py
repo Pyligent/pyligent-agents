@@ -1,6 +1,6 @@
 """Domain errors.
 
-These are *expected outcomes*, not crashes. Trellis turns each into a tool
+These are *expected outcomes*, not crashes. Pyligent Agents turns each into a tool
 observation the agent can read and route around — the difference between "the
 request 500s because a tracking API blinked" and "the agent notices, says so,
 and offers the customer something useful anyway".
@@ -8,7 +8,7 @@ and offers the customer something useful anyway".
 
 from __future__ import annotations
 
-from trellis import DomainRefusal
+from pyligent_agents import DomainRefusal
 
 
 class ShopDeskError(DomainRefusal):

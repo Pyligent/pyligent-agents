@@ -8,7 +8,7 @@ venv/
 .env
 .pytest_cache/
 .ruff_cache/
-.trellis/
+.pyligent-agents/
 *.sqlite
 *.db
 .DS_Store

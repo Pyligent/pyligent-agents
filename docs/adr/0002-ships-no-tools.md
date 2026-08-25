@@ -1,4 +1,4 @@
-# ADR 0002 — Trellis ships no tools and no domain
+# ADR 0002 — Pyligent Agents ships no tools and no domain
 
 **Status:** accepted · **Date:** 2026-08-25
 
@@ -33,8 +33,8 @@ environments where the rest of this library is most useful. The absence also
 makes the first design conversation the right one: *what are your tools, and
 what tier is each?* — rather than *how do I turn off the shell tool?*
 
-**Bad.** A worse first impression. `import trellis` and nothing happens. We
-compensate with `trellis new`, which scaffolds a project whose three guardrail
+**Bad.** A worse first impression. `import pyligent_agents` and nothing happens. We
+compensate with `pyligent-agents new`, which scaffolds a project whose three guardrail
 tests pass immediately, and with four worked examples.
 
 **Also.** It means the library cannot be evaluated by running it — you have to

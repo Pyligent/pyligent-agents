@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from trellis.testing import ScriptedCall, ScriptedTurn, turn
+from pyligent_agents.testing import ScriptedCall, ScriptedTurn, turn
 
 
 def drafting_policy(call: ScriptedCall) -> ScriptedTurn:

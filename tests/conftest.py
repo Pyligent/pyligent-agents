@@ -14,10 +14,10 @@ for p in (ROOT / "src", ROOT / "examples"):
 @pytest.fixture(autouse=True)
 def offline(monkeypatch, tmp_path):
     """No network, no spend, isolated state per test."""
-    monkeypatch.setenv("TRELLIS_BACKEND", "scripted")
+    monkeypatch.setenv("PYLIGENT_AGENTS_BACKEND", "scripted")
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
     monkeypatch.delenv("ANTHROPIC_AUTH_TOKEN", raising=False)
-    monkeypatch.setenv("TRELLIS_STATE_DIR", str(tmp_path / "state"))
+    monkeypatch.setenv("PYLIGENT_AGENTS_STATE_DIR", str(tmp_path / "state"))
 
 
 @pytest.fixture

@@ -35,7 +35,7 @@ DEFAULT_CONTEXT_WINDOW = 200_000
 
 def register_model(model_id: str, *, price_in: float, price_out: float,
                    context_window: int) -> None:
-    """Teach Trellis about a model it does not ship prices for.
+    """Teach Pyligent Agents about a model it does not ship prices for.
 
     Call this once at startup for any provider or model you use. The alternative
     — letting an unknown model fall through — is handled safely (it prices at
@@ -83,7 +83,7 @@ class Settings:
     offload_preview_chars: int = 600
 
     # --- storage ---
-    state_dir: Path = field(default_factory=lambda: Path(".trellis"))
+    state_dir: Path = field(default_factory=lambda: Path(".pyligent-agents"))
 
     # Deliberately run a tighter window than the model's own — for testing
     # compaction, for cost control, or to keep a long run honest.
@@ -94,19 +94,20 @@ class Settings:
     @classmethod
     def from_env(cls) -> Settings:
         return cls(
-            backend=(os.getenv("TRELLIS_BACKEND") or "auto").strip().lower(),
-            orchestrator_model=os.getenv("TRELLIS_ORCHESTRATOR_MODEL", DEFAULT_ORCHESTRATOR_MODEL),
-            worker_model=os.getenv("TRELLIS_WORKER_MODEL", DEFAULT_WORKER_MODEL),
-            cheap_model=os.getenv("TRELLIS_CHEAP_MODEL", DEFAULT_CHEAP_MODEL),
-            max_turns=_i("TRELLIS_MAX_TURNS", 12),
-            run_budget_usd=_f("TRELLIS_BUDGET_USD", 2.00),
-            run_budget_seconds=_f("TRELLIS_BUDGET_SECONDS", 600.0),
-            compact_at=_f("TRELLIS_COMPACT_AT", 0.70),
-            keep_recent_turns=_i("TRELLIS_KEEP_RECENT", 6),
-            offload_over_chars=_i("TRELLIS_OFFLOAD_OVER", 4_000),
-            state_dir=Path(os.getenv("TRELLIS_STATE_DIR", ".trellis")),
-            context_window_override=_i("TRELLIS_WINDOW", 0) or None,
-            effort=os.getenv("TRELLIS_EFFORT") or None,
+            backend=(os.getenv("PYLIGENT_AGENTS_BACKEND") or "auto").strip().lower(),
+            orchestrator_model=os.getenv("PYLIGENT_AGENTS_ORCHESTRATOR_MODEL",
+                                         DEFAULT_ORCHESTRATOR_MODEL),
+            worker_model=os.getenv("PYLIGENT_AGENTS_WORKER_MODEL", DEFAULT_WORKER_MODEL),
+            cheap_model=os.getenv("PYLIGENT_AGENTS_CHEAP_MODEL", DEFAULT_CHEAP_MODEL),
+            max_turns=_i("PYLIGENT_AGENTS_MAX_TURNS", 12),
+            run_budget_usd=_f("PYLIGENT_AGENTS_BUDGET_USD", 2.00),
+            run_budget_seconds=_f("PYLIGENT_AGENTS_BUDGET_SECONDS", 600.0),
+            compact_at=_f("PYLIGENT_AGENTS_COMPACT_AT", 0.70),
+            keep_recent_turns=_i("PYLIGENT_AGENTS_KEEP_RECENT", 6),
+            offload_over_chars=_i("PYLIGENT_AGENTS_OFFLOAD_OVER", 4_000),
+            state_dir=Path(os.getenv("PYLIGENT_AGENTS_STATE_DIR", ".pyligent-agents")),
+            context_window_override=_i("PYLIGENT_AGENTS_WINDOW", 0) or None,
+            effort=os.getenv("PYLIGENT_AGENTS_EFFORT") or None,
         )
 
     def price(self, model: str) -> tuple[float, float]:

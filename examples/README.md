@@ -14,7 +14,7 @@ python examples/run.py invoice [--fabricate | --transposed]   # Level 4
 python examples/run.py demo harness|loop|graph|ladder|all
 ```
 
-Everything runs offline. Set `ANTHROPIC_API_KEY` and `TRELLIS_BACKEND=anthropic`
+Everything runs offline. Set `ANTHROPIC_API_KEY` and `PYLIGENT_AGENTS_BACKEND=anthropic`
 and the identical code runs against the real API.
 
 ---
@@ -25,7 +25,7 @@ and the identical code runs against the real API.
 |---|---|
 | `money.py` | refund and invoice arithmetic — pure, deterministic, tested |
 | `data.py` | a seeded book of orders, tickets and one supplier invoice |
-| `errors.py` | domain refusals, subclassing `trellis.DomainRefusal` |
+| `errors.py` | domain refusals, subclassing `pyligent_agents.DomainRefusal` |
 | `tools.py` | the tool surface, with tiers, deferral and trust flags |
 
 **No model output is ever a monetary figure.** Every amount comes from
@@ -130,5 +130,5 @@ The fastest path to your own domain:
 Or start from scratch with guardrails already wired:
 
 ```bash
-trellis new my_agent && cd my_agent && pytest
+pyligent-agents new my_agent && cd my_agent && pytest
 ```

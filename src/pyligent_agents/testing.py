@@ -1,6 +1,6 @@
 """Helpers for testing agents.
 
-The single most useful thing Trellis gives you is that **agent behaviour is
+The single most useful thing Pyligent Agents gives you is that **agent behaviour is
 testable**. Turn caps, error recovery, permission denials, compaction triggers
 and idempotency guarantees cannot be tested against a live model: it will behave
 differently on the retry and hide the bug.
@@ -9,7 +9,7 @@ differently on the retry and hide the bug.
 `LLMClient` contract, driven by policies you write. This module is the sugar
 that makes writing those policies quick.
 
-    from trellis.testing import turn, calls, router, looping, build_test_stack
+    from pyligent_agents.testing import turn, calls, router, looping, build_test_stack
 
     def policy(call):
         if not call.called("get_order"):
@@ -152,7 +152,7 @@ def build_test_stack(
         policy=policy,
         settings=base,
         registry=tools,
-        state_dir=state_dir or tempfile.mkdtemp(prefix="trellis-test-"),
+        state_dir=state_dir or tempfile.mkdtemp(prefix="pyligent-agents-test-"),
         budget_usd=budget_usd,
     )
 
@@ -195,7 +195,7 @@ def assert_capped(fn: Callable[[], Any], *, within: int | None = None) -> None:
         return
     raise AssertionError(
         "the agent finished. If it can finish, this is not a runaway test — use "
-        "trellis.testing.looping() to build a model that never stops."
+        "pyligent_agents.testing.looping() to build a model that never stops."
     )
 
 

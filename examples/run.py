@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the Trellis examples.
+"""Run the Pyligent Agents examples.
 
     python examples/run.py triage
     python examples/run.py order-agent "Why is order A-1207 late?"
@@ -9,7 +9,7 @@
     python examples/run.py demo harness|loop|graph|ladder|all
 
 Everything runs offline against a deterministic backend. Set ANTHROPIC_API_KEY
-and TRELLIS_BACKEND=anthropic and the identical code runs against the real API.
+and PYLIGENT_AGENTS_BACKEND=anthropic and the identical code runs against the real API.
 """
 
 from __future__ import annotations
@@ -24,17 +24,17 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-os.environ.setdefault("TRELLIS_BACKEND", "scripted")
+os.environ.setdefault("PYLIGENT_AGENTS_BACKEND", "scripted")
 
-from trellis import build_stack, get_settings  # noqa: E402
-from trellis.core.errors import (  # noqa: E402
+from pyligent_agents import build_stack, get_settings  # noqa: E402
+from pyligent_agents.core.errors import (  # noqa: E402
     BudgetExhausted,
     GraphError,
     StopConditionNotMet,
 )
-from trellis.core.types import Phase, ToolUse  # noqa: E402
-from trellis.harness.hooks import ToolResultContext, defang_untrusted_content  # noqa: E402
-from trellis.testing import build_test_stack, looping, tools_used  # noqa: E402
+from pyligent_agents.core.types import Phase, ToolUse  # noqa: E402
+from pyligent_agents.harness.hooks import ToolResultContext, defang_untrusted_content  # noqa: E402
+from pyligent_agents.testing import build_test_stack, looping, tools_used  # noqa: E402
 
 from level1_triage import app as l1, policy as l1p  # noqa: E402
 from level2_order_agent import app as l2, policy as l2p  # noqa: E402
@@ -43,7 +43,7 @@ from level4_invoice_intake import app as l4, policy as l4p  # noqa: E402
 from shopdesk import data  # noqa: E402
 from shopdesk.tools import build_registry  # noqa: E402
 
-STATE = Path(".trellis")
+STATE = Path(".pyligent-agents")
 
 
 def rule(t: str, c: str = "=") -> None:
@@ -226,7 +226,7 @@ def _verbose_policy(call):
     message-counting exit condition never terminates. That interaction is easy
     to hit for real.
     """
-    from trellis.testing import calls, turn
+    from pyligent_agents.testing import calls, turn
 
     if "compacting an agent transcript" in call.system:
         return turn("Earlier: read order A-1207 and its policy document several times.",
@@ -246,7 +246,7 @@ def demo_loop() -> None:
     print()
     for k, v in l2.contract("Answer a customer question.").summary().items():
         print(f"  {k:<16} {v if not isinstance(v, dict) else json.dumps(v)}")
-    from trellis.loop import no_verification
+    from pyligent_agents.loop import no_verification
     try:
         no_verification("meh")
     except Exception as exc:
@@ -316,7 +316,7 @@ def demo_graph() -> None:
     print(); print(graph.render())
 
     sub("B. Malformed graphs fail at build time, not on the invoice")
-    from trellis.graph import Graph, Step
+    from pyligent_agents.graph import Graph, Step
     for label, build in (
         ("missing dependency",
          lambda: Graph("bad").add(Step(id="b", fn=lambda s: 1, depends_on=("a",))).validate()),

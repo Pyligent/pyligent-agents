@@ -14,11 +14,11 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 ENV = {"PYTHONPATH": f"{ROOT / 'src'}:{ROOT / 'examples'}", "PATH": "/usr/bin:/bin",
-       "TRELLIS_BACKEND": "scripted"}
+       "PYLIGENT_AGENTS_BACKEND": "scripted"}
 
 
 def _cli(*args, cwd=None, env=None):
-    return subprocess.run([sys.executable, "-m", "trellis", *args], capture_output=True,
+    return subprocess.run([sys.executable, "-m", "pyligent_agents", *args], capture_output=True,
                           text=True, cwd=cwd or ROOT, env={**ENV, **(env or {})}, timeout=120)
 
 
@@ -44,7 +44,7 @@ def test_doctor_reports_pricing_and_governors():
 
 
 def test_doctor_flags_an_unpriced_model():
-    out = _cli("doctor", env={"TRELLIS_WORKER_MODEL": "some-model-we-never-heard-of"}).stdout
+    out = _cli("doctor", env={"PYLIGENT_AGENTS_WORKER_MODEL": "some-model-we-never-heard-of"}).stdout
     assert "UNPRICED" in out
     assert "register_model" in out
 
@@ -145,7 +145,7 @@ def test_a_transposed_digit_is_caught_from_the_cli(tmp_path):
 
 
 def test_assert_capped_rejects_an_agent_that_finishes(registry):
-    from trellis.testing import assert_capped, build_test_stack, turn
+    from pyligent_agents.testing import assert_capped, build_test_stack, turn
 
     from level2_order_agent import app
 
@@ -155,7 +155,7 @@ def test_assert_capped_rejects_an_agent_that_finishes(registry):
 
 
 def test_assert_effects_fire_once_reports_the_keys(tmp_path, registry):
-    from trellis.testing import assert_effects_fire_once, build_test_stack
+    from pyligent_agents.testing import assert_effects_fire_once, build_test_stack
 
     stack = build_test_stack(lambda c: None, tools=registry, state_dir=tmp_path)
     stack.store.save_run("r1", "g", "completed", {"run_id": "r1", "goal": ""})

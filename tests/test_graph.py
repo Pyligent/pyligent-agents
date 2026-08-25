@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import pytest
 
-from trellis import idempotency_key
-from trellis.core.errors import GraphError
-from trellis.graph import Graph, GraphState, RetryPolicy, Step
-from trellis.testing import assert_effects_fire_once, build_test_stack
+from pyligent_agents import idempotency_key
+from pyligent_agents.core.errors import GraphError
+from pyligent_agents.graph import Graph, GraphState, RetryPolicy, Step
+from pyligent_agents.testing import assert_effects_fire_once, build_test_stack
 
 from level3_refund_workflow import app as refund, policy as refund_policy
 from level4_invoice_intake import app as invoice, policy as invoice_policy

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from trellis.testing import ScriptedTurn, build_test_stack
-from trellis.verify import (
+from pyligent_agents.testing import ScriptedTurn, build_test_stack
+from pyligent_agents.verify import (
     DocumentVerifier,
     GateSet,
     GateVerifier,

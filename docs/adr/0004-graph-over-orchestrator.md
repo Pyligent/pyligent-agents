@@ -31,7 +31,7 @@ architecture.
 ## Consequences
 
 **Good.** Four classes of runtime surprise become build-time errors.
-`trellis graph show` and `to_mermaid()` make the plan reviewable by someone who
+`pyligent-agents graph show` and `to_mermaid()` make the plan reviewable by someone who
 will never read the code. Resume, replay, conditional routing and per-node
 tracing come from the runner rather than being rewritten per workflow. And the
 orchestrator-never-executes rule becomes vacuous: there is no orchestrator to

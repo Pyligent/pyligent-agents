@@ -16,11 +16,11 @@ from __future__ import annotations
 
 from typing import Any
 
-from trellis import idempotency_key
-from trellis.graph import AgentNode, Graph, HumanGate, RetryPolicy, Step
-from trellis.graph.state import GraphState
-from trellis.harness import Harness
-from trellis.loop import (
+from pyligent_agents import idempotency_key
+from pyligent_agents.graph import AgentNode, Graph, HumanGate, RetryPolicy, Step
+from pyligent_agents.graph.state import GraphState
+from pyligent_agents.harness import Harness
+from pyligent_agents.loop import (
     Agent,
     AgentContract,
     Budget,

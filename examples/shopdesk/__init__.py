@@ -1,4 +1,4 @@
-"""ShopDesk — a small support/operations domain for the Trellis examples.
+"""ShopDesk — a small support/operations domain for the Pyligent Agents examples.
 
 Deterministic, tested, and containing no model code. That ordering is the point:
 build the domain first, and the agents above it have something true to stand on.

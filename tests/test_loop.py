@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from trellis.core.errors import BudgetExhausted, ContractViolation, ErrorClass
-from trellis.loop import (
+from pyligent_agents.core.errors import BudgetExhausted, ContractViolation, ErrorClass
+from pyligent_agents.loop import (
     Agent,
     AgentContract,
     Budget,
@@ -16,8 +16,8 @@ from trellis.loop import (
     StopVerdict,
     no_verification,
 )
-from trellis.loop.recovery import Action
-from trellis.testing import (
+from pyligent_agents.loop.recovery import Action
+from pyligent_agents.testing import (
     assert_capped,
     build_test_stack,
     capture_prompts,
@@ -90,7 +90,7 @@ def test_a_delivery_date_is_not_claimed_when_tracking_failed(registry):
 
 
 def test_produced_requires_a_non_empty_key():
-    from trellis.loop.agent import LoopState
+    from pyligent_agents.loop.agent import LoopState
 
     state = LoopState(goal="g", artifact={"fields": {}})
     assert not Produced("fields").check(state).done

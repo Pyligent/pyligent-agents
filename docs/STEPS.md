@@ -7,7 +7,7 @@ are domain failures and permission failures wearing an AI costume, and they are
 cheapest to fix before there is a model in the room.
 
 ```bash
-trellis steps        # this list, in your terminal
+pyligent-agents steps        # this list, in your terminal
 ```
 
 ---
@@ -67,7 +67,7 @@ outside your team `trusted=False`.
 ## Step 4 — Stand up the harness
 
 ```python
-from trellis import build_stack
+from pyligent_agents import build_stack
 stack = build_stack(registry=my_tools)
 ```
 
@@ -98,7 +98,7 @@ You cannot construct an `Agent` without all four, and `no_verification()` refuse
 a reason shorter than a sentence. Everyone agrees the four questions matter; as
 constructor arguments they cannot drift out of the code.
 
-📄 [`src/trellis/loop/contract.py`](../src/trellis/loop/contract.py)
+📄 [`src/pyligent_agents/loop/contract.py`](../src/pyligent_agents/loop/contract.py)
 
 ---
 
@@ -117,7 +117,7 @@ surfaces it in ten minutes.
 
 Compose with `&` and `|`.
 
-📄 [`src/trellis/loop/stop.py`](../src/trellis/loop/stop.py)
+📄 [`src/pyligent_agents/loop/stop.py`](../src/pyligent_agents/loop/stop.py)
 
 ---
 
@@ -152,7 +152,7 @@ unreachable state are build-time errors rather than a confident answer built on
 a hole. Checkpointing, resume, replay and tracing come from the runner.
 
 ```bash
-trellis graph show level3_refund_workflow.app:build_graph
+pyligent-agents graph show level3_refund_workflow.app:build_graph
 python examples/run.py demo graph
 ```
 
@@ -185,7 +185,7 @@ python examples/run.py demo graph    # section E: 3 runs, 1 refund
 ## Step 10 — Prove each guardrail with a test that fails without it
 
 ```python
-from trellis.testing import assert_capped, build_test_stack, looping
+from pyligent_agents.testing import assert_capped, build_test_stack, looping
 
 def test_a_looping_model_is_stopped(registry):
     stack = build_test_stack(looping("get_order", order_id="A-1"), tools=registry)
@@ -215,10 +215,10 @@ quarters, by someone who was not in the room when you agreed it.
 | | |
 |---|---|
 | 0:00 | `pip install -e ".[dev]" && pytest` |
-| 0:10 | `trellis steps` |
+| 0:10 | `pyligent-agents steps` |
 | 0:20 | Step 1 — read `examples/shopdesk/money.py`, run its tests |
 | 0:40 | `python examples/run.py demo harness` — read every section |
 | 1:20 | `python examples/run.py demo loop` |
 | 2:00 | `python examples/run.py demo graph` |
 | 2:45 | `python examples/run.py demo ladder` |
-| 3:00 | `trellis new my_agent` and build something |
+| 3:00 | `pyligent-agents new my_agent` and build something |

@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import json
 
-from trellis.testing import ScriptedTurn, router, turn
+from pyligent_agents.testing import ScriptedTurn, router, turn
 
 
 def _q(v, quote):

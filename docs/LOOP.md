@@ -120,7 +120,7 @@ reads it the same way twice.
 **The contract's verifier.** A different agent that sees the artifact and the
 source and *nothing about how the artifact was produced*. This is the one that
 counts. See [`GRAPH.md`](GRAPH.md#verification) and
-[`verification/verifier.py`](../src/trellis/verify/verifier.py).
+[`verification/verifier.py`](../src/pyligent_agents/verify/verifier.py).
 
 ### Push back, never "try again"
 
@@ -139,7 +139,7 @@ with more adjectives.
 
 ## 4. Recovery — one branch per error class
 
-The taxonomy in [`core/errors.py`](../src/trellis/core/errors.py) exists so
+The taxonomy in [`core/errors.py`](../src/pyligent_agents/core/errors.py) exists so
 this is a lookup table rather than a pile of heuristics:
 
 | Class | Action | Why |

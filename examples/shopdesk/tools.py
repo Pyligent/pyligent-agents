@@ -21,9 +21,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from trellis import PermissionTier, ToolSpec
-from trellis.core.types import Phase
-from trellis.harness import ToolRegistry
+from pyligent_agents import PermissionTier, ToolSpec
+from pyligent_agents.core.types import Phase
+from pyligent_agents.harness import ToolRegistry
 
 from . import data, money
 
@@ -88,7 +88,7 @@ def get_order(order_id: str) -> dict[str, Any]:
 
 
 def get_tracking(order_id: str) -> dict[str, Any]:
-    # Raises CarrierUnavailable for A-1422. Trellis classifies that TRANSIENT
+    # Raises CarrierUnavailable for A-1422. Pyligent Agents classifies that TRANSIENT
     # and retries with backoff before handing it back to the agent.
     return data.get_tracking(order_id)
 

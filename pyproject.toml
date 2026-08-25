@@ -37,7 +37,7 @@ Issues = "https://github.com/pyligent/pyligent-agents/issues"
 Changelog = "https://github.com/pyligent/pyligent-agents/blob/main/CHANGELOG.md"
 
 [project.scripts]
-trellis = "trellis.cli:main"
+"pyligent-agents" = "pyligent_agents.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

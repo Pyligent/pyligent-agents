@@ -1,13 +1,13 @@
-"""`trellis` — a small, domain-free CLI for the library itself.
+"""`pyligent-agents` — a small, domain-free CLI for the library itself.
 
-Trellis ships no tools and no domain, so this CLI does not run agents. It does
-the four things that are useful about *any* Trellis project:
+Pyligent Agents ships no tools and no domain, so this CLI does not run agents. It does
+the four things that are useful about *any* Pyligent Agents project:
 
-    trellis steps                    the ten build steps
-    trellis doctor                   check config, credentials, pricing
-    trellis new my_agent             scaffold a project that already has guardrails
-    trellis graph mypkg.flows:build  inspect a graph without running it
-    trellis runs / trellis trace ID  read a state directory
+    pyligent-agents steps                    the ten build steps
+    pyligent-agents doctor                   check config, credentials, pricing
+    pyligent-agents new my_agent             scaffold a project that already has guardrails
+    pyligent-agents graph mypkg.flows:build  inspect a graph without running it
+    pyligent-agents runs / pyligent-agents trace ID  read a state directory
 
 Your application's own commands belong in your application. See
 `examples/run.py` for what that looks like.
@@ -54,13 +54,13 @@ STEPS = [
      "narrows the duplicate window; only the ledger closes it."),
     ("10", "Prove each guardrail with a test that fails without it",
      "A rule that is not a failing test is a rule that will be broken within "
-     "two quarters. trellis.testing has the helpers."),
+     "two quarters. pyligent_agents.testing has the helpers."),
 ]
 
 QUESTIONS = ("What is the stop condition?", "Who verifies before it ships?",
              "What is the spend cap?", "What happens when a subagent fails?")
 
-TEMPLATE_APP = '''"""{name} — an agent built on Trellis.
+TEMPLATE_APP = '''"""{name} — an agent built on Pyligent Agents.
 
 Fill in the domain, the tools and the stop condition. The guardrails are already
 wired: a contract you cannot leave incomplete, tiered tool permissions, four
@@ -71,9 +71,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from trellis import PermissionTier, ToolSpec, build_stack
-from trellis.harness import Harness, ToolRegistry
-from trellis.loop import (
+from pyligent_agents import PermissionTier, ToolSpec, build_stack
+from pyligent_agents.harness import Harness, ToolRegistry
+from pyligent_agents.loop import (
     Agent, AgentContract, Budget, LoopState, ModelSaysDone, OnFailure,
     Predicate, no_verification,
 )
@@ -163,7 +163,7 @@ definition of a guardrail; everything else is a comment.
 
 from __future__ import annotations
 
-from trellis.testing import (
+from pyligent_agents.testing import (
     assert_capped, build_test_stack, calls, looping, tools_used, turn,
 )
 
@@ -200,7 +200,7 @@ def test_an_ungrounded_figure_never_ships():
     diagnosable failure instead of a wrong answer.
     """
     import pytest
-    from trellis.core.errors import StopConditionNotMet
+    from pyligent_agents.core.errors import StopConditionNotMet
 
     stack = _stack(lambda call: turn("The result is 99."))
     with pytest.raises(StopConditionNotMet):
@@ -245,7 +245,7 @@ def cmd_doctor(_a) -> int:
     from .config import CONTEXT_WINDOW, PRICES
 
     has_key = bool(os.getenv("ANTHROPIC_API_KEY") or os.getenv("ANTHROPIC_AUTH_TOKEN"))
-    _rule("trellis doctor", "=")
+    _rule("pyligent-agents doctor", "=")
     print(f"  version            {__version__}")
     print(f"  python             {sys.version.split()[0]}")
     print(f"  backend            {s.backend}"
@@ -274,10 +274,10 @@ def cmd_doctor(_a) -> int:
                 if m not in PRICES]
     if unpriced:
         _rule("Action")
-        print(f"  {len(unpriced)} model(s) have no price. They will not look free — Trellis")
-        print("  charges an unknown model at the dearest tier it knows — but a real")
-        print("  number beats a safe guess:\n")
-        print("    from trellis import register_model")
+        print(f"  {len(unpriced)} model(s) have no price. They will not look free —")
+        print("  an unknown model is charged at the dearest tier we know about — but")
+        print("  a real number beats a safe guess:\n")
+        print("    from pyligent_agents import register_model")
         for m in unpriced:
             print(f'    register_model("{m}", price_in=..., price_out=..., context_window=...)')
     return 0
@@ -294,7 +294,7 @@ def cmd_new(a) -> int:
     (target / "tests" / f"test_{name}.py").write_text(
         TEMPLATE_TEST.format(name=name), encoding="utf-8")
     (target / "README.md").write_text(
-        f"# {name}\n\nBuilt on [Trellis](https://github.com/pyligent/pyligent-agents).\n\n"
+        f"# {name}\n\nBuilt on [Pyligent Agents](https://github.com/pyligent/pyligent-agents).\n\n"
         f"```bash\npip install pyligent-agents pytest\npython {name}.py\npytest\n```\n\n"
         f"## The four questions\n\n"
         f"| | |\n|---|---|\n"
@@ -366,9 +366,9 @@ def cmd_trace(a) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
-        prog="trellis",
+        prog="pyligent-agents",
         description="Harness, loop and graph engineering for production agents.")
-    p.add_argument("--version", action="version", version=f"trellis {__version__}")
+    p.add_argument("--version", action="version", version=f"pyligent-agents {__version__}")
     sub = p.add_subparsers(dest="command", required=True)
 
     sub.add_parser("steps", help="the ten build steps").set_defaults(fn=cmd_steps)

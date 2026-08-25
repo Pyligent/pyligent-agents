@@ -1,4 +1,4 @@
-# Trellis
+# Pyligent Agents
 
 **Harness, loop and graph engineering for production AI agents.**
 
@@ -6,27 +6,24 @@
 [![python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A trellis is structure a plant grows on. It does not make the plant grow — it
-decides what shape the growth can take. That is the argument:
+The argument, in one line:
 
 > A multi-agent system is not more model. It is more **structure** — and
 > structure only helps when the task actually needs it.
 
+This is that structure: three layers you can adopt one at a time, a domain you
+supply yourself, and guardrails that fail a test when you remove them.
+
 ```bash
-pip install pyligent-agents     # distribution name
-trellis steps                   # the ten build steps
-trellis new my_agent            # a project whose guardrail tests already pass
+pip install pyligent-agents
+
+pyligent-agents steps           # the ten build steps
+pyligent-agents new my_agent    # a project whose guardrail tests already pass
 ```
 
 ```python
-import trellis                  # import name
+import pyligent_agents
 ```
-
-| | |
-|---|---|
-| Repository | `github.com/pyligent/pyligent-agents` |
-| Distribution (`pip install`) | `pyligent-agents` |
-| Import name / CLI | `trellis` |
 
 **No required dependencies.** **No tools shipped.** **115 tests that run offline
 in five seconds with no API key.**
@@ -57,8 +54,8 @@ tangled in one file.
 ## Thirty seconds
 
 ```python
-from trellis import build_stack
-from trellis.loop import (
+from pyligent_agents import build_stack
+from pyligent_agents.loop import (
     Agent, AgentContract, Budget, ModelSaysDone, Predicate, no_verification,
 )
 
@@ -195,7 +192,7 @@ The argument for a declared graph over an orchestrator agent is not elegance. It
 is that a graph is **inspectable before it executes**:
 
 ```
-$ trellis graph show level3_refund_workflow.app:build_graph
+$ pyligent-agents graph show level3_refund_workflow.app:build_graph
 
 graph: refund_workflow
   seeds: ticket_id
@@ -270,7 +267,7 @@ is not a mock — it is a second implementation of the `LLMClient` contract,
 running through the same `build_stack` path production uses.
 
 ```python
-from trellis.testing import assert_capped, build_test_stack, calls, looping, turn
+from pyligent_agents.testing import assert_capped, build_test_stack, calls, looping, turn
 
 def test_a_looping_model_is_stopped(registry):
     stack = build_test_stack(looping("get_order", order_id="A-1"), tools=registry)
@@ -338,7 +335,7 @@ the largest line on the bill despite being cheapest per run.
 | Reviewing someone's agent PR | [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) |
 | Writing tests | [`docs/TESTING.md`](docs/TESTING.md) |
 | Curious about a decision | [`docs/adr/`](docs/adr/) |
-| Ready to build | `trellis new my_agent && cd my_agent && pytest` |
+| Ready to build | `pyligent-agents new my_agent && cd my_agent && pytest` |
 
 ---
 
@@ -387,7 +384,7 @@ Stated here rather than discovered later:
 - **`ScriptedLLM` proves control flow, not output quality.** It will never tell
   you a prompt got worse. A gold-set eval harness is separate work and is
   deliberately not in this library.
-- **Trellis does not sandbox your tools.** They run in your process with your
+- **Pyligent Agents does not sandbox your tools.** They run in your process with your
   privileges. See [`SECURITY.md`](SECURITY.md).
 - **`estimate_tokens` is a heuristic** used only for triggering decisions. Real
   usage comes from the API and is what the governor bills against.

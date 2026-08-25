@@ -11,7 +11,7 @@ import json
 import re
 from typing import Any
 
-from trellis.testing import ScriptedCall, ScriptedTurn, calls, parallel, turn
+from pyligent_agents.testing import ScriptedCall, ScriptedTurn, calls, parallel, turn
 
 ORDER_RE = re.compile(r"\bA-\d{4}\b")
 

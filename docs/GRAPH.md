@@ -24,7 +24,7 @@ node — then the flexibility is scoped to where it earns its keep, and the
 workflow around it is still declared.
 
 ```bash
-trellis graph show level3_refund_workflow.app:build_graph
+pyligent-agents graph show level3_refund_workflow.app:build_graph
 python examples/run.py demo graph
 ```
 
@@ -112,7 +112,7 @@ read — used for idempotency and for proving a replayed run saw identical input
 
 ## 4. The execution contract
 
-Five rules, in [`runner.py`](../src/trellis/graph/runner.py):
+Five rules, in [`runner.py`](../src/pyligent_agents/graph/runner.py):
 
 1. A node that already finished is **replayed from the checkpoint**, not re-run.
 2. A node whose idempotency key is already on the ledger is **replayed from the
@@ -278,8 +278,8 @@ because the original failure is the one a human needs to see.
 ## Reading a run afterwards
 
 ```bash
-python -m trellis runs
-python -m trellis trace gr_55b7585fd5c3
+python -m pyligent-agents runs
+python -m pyligent-agents trace gr_55b7585fd5c3
 ```
 
 ```

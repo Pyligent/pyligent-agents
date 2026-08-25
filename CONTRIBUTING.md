@@ -1,4 +1,4 @@
-# Contributing to Trellis
+# Contributing to Pyligent Agents
 
 Thanks for considering it. This document is short and specific, because a
 contributing guide that is neither wastes your time.
@@ -27,7 +27,7 @@ that is a signal the thing under test is in the wrong place.
 - **Backends.** `LLMClient` is one method. An OpenAI, Bedrock, Vertex, Ollama or
   local backend is a genuinely small file, and the rest of the stack does not
   change. Add prices via `register_model()`.
-- **Gates.** `trellis/verify/gates.py` is a library of reusable checks. If you
+- **Gates.** `pyligent_agents/verify/gates.py` is a library of reusable checks. If you
   wrote a good cross-field gate for your domain, a generalised version probably
   belongs here.
 - **Stop conditions.** Same argument. Grounding predicates especially.
@@ -44,7 +44,7 @@ that is a signal the thing under test is in the wrong place.
   expresses your shape.
 - Anything that gives the library **required third-party dependencies**.
 - Anything that adds a **domain** or a **default tool** to the core library.
-  Trellis ships neither, deliberately.
+  Pyligent Agents ships neither, deliberately.
 - Async. It is wanted; the design needs discussion before the code.
 
 **Probably not**
@@ -61,10 +61,10 @@ This is the house rule. Delete the guardrail, run the test, watch it go red. A
 rule that is not a failing test is a rule that will be broken within two
 quarters, by someone who was not in the room when you agreed it.
 
-Use `trellis.testing`:
+Use `pyligent_agents.testing`:
 
 ```python
-from trellis.testing import assert_capped, build_test_stack, calls, looping, turn
+from pyligent_agents.testing import assert_capped, build_test_stack, calls, looping, turn
 
 def test_a_looping_model_is_stopped(registry):
     stack = build_test_stack(looping("get_order", order_id="A-1"), tools=registry)
@@ -119,19 +119,17 @@ template. They are the same four the library makes you answer in code.
 Maintainers: bump `__version__` and `pyproject.toml`, update `CHANGELOG.md`, tag
 `v0.x.y`.
 
-**Three names, and they differ:**
+Everything is named consistently, which is the point of the rename:
 
 | | |
 |---|---|
 | Repository | `pyligent/pyligent-agents` |
 | Distribution | `pyligent-agents` |
-| Import name / CLI | `trellis` |
-
-Say both the distribution and the import name whenever you write an install
-line. A reader who sees only one of them will get it wrong.
+| Import | `pyligent_agents` |
+| CLI | `pyligent-agents` |
 
 ## Getting help
 
 Open a discussion for design questions, an issue for bugs. Include the output of
-`trellis doctor` — it reports backend, model routing, pricing coverage and
+`pyligent-agents doctor` — it reports backend, model routing, pricing coverage and
 governor settings, which answers most "why is it doing that?" questions.

@@ -6,10 +6,10 @@ from dataclasses import replace
 
 import pytest
 
-from trellis import get_settings
-from trellis.core.errors import BudgetExhausted, ErrorClass
-from trellis.core.types import Phase, PermissionTier, ToolUse, Usage
-from trellis.harness import (
+from pyligent_agents import get_settings
+from pyligent_agents.core.errors import BudgetExhausted, ErrorClass
+from pyligent_agents.core.types import Phase, PermissionTier, ToolUse, Usage
+from pyligent_agents.harness import (
     ContextManager,
     Governor,
     HookBus,
@@ -23,12 +23,12 @@ from trellis.harness import (
     defang_untrusted_content,
     redact_secrets,
 )
-from trellis.testing import build_test_stack
+from pyligent_agents.testing import build_test_stack
 
 
 @pytest.fixture
 def stack(registry):
-    from trellis.testing import turn
+    from pyligent_agents.testing import turn
 
     return build_test_stack(lambda c: turn("ok"), tools=registry)
 
@@ -194,8 +194,8 @@ def test_unknown_tool_lists_what_exists(registry):
 
 def test_a_registered_third_party_exception_joins_the_taxonomy():
     """You do not have to own an exception to classify it correctly."""
-    from trellis import register_error_class
-    from trellis.core.errors import classify
+    from pyligent_agents import register_error_class
+    from pyligent_agents.core.errors import classify
 
     class VendorRateLimit(Exception):
         pass
@@ -207,7 +207,7 @@ def test_a_registered_third_party_exception_joins_the_taxonomy():
 
 def test_an_unknown_exception_is_fatal_not_transient():
     """An unrecognised failure must never be retried into a bill."""
-    from trellis.core.errors import classify
+    from pyligent_agents.core.errors import classify
 
     class Weird(Exception):
         pass
@@ -232,7 +232,7 @@ def test_deferred_tools_are_hidden_until_surfaced(stack):
 
 
 def test_the_cap_is_checked_before_spending(registry):
-    from trellis.testing import ScriptedTurn as T
+    from pyligent_agents.testing import ScriptedTurn as T
 
     stack = build_test_stack(lambda c: T(text="ok", input_tokens=2_000_000),
                              tools=registry, budget_usd=0.05)
@@ -256,8 +256,8 @@ def test_an_unknown_model_is_never_free():
 
 
 def test_registering_a_model_makes_it_priced_properly():
-    from trellis import register_model
-    from trellis.config import PRICES
+    from pyligent_agents import register_model
+    from pyligent_agents.config import PRICES
 
     register_model("acme-fast-1", price_in=0.5, price_out=1.5, context_window=128_000)
     assert PRICES["acme-fast-1"] == (0.5, 1.5)

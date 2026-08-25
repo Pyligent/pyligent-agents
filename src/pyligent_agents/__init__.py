@@ -1,7 +1,6 @@
-"""Trellis — harness, loop and graph engineering for production agents.
+"""Pyligent Agents — harness, loop and graph engineering for production agents.
 
-A trellis is structure a plant grows on. It does not make the plant grow; it
-decides what shape the growth can take. That is the argument of this library:
+The argument of this library, in one line:
 
     A multi-agent system is not more model. It is more structure — and structure
     only helps when the task actually needs it.
@@ -12,13 +11,13 @@ Three layers, one sentence each:
     loop      owns CONTROL        when to stop, what to do when something breaks
     graph     owns COORDINATION   what runs in what order, and what survives a crash
 
-Trellis ships **no tools and no domain**. Your tools are your domain, and a
-library that guesses at them is a library you fight.
+This library ships **no tools and no domain**. Your tools are your domain, and
+a library that guesses at them is a library you fight.
 
 Quick start:
 
-    from trellis import build_stack
-    from trellis.loop import Agent, AgentContract, Budget, ModelSaysDone, no_verification
+    from pyligent_agents import build_stack
+    from pyligent_agents.loop import Agent, AgentContract, Budget, ModelSaysDone, no_verification
 
     stack = build_stack(registry=my_tools)
     agent = Agent(
