@@ -17,6 +17,7 @@ from .gates import (
     iso_currency,
     no_cross_reference_values,
     no_placeholder_values,
+    no_silent_repair,
     non_empty,
     numeric_range,
     one_of,
@@ -30,6 +31,7 @@ from .verifier import DocumentVerifier, GateVerifier, quote_is_in
 __all__ = [
     "values_are_numeric",
     "no_cross_reference_values",
+    "no_silent_repair",
     "iso_currency",
     "ISO_4217",
     "DocumentVerifier", "Gate", "GateReport", "GateResult", "GateSet",

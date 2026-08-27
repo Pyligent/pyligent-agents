@@ -106,7 +106,7 @@ survives a crash. The collateral work above is an application of them, and the
 patterns generalise — [`docs/PATTERNS.md`](docs/PATTERNS.md) works them through
 on an ordinary support desk, away from the domain.
 
-**No required dependencies.** **No tools shipped.** **231 tests that run offline
+**One dependency** (`unsourced`, which has none). **No tools shipped.** **277 tests that run offline
 in six seconds with no API key.**
 
 ---

@@ -35,6 +35,12 @@ from collections.abc import Callable, Iterable, Sequence
 from dataclasses import dataclass, field
 from typing import Any
 
+# One definition of each check, shared with the `unsourced` CLI. Two copies
+# of a comparison rule drift, and a drifted rule invalidates every number
+# measured with it long after anyone would notice.
+from unsourced.checks import PLACEHOLDERS, check_field
+from unsourced.normalize import contains
+
 # A check returns (passed, message). The message is read by a human at 3am, so
 # it should say what is wrong, not merely that something is.
 Check = Callable[[dict[str, Any]], "tuple[bool, str]"]
@@ -203,15 +209,13 @@ def quotes_appear_in_source(
         source = artifact.get(source_key)
         if not source:
             return False, f"no '{source_key}' supplied; evidence cannot be checked"
-        haystack = " ".join(str(source).split()).lower()
 
         entries = _dig(artifact, under) or {}
         if isinstance(entries, list):
             entries = {str(i): e for i, e in enumerate(entries)}
         fabricated = [
             k for k, v in entries.items()
-            if isinstance(v, dict)
-            and " ".join(str(v.get(quote_field, "")).split()).lower() not in haystack
+            if isinstance(v, dict) and not contains(str(source), str(v.get(quote_field, "")))
         ]
         if fabricated:
             return False, f"quote not found in source for: {', '.join(sorted(fabricated))}"
@@ -288,7 +292,7 @@ def verified_independently(key: str = "_verification") -> Check:
     return check
 
 
-def no_placeholder_values(*, under: str, markers: Sequence[str] = ("TODO", "TBD", "N/A", "unknown", "null")) -> Check:
+def no_placeholder_values(*, under: str, markers: Sequence[str] = PLACEHOLDERS) -> Check:
     """Catch an extraction that filled the shape but not the content.
 
     A model that cannot find a value will often produce a plausible-looking
@@ -397,6 +401,47 @@ def no_cross_reference_values(*paths: str, under: str = "") -> Check:
                 f"This is a cross-reference, not a quantity."
             )
         return True, f"{seen} value(s) are quantities, not clause references"
+    return check
+
+
+def no_silent_repair(*, under: str = "fields", quote_field: str = "evidence_quote",
+                     source_key: str = "_source_text") -> Check:
+    """No field's cited text names a *different* value than the one extracted.
+
+    The failure the other evidence gates cannot see. A model asked to extract a
+    name that reads `Jonathon` on the passport and `Jonathan` on the form will
+    often write down whichever makes the file consistent — and quote the
+    passport line honestly. `evidence_present` passes. `evidence_verbatim`
+    passes. The discrepancy the extraction was hired to surface is the thing it
+    removed.
+
+    Delegates to `unsourced`, which is the single definition of this check and
+    carries the normalisation rules that keep it from firing on a correct
+    extraction: a value the quote does not mention at all is inference, not
+    repair, and reporting it would make the gate unusable on legal text.
+    """
+    def check(artifact: dict[str, Any]) -> tuple[bool, str]:
+        source = str(artifact.get(source_key) or "")
+        if not source:
+            return False, f"no '{source_key}' supplied; evidence cannot be checked"
+        entries = _dig(artifact, under) or {}
+        if isinstance(entries, list):
+            entries = {str(i): e for i, e in enumerate(entries)}
+
+        repaired = []
+        for name, entry in entries.items():
+            if not isinstance(entry, dict):
+                continue
+            finding = check_field(str(name), entry.get("value"),
+                                  str(entry.get(quote_field) or ""), source)
+            if finding is not None and finding.code == "SILENT_REPAIR":
+                repaired.append(f"{name} (cited text states {', '.join(finding.competing[:2])})")
+        if repaired:
+            return False, (
+                f"the cited text names a different value for: {'; '.join(sorted(repaired))}. "
+                f"A discrepancy was removed rather than reported."
+            )
+        return True, f"no cited text contradicts its value across {len(entries)} entries"
     return check
 
 
