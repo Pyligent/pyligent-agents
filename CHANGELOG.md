@@ -5,6 +5,27 @@ All notable changes to this project are documented here. This project follows
 
 ## [Unreleased]
 
+### Changed
+
+- **Evidence checks are now imported from `unsourced`, not defined here.** The
+  logic existed in two places and had already drifted: this module knew five
+  placeholder markers, `unsourced` knew ten, so a field holding `-` or `none`
+  passed the gate and failed the CLI. The same artifact got two verdicts.
+  Drift in a comparison rule is silent — both copies keep passing their own
+  tests — and every number measured with either is quietly wrong until somebody
+  compares them.
+- This costs the "no required dependencies" claim. Now stated honestly: one
+  dependency, and it has none of its own. See ADR 0002's amendment.
+
+### Added
+
+- `no_silent_repair()` — a genuine citation naming a different value, which
+  `evidence_present` and `evidence_verbatim` both pass. Not in the
+  `evidence_gated_extraction` bundle yet: adding it changes gate counts, eval
+  baselines and every published figure, which is a separate decision.
+- `tests/test_shared_checks.py` — asserts the gate and the CLI return the same
+  verdict on the same artifact.
+
 ### Added — collateral chain and shadow mode
 
 Repositions the repository around ISDA collateral, with the generic agent

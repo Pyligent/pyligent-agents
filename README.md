@@ -298,6 +298,77 @@ checkpoint before the work · a failed node blocks its dependents · a human gat
 
 ---
 
+## The artifact is the unit of control
+
+A chat response is not a governable object. It has no schema, no provenance, no
+status, and no way to say *this value came from that sentence, extracted by that
+prompt at that version*. You can read it and hope.
+
+`Record` makes the artifact the unit instead:
+
+```python
+from pyligent_agents import Record, Status
+
+record = Record.from_artifact(extraction, doc_type="csa")
+record.status                       # Status.PROPOSED — nothing has checked it
+record.fields["threshold"].provenance.gate_set          # "csa/v7"
+record.fields["threshold"].evidence[0].locator.describe()   # "table t1, cell r3c2"
+
+record.certified(gate_report).admitted()      # a NEW record; nothing mutates
+record.referred(ReviewItem("ratings trigger", "not modelled", owner="legal"))
+```
+
+Three properties make it governable rather than merely structured.
+
+**Status is a lifecycle, not a boolean** — `PROPOSED → CERTIFIED → ADMITTED |
+REFERRED | ABSTAINED`. `ABSTAINED` is the one usually missing and the one that
+keeps a control honest: the system could not tell, and said so, rather than
+guessing in whichever direction its threshold happened to fall.
+
+**Provenance is per field.** "Processed by v2.1" is useless at review time.
+"This threshold came from prompt `csa/v3` under gate set `csa/v7`, quote on page
+4" is what an auditor asks for, and the answer has to survive the document being
+reprocessed later.
+
+**Transitions return new records.** Nothing mutates status in place, so the
+chain from source to decision replays rather than being reconstructed.
+
+`to_artifact()` emits the exact dict shape the gate library already reads, so
+locators and provenance are **additive, not a migration**. Gates written before
+this type existed keep working untouched.
+
+---
+
+## Configuration and secrets
+
+Structure lives in a file. Credentials do not.
+
+```yaml
+# pyligent.yaml — committed
+extractor:
+  provider: anthropic
+  model: claude-sonnet-5
+  api_key_env: ANTHROPIC_API_KEY     # the NAME, never the value
+```
+
+```python
+from pyligent_agents.config_file import load
+
+cfg = load("pyligent.yaml")
+cfg.get("extractor.model")           # "claude-sonnet-5"
+cfg.secret("extractor.api_key_env")  # read from the environment, at use
+```
+
+`load()` **refuses** a file that appears to carry a credential rather than a
+reference to one, and says why: deleting a secret from a repository does not
+remove it from history. A check that only runs when someone remembers to run it
+is not a control.
+
+No YAML dependency — the subset parsed is what a configuration file needs, and
+adding a parser to read six keys is a bad trade.
+
+---
+
 ## Verification: the part most teams skip
 
 Width — more tools, more subagents, more autonomy — is what an architecture
@@ -338,6 +409,25 @@ arithmetic caught it.
 
 > **Every gate set should contain at least one check a JSON schema could not
 > express.** If yours does not, you have written a validator, not a gate set.
+
+And the counterpart, learned the expensive way:
+
+> **A gate that cannot tell must pass, not fail.** When a check's precondition
+> does not hold, abstain. One that fires on "I cannot tell" turns every
+> unusual-but-valid document into a referral, and a queue full of correct
+> documents is how a control gets switched off.
+> ([ADR 0006](docs/adr/0006-gates-cite-published-guidance.md))
+
+`no_silent_repair()` catches what the other evidence gates cannot see: a
+citation that is genuine and names a *different* value. `evidence_present`
+passes, `evidence_verbatim` passes, and the discrepancy the extraction was hired
+to surface is the thing it removed. Available now, and deliberately not yet in
+the default bundle — adding it changes gate counts and every published figure.
+
+Every evidence check is imported from `unsourced` rather than defined twice, so
+there is one definition and it cannot drift. It already had: this module knew
+five placeholder markers, `unsourced` knew ten, so `-` and `none` passed one
+path and failed the other.
 
 ---
 
@@ -468,7 +558,7 @@ the largest line on the bill despite being cheapest per run.
 
 - **[Three layers](docs/adr/0001-three-layers.md)**, not one module per ladder
   level. Level 4 workers were re-implementing Level 2; now they *are* Level 2.
-- **[No tools, no domain, no dependencies](docs/adr/0002-ships-no-tools.md)**. A
+- **[No tools, no domain](docs/adr/0002-ships-no-tools.md)**. A
   default tool set makes three promises the library cannot keep.
 - **[An effect ledger separate from checkpoints](docs/adr/0003-idempotency-ledger.md)**.
   Checkpointing narrows the duplicate window; only the ledger closes it.

@@ -1,6 +1,6 @@
 # ADR 0002 — Pyligent Agents ships no tools and no domain
 
-**Status:** accepted · **Date:** 2026-08-25
+**Status:** accepted, amended 2026-08-27 · **Date:** 2026-08-25
 
 ## Context
 
@@ -15,15 +15,35 @@ their failure modes match your recovery policy.
 
 ## Decision
 
-The core library ships **no tools and no domain**, and has **no required
-third-party dependencies**.
+The core library ships **no tools and no domain**.
 
-`build_stack()` defaults to an empty `ToolRegistry`. The four built-in tools that
+`build_stack()` defaults to an empty `ToolRegistry`. The two built-in tools that
 do exist — `read_artifact` and `search_tools` — are harness mechanics, not
 capabilities: they exist because offloading and deferred loading need a way back
 in.
 
 Examples live in `examples/`, outside the package.
+
+## Amendment, 2026-08-27
+
+This ADR originally also claimed **no required third-party dependencies**. That
+is no longer true: the library depends on `unsourced`, which supplies the
+evidence checks.
+
+The reason is worth recording, because "zero dependencies" was a real selling
+point and it was given up deliberately. The check logic existed in two places —
+here and in the `unsourced` CLI — and had already drifted: this module knew five
+placeholder markers, `unsourced` knew ten, so a field holding `-` or `none`
+passed one path and failed the other. The same artifact got two verdicts.
+
+Drift in a comparison rule is silent. Both copies keep passing their own tests,
+both look right in review, and every number measured with either is quietly
+wrong until somebody compares them. Having that in our own evidence checks was
+not defensible while publishing a tool whose purpose is to make exactly that
+class of error visible.
+
+The dependency has no dependencies of its own, so the tree stays one deep. The
+claim is now stated as *one dependency, and it has none*.
 
 ## Consequences
 
