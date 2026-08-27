@@ -27,13 +27,13 @@ Examples live in `examples/`, outside the package.
 ## Amendment, 2026-08-27
 
 This ADR originally also claimed **no required third-party dependencies**. That
-is no longer true: the library depends on `unsourced`, which supplies the
+is no longer true: the library depends on `evidence-check`, which supplies the
 evidence checks.
 
 The reason is worth recording, because "zero dependencies" was a real selling
 point and it was given up deliberately. The check logic existed in two places —
-here and in the `unsourced` CLI — and had already drifted: this module knew five
-placeholder markers, `unsourced` knew ten, so a field holding `-` or `none`
+here and in the `evidence-check` CLI — and had already drifted: this module knew five
+placeholder markers, `evidence-check` knew ten, so a field holding `-` or `none`
 passed one path and failed the other. The same artifact got two verdicts.
 
 Drift in a comparison rule is silent. Both copies keep passing their own tests,
@@ -42,11 +42,11 @@ wrong until somebody compares them. Having that in our own evidence checks was
 not defensible while publishing a tool whose purpose is to make exactly that
 class of error visible.
 
-**Second amendment, same day.** `unsourced` was subsequently merged into this
+**Second amendment, same day.** `evidence-check` was subsequently merged into this
 repository rather than depended upon across one, so the dependency count is back
 to zero. The reasoning above still stands and is why the *code* was never
 duplicated: one definition, now in one tree, shipped as its own command
-(`unsourced`) alongside the framework's.
+(`evidence-check`) alongside the framework's.
 
 ## Consequences
 

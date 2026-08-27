@@ -41,7 +41,7 @@ def _agent() -> str:
             "This is not sent anywhere but sec.gov, and it is their published "
             "condition for bulk access to public filings."
         )
-    return f"unsourced-benchmark {contact}"
+    return f"pyligent-benchmark {contact}"
 
 
 def _get(url: str, *, agent: str) -> bytes:

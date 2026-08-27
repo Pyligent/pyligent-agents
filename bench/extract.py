@@ -100,7 +100,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--overwrite", action="store_true")
     a = p.parse_args(argv)
 
-    from unsourced.sources import load as load_source
+    from evidencecheck.sources import load as load_source
 
     call = backend_for(a.model)
     root = Path(a.corpus)

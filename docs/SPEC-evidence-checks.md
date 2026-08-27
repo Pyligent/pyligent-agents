@@ -1,6 +1,6 @@
-# The unsourced check contract, v1
+# The evidence-check contract, v1
 
-`unsourced` answers one question about a document extraction:
+`evidence-check` answers one question about a document extraction:
 
 > **Which of these values does the document not actually support?**
 
@@ -20,7 +20,7 @@ document decides which.
 text your own pipeline cited for it.
 
 **Not for.** Deciding whether the extraction is *correct*. A quote can be
-genuine, contain the value, and still be the wrong clause. `unsourced` cannot know
+genuine, contain the value, and still be the wrong clause. `evidence-check` cannot know
 that, and does not guess. Everything here is a claim about *support*, never a
 claim about truth.
 
@@ -29,7 +29,7 @@ Three specific non-goals, stated so nobody has to discover them:
 - **Irrelevant-but-genuine evidence passes.** A real sentence that does not
   bear on the claim is invisible to this tool.
 - **Omissions are invisible.** A field your extractor never emitted is not a
-  finding here; `unsourced` sees what you gave it.
+  finding here; `evidence-check` sees what you gave it.
 - **Domain rules are out of scope.** Whether a Minimum Transfer Amount may
   exceed a Threshold is a question for a domain gate, not for this.
 
@@ -48,7 +48,7 @@ Three specific non-goals, stated so nobody has to discover them:
 
 `value` may be any JSON scalar. `quote` is the text the pipeline says
 establishes that value. Any pipeline can emit this shape, which is the point —
-`unsourced` checks Claude, GPT, Gemini, a vendor IDP or a regex equally.
+`evidence-check` checks Claude, GPT, Gemini, a vendor IDP or a regex equally.
 
 ---
 
@@ -181,7 +181,7 @@ because neither given name matches, the pair is a competing value.
 ```json
 {
   "report_version": 1,
-  "tool": "unsourced 0.1.0",
+  "tool": "evidence-check 0.1.0",
   "source": { "sha256": "…", "chars": 4821 },
   "summary": {
     "fields": 12, "findings": 2, "critical": 2,

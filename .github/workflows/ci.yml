@@ -37,8 +37,8 @@ jobs:
       - run: python examples/run.py demo all
       - name: the evidence checker runs from a clean install
         run: |
-          unsourced --version
-          python -m pytest tests/test_unsourced_checks.py -q
+          evidence-check --version
+          python -m pytest tests/test_evidencecheck_checks.py -q
       - name: the benchmark harness runs with no credential
         # The synthetic corpus proves the harness works. It proves nothing about
         # any model, and its provenance line says so in the output.

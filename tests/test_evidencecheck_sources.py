@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from unsourced.sources import find_flexible, from_html, from_text, load
+from evidencecheck.sources import find_flexible, from_html, from_text, load
 
 SEC_EXHIBIT = """<html><body>
 <p>CREDIT SUPPORT ANNEX between ATLAS GLOBAL MARKETS LTD and NORTHWIND BANK PLC</p>
@@ -99,7 +99,7 @@ def test_a_backend_failure_is_a_message_not_a_traceback(tmp_path):
     with pytest.raises(RuntimeError) as exc:
         load(p)
     assert "could not read" in str(exc.value)
-    assert "unsourced extracted.txt out.json" in str(exc.value)
+    assert "evidence-check extracted.txt out.json" in str(exc.value)
 
 
 def test_pdf_without_a_backend_explains_the_two_ways_forward(tmp_path, monkeypatch):
@@ -119,4 +119,4 @@ def test_pdf_without_a_backend_explains_the_two_ways_forward(tmp_path, monkeypat
         load(p)
     # Two ways forward: install a backend, or convert it yourself.
     msg = str(exc.value)
-    assert "pip install" in msg and "unsourced extracted.txt out.json" in msg
+    assert "pip install" in msg and "evidence-check extracted.txt out.json" in msg

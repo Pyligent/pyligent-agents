@@ -24,14 +24,17 @@ classifiers = [
 # The core library has NO required third-party dependencies. That is deliberate:
 # a structural layer you cannot adopt because of its dependency tree is a layer
 # nobody adopts.
-# Back to none. `unsourced` now lives in this tree and ships as its own
+# Back to none. `evidencecheck` now lives in this tree and ships as its own
 # distribution from it — one definition of the evidence checks, one repository,
-# and still a `pip install unsourced` for people who want the checker and not
+# and still an `evidence-check` command for people who want the checker and not
 # the framework.
 dependencies = []
 
 [project.optional-dependencies]
 anthropic = ["anthropic>=0.69"]
+# PDF ingestion for the evidence checker. Docling is MIT, runs on CPU, and
+# is strong on the financial tables where haircut matrices live.
+pdf = ["docling>=2.0"]
 dev = ["pytest>=8.0", "ruff>=0.4"]
 
 [project.urls]
@@ -42,7 +45,7 @@ Changelog = "https://github.com/pyligent/pyligent-agents/blob/main/CHANGELOG.md"
 
 [project.scripts]
 "pyligent-agents" = "pyligent_agents.cli:main"
-unsourced = "unsourced.cli:main"
+"evidence-check" = "evidencecheck.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

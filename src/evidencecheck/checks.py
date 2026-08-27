@@ -123,7 +123,7 @@ def check_field(name: str, value: Any, quote: str, source: str) -> Finding | Non
 
 
 def check(source: str, fields: Mapping[str, Mapping[str, Any]], *,
-          tool: str = "unsourced 0.1.0") -> Report:
+          tool: str = "evidence-check 0.1.0") -> Report:
     """Check an extraction against its source. No model, no network."""
     findings: list[Finding] = []
     notes: list[str] = []

@@ -21,8 +21,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from corpus import Entry, extractors_in, load_corpus  # noqa: E402
 
-from unsourced import check  # noqa: E402
-from unsourced.sources import load as load_source  # noqa: E402
+from evidencecheck import check  # noqa: E402
+from evidencecheck.sources import load as load_source  # noqa: E402
 
 CODES = ("FABRICATED_EVIDENCE", "SILENT_REPAIR", "PLACEHOLDER_VALUE",
          "MISSING_EVIDENCE", "EMPTY_VALUE")

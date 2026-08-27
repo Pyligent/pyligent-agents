@@ -1,4 +1,4 @@
-"""`unsourced` — the ten-minute version.
+"""`evidence-check` — the ten-minute version.
 
 Liberal in what it accepts, because the whole point is that you do not have to
 change your pipeline to use it. Four extraction shapes are understood, and the
@@ -124,7 +124,7 @@ def cmd_check(a: argparse.Namespace) -> int:
         print(str(exc), file=sys.stderr)
         return 2
 
-    report = check(source.text, fields, tool=f"unsourced {__version__}")
+    report = check(source.text, fields, tool=f"evidence-check {__version__}")
 
     if a.json:
         payload_out = report.to_dict()
@@ -149,16 +149,16 @@ def main(argv: list[str] | None = None) -> int:
     """Positional in the common case; the subcommand stays for scripts.
 
     A stranger should not have to read --help to run the one thing this does.
-    `unsourced contract.html out.json` is the whole interface.
+    `evidence-check contract.html out.json` is the whole interface.
     """
     argv = list(sys.argv[1:] if argv is None else argv)
 
     p = argparse.ArgumentParser(
-        prog="unsourced",
-        usage="unsourced SOURCE EXTRACTION [--json] [--fail-on {critical,any,never}]",
+        prog="evidence-check",
+        usage="evidence-check SOURCE EXTRACTION [--json] [--fail-on {critical,any,never}]",
         description="Which values in this extraction does the document not support?",
     )
-    p.add_argument("--version", action="version", version=f"unsourced {__version__}")
+    p.add_argument("--version", action="version", version=f"evidence-check {__version__}")
     p.add_argument("source", nargs="?", help="the document: .txt, .html or .pdf")
     p.add_argument("extraction", nargs="?", help="JSON of what your pipeline produced")
     p.add_argument("--source", dest="source_flag", help=argparse.SUPPRESS)
@@ -168,7 +168,7 @@ def main(argv: list[str] | None = None) -> int:
                    help="what makes the exit code non-zero (default: critical)")
     p.add_argument("--verbose", action="store_true")
 
-    # `unsourced check --source X --extraction Y` still works; the subcommand is
+    # `evidence-check check --source X --extraction Y` still works; the subcommand is
     # just dropped before parsing.
     if argv and argv[0] == "check":
         argv = argv[1:]

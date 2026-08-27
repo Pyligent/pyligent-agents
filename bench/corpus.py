@@ -53,7 +53,7 @@ class Entry:
 
 
 def _read_extraction(path: Path) -> Extraction:
-    from unsourced.cli import normalise_extraction
+    from evidencecheck.cli import normalise_extraction
 
     payload = json.loads(path.read_text())
     return Extraction(extractor=path.stem,

@@ -33,9 +33,15 @@ All notable changes to this project are documented here. This project follows
 
 ### Changed
 
-- **Evidence checks are now imported from `unsourced`, not defined here.** The
+- The evidence checker is named **`evidence-check`**. It was briefly `unsourced`,
+  which named the defect rather than the product and read like a bug report in a
+  procurement document. `certify` was rejected despite sounding the most
+  enterprise-ready: the tool reports and certifies nothing, and naming it
+  otherwise would be the same overclaim it exists to detect.
+
+- **Evidence checks are now imported from `evidence-check`, not defined here.** The
   logic existed in two places and had already drifted: this module knew five
-  placeholder markers, `unsourced` knew ten, so a field holding `-` or `none`
+  placeholder markers, `evidence-check` knew ten, so a field holding `-` or `none`
   passed the gate and failed the CLI. The same artifact got two verdicts.
   Drift in a comparison rule is silent — both copies keep passing their own
   tests — and every number measured with either is quietly wrong until somebody

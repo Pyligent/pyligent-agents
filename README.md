@@ -478,7 +478,7 @@ The evidence checks also ship as a **standalone command**, so you can point them
 at any pipeline's output without adopting anything:
 
 ```bash
-unsourced contract.html extraction.json
+evidence-check contract.html extraction.json
 ```
 
 No model, no network, no configuration. It works on Claude, GPT, Gemini, a
@@ -494,9 +494,9 @@ passes, `evidence_verbatim` passes, and the discrepancy the extraction was hired
 to surface is the thing it removed. Available now, and deliberately not yet in
 the default bundle — adding it changes gate counts and every published figure.
 
-Every evidence check lives in `src/unsourced/` and is imported, never copied,
+Every evidence check lives in `src/evidencecheck/` and is imported, never copied,
 so there is one definition and it cannot drift. It already had: this module knew
-five placeholder markers, `unsourced` knew ten, so `-` and `none` passed one
+five placeholder markers, the checker knew ten, so `-` and `none` passed one
 path and failed the other.
 
 ---

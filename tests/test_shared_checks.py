@@ -1,19 +1,19 @@
-"""One definition of each evidence check, shared with the `unsourced` CLI.
+"""One definition of each evidence check, shared with the `evidence-check` CLI.
 
 Two copies of a comparison rule drift. A drifted rule invalidates every number
 measured with it, and it does so silently — the tests still pass, both sides
 still look right, and the benchmark is quietly wrong for months.
 
 They had already drifted before this was wired: this module knew five
-placeholder markers, `unsourced` knew ten.
+placeholder markers, `evidence-check` knew ten.
 """
 
 from __future__ import annotations
 
 import pytest
-from unsourced.checks import PLACEHOLDERS, check_field
-from unsourced.normalize import contains
 
+from evidencecheck.checks import PLACEHOLDERS, check_field
+from evidencecheck.normalize import contains
 from pyligent_agents.verify import (
     GateSet,
     no_placeholder_values,
@@ -45,12 +45,12 @@ def run(check, art):
 
 
 @pytest.mark.parametrize("marker", PLACEHOLDERS)
-def test_every_placeholder_unsourced_knows_is_also_rejected_here(marker):
+def test_every_placeholder_the_checker_knows_is_also_rejected_here(marker):
     """The drift that already existed. `-`, `none` and `na` passed this module
     and failed the CLI, so the same artifact got two different verdicts."""
     passed, _ = run(no_placeholder_values(under="fields"),
                     artifact(f=(marker.upper(), "Net total            824.99")))
-    assert not passed, f"{marker!r} is a placeholder to unsourced but not here"
+    assert not passed, f"{marker!r} is a placeholder to evidence-check but not here"
 
 
 def test_quote_matching_uses_the_shared_comparison():

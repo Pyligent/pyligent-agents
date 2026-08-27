@@ -203,9 +203,9 @@ def from_pdf(path: str | Path) -> Source:
         raise RuntimeError(
             f"Reading {path} needs a PDF backend, which this package does not "
             f"ship.\n\n"
-            f"    pip install 'unsourced[pdf]'      # Docling, MIT, runs on CPU\n\n"
+            f"    pip install 'pyligent-agents[pdf]'      # Docling, MIT, runs on CPU\n\n"
             f"Or convert it yourself and pass the text:\n"
-            f"    unsourced extracted.txt out.json"
+            f"    evidence-check extracted.txt out.json"
         ) from exc
 
     try:
@@ -219,7 +219,7 @@ def from_pdf(path: str | Path) -> Source:
             f"{type(exc).__name__}: {exc}\n\n"
             f"If the file is a scan, the backend may need OCR enabled. You can "
             f"also convert it yourself and pass the text:\n"
-            f"    unsourced extracted.txt out.json"
+            f"    evidence-check extracted.txt out.json"
         ) from exc
 
     return Source(text=text, media_type="application/pdf",

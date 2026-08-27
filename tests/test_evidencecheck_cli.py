@@ -6,7 +6,7 @@ import json
 
 import pytest
 
-from unsourced.cli import main, normalise_extraction
+from evidencecheck.cli import main, normalise_extraction
 
 CSA = """<html><body>
 <p>"Base Currency" means United States Dollars (USD).</p>
@@ -116,7 +116,7 @@ def test_human_output_names_the_document_position(doc, tmp_path, capsys):
 
 
 def test_the_common_case_needs_no_subcommand(doc, tmp_path, capsys):
-    """`unsourced doc.html out.json` — the whole interface.
+    """`evidence-check doc.html out.json` — the whole interface.
 
     A stranger should not have to read --help to run the one thing this does.
     """

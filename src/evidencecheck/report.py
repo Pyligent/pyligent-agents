@@ -62,7 +62,7 @@ class Report:
     source_sha256: str = ""
     source_chars: int = 0
     notes: tuple[str, ...] = ()
-    tool: str = "unsourced 0.1.0"
+    tool: str = "evidence-check 0.1.0"
 
     @property
     def critical(self) -> tuple[Finding, ...]:

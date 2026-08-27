@@ -10,7 +10,7 @@ from datetime import date
 
 import pytest
 
-from unsourced.normalize import (
+from evidencecheck.normalize import (
     contains,
     dates_in,
     looks_like_a_name,

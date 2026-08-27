@@ -35,11 +35,11 @@ from collections.abc import Callable, Iterable, Sequence
 from dataclasses import dataclass, field
 from typing import Any
 
-# One definition of each check, shared with the `unsourced` CLI. Two copies
+# One definition of each check, shared with the `evidence-check` CLI. Two copies
 # of a comparison rule drift, and a drifted rule invalidates every number
 # measured with it long after anyone would notice.
-from unsourced.checks import PLACEHOLDERS, check_field
-from unsourced.normalize import contains
+from evidencecheck.checks import PLACEHOLDERS, check_field
+from evidencecheck.normalize import contains
 
 # A check returns (passed, message). The message is read by a human at 3am, so
 # it should say what is wrong, not merely that something is.
@@ -415,7 +415,7 @@ def no_silent_repair(*, under: str = "fields", quote_field: str = "evidence_quot
     passes. The discrepancy the extraction was hired to surface is the thing it
     removed.
 
-    Delegates to `unsourced`, which is the single definition of this check and
+    Delegates to `evidence-check`, which is the single definition of this check and
     carries the normalisation rules that keep it from firing on a correct
     extraction: a value the quote does not mention at all is inference, not
     repair, and reporting it would make the gate unusable on legal text.
