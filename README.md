@@ -484,6 +484,12 @@ evidence-check contract.html extraction.json
 No model, no network, no configuration. It works on Claude, GPT, Gemini, a
 vendor IDP or a regex — seven extraction shapes are understood, because a tool
 that requires reformatting measures whoever bothered to reformat.
+
+It is **necessary, not sufficient**, and says so: roughly half of what a
+"helpful" extractor gets wrong is catchable with no domain knowledge at all —
+that is this command. The other half needs rules about your documents, which is
+what the gates above are. And a genuine quote can still be the wrong clause;
+every claim here is about *support*, never about truth.
 [`docs/SPEC-evidence-checks.md`](docs/SPEC-evidence-checks.md) defines each check
 precisely enough for a second implementation to agree; `bench/` scores evidence
 integrity across extractors, free and offline.
