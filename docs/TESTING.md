@@ -187,3 +187,39 @@ PYLIGENT_AGENTS_BACKEND=anthropic pytest tests/test_smoke_live.py
 
 Keep those tests separate and few. They tell you the wiring is right; they cannot
 tell you the guardrails hold.
+
+---
+
+## Checking an extraction without writing a test
+
+Some failures are not control-flow failures and no scripted turn will find them.
+For those there is a command:
+
+```bash
+evidence-check contract.html extraction.json
+```
+
+Three checks, mutually exclusive, at most one finding per field: the citation is
+not in the document; the citation is genuine and names a **different** value;
+the field offered nothing to check. No model, no network, deterministic — so a
+report can be committed and a change in it means the extraction changed.
+
+The middle one is what a scripted test cannot reach. A model that quotes the
+right line and writes a different number passes every structural check you would
+think to write.
+
+[`docs/SPEC-evidence-checks.md`](SPEC-evidence-checks.md) defines each check
+precisely enough for a second implementation to agree.
+
+## Measuring across extractors
+
+```bash
+python bench/run.py --corpus bench/corpus
+```
+
+Evidence integrity is **reference-free** — you do not need to know the right
+answer to know a quote is not in the document — so it can be computed on any
+corpus by anyone, with no annotation step where a judgement call could quietly
+favour one model. Scoring is free, offline and deterministic; extraction is a
+separate program precisely so that someone who distrusts your numbers can
+recompute them without a key.

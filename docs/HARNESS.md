@@ -135,12 +135,53 @@ once is in the run forever.
 
 ```python
 def add_memory(ctx: ModelCallContext) -> None:
-    ctx.add_context("Relevant prior notes: ...")   # ✅ after the cached prefix
-    ctx.system += "..."                             # ❌ invalidates the cache
+    ctx.add_context(harness.recall("threshold", sources=current))  # ✅ after the prefix
+    ctx.system += "..."                                            # ❌ invalidates the cache
 ```
 
 `add_context` appends a user turn after the cached prefix. Editing `system`
 changes the front of the prefix and re-bills the entire conversation.
+
+### 2.4 Memory, and why it is the dangerous input
+
+Memory outlives every control around it. A note written from a document that
+has since been amended is not merely unhelpful — it is confidently wrong, and
+it **suppresses the lookup that would have corrected it**. A missing fact
+prompts a search; a wrong one prevents it.
+
+So a note records what it was derived from, by content hash, and recall checks
+that hash against the source as it is now:
+
+```python
+memory.write("atlas-threshold", "Threshold is USD 5,000,000.",
+             why="Avoids re-reading Paragraph 11 on every call.",
+             derived_from=[Binding.of("DOC-CSA-ATLAS", csa_text)])
+
+harness.recall("atlas threshold", sources={"DOC-CSA-ATLAS": current_sha})
+# withheld once the agreement changes, and reported STALE
+```
+
+| | |
+|---|---|
+| `FRESH` | bound, and the source still hashes the same |
+| `STALE` | bound, and the source has changed since |
+| `UNVERIFIED` | bound, but no current hash supplied — **cannot tell** |
+| `UNBOUND` | no provenance: general knowledge, or written before this existed |
+
+`UNVERIFIED` abstains rather than guessing, on the same principle as a gate
+([ADR 0006](adr/0006-gates-cite-published-guidance.md)).
+
+Three properties worth knowing:
+
+- **Injection is budgeted.** Memory was the one prompt input that grew without
+  anyone deciding to grow it. `inject()` obeys a character cap and **counts what
+  it withheld rather than hiding it**.
+- **Recall goes through the harness**, so one place counts what was injected and
+  one records what was used — `report()["memory_used"]` puts it in the audit
+  trail.
+- **Retrieval is lexical, not embedded.** An embedding recalls more and
+  justifies less, and a memory whose retrieval you cannot explain is a memory
+  you cannot audit.
 
 ---
 

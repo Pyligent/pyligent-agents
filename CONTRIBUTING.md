@@ -12,7 +12,7 @@ pip install -e ".[dev]"
 
 pytest                          # 420 tests, offline, ~5 seconds
 python examples/run.py demo all # the four layer demos
-ruff check src tests examples
+ruff check src tests examples evals bench
 ```
 
 **No API key is needed for anything**, including CI. The suite runs against
@@ -126,7 +126,7 @@ Everything is named consistently, which is the point of the rename:
 | Repository | `pyligent/pyligent-agents` |
 | Distribution | `pyligent-agents` |
 | Import | `pyligent_agents` |
-| CLI | `pyligent-agents` |
+| CLI | `pyligent-agents` · `evidence-check` |
 
 ## Getting help
 

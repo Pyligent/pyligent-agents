@@ -111,3 +111,17 @@ discrepancy the extraction was meant to surface is the thing it removed.
 
 An extractor can sit at 98% integrity and still be the most dangerous one in
 the table.
+
+---
+
+## Where this sits
+
+The benchmark scores the checks in [`src/evidencecheck/`](../src/evidencecheck),
+which are the same checks the framework's evidence gates call — one definition,
+never copied. `evidence-check` is the single-document command; this is the
+many-document one.
+
+```bash
+evidence-check contract.html extraction.json     # one document, exit 1 on findings
+python bench/run.py --corpus bench/corpus        # a portfolio, with a table
+```
