@@ -5,6 +5,32 @@ All notable changes to this project are documented here. This project follows
 
 ## [Unreleased]
 
+### Added — memory bound to its evidence
+
+- **`MemoryStore` notes now record what they were derived from**, by content
+  hash, and `recall()` checks that hash against the source as it is now. A note
+  written from an agreement that has since been amended is withheld and reported
+  `STALE`. This is the same drift the shadow-mode reconciliation finds between a
+  margin system and a signed agreement — except it was happening inside the
+  agent, where nothing looked at it, and a wrong remembered fact suppresses the
+  lookup that would have corrected it.
+- Four freshness states. `UNVERIFIED` — bound, but no current hash supplied —
+  abstains rather than guessing, on the same principle as ADR 0006: a control
+  that answers when it cannot tell answers wrongly in whichever direction its
+  default falls.
+- `inject()` obeys a character budget and counts what it withheld rather than
+  hiding it. Memory was the one input to a prompt that grew without anyone
+  deciding to grow it.
+- `harness.recall()` routes memory through the harness, so one place counts what
+  was injected and one place records what was used;
+  `harness.report()["memory_used"]` puts those notes in the audit trail.
+- `memory_is_current()` gate: an artifact that leaned on a stale note is not
+  admissible.
+- **24 tests.** The module previously had none, which for the one component that
+  persists across every run was the wrong place to have none.
+- Retrieval stays lexical on purpose. An embedding would recall more and justify
+  less, and a memory whose retrieval cannot be explained cannot be audited.
+
 ### Changed
 
 - **Evidence checks are now imported from `unsourced`, not defined here.** The

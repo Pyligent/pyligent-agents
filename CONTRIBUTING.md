@@ -10,7 +10,7 @@ git clone https://github.com/pyligent/pyligent-agents && cd pyligent-agents
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
-pytest                          # 277 tests, offline, ~5 seconds
+pytest                          # 301 tests, offline, ~5 seconds
 python examples/run.py demo all # the four layer demos
 ruff check src tests examples
 ```

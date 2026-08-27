@@ -106,7 +106,7 @@ survives a crash. The collateral work above is an application of them, and the
 patterns generalise — [`docs/PATTERNS.md`](docs/PATTERNS.md) works them through
 on an ordinary support desk, away from the domain.
 
-**One dependency** (`unsourced`, which has none). **No tools shipped.** **277 tests that run offline
+**One dependency** (`unsourced`, which has none). **No tools shipped.** **301 tests that run offline
 in six seconds with no API key.**
 
 ---
@@ -336,6 +336,62 @@ chain from source to decision replays rather than being reconstructed.
 `to_artifact()` emits the exact dict shape the gate library already reads, so
 locators and provenance are **additive, not a migration**. Gates written before
 this type existed keep working untouched.
+
+---
+
+## Memory that knows when it has gone out of date
+
+Memory outlives every control around it, which is why it is the most dangerous
+thing in an agent. A note written from an agreement that has since been amended
+is not merely unhelpful — it is confidently wrong, and it **suppresses the
+lookup that would have corrected it**. The absence of a fact prompts a search; a
+wrong fact prevents one.
+
+```
+run 1   reads a CSA, notes "ATLAS Threshold is USD 5,000,000"
+...     the parties adhere to the VM protocol; Threshold becomes zero
+run 9   recalls the note and sizes a call against a band that no longer exists
+```
+
+That is the same drift the shadow-mode reconciliation exists to find, happening
+*inside the agent* where nothing looks at it. So a note records what it was
+derived from, by content hash, and recall checks that hash against the source as
+it is now:
+
+```python
+memory.write("atlas-threshold", "Threshold is USD 5,000,000.",
+             why="Avoids re-reading Paragraph 11 on every call.",
+             derived_from=[Binding.of("DOC-CSA-ATLAS", csa_text)])
+
+memory.recall("atlas threshold", sources={"DOC-CSA-ATLAS": current_sha})
+# -> withheld once the agreement changes, and reported as STALE
+```
+
+Four states, and the third is the one usually missing:
+
+| | |
+|---|---|
+| `FRESH` | bound to a source, and the source still hashes the same |
+| `STALE` | bound, and the source has changed since |
+| `UNVERIFIED` | bound, but no current hash was supplied — **we cannot tell** |
+| `UNBOUND` | no provenance: general knowledge, or written before this existed |
+
+`UNVERIFIED` abstains rather than guessing, for the same reason a gate does. A
+control that answers when it cannot tell answers wrongly in whichever direction
+its default happens to fall.
+
+Three consequences worth knowing:
+
+- **Injection is budgeted.** Memory that grows without a cap is a context leak
+  with a good reputation. `inject()` obeys a character budget and **counts what
+  it withheld rather than hiding it** — a prompt that silently drops half of
+  what it recalled is worse than one that says so.
+- **Recall is lexical, not embedded.** An embedding would recall more and
+  justify less, and a memory whose retrieval you cannot explain is a memory you
+  cannot audit.
+- **`memory_is_current()` is a gate.** An artifact that leaned on a note whose
+  source has changed is not admissible, and `harness.report()["memory_used"]`
+  puts the notes a decision relied on into the audit trail.
 
 ---
 

@@ -305,10 +305,25 @@ class Harness:
         sub.surfaced = self.surfaced
         return sub
 
+    def recall(self, query: str = "", *, sources: dict[str, str] | None = None,
+               strict: bool = False) -> str:
+        """Remembered text for a prompt, budgeted and staleness-checked.
+
+        Goes through the harness rather than the store directly for the same
+        reason model and tool calls do: one code path means one place that
+        counts what was injected and one place that records what was used.
+        """
+        if self.memory is None:
+            return ""
+        return self.memory.inject(query, sources=sources, strict=strict)
+
     def report(self) -> dict[str, Any]:
         return {
             "run": self.run,
             "governor": self.governor.report(),
             "artifacts": self.workspace.index(),
+            # Which remembered facts this run leaned on. A decision influenced
+            # by memory that leaves no trace is a decision nobody can replay.
+            "memory_used": sorted(set(self.memory.used)) if self.memory else [],
             "surfaced_tools": sorted(self.surfaced),
         }

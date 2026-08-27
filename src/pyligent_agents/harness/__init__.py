@@ -22,13 +22,14 @@ from .hooks import (
     default_hooks,
     redact_secrets,
 )
-from .memory import MemoryStore
+from .memory import Binding, Freshness, MemoryStore, Note, Recalled
 from .registry import ToolOutcome, ToolRegistry
 from .workspace import Artifact, Workspace
 
 __all__ = [
     "AnthropicLLM", "Artifact", "CompactionEvent", "ContextManager", "Governor",
-    "Harness", "HookBus", "HookPoint", "MemoryStore", "ModelCallContext",
+    "Binding", "Freshness", "Harness", "HookBus", "HookPoint", "MemoryStore",
+    "ModelCallContext", "Note", "Recalled",
     "ScriptedCall", "ScriptedLLM", "ScriptedTurn", "ToolCallContext",
     "ToolOutcome", "ToolRegistry", "ToolResultContext", "Verdict",
     "Workspace", "build_backend", "default_hooks", "defang_untrusted_content",

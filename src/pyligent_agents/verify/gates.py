@@ -445,6 +445,35 @@ def no_silent_repair(*, under: str = "fields", quote_field: str = "evidence_quot
     return check
 
 
+def memory_is_current(key: str = "_memory") -> Check:
+    """No remembered fact this artifact leaned on has gone stale.
+
+    Memory is the one input that outlives every control around it. A note
+    written from an agreement that has since been amended is not merely
+    unhelpful — it is confidently wrong, and it suppresses the lookup that
+    would have corrected it. The absence of a fact prompts a search; a wrong
+    fact prevents one.
+
+    Expects the harness report's `memory` block:
+
+        {"used": ["atlas-threshold"], "stale": []}
+    """
+    def check(artifact: dict[str, Any]) -> tuple[bool, str]:
+        block = artifact.get(key)
+        if block is None:
+            return True, "no memory was consulted"
+        stale = list(block.get("stale") or [])
+        used = list(block.get("used") or [])
+        if stale:
+            return False, (
+                f"{len(stale)} remembered fact(s) were derived from a source that "
+                f"has since changed: {', '.join(sorted(stale)[:4])}. "
+                f"Re-read the source rather than trusting the note."
+            )
+        return True, f"{len(used)} remembered fact(s) consulted, none stale"
+    return check
+
+
 def evidence_gated_extraction(
     *required: str,
     under: str = "fields",
