@@ -1,0 +1,33 @@
+{
+  "dataset": "document-intake-v1",
+  "system": "faithful",
+  "cases": 15,
+  "metrics": {
+    "field_accuracy": 1.0,
+    "evidence_validity": 1.0,
+    "false_accept_rate": 0.0,
+    "false_refer_rate": 0.0,
+    "decision_accuracy": 1.0,
+    "attribution_accuracy": 1.0
+  },
+  "counts": {
+    "true_accept": 7,
+    "true_refer": 8,
+    "false_accept": 0,
+    "false_refer": 0,
+    "right_reason": 8,
+    "wrong_reason": 0,
+    "errored": 0,
+    "fields_correct": 162,
+    "fields_wrong": 0,
+    "fields_missing": 0
+  },
+  "cost": {
+    "usd": 0.288,
+    "usd_per_case": 0.0192,
+    "model_calls": 30,
+    "seconds": 0.25
+  },
+  "recorded_at": 1787757009.511347,
+  "note": "v0.2.0: ISDA CSA + AWS KYC guideline alignment"
+}

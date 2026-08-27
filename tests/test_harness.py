@@ -8,7 +8,7 @@ import pytest
 
 from pyligent_agents import get_settings
 from pyligent_agents.core.errors import BudgetExhausted, ErrorClass
-from pyligent_agents.core.types import Phase, PermissionTier, ToolUse, Usage
+from pyligent_agents.core.types import PermissionTier, Phase, ToolUse, Usage
 from pyligent_agents.harness import (
     ContextManager,
     Governor,

@@ -29,13 +29,18 @@ invoice and a KYC onboarding pack. They share nothing as documents and
 everything as work.
 
 Five generic gates apply to all three. Each type then adds the checks a JSON
-schema could not make: *MTA within Threshold*, *line items sum to the total*,
-*the name on the passport matches the application*.
+schema could not make: *Threshold and MTA are not transposed*, *line items sum
+to the total*, *the name on the passport matches the application*.
 
 Run `--flaw` and every generic gate passes, the independent verifier approves,
 every evidence quote is genuine — and one cross-field gate catches it anyway.
 The KYC case is the sharpest: the extraction is **perfect** and the *document*
 is inconsistent, which no amount of model quality can fix.
+
+The CSA and KYC gate sets implement published guidance — ISDA's CSA clause
+extraction and CDM benchmarking paper, and the AWS Marketplace KYC
+documentation guide — with a conformance test per rule. An accepted CSA is
+emitted as **CDM JSON**, not a dictionary.
 
 📄 [`document_intake/README.md`](document_intake/README.md)
 

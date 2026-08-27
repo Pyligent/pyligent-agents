@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "${{ matrix.python-version }}" }
       - run: pip install -e ".[dev]"
-      - run: ruff check src tests examples
+      - run: ruff check src tests examples evals
       # No ANTHROPIC_API_KEY is set anywhere in CI. The suite runs against the
       # deterministic backend, so CI needs no credential and spends nothing.
       - run: pytest
@@ -35,7 +35,14 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -e ".[dev]"
       - run: python examples/run.py demo all
+      - name: evals do not regress against the committed baselines
+        # Fails the build on ANY new false accept. The tolerance for letting a
+        # flawed document through is zero; see evals/README.md.
+        run: |
+          for persona in faithful paraphraser helpful sloppy; do
+            python evals/run_evals.py --system "$persona" --check
+          done
       - name: scaffold builds and its tests pass
         run: |
-          python -m pyligent-agents new /tmp/scaffold_check
+          python -m pyligent_agents new /tmp/scaffold_check
           cd /tmp/scaffold_check && pip install pytest && python -m pytest -q

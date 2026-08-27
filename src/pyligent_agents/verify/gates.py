@@ -17,17 +17,52 @@ composed from them, plus at least one you write yourself:
 > The examples show what that looks like: `refund <= order total`,
 > `rounding finer than the minimum transfer amount`, `these haircuts are
 > actually valuation percentages`.
+
+And the counterpart rule, learned the expensive way:
+
+> **A gate that cannot tell must pass, not fail.** When a check's precondition
+> does not hold, abstain. A gate that fires on "I cannot tell" turns every
+> unusual-but-valid document into a referral, and a queue full of correct
+> documents is how a control gets switched off. See ADR 0006 for the CSA gate
+> that asserted `MTA <= Threshold` and referred every standard VM CSA, where
+> the Threshold is legitimately zero.
 """
 
 from __future__ import annotations
 
+import re
 from collections.abc import Callable, Iterable, Sequence
 from dataclasses import dataclass, field
 from typing import Any
 
+# One definition of each check, shared with the `unsourced` CLI. Two copies
+# of a comparison rule drift, and a drifted rule invalidates every number
+# measured with it long after anyone would notice.
+from unsourced.checks import PLACEHOLDERS, check_field
+from unsourced.normalize import contains
+
 # A check returns (passed, message). The message is read by a human at 3am, so
 # it should say what is wrong, not merely that something is.
 Check = Callable[[dict[str, Any]], "tuple[bool, str]"]
+
+# ISO 4217 alphabetic codes. The active list, not the historical one — a
+# withdrawn code in a live agreement is a finding, not a convenience.
+ISO_4217 = frozenset([
+    "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD",
+    "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYN",
+    "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUP", "CVE", "CZK", "DJF",
+    "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GHS",
+    "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS",
+    "INR", "IQD", "IRR", "ISK", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW",
+    "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LYD", "MAD", "MDL",
+    "MGA", "MKD", "MMK", "MNT", "MOP", "MRU", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN",
+    "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR",
+    "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK",
+    "SGD", "SHP", "SLE", "SOS", "SRD", "SSP", "STN", "SVC", "SYP", "SZL", "THB", "TJS",
+    "TMT", "TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS",
+    "VED", "VES", "VND", "VUV", "WST", "XAF", "XCD", "XOF", "XPF", "YER", "ZAR", "ZMW",
+    "ZWG"
+])
 
 
 @dataclass(frozen=True)
@@ -174,15 +209,13 @@ def quotes_appear_in_source(
         source = artifact.get(source_key)
         if not source:
             return False, f"no '{source_key}' supplied; evidence cannot be checked"
-        haystack = " ".join(str(source).split()).lower()
 
         entries = _dig(artifact, under) or {}
         if isinstance(entries, list):
             entries = {str(i): e for i, e in enumerate(entries)}
         fabricated = [
             k for k, v in entries.items()
-            if isinstance(v, dict)
-            and " ".join(str(v.get(quote_field, "")).split()).lower() not in haystack
+            if isinstance(v, dict) and not contains(str(source), str(v.get(quote_field, "")))
         ]
         if fabricated:
             return False, f"quote not found in source for: {', '.join(sorted(fabricated))}"
@@ -259,7 +292,7 @@ def verified_independently(key: str = "_verification") -> Check:
     return check
 
 
-def no_placeholder_values(*, under: str, markers: Sequence[str] = ("TODO", "TBD", "N/A", "unknown", "null")) -> Check:
+def no_placeholder_values(*, under: str, markers: Sequence[str] = PLACEHOLDERS) -> Check:
     """Catch an extraction that filled the shape but not the content.
 
     A model that cannot find a value will often produce a plausible-looking
@@ -279,6 +312,136 @@ def no_placeholder_values(*, under: str, markers: Sequence[str] = ("TODO", "TBD"
         if bad:
             return False, f"placeholder value(s) in: {', '.join(sorted(bad))}"
         return True, f"no placeholder values in {len(entries)} entries"
+    return check
+
+
+def iso_currency(*paths: str, under: str = "") -> Check:
+    """Every named value is a valid ISO 4217 alphabetic currency code.
+
+    ISDA's CSA benchmarking protocol names this explicitly as a validation
+    check ("ensure currency codes are valid ISO codes"). It matters more than
+    it looks: `USD` and `US Dollars` are the same thing to a reader and two
+    different things to a collateral system, and a downstream mapping that
+    silently drops an unrecognised code loses the currency rather than failing.
+    """
+    def check(artifact: dict[str, Any]) -> tuple[bool, str]:
+        bad, seen = [], 0
+        for path in paths:
+            value = _dig(artifact, f"{under}.{path}" if under else path)
+            if isinstance(value, dict):
+                value = value.get("value")
+            if value is None:
+                continue
+            seen += 1
+            if not (isinstance(value, str) and value.strip().upper() in ISO_4217):
+                bad.append(f"{path}={value!r}")
+        if bad:
+            return False, f"not a valid ISO 4217 code: {', '.join(bad)}"
+        return True, f"{seen} currency code(s) are valid ISO 4217"
+    return check
+
+
+def values_are_numeric(*paths: str, under: str = "") -> Check:
+    """Every named value is a number, not a string that looks like one.
+
+    Also an explicit ISDA validation check ("ensure rounding amounts are
+    represented as numbers, not strings"). `"5,000,000"` and `5000000` both
+    read correctly to a human; only one of them adds up.
+    """
+    def check(artifact: dict[str, Any]) -> tuple[bool, str]:
+        bad, seen = [], 0
+        for path in paths:
+            value = _dig(artifact, f"{under}.{path}" if under else path)
+            if isinstance(value, dict):
+                value = value.get("value")
+            if value is None:
+                continue
+            seen += 1
+            if isinstance(value, bool) or not isinstance(value, (int, float)):
+                bad.append(f"{path}={value!r}")
+        if bad:
+            return False, f"should be a number, not a string: {', '.join(bad)}"
+        return True, f"{seen} value(s) are numeric"
+    return check
+
+
+# A clause pointer such as "13(c)(ii)", "Paragraph 11(b)" or "Section 4.2" —
+# digits and punctuation, so it survives a naive "does it contain a number"
+# test and lands in a numeric field looking like money.
+_REFERENCE = re.compile(
+    r"^\s*(?:paragraph|para|clause|section|annex|appendix|part)?\s*"
+    r"\d+\s*(?:[().]\s*[a-z0-9ivx]+\s*\)?)+\s*$",
+    re.IGNORECASE,
+)
+
+
+def no_cross_reference_values(*paths: str, under: str = "") -> Check:
+    """A field that should hold a quantity is not holding a clause pointer.
+
+    ISDA's benchmarking paper singles this out: a domain-aware extractor
+    "is more likely to distinguish references like 'paragraph 13(c)(ii)' from
+    monetary amounts and avoid transcription errors". A CSA is dense with both,
+    they sit in adjacent sentences, and `13(c)(ii)` in a threshold field is a
+    number a schema will happily accept.
+    """
+    def check(artifact: dict[str, Any]) -> tuple[bool, str]:
+        bad, seen = [], 0
+        for path in paths:
+            value = _dig(artifact, f"{under}.{path}" if under else path)
+            if isinstance(value, dict):
+                value = value.get("value")
+            if value is None:
+                continue
+            seen += 1
+            if isinstance(value, str) and _REFERENCE.match(value):
+                bad.append(f"{path}={value!r}")
+        if bad:
+            return False, (
+                f"a clause reference was read into a value field: {', '.join(bad)}. "
+                f"This is a cross-reference, not a quantity."
+            )
+        return True, f"{seen} value(s) are quantities, not clause references"
+    return check
+
+
+def no_silent_repair(*, under: str = "fields", quote_field: str = "evidence_quote",
+                     source_key: str = "_source_text") -> Check:
+    """No field's cited text names a *different* value than the one extracted.
+
+    The failure the other evidence gates cannot see. A model asked to extract a
+    name that reads `Jonathon` on the passport and `Jonathan` on the form will
+    often write down whichever makes the file consistent — and quote the
+    passport line honestly. `evidence_present` passes. `evidence_verbatim`
+    passes. The discrepancy the extraction was hired to surface is the thing it
+    removed.
+
+    Delegates to `unsourced`, which is the single definition of this check and
+    carries the normalisation rules that keep it from firing on a correct
+    extraction: a value the quote does not mention at all is inference, not
+    repair, and reporting it would make the gate unusable on legal text.
+    """
+    def check(artifact: dict[str, Any]) -> tuple[bool, str]:
+        source = str(artifact.get(source_key) or "")
+        if not source:
+            return False, f"no '{source_key}' supplied; evidence cannot be checked"
+        entries = _dig(artifact, under) or {}
+        if isinstance(entries, list):
+            entries = {str(i): e for i, e in enumerate(entries)}
+
+        repaired = []
+        for name, entry in entries.items():
+            if not isinstance(entry, dict):
+                continue
+            finding = check_field(str(name), entry.get("value"),
+                                  str(entry.get(quote_field) or ""), source)
+            if finding is not None and finding.code == "SILENT_REPAIR":
+                repaired.append(f"{name} (cited text states {', '.join(finding.competing[:2])})")
+        if repaired:
+            return False, (
+                f"the cited text names a different value for: {'; '.join(sorted(repaired))}. "
+                f"A discrepancy was removed rather than reported."
+            )
+        return True, f"no cited text contradicts its value across {len(entries)} entries"
     return check
 
 

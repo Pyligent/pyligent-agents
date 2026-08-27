@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyligent-agents"
-version = "0.1.0"
+version = "0.2.0"
 description = "Harness, loop and graph engineering for production AI agents."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -24,7 +24,10 @@ classifiers = [
 # The core library has NO required third-party dependencies. That is deliberate:
 # a structural layer you cannot adopt because of its dependency tree is a layer
 # nobody adopts.
-dependencies = []
+# One dependency, and it has none of its own. `unsourced` is the single
+# definition of the evidence checks; vendoring a second copy is how a
+# comparison rule drifts and quietly invalidates every number measured with it.
+dependencies = ["unsourced>=0.1"]
 
 [project.optional-dependencies]
 anthropic = ["anthropic>=0.69"]
@@ -44,7 +47,7 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src", "examples"]
+pythonpath = ["src", "examples", "evals"]
 addopts = "-q"
 
 [tool.ruff]

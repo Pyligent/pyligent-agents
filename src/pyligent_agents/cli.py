@@ -22,7 +22,7 @@ import os
 import sys
 from pathlib import Path
 
-from . import __version__, get_settings
+from . import PermissionTier, __version__, get_settings
 
 STEPS = [
     ("1", "Write the domain first, without a model",
@@ -240,6 +240,106 @@ def cmd_steps(_a) -> int:
     return 0
 
 
+def cmd_validation_pack(a) -> int:
+    """Assemble the evidence a model-risk review asks for.
+
+    Second-line validation functions ask the same questions of every AI system:
+    what does it refuse to do, how do you know, what did you measure it against,
+    and can you reproduce a decision from six months ago. This command answers
+    them from the repository itself rather than from a slide, so the answers
+    cannot drift away from the code.
+
+    It reports what is there. It does not certify anything, and it will say so.
+    """
+    import json as _json
+    from pathlib import Path as _Path
+
+    root = _Path(a.root).resolve()
+    out: dict[str, object] = {
+        "generated_by": f"pyligent-agents {__version__}",
+        "repository": str(root),
+        "disclaimer": (
+            "Evidence inventory only. This is not a validation, an attestation, "
+            "or a claim of regulatory compliance. It reports what controls exist "
+            "in this codebase and what evidence supports them."
+        ),
+    }
+
+    # 1. Determinism — the basis of every reproducibility claim.
+    s = get_settings()
+    out["reproducibility"] = {
+        "deterministic_backend": "ScriptedLLM is a second implementation of the "
+                                 "LLMClient contract, not a mock; the full suite "
+                                 "runs against it with no credential and no spend",
+        "replay": "graph runs checkpoint before each node and replay from disk at "
+                  "zero token cost",
+        "effect_ledger": "external effects carry a key derived from the facts of "
+                         "the action and a UNIQUE(run_id, key) constraint",
+        "state_dir": str(s.state_dir.resolve()),
+    }
+
+    # 2. Controls that are enforced rather than documented.
+    out["enforced_controls"] = {
+        "permission_tiers": [t.name for t in PermissionTier],
+        "governors": ["turns", "tokens", "usd", "wall_clock"],
+        "governors_checked": "before each model call, not after",
+        "contract_required_fields": ["goal", "stop", "verifier", "budget"],
+        "verification_waiver": "no_verification() requires a written justification "
+                               "and rejects a placeholder",
+        "citations": "every evidence quote is checked as a verbatim substring of "
+                     "the source; one fabricated quote rejects the artifact "
+                     "regardless of the verifier's verdict",
+    }
+
+    # 3. Tests — the only evidence a control is real.
+    tests = sorted((root / "tests").glob("test_*.py"))
+    out["test_evidence"] = {
+        "files": [t.name for t in tests],
+        "principle": "each guardrail has a test that fails when the guardrail is "
+                     "removed; a rule that is not a failing test is not a rule",
+    }
+
+    # 4. Measurement — baselines, tolerances, and the asymmetry.
+    baselines = sorted((root / "evals" / "baselines").glob("*.json"))
+    systems = {}
+    for b in baselines:
+        try:
+            data = _json.loads(b.read_text())
+            systems[b.stem] = data.get("metrics", {})
+        except (OSError, ValueError):
+            systems[b.stem] = {"error": "unreadable"}
+    out["measurement"] = {
+        "committed_baselines": systems,
+        "false_accept_tolerance": 0.0,
+        "false_accept_rationale": "a false accept is a flawed document approved; "
+                                  "there is no acceptable number, so any increase "
+                                  "fails the build",
+        "false_refer_tolerance": 0.05,
+        "headline_metric": "none. The two decision errors are reported separately "
+                           "and never averaged.",
+    }
+
+    # 5. What this system does NOT do. The section reviewers actually read.
+    out["limitations"] = [
+        "Tools are not sandboxed; they run in-process with the host's privileges.",
+        "The citation check catches fabricated evidence, not irrelevant evidence: "
+        "a genuine sentence that does not support the claim will pass.",
+        "Domain gates are worked examples over synthetic documents. They are not "
+        "calibrated to any institution's policy.",
+        "No retrieval layer; everything must fit in context.",
+        "estimate_tokens is a heuristic used only to trigger context management; "
+        "billing uses the figures the API returns.",
+    ]
+
+    text = _json.dumps(out, indent=2)
+    if a.out:
+        _Path(a.out).write_text(text)
+        print(f"validation pack written to {a.out}")
+    else:
+        print(text)
+    return 0
+
+
 def cmd_doctor(_a) -> int:
     s = get_settings()
     from .config import CONTEXT_WINDOW, PRICES
@@ -270,6 +370,21 @@ def cmd_doctor(_a) -> int:
           f"offload_over={s.offload_over_chars} chars")
     print(f"  state dir          {s.state_dir.resolve()}"
           f"{'  (exists)' if s.state_dir.exists() else '  (will be created)'}")
+
+    # Asked in the first thirty minutes of every regulated-industry review, and
+    # answered badly by most tools: where does the document text actually go?
+    _rule("Data residency")
+    if s.backend == "scripted" or not has_key:
+        print("  model calls        NONE — the deterministic backend runs in-process")
+        print("  document text      never leaves this process")
+    else:
+        print(f"  model calls        sent to the {s.backend} API over the network")
+        print("  document text      LEAVES this process in the request body")
+        print("                     Review against your data policy before pointing")
+        print("                     this at real agreements.")
+    print(f"  state written to   {s.state_dir.resolve()}")
+    print("  telemetry          none. This library makes no call you did not ask for.")
+    print("  tool sandboxing    NONE — tools run in this process with its privileges")
     unpriced = [m for m in (s.orchestrator_model, s.worker_model, s.cheap_model)
                 if m not in PRICES]
     if unpriced:
@@ -373,6 +488,12 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("steps", help="the ten build steps").set_defaults(fn=cmd_steps)
     sub.add_parser("doctor", help="check config, credentials and pricing").set_defaults(fn=cmd_doctor)
+
+    vp = sub.add_parser("validation-pack",
+                        help="assemble the evidence a model-risk review asks for")
+    vp.add_argument("--root", default=".", help="repository root to inventory")
+    vp.add_argument("--out", help="write JSON here instead of stdout")
+    vp.set_defaults(fn=cmd_validation_pack)
 
     n = sub.add_parser("new", help="scaffold a project with guardrails already wired")
     n.add_argument("path")

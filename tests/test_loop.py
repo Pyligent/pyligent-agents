@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import pytest
+from level2_order_agent import app, policy
 
 from pyligent_agents.core.errors import BudgetExhausted, ContractViolation, ErrorClass
 from pyligent_agents.loop import (
@@ -24,8 +25,6 @@ from pyligent_agents.testing import (
     looping,
     tools_used,
 )
-
-from level2_order_agent import app, policy
 
 
 def _stack(pol, registry):

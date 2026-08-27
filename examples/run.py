@@ -27,6 +27,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 os.environ.setdefault("PYLIGENT_AGENTS_BACKEND", "scripted")
 
+from document_intake import app as intake  # noqa: E402
+from document_intake import policy as intakep
+from document_intake.documents import DOCUMENTS  # noqa: E402
+from level1_triage import app as l1  # noqa: E402
+from level1_triage import policy as l1p
+from level2_order_agent import app as l2  # noqa: E402
+from level2_order_agent import policy as l2p
+from level3_refund_workflow import app as l3  # noqa: E402
+from level3_refund_workflow import policy as l3p
+from level4_invoice_intake import app as l4  # noqa: E402
+from level4_invoice_intake import policy as l4p
+from shopdesk import data  # noqa: E402
+from shopdesk.tools import build_registry  # noqa: E402
+
 from pyligent_agents import build_stack, get_settings  # noqa: E402
 from pyligent_agents.core.errors import (  # noqa: E402
     BudgetExhausted,
@@ -36,15 +50,6 @@ from pyligent_agents.core.errors import (  # noqa: E402
 from pyligent_agents.core.types import Phase, ToolUse  # noqa: E402
 from pyligent_agents.harness.hooks import ToolResultContext, defang_untrusted_content  # noqa: E402
 from pyligent_agents.testing import build_test_stack, looping, tools_used  # noqa: E402
-
-from level1_triage import app as l1, policy as l1p  # noqa: E402
-from level2_order_agent import app as l2, policy as l2p  # noqa: E402
-from level3_refund_workflow import app as l3, policy as l3p  # noqa: E402
-from document_intake import app as intake, policy as intakep  # noqa: E402
-from document_intake.documents import DOCUMENTS  # noqa: E402
-from level4_invoice_intake import app as l4, policy as l4p  # noqa: E402
-from shopdesk import data  # noqa: E402
-from shopdesk.tools import build_registry  # noqa: E402
 
 STATE = Path(".pyligent-agents")
 
@@ -89,10 +94,13 @@ def cmd_triage(a) -> int:
 def cmd_order_agent(a) -> int:
     stack = _stack(l2p.order_agent_policy)
     result = l2.build(stack.harness).run(a.question)
-    rule("ANSWER"); print(result.answer)
+    rule("ANSWER")
+    print(result.answer)
     if a.trace:
-        rule("TRACE"); print(stack.ledger.render())
-    rule("COST"); print(json.dumps(stack.cost(), indent=2))
+        rule("TRACE")
+        print(stack.ledger.render())
+    rule("COST")
+    print(json.dumps(stack.cost(), indent=2))
     return 0 if result.ok else 1
 
 
@@ -138,11 +146,37 @@ def cmd_invoice(a) -> int:
     for g in report.get("results", []):
         print(f"  [{'PASS' if g['passed'] else 'FAIL'}] {g['name']}: {g['message']}")
     if r.state.get("posted"):
-        rule("POSTED"); print(json.dumps(r.state.get("posted"), indent=2))
+        rule("POSTED")
+        print(json.dumps(r.state.get("posted"), indent=2))
     if r.state.get("escalation"):
-        rule("ESCALATED"); print(json.dumps(r.state.get("escalation"), indent=2))
-    rule("COST"); print(json.dumps(stack.cost(), indent=2))
+        rule("ESCALATED")
+        print(json.dumps(r.state.get("escalation"), indent=2))
+    rule("COST")
+    print(json.dumps(stack.cost(), indent=2))
     return 0 if report.get("passed") else 1
+
+
+def cmd_shadow(a) -> int:
+    """Shadow mode: read the agreement, reconcile, write nothing."""
+    from collateral.app import render_run, run, shadow_hooks, vm_policy
+
+    policy = vm_policy() if a.drift else intakep.build_policy("csa")
+    stack = build_test_stack(policy, hooks=shadow_hooks(),
+                             state_dir=tempfile.mkdtemp())
+    bundle, pack, report = run(stack, drifted=a.drift)
+
+    rule("SHADOW MODE" + ("  —  a margin system that has drifted" if a.drift else ""))
+    print(render_run(bundle, pack, report))
+
+    if a.json:
+        rule("CONSTRAINT PACK (JSON)")
+        print(pack.to_json())
+
+    rule("COST")
+    print(json.dumps(stack.cost(), indent=2))
+    # A shadow run that finds nothing is still a successful run. Exit non-zero
+    # only when something material disagrees and a human should look.
+    return 1 if report.material else 0
 
 
 def cmd_intake(a) -> int:
@@ -370,7 +404,8 @@ def demo_graph() -> None:
 
     sub("A. The plan is declared, so you can read it")
     graph = l3.build_graph().validate()
-    print(); print(graph.render())
+    print()
+    print(graph.render())
 
     sub("B. Malformed graphs fail at build time, not on the invoice")
     from pyligent_agents.graph import Graph, Step
@@ -393,7 +428,8 @@ def demo_graph() -> None:
     sub("C. Run it: pause at a human gate")
     s1 = _stack(l3p.drafting_policy, state_dir=state_dir)
     r1 = s1.runner(l3.build_graph()).start("Refund", {"ticket_id": "T-9001"})
-    print(); print(r1.render())
+    print()
+    print(r1.render())
     print(f"\n  {r1.pause_prompt}\n  model calls so far: {s1.cost()['calls']}")
     print("\n  Paused is not failed. State is on disk; nothing is spinning.")
 
@@ -401,7 +437,8 @@ def demo_graph() -> None:
     s2 = _stack(l3p.drafting_policy, state_dir=state_dir)
     r2 = s2.runner(l3.build_graph()).resume(
         r1.run_id, decisions={"approve_refund": {"approved": True, "by": "supervisor"}})
-    print(); print(r2.render())
+    print()
+    print(r2.render())
     print(f"\n  model calls this attempt: {s2.cost()['calls']}  "
           f"— the drafting call came off disk.")
 
@@ -409,7 +446,7 @@ def demo_graph() -> None:
     s3 = _stack(l3p.drafting_policy, state_dir=state_dir)
     s3.runner(l3.build_graph()).resume(r1.run_id)
     effects = s3.store.effects(r1.run_id)
-    print(f"\n  workflow executions      : 3")
+    print("\n  workflow executions      : 3")
     print(f"  refunds actually issued  : "
           f"{sum(1 for e in effects if e['node_id'] == 'issue_refund')}")
     print(f"  emails actually sent     : "
@@ -426,7 +463,8 @@ def demo_graph() -> None:
     sub("F. Conditional routing: a failed gate goes to a human, not through")
     s4 = _stack(l4p.transposed_policy, state_dir=tempfile.mkdtemp())
     bad = s4.runner(l4.build_graph(s4.harness)).start("Intake", {})
-    print(); print(bad.render())
+    print()
+    print(bad.render())
     report = bad.state.get("gate_report") or {}
     print(f"\n  failing gates : {report.get('failed')}")
     for g in report.get("results", []):
@@ -502,6 +540,12 @@ def main(argv=None) -> int:
     rs.add_argument("run_id")
     rs.add_argument("--approve", action="store_true")
     rs.set_defaults(fn=cmd_resume)
+
+    sh = sub_.add_parser("shadow", help="shadow-mode reconciliation against a margin system")
+    sh.add_argument("--drift", action="store_true",
+                    help="run against an amended agreement the margin system never heard about")
+    sh.add_argument("--json", action="store_true", help="also print the constraint pack")
+    sh.set_defaults(fn=cmd_shadow)
 
     ik = sub_.add_parser("intake", help="document intake: CSA, invoice or KYC")
     ik.add_argument("kind", nargs="?", default="all",

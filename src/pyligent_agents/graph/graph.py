@@ -100,17 +100,28 @@ class Graph:
                 )
 
     def _check_side_effects(self) -> None:
-        """A node that retries must be idempotent, or it will duplicate.
+        """A node that can undo an effect must be able to make it exactly once.
 
-        Retry without an idempotency key is the exact shape of the duplicate
-        custodian instruction. Catch it at build time, not in Operations.
+        We cannot detect an *undeclared* side effect from the graph structure —
+        `idempotency` being present is precisely what declares one (see
+        `nodes.py`), so a node without it has, by contract, nothing to protect.
+        Guessing from `provides` would flag every pure computation that retries.
+
+        What we can catch is the incoherent pair: a node that declares
+        `compensate` — an undo for an effect that landed — while declaring no
+        key by which that effect is made once. On resume the graph has no way to
+        know whether the effect happened, so it cannot know whether to undo it.
+        That is the duplicate custodian instruction, visible at build time.
         """
-        for node in self.nodes.values():
-            if node.retry.max_attempts > 1 and node.compensate is None and node.idempotency is None:
-                if node.kind in {"step", "agent"} and node.provides:
-                    # Heuristic, deliberately narrow: only flag nodes that both
-                    # retry and write something the graph depends on.
-                    continue
+        for nid, node in self.nodes.items():
+            if node.compensate is not None and node.idempotency is None:
+                raise GraphError(
+                    f"Node '{nid}' declares `compensate` but no `idempotency`. "
+                    f"Compensation undoes an effect that landed; without a key the "
+                    f"graph cannot tell whether it landed, so it can neither make it "
+                    f"once nor safely undo it. Add `idempotency=` deriving a key from "
+                    f"the facts of the action."
+                )
 
     def _ancestors(self, nid: str) -> set[str]:
         seen: set[str] = set()

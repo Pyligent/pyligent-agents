@@ -25,7 +25,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from ..core.errors import ErrorClass, classify
-from ..core.types import Phase, PermissionTier, ToolSpec, ToolUse, tool_result_block
+from ..core.types import PermissionTier, Phase, ToolSpec, ToolUse, tool_result_block
 
 ToolFn = Callable[..., Any]
 

@@ -22,7 +22,7 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from ..core.errors import BudgetExhausted, StopConditionNotMet
-from ..core.types import Message, Phase, PermissionTier, ToolSpec, assistant_turn, tool_result_turn
+from ..core.types import Message, PermissionTier, Phase, ToolSpec, assistant_turn, tool_result_turn
 from ..harness.context import ContextManager
 from ..harness.harness import Harness
 from ..harness.registry import ToolOutcome

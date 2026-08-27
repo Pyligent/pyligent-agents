@@ -21,11 +21,11 @@ that makes writing those policies quick.
 
 from __future__ import annotations
 
-from collections.abc import Callable, Iterable
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
-from .harness.client import ScriptedCall, ScriptedLLM, ScriptedTurn
+from .harness.client import ScriptedCall, ScriptedTurn
 from .harness.registry import ToolRegistry
 from .runtime import Stack, build_stack
 
@@ -133,6 +133,7 @@ def build_test_stack(
     tools: ToolRegistry | None = None,
     state_dir: str | Path | None = None,
     budget_usd: float = 5.0,
+    hooks: Any = None,
     **settings: Any,
 ) -> Stack:
     """A stack wired to a scripted policy, with a throwaway state directory.
@@ -154,6 +155,7 @@ def build_test_stack(
         registry=tools,
         state_dir=state_dir or tempfile.mkdtemp(prefix="pyligent-agents-test-"),
         budget_usd=budget_usd,
+        hooks=hooks,
     )
 
 
