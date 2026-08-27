@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import ssl
 import sys
 import time
 import urllib.error
@@ -44,6 +45,25 @@ def _agent() -> str:
     return f"pyligent-benchmark {contact}"
 
 
+def _ssl_context() -> ssl.SSLContext:
+    """A context that trusts a real CA bundle.
+
+    A python.org install on macOS ships without one, so the first HTTPS call
+    fails with CERTIFICATE_VERIFY_FAILED and an unhelpful traceback. `certifi`
+    carries a bundle and is present in most environments; fall back to the
+    default when it is not, since a Linux install usually has one already.
+
+    Never disables verification. An unverified fetch of the documents a
+    benchmark is built on would undermine the benchmark.
+    """
+    try:
+        import certifi
+
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
+
 def _get(url: str, *, agent: str) -> bytes:
     req = urllib.request.Request(url, headers={
         "User-Agent": agent,
@@ -51,8 +71,19 @@ def _get(url: str, *, agent: str) -> bytes:
         "Host": urllib.parse.urlparse(url).netloc,
     })
     time.sleep(COURTESY_DELAY_S)
-    with urllib.request.urlopen(req, timeout=30) as r:      # noqa: S310
-        raw = r.read()
+    try:
+        with urllib.request.urlopen(req, timeout=30,      # noqa: S310
+                                    context=_ssl_context()) as r:
+            raw = r.read()
+    except urllib.error.URLError as exc:
+        if "CERTIFICATE_VERIFY" in str(exc.reason):
+            raise SystemExit(
+                "This Python has no CA bundle, so HTTPS cannot be verified.\n\n"
+                "    pip install certifi\n\n"
+                "or, on a python.org install for macOS, run once:\n"
+                "    open '/Applications/Python 3.13/Install Certificates.command'"
+            ) from exc
+        raise
     if raw[:2] == b"\x1f\x8b":
         import gzip
         raw = gzip.decompress(raw)

@@ -51,9 +51,26 @@ DEFAULT_FIELDS = ("base_currency", "eligible_currency", "threshold",
 def call_anthropic(model: str, prompt: str) -> str:
     import anthropic
 
-    client = anthropic.Anthropic()
-    r = client.messages.create(model=model, max_tokens=4096,
-                               messages=[{"role": "user", "content": prompt}])
+    # An identity-linked key must say which workspace it is acting in. A plain
+    # account key does not, and sending an empty header would be worse than
+    # sending none, so this is set only when present.
+    workspace = os.getenv("ANTHROPIC_WORKSPACE_ID", "").strip()
+    headers = {"anthropic-workspace-id": workspace} if workspace else None
+    client = anthropic.Anthropic(default_headers=headers)
+    try:
+        r = client.messages.create(model=model, max_tokens=4096,
+                                   messages=[{"role": "user", "content": prompt}])
+    except anthropic.BadRequestError as exc:
+        if "workspace-id is required" in str(exc):
+            raise SystemExit(
+                "This API key is identity-linked, so every request must name the "
+                "workspace it acts in.\n\n"
+                "Find the workspace id in the Anthropic Console (Settings ->\n"
+                "Workspaces; it looks like wrkspc_...), then add it alongside the\n"
+                "key:\n\n"
+                '    echo \'ANTHROPIC_WORKSPACE_ID=wrkspc_...\' >> .env\n'
+            ) from exc
+        raise
     return "".join(b.text for b in r.content if b.type == "text")
 
 
