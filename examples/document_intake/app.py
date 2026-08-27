@@ -24,6 +24,8 @@ from __future__ import annotations
 import json
 from typing import Any
 
+from document_intake.cdm import classify_rounding, to_cdm
+from document_intake.documents import DOCUMENTS, DocumentSpec
 from pyligent_agents import idempotency_key
 from pyligent_agents.graph import AgentNode, GateNode, Graph, Step
 from pyligent_agents.graph.state import GraphState
@@ -38,8 +40,6 @@ from pyligent_agents.loop import (
     no_verification,
 )
 from pyligent_agents.verify import DocumentVerifier
-
-from document_intake.documents import DOCUMENTS, DocumentSpec
 
 
 def _json_extractor(state: LoopState) -> dict[str, Any]:
@@ -85,11 +85,12 @@ def _build_extractor(spec: DocumentSpec):
 # --- node bodies ----------------------------------------------------------
 
 
-def _load(spec: DocumentSpec, *, flawed: bool):
+def _load(spec: DocumentSpec, *, flawed: bool, source: str | None = None,
+          document_id: str | None = None):
     def load(_state: GraphState) -> dict[str, Any]:
-        return {"source_text": spec.source(flawed=flawed),
-                "document": {"document_id": spec.document_id, "title": spec.title,
-                             "kind": spec.key}}
+        return {"source_text": source if source is not None else spec.source(flawed=flawed),
+                "document": {"document_id": document_id or spec.document_id,
+                             "title": spec.title, "kind": spec.key}}
     return load
 
 
@@ -116,12 +117,19 @@ def _verify(harness: Harness):
 
 def _accept(state: GraphState) -> dict[str, Any]:
     artifact = state.require("artifact")
-    return {"accepted": {
+    accepted = {
         "document_id": artifact["document_id"],
         "kind": artifact["kind"],
         "fields": len(artifact.get("fields", {})),
         "status": "accepted_into_system_of_record",
-    }}
+    }
+    # A CSA's deliverable is not a dictionary — it is CDM JSON a collateral
+    # system can load without anyone retyping a term. The gates have already
+    # proved the mapping succeeds; this is where it lands.
+    if artifact["kind"] == "csa":
+        accepted["cdm"] = to_cdm(artifact)
+        accepted["rounding_variant"] = classify_rounding(artifact.get("fields") or {})
+    return {"accepted": accepted}
 
 
 def _refer(state: GraphState) -> dict[str, Any]:
@@ -142,12 +150,18 @@ def _gates_passed(state: GraphState) -> bool:
 # --- the graph ------------------------------------------------------------
 
 
-def build_graph(harness: Harness, kind: str = "invoice", *, flawed: bool = False) -> Graph:
-    """One graph shape, parameterised by which document it is reading."""
+def build_graph(harness: Harness, kind: str = "invoice", *, flawed: bool = False,
+                source: str | None = None, document_id: str | None = None) -> Graph:
+    """One graph shape, parameterised by which document it is reading.
+
+    `source` overrides the shipped document — that is how the eval harness runs
+    this same pipeline over a labelled dataset without a parallel copy of it.
+    Evaluating a re-implementation of your pipeline evaluates the wrong thing.
+    """
     spec = DOCUMENTS[kind]
 
     return Graph(name=f"intake_{spec.key}", seeds=()).extend(
-        Step(id="load", fn=_load(spec, flawed=flawed),
+        Step(id="load", fn=_load(spec, flawed=flawed, source=source, document_id=document_id),
              provides=("source_text", "document"),
              description=f"Fetch the {spec.title}. Untrusted content from here on."),
 

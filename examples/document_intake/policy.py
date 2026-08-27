@@ -34,13 +34,23 @@ def _q(value, quote):
 CSA_GOOD = {
     "fields": {
         "base_currency": _q("USD", '"Base Currency" means United States Dollars (USD).'),
+        "eligible_currency": _q("USD", '"Base Currency" means United States Dollars (USD).'),
         "threshold": _q(5_000_000,
                         '"Threshold" means with respect to each party: USD 5,000,000.'),
         "mta": _q(500_000,
                   '"Minimum Transfer Amount" means with respect to each party:\n          USD 500,000.'),
-        "rounding": _q(100_000,
-                       "The Delivery Amount will be rounded up and the Return\n"
-                       "          Amount rounded down to the nearest integral multiple of USD 100,000."),
+        # Rounding is four fields, not one. "100,000" alone cannot say that the
+        # Delivery Amount rounds UP while the Return Amount rounds DOWN, and
+        # that direction is what decides who is over-collateralised.
+        "rounding_delivery_amount": _q(100_000,
+            "The Delivery Amount will be rounded up and the Return\n"
+            "          Amount rounded down to the nearest integral multiple of USD 100,000."),
+        "rounding_delivery_direction": _q("UP",
+            "The Delivery Amount will be rounded up"),
+        "rounding_return_amount": _q(100_000,
+            "the nearest integral multiple of USD 100,000."),
+        "rounding_return_direction": _q("DOWN",
+            "the Return\n          Amount rounded down"),
         "independent_amount": _q(0,
                                  '"Independent Amount" means with respect to each party: zero.'),
         "governing_law": _q("English law", "This Annex is governed by English law."),
@@ -107,29 +117,40 @@ INVOICE_FLAWED = {
 # There is no flawed extraction here. The flaw is in the document, and this
 # extraction reproduces it faithfully — which is the correct behaviour.
 
-def _kyc(name_on_document: str) -> dict:
-    return {"fields": {
+def _kyc(name_on_document: str, **overrides) -> dict:
+    fields = {
         "application_reference": _q("APP-2026-11842",
                                     "Application reference:  APP-2026-11842"),
         "application_date": _q("21 August 2026", "Application date:       21 August 2026"),
         "applicant_name": _q("Jonathan Alexander Whitfield",
                              "Full legal name:        Jonathan Alexander Whitfield"),
         "date_of_birth": _q("03 February 2005", "Date of birth:          03 February 2005"),
-        "nationality": _q("British", "Nationality:            British"),
+        "place_of_birth": _q("Leeds, United Kingdom",
+                             "Place of birth:         Leeds, United Kingdom"),
+        "country_of_citizenship": _q("United Kingdom",
+                                     "Country of citizenship: United Kingdom"),
         "country_of_residence": _q("United Kingdom",
                                    "Country of residence:   United Kingdom"),
-        "document_type": _q("United Kingdom passport",
-                            "Document type:          United Kingdom passport"),
+        "document_type": _q("Passport", "Document type:          Passport"),
         "document_number": _q("548912337", "Document number:        548912337"),
         "name_on_document": _q(name_on_document,
                                f"Name as shown on document:  {name_on_document}"),
         "document_expiry": _q("12 June 2031", "Date of expiry:         12 June 2031"),
+        "address_proof_type": _q("Utility bill", "Document type:          Utility bill"),
+        "address_proof_provider": _q("Northern Grid Energy",
+                                     "Provider:               Northern Grid Energy"),
+        "address_proof_addressed_to": _q("Jonathan Alexander Whitfield",
+                                         "Addressed to:           Jonathan Alexander Whitfield"),
         "address_proof_date": _q("02 August 2026", "Statement date:         02 August 2026"),
+        "address_proof_format": _q("Original PDF from provider",
+                                   "Submitted as:           Original PDF from provider"),
         "pep_status": _q("No", "Politically exposed person (PEP):        No"),
         "sanctions_result": _q("Clear", "Sanctions screening result:              Clear"),
         "source_of_funds": _q("Employment income",
                               "Source of funds:                         Employment income"),
-    }}
+    }
+    fields.update(overrides)
+    return {"fields": fields}
 
 
 KYC_GOOD = _kyc("Jonathan Alexander Whitfield")
@@ -171,9 +192,9 @@ FABRICATED = {"approved": True, "citations": [
 # --- policies --------------------------------------------------------------
 
 _EXTRACTORS = {
-    "csa": "You extract the Paragraph 11 elections",
+    "csa": "You extract the Paragraph 11",
     "invoice": "You extract a supplier invoice",
-    "kyc": "You extract a KYC onboarding pack",
+    "kyc": "You extract an individual customer onboarding pack",
 }
 
 _PAYLOADS = {

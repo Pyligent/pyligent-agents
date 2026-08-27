@@ -6,24 +6,32 @@ first one.
 """
 
 from .gates import (
+    ISO_4217,
     Gate,
     GateReport,
     GateResult,
     GateSet,
     cross_field,
-    evidence_gated_extraction,
     every_value_has,
+    evidence_gated_extraction,
+    iso_currency,
+    no_cross_reference_values,
     no_placeholder_values,
     non_empty,
     numeric_range,
     one_of,
     quotes_appear_in_source,
     required_keys,
+    values_are_numeric,
     verified_independently,
 )
 from .verifier import DocumentVerifier, GateVerifier, quote_is_in
 
 __all__ = [
+    "values_are_numeric",
+    "no_cross_reference_values",
+    "iso_currency",
+    "ISO_4217",
     "DocumentVerifier", "Gate", "GateReport", "GateResult", "GateSet",
     "GateVerifier", "cross_field", "evidence_gated_extraction",
     "every_value_has", "no_placeholder_values", "non_empty", "numeric_range",

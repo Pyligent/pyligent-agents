@@ -39,24 +39,32 @@ Every document type gets the same five generic gates from
 
 Then each type adds the checks a JSON schema could not make:
 
-| Document | Domain gates |
-|---|---|
-| **CSA** | MTA does not exceed the Threshold · valuation percentages are not haircuts |
-| **Invoice** | line items reconcile to the stated totals · due date follows the invoice date |
-| **KYC** | applicant is of age · identity document in date · **name on the document matches the application** · proof of address is recent |
+| Document | Domain gates | |
+|---|---|---|
+| **CSA** | ISO 4217 currencies · amounts are numbers not strings · no clause reference in a value field · rounding directions are UP/DOWN · **MTA and Threshold are not transposed** · rounding is finer than the MTA · non-standard rounding carries its full text · valuation percentages are not haircuts · representable in CDM | 9 |
+| **Invoice** | line items reconcile to the stated totals · due date follows the invoice date | 2 |
+| **KYC** | applicant is of age · identity document in date · document type is accepted · required identity data points present · **name on the document matches the application** · address proof type accepted · address proof names the applicant · address proof is not a screenshot · address proof is recent | 9 |
+
+The CSA and KYC sets are not invented. They implement two published guidelines —
+see [Conformance](#conformance) below.
 
 Run `--flaw` and watch what happens:
 
 ```
-[PASS] generic  required_fields: all 9 required key(s) present
-[PASS] generic  no_placeholders: no placeholder values in 14 entries
-[PASS] generic  evidence_present: all 14 entries carry 'evidence_quote'
-[PASS] generic  evidence_verbatim: all 14 quote(s) appear verbatim in the source
+[PASS] generic  required_fields: all 14 required key(s) present
+[PASS] generic  no_placeholders: no placeholder values in 19 entries
+[PASS] generic  evidence_present: all 19 entries carry 'evidence_quote'
+[PASS] generic  evidence_verbatim: all 19 quote(s) appear verbatim in the source
 [PASS] generic  independently_verified: approved with 2 citation(s)
 [PASS] domain   applicant_is_of_age: applicant is of age
 [PASS] domain   identity_document_valid: identity document is in date
+[PASS] domain   identity_document_type_accepted: identity document type is accepted
+[PASS] domain   identity_data_points_present: required identity data points present
 [FAIL] domain   name_matches_document: the name on the identity document does not
                 match the name on the application. Refer to compliance.
+[PASS] domain   address_proof_type_accepted: address proof type is accepted
+[PASS] domain   address_proof_names_applicant: address proof names the applicant
+[PASS] domain   address_proof_not_a_screenshot: address proof is not a screenshot
 [PASS] domain   address_proof_recent: address proof is recent
 ```
 
@@ -142,6 +150,79 @@ Nothing in `app.py` changes. The order to build in:
 4. Add a test asserting the flawed variant fails **only** the gate you intended.
    If it fails a generic gate too, your flaw is not subtle enough to be the one
    you should be worried about.
+
+---
+
+## Conformance
+
+The CSA and KYC gate sets implement published guidance rather than a plausible
+guess at it. `tests/test_guideline_alignment.py` holds the code to both, one
+test per rule, so a revised guideline produces a failing test that names the
+rule instead of a silent divergence.
+
+### ISDA — CSA clause extraction and CDM
+
+From *Benchmarking Generative AI for CSA Clause Extraction and CDM
+Representation* (ISDA, May 2025):
+
+- **The five benchmarked clauses** — base currency, eligible currency, MTA,
+  threshold, rounding — are all extracted and all gated.
+- **CDM JSON is the deliverable.** [`cdm.py`](cdm.py) maps the elections into
+  `agreementTerms → agreement → creditSupportAgreementElections`, with per-party
+  `minimumTransferAmount[]` and `threshold[]` arrays. An accepted CSA carries
+  `cdm`. A dictionary is not a deliverable; a collateral system consumes CDM.
+- **Rounding is four fields, not one.** `rounding: 100000` cannot say that the
+  Delivery Amount rounds UP while the Return Amount rounds DOWN, and that
+  direction decides who ends up over-collateralised.
+- **The no-rounding rule.** If the Annex is silent on rounding, no rounding
+  object is emitted. A defaulted `deliveryDirection: UP` is a contractual term
+  the parties never agreed, and it is invisible downstream precisely because it
+  is perfectly well-formed.
+- **Variant 1 / Variant 2.** Anything other than standard unconditional rounding
+  is Variant 2 and must carry the *complete* provision text — not a summary.
+  "Do not truncate or summarize the text, as important details may be lost."
+- **The validation protocol** becomes three reusable gates: valid ISO 4217
+  codes, amounts as numbers rather than `"500,000"`, and no clause pointer such
+  as `13(c)(ii)` transcribed into a value field.
+- **Vocabulary in the prompt.** Threshold vs Threshold Amount vs Minimum
+  Transfer Amount vs Independent Amount are routinely conflated. The paper's
+  central finding is that supplying this domain detail moved accuracy from
+  around 67% to over 90% across every model tested — the largest single lever
+  in the study, and it costs nothing.
+
+> **The gate this replaced was wrong.** It asserted `MTA ≤ Threshold`. A 2016 VM
+> CSA elects a Threshold of **zero** — variation margin is fully collateralised
+> — while the MTA stays at a normal operational figure, so MTA legitimately
+> exceeds Threshold in the most common CSA shape in the market. ISDA's own
+> worked example is exactly that shape, and the gate referred it every time.
+> The ordering only carries information above zero; at zero it says nothing, and
+> a gate that says nothing must not vote. The `csa/vm-zero-threshold` eval case
+> exists to keep it that way.
+
+### AWS Marketplace — KYC documentation
+
+From *Know Your Customer (KYC) Documentation Upload Best Practices*:
+
+| Rule | Gate |
+|---|---|
+| Accepted identity documents: passport, national identity card, US passport card, driving licence, residence permit | `identity_document_type_accepted` |
+| The document must show full name, date of birth, **place of birth** and **country of citizenship** | `identity_data_points_present` |
+| The document must not be expired | `identity_document_valid` |
+| Accepted proof of address, **excluding** statements from non-bank providers and online digital banks | `address_proof_type_accepted` |
+| Must be addressed to the applicant — "names should match the ID/legal document provided" | `address_proof_names_applicant` |
+| "The document must not be a screenshot" | `address_proof_not_a_screenshot` |
+| "Dated within **180 days**" | `address_proof_recent` |
+
+Two of these are worth pausing on. A statement from an e-money institution is a
+perfectly well-formed bank statement that **does not count**, and nothing about
+its shape says so. And a utility bill in a partner's or landlord's name proves
+an address exists — it does not tie *this applicant* to it, which is the only
+thing it was collected to do.
+
+Note the guide is a business (KYB) onboarding process; this example models
+individual verification, so the entity-level requirements — beneficial ownership
+above 25%, statute documents, letters of authority — are noted but not
+implemented.
 
 ---
 
