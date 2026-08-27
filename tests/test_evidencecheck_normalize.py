@@ -148,3 +148,25 @@ def test_proper_nouns_require_a_lowercase_body():
 ])
 def test_near_miss_separates_a_repair_from_a_different_subject(a, b, expected):
     assert near_miss(a, b) is expected
+
+
+# --- §4.4, the bound that keeps prose off the name path ------------------
+
+
+@pytest.mark.parametrize("value,is_name", [
+    ("Jonathan Alexander Whitfield", True),
+    ("ATLAS GLOBAL MARKETS LTD", False),        # all caps: a code-ish entity, not a name token
+    ("Northwind Bank Plc", True),
+    ("The Valuation Percentage equals the percentage specified under the "
+     "applicable Rating Agency's name in the table", False),
+])
+def test_only_short_values_take_the_name_comparison_path(value, is_name):
+    """A paragraph is not a name.
+
+    Found on real SEC filings: a prose summary of a valuation-percentage rule
+    was reported as a silent repair because "Ratings" in the summary is a
+    near-miss for "Rating" in the clause it summarised. A long value shares most
+    of its words with its own source, so one plural is enough to make a correct
+    extraction look wrong.
+    """
+    assert looks_like_a_name(value) is is_name

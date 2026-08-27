@@ -175,6 +175,16 @@ def near_miss(a: str, b: str, *, threshold: float = 0.72) -> bool:
     return SequenceMatcher(None, a, b).ratio() >= threshold
 
 
+# A name is a few tokens. Beyond that it is prose, and prose must not go down
+# the name-comparison path: a long summary shares most of its words with the
+# text it summarises, so a single plural — "Ratings" against "Rating" — reads as
+# a competing value and a correct extraction is reported as a repair. Measured
+# on real SEC filings, where it was the only finding and it was wrong.
+MAX_NAME_TOKENS = 6
+
+
 def looks_like_a_name(value: object) -> bool:
     t = squash(value)
-    return bool(t) and bool(_PROPER.match(t))
+    if not t or not _PROPER.match(t):
+        return False
+    return len(t.split()) <= MAX_NAME_TOKENS

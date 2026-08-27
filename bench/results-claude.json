@@ -1,0 +1,41 @@
+{
+  "documents": 5,
+  "corpus": [
+    {
+      "name": "1129068-014381",
+      "provenance": "https://www.sec.gov/Archives/edgar/data/1129068/000095013708014381/c48210exv99w2.htm (US federal government work, public domain)"
+    },
+    {
+      "name": "1402523-004967",
+      "provenance": "https://www.sec.gov/Archives/edgar/data/1402523/000090514807004967/efc7-1897_6270986form8k.htm (US federal government work, public domain)"
+    },
+    {
+      "name": "1403152-000731",
+      "provenance": "https://www.sec.gov/Archives/edgar/data/1403152/000116231807000731/dbalt200718kforpsa1574802.htm (US federal government work, public domain)"
+    },
+    {
+      "name": "1423381-001278",
+      "provenance": "https://www.sec.gov/Archives/edgar/data/1423381/000095013408001278/a37441exv99w2.htm (US federal government work, public domain)"
+    },
+    {
+      "name": "1494538-002627",
+      "provenance": "https://www.sec.gov/Archives/edgar/data/1494538/000138713113002627/ex10_2.htm (US federal government work, public domain)"
+    }
+  ],
+  "scores": [
+    {
+      "extractor": "claude-sonnet-5",
+      "documents": 5,
+      "fields": 20,
+      "findings": 0,
+      "evidence_integrity": 1.0,
+      "by_code": {
+        "FABRICATED_EVIDENCE": 0,
+        "SILENT_REPAIR": 0,
+        "PLACEHOLDER_VALUE": 0,
+        "MISSING_EVIDENCE": 0,
+        "EMPTY_VALUE": 0
+      }
+    }
+  ]
+}
