@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pyligent-agents"
-version = "0.1.0"
+version = "0.2.0"
 description = "Harness, loop and graph engineering for production AI agents."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -44,7 +44,7 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src", "examples"]
+pythonpath = ["src", "examples", "evals"]
 addopts = "-q"
 
 [tool.ruff]

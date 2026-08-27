@@ -39,18 +39,21 @@ from .config import Settings, get_settings, register_model
 from .core import (
     DomainRefusal,
     ErrorClass,
-    Phase,
     PermissionTier,
+    Phase,
     ToolSpec,
     ToolUse,
     idempotency_key,
     register_error_class,
 )
+from .record import Record, Status
 from .runtime import Stack, build_stack
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
+    "Record",
+    "Status",
     "DomainRefusal", "ErrorClass", "Phase", "PermissionTier", "Settings",
     "Stack", "ToolSpec", "ToolUse", "__version__", "build_stack", "get_settings",
     "idempotency_key", "register_error_class", "register_model",
