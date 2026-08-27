@@ -1,0 +1,40 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "USD",
+      "quote": "The document states that base currency is USD."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "quote": "The document states that eligible currency is USD."
+    },
+    "threshold": {
+      "value": 250000,
+      "quote": "The document states that threshold is 250000."
+    },
+    "mta": {
+      "value": 5000000,
+      "quote": "The document states that mta is 5000000."
+    },
+    "rounding_delivery_amount": {
+      "value": 100000,
+      "quote": "The document states that rounding delivery amount is 100000."
+    },
+    "rounding_delivery_direction": {
+      "value": "UP",
+      "quote": "The document states that rounding delivery direction is UP."
+    },
+    "rounding_return_amount": {
+      "value": 100000,
+      "quote": "The document states that rounding return amount is 100000."
+    },
+    "rounding_return_direction": {
+      "value": "DOWN",
+      "quote": "The document states that rounding return direction is DOWN."
+    },
+    "governing_law": {
+      "value": "English law",
+      "quote": "The document states that governing law is English law."
+    }
+  }
+}

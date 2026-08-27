@@ -1,0 +1,64 @@
+{
+  "fields": {
+    "application_reference": {
+      "value": "APP-2026-12004",
+      "quote": "The document states that application reference is APP-2026-12004."
+    },
+    "application_date": {
+      "value": "25 August 2026",
+      "quote": "The document states that application date is 25 August 2026."
+    },
+    "applicant_name": {
+      "value": "Jonathan Alexander Whitfield",
+      "quote": "The document states that applicant name is Jonathan Alexander Whitfield."
+    },
+    "date_of_birth": {
+      "value": "03 February 2005",
+      "quote": "The document states that date of birth is 03 February 2005."
+    },
+    "place_of_birth": {
+      "value": "Leeds, United Kingdom",
+      "quote": "The document states that place of birth is Leeds, United Kingdom."
+    },
+    "country_of_citizenship": {
+      "value": "United Kingdom",
+      "quote": "The document states that country of citizenship is United Kingdom."
+    },
+    "document_type": {
+      "value": "Passport",
+      "quote": "The document states that document type is Passport."
+    },
+    "name_on_document": {
+      "value": "Jonathon Alexander Whitfield",
+      "quote": "The document states that name on document is Jonathon Alexander Whitfield."
+    },
+    "document_expiry": {
+      "value": "12 June 2031",
+      "quote": "The document states that document expiry is 12 June 2031."
+    },
+    "address_proof_type": {
+      "value": "Utility bill",
+      "quote": "The document states that address proof type is Utility bill."
+    },
+    "address_proof_provider": {
+      "value": "Northern Grid Energy",
+      "quote": "The document states that address proof provider is Northern Grid Energy."
+    },
+    "address_proof_addressed_to": {
+      "value": "Jonathan Alexander Whitfield",
+      "quote": "The document states that address proof addressed to is Jonathan Alexander Whitfield."
+    },
+    "address_proof_date": {
+      "value": "02 August 2026",
+      "quote": "The document states that address proof date is 02 August 2026."
+    },
+    "address_proof_format": {
+      "value": "Original PDF from provider",
+      "quote": "The document states that address proof format is Original PDF from provider."
+    },
+    "pep_status": {
+      "value": "No",
+      "quote": "The document states that pep status is No."
+    }
+  }
+}

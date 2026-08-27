@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "invoice_number": {
+      "value": "NW-2026-04702",
+      "quote": "The document states that invoice number is NW-2026-04702."
+    },
+    "invoice_date": {
+      "value": "20 August 2026",
+      "quote": "The document states that invoice date is 20 August 2026."
+    },
+    "due_date": {
+      "value": "20 July 2026",
+      "quote": "The document states that due date is 20 July 2026."
+    },
+    "net_total": {
+      "value": 824.99,
+      "quote": "The document states that net total is 824.99."
+    },
+    "tax_rate_pct": {
+      "value": 20.0,
+      "quote": "The document states that tax rate pct is 20.0."
+    },
+    "gross_total": {
+      "value": 989.99,
+      "quote": "The document states that gross total is 989.99."
+    },
+    "currency": {
+      "value": "GBP",
+      "quote": "The document states that currency is GBP."
+    }
+  }
+}

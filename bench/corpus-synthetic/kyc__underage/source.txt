@@ -1,0 +1,30 @@
+CUSTOMER ONBOARDING PACK
+Pyligent Financial Services — Individual Account Application
+
+Application reference:  APP-2026-12115
+Application date:       25 August 2026
+
+SECTION 1 — APPLICANT
+Full legal name:        Daniel Peter Hargreaves
+Date of birth:          30 May 2010
+Place of birth:         Leeds, United Kingdom
+Country of citizenship: United Kingdom
+Country of residence:   United Kingdom
+
+SECTION 2 — IDENTITY DOCUMENT
+Document type:          Passport
+Document number:        548912337
+Name as shown on document:  Daniel Peter Hargreaves
+Date of expiry:         09 January 2032
+
+SECTION 3 — PROOF OF ADDRESS
+Document type:          Utility bill
+Provider:               Northern Grid Energy
+Addressed to:           Daniel Peter Hargreaves
+Statement date:         11 August 2026
+Submitted as:           Original PDF from provider
+
+SECTION 4 — DECLARATIONS
+Politically exposed person (PEP):        No
+Sanctions screening result:              Clear
+Source of funds:                         Employment income

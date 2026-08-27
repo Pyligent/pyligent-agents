@@ -1,0 +1,30 @@
+CUSTOMER ONBOARDING PACK
+Pyligent Financial Services — Individual Account Application
+
+Application reference:  APP-2026-12318
+Application date:       25 August 2026
+
+SECTION 1 — APPLICANT
+Full legal name:        Tomas Eduard Lindqvist
+Date of birth:          02 November 1988
+Place of birth:         Leeds, United Kingdom
+Country of citizenship: United Kingdom
+Country of residence:   United Kingdom
+
+SECTION 2 — IDENTITY DOCUMENT
+Document type:          Passport
+Document number:        548912337
+Name as shown on document:  Tomas Eduard Lindqvist
+Date of expiry:         19 June 2029
+
+SECTION 3 — PROOF OF ADDRESS
+Document type:          Utility bill
+Provider:               Northern Grid Energy
+Addressed to:           Tomas Eduard Lindqvist
+Statement date:         14 August 2026
+Submitted as:           Screenshot of online account page
+
+SECTION 4 — DECLARATIONS
+Politically exposed person (PEP):        No
+Sanctions screening result:              Clear
+Source of funds:                         Employment income

@@ -12,3 +12,9 @@ venv/
 *.sqlite
 *.db
 .DS_Store
+
+# Real filings are fetched, not committed: large, someone else's bytes, and a
+# corpus in git is a corpus nobody re-fetches when it goes stale. The synthetic
+# set IS committed, so CI can prove the harness runs with no credential.
+bench/corpus/*/
+!bench/corpus/.gitkeep

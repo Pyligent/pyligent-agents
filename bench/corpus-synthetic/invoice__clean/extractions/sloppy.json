@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "invoice_number": {
+      "value": "NW-2026-04417",
+      "quote": "Invoice number:   NW-2026-04417"
+    },
+    "invoice_date": {
+      "value": "14 August 2026",
+      "quote": "Invoice date:     14 August 2026"
+    },
+    "due_date": {
+      "value": "13 September 2026",
+      "quote": "Payment due:      13 September 2026"
+    },
+    "net_total": {
+      "value": 824.99,
+      "quote": "Net total            824.99"
+    },
+    "tax_rate_pct": {
+      "value": 20.0,
+      "quote": "VAT at 20%            165.00"
+    },
+    "gross_total": {
+      "value": "TBD",
+      "quote": "TOTAL DUE        GBP     989.99"
+    }
+  }
+}

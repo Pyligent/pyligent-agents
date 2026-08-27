@@ -1,0 +1,64 @@
+{
+  "fields": {
+    "application_reference": {
+      "value": "APP-2026-12115",
+      "quote": "Application reference:  APP-2026-12115"
+    },
+    "application_date": {
+      "value": "25 August 2026",
+      "quote": "Application date:       25 August 2026"
+    },
+    "applicant_name": {
+      "value": "Daniel Peter Hargreaves",
+      "quote": "Full legal name:        Daniel Peter Hargreaves"
+    },
+    "date_of_birth": {
+      "value": "30 May 2010",
+      "quote": "Date of birth:          30 May 2010"
+    },
+    "place_of_birth": {
+      "value": "Leeds, United Kingdom",
+      "quote": "Place of birth:         Leeds, United Kingdom"
+    },
+    "country_of_citizenship": {
+      "value": "United Kingdom",
+      "quote": "Country of citizenship: United Kingdom"
+    },
+    "document_type": {
+      "value": "Passport",
+      "quote": "Document type:          Passport"
+    },
+    "name_on_document": {
+      "value": "Daniel Peter Hargreaves",
+      "quote": "Name as shown on document:  Daniel Peter Hargreaves"
+    },
+    "document_expiry": {
+      "value": "09 January 2032",
+      "quote": "Date of expiry:         09 January 2032"
+    },
+    "address_proof_type": {
+      "value": "Utility bill",
+      "quote": "Document type:          Utility bill"
+    },
+    "address_proof_provider": {
+      "value": "Northern Grid Energy",
+      "quote": "Provider:               Northern Grid Energy"
+    },
+    "address_proof_addressed_to": {
+      "value": "Daniel Peter Hargreaves",
+      "quote": "Addressed to:           Daniel Peter Hargreaves"
+    },
+    "address_proof_date": {
+      "value": "11 August 2026",
+      "quote": "Statement date:         11 August 2026"
+    },
+    "address_proof_format": {
+      "value": "Original PDF from provider",
+      "quote": "Submitted as:           Original PDF from provider"
+    },
+    "pep_status": {
+      "value": "No",
+      "quote": "Politically exposed person (PEP):        No"
+    }
+  }
+}

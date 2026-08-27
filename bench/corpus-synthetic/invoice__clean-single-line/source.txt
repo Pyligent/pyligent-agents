@@ -1,0 +1,19 @@
+NORTHWIND SUPPLY CO.
+Unit 4, Kestrel Park, Bristol BS11 9QD
+
+INVOICE
+
+Invoice number:   NW-2026-04502
+Invoice date:     18 August 2026
+Payment due:      17 September 2026
+Purchase order:   PO-88231
+
+------------------------------------------------------------------------
+Description                          Qty     Unit price        Line total
+------------------------------------------------------------------------
+Espresso machine, model EM-9           1       1,249.00          1,249.00
+------------------------------------------------------------------------
+                                              Net total          1,249.00
+                                             VAT at 20%            249.80
+                                          TOTAL DUE        GBP   1,498.80
+------------------------------------------------------------------------

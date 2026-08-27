@@ -1,0 +1,64 @@
+{
+  "fields": {
+    "application_reference": {
+      "value": "APP-2026-12318",
+      "quote": "The document states that application reference is APP-2026-12318."
+    },
+    "application_date": {
+      "value": "25 August 2026",
+      "quote": "The document states that application date is 25 August 2026."
+    },
+    "applicant_name": {
+      "value": "Tomas Eduard Lindqvist",
+      "quote": "The document states that applicant name is Tomas Eduard Lindqvist."
+    },
+    "date_of_birth": {
+      "value": "02 November 1988",
+      "quote": "The document states that date of birth is 02 November 1988."
+    },
+    "place_of_birth": {
+      "value": "Leeds, United Kingdom",
+      "quote": "The document states that place of birth is Leeds, United Kingdom."
+    },
+    "country_of_citizenship": {
+      "value": "United Kingdom",
+      "quote": "The document states that country of citizenship is United Kingdom."
+    },
+    "document_type": {
+      "value": "Passport",
+      "quote": "The document states that document type is Passport."
+    },
+    "name_on_document": {
+      "value": "Tomas Eduard Lindqvist",
+      "quote": "The document states that name on document is Tomas Eduard Lindqvist."
+    },
+    "document_expiry": {
+      "value": "19 June 2029",
+      "quote": "The document states that document expiry is 19 June 2029."
+    },
+    "address_proof_type": {
+      "value": "Utility bill",
+      "quote": "The document states that address proof type is Utility bill."
+    },
+    "address_proof_provider": {
+      "value": "Northern Grid Energy",
+      "quote": "The document states that address proof provider is Northern Grid Energy."
+    },
+    "address_proof_addressed_to": {
+      "value": "Tomas Eduard Lindqvist",
+      "quote": "The document states that address proof addressed to is Tomas Eduard Lindqvist."
+    },
+    "address_proof_date": {
+      "value": "14 August 2026",
+      "quote": "The document states that address proof date is 14 August 2026."
+    },
+    "address_proof_format": {
+      "value": "Screenshot of online account page",
+      "quote": "The document states that address proof format is Screenshot of online account page."
+    },
+    "pep_status": {
+      "value": "No",
+      "quote": "The document states that pep status is No."
+    }
+  }
+}

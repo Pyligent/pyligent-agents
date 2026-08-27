@@ -1,0 +1,60 @@
+{
+  "fields": {
+    "application_reference": {
+      "value": "APP-2026-12318",
+      "quote": "Application reference:  APP-2026-12318"
+    },
+    "application_date": {
+      "value": "25 August 2026",
+      "quote": "Application date:       25 August 2026"
+    },
+    "applicant_name": {
+      "value": "Tomas Eduard Lindqvist",
+      "quote": "Full legal name:        Tomas Eduard Lindqvist"
+    },
+    "date_of_birth": {
+      "value": "02 November 1988",
+      "quote": "Date of birth:          02 November 1988"
+    },
+    "place_of_birth": {
+      "value": "Leeds, United Kingdom",
+      "quote": "Place of birth:         Leeds, United Kingdom"
+    },
+    "country_of_citizenship": {
+      "value": "United Kingdom",
+      "quote": "Country of citizenship: United Kingdom"
+    },
+    "document_type": {
+      "value": "Passport",
+      "quote": "Document type:          Passport"
+    },
+    "name_on_document": {
+      "value": "Tomas Eduard Lindqvist",
+      "quote": "Name as shown on document:  Tomas Eduard Lindqvist"
+    },
+    "document_expiry": {
+      "value": "19 June 2029",
+      "quote": "Date of expiry:         19 June 2029"
+    },
+    "address_proof_type": {
+      "value": "Utility bill",
+      "quote": "Document type:          Utility bill"
+    },
+    "address_proof_provider": {
+      "value": "Northern Grid Energy",
+      "quote": "Provider:               Northern Grid Energy"
+    },
+    "address_proof_addressed_to": {
+      "value": "Tomas Eduard Lindqvist",
+      "quote": "Addressed to:           Tomas Eduard Lindqvist"
+    },
+    "address_proof_date": {
+      "value": "14 August 2026",
+      "quote": "Statement date:         14 August 2026"
+    },
+    "address_proof_format": {
+      "value": "TBD",
+      "quote": "Submitted as:           Screenshot of online account page"
+    }
+  }
+}

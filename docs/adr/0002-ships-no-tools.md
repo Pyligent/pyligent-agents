@@ -42,8 +42,11 @@ wrong until somebody compares them. Having that in our own evidence checks was
 not defensible while publishing a tool whose purpose is to make exactly that
 class of error visible.
 
-The dependency has no dependencies of its own, so the tree stays one deep. The
-claim is now stated as *one dependency, and it has none*.
+**Second amendment, same day.** `unsourced` was subsequently merged into this
+repository rather than depended upon across one, so the dependency count is back
+to zero. The reasoning above still stands and is why the *code* was never
+duplicated: one definition, now in one tree, shipped as its own command
+(`unsourced`) alongside the framework's.
 
 ## Consequences
 

@@ -1,0 +1,22 @@
+CREDIT SUPPORT ANNEX
+to the Schedule to the ISDA Master Agreement dated as of 14 March 2019
+between DELPHI RATES BV ("Party A") and NORTHWIND BANK PLC ("Party B")
+
+Paragraph 11. Elections and Variables
+
+(a) Base Currency.
+    "Base Currency" means United States Dollars (USD).
+    "Eligible Currency" means the Base Currency.
+
+(b) Credit Support Obligations.
+    (i)   "Threshold" means with respect to each party: USD 5,000,000.
+    (ii)  "Minimum Transfer Amount" means with respect to each party: USD 500,000.
+    (iii) "Rounding". The Delivery Amount will be rounded up and the Return Amount
+          rounded down to the nearest integral multiple of USD 100,000.
+    (iv)  "Independent Amount" means with respect to each party: zero.
+
+(c) Eligible Credit Support, with the Valuation Percentage specified:
+      (A) Cash in the Base Currency ................................. 100%
+      (B) US Treasury obligations, residual maturity up to 5 years ... 98%
+      (C) US Treasury obligations, residual maturity 5 to 10 years ... 96%
+

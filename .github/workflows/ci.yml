@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "${{ matrix.python-version }}" }
       - run: pip install -e ".[dev]"
-      - run: ruff check src tests examples evals
+      - run: ruff check src tests examples evals bench
       # No ANTHROPIC_API_KEY is set anywhere in CI. The suite runs against the
       # deterministic backend, so CI needs no credential and spends nothing.
       - run: pytest
@@ -35,6 +35,14 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -e ".[dev]"
       - run: python examples/run.py demo all
+      - name: the evidence checker runs from a clean install
+        run: |
+          unsourced --version
+          python -m pytest tests/test_unsourced_checks.py -q
+      - name: the benchmark harness runs with no credential
+        # The synthetic corpus proves the harness works. It proves nothing about
+        # any model, and its provenance line says so in the output.
+        run: python bench/run.py --corpus bench/corpus-synthetic
       - name: evals do not regress against the committed baselines
         # Fails the build on ANY new false accept. The tolerance for letting a
         # flawed document through is zero; see evals/README.md.

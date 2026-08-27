@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "USD",
+      "quote": "\"Base Currency\" means United States Dollars (USD)."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "quote": "\"Eligible Currency\" means the Base Currency."
+    },
+    "threshold": {
+      "value": 5000000,
+      "quote": "\"Threshold\" means with respect to each party: USD 5,000,000."
+    },
+    "mta": {
+      "value": 500000,
+      "quote": "\"Minimum Transfer Amount\" means with respect to each party: USD 500,000."
+    },
+    "rounding_delivery_amount": {
+      "value": 100000,
+      "quote": "\"Rounding\". The Delivery Amount will be rounded up and the Return Amount\n          rounded down to the nearest integral multiple of USD 100,000."
+    },
+    "rounding_delivery_direction": {
+      "value": "UP",
+      "quote": "The Delivery Amount will be rounded up"
+    },
+    "rounding_return_amount": {
+      "value": "TBD",
+      "quote": "the nearest integral multiple of USD 100,000."
+    }
+  }
+}

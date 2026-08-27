@@ -106,7 +106,7 @@ survives a crash. The collateral work above is an application of them, and the
 patterns generalise — [`docs/PATTERNS.md`](docs/PATTERNS.md) works them through
 on an ordinary support desk, away from the domain.
 
-**One dependency** (`unsourced`, which has none). **No tools shipped.** **301 tests that run offline
+**No required dependencies.** **No tools shipped.** **420 tests that run offline
 in six seconds with no API key.**
 
 ---
@@ -474,14 +474,28 @@ And the counterpart, learned the expensive way:
 > documents is how a control gets switched off.
 > ([ADR 0006](docs/adr/0006-gates-cite-published-guidance.md))
 
+The evidence checks also ship as a **standalone command**, so you can point them
+at any pipeline's output without adopting anything:
+
+```bash
+unsourced contract.html extraction.json
+```
+
+No model, no network, no configuration. It works on Claude, GPT, Gemini, a
+vendor IDP or a regex — seven extraction shapes are understood, because a tool
+that requires reformatting measures whoever bothered to reformat.
+[`docs/SPEC-evidence-checks.md`](docs/SPEC-evidence-checks.md) defines each check
+precisely enough for a second implementation to agree; `bench/` scores evidence
+integrity across extractors, free and offline.
+
 `no_silent_repair()` catches what the other evidence gates cannot see: a
 citation that is genuine and names a *different* value. `evidence_present`
 passes, `evidence_verbatim` passes, and the discrepancy the extraction was hired
 to surface is the thing it removed. Available now, and deliberately not yet in
 the default bundle — adding it changes gate counts and every published figure.
 
-Every evidence check is imported from `unsourced` rather than defined twice, so
-there is one definition and it cannot drift. It already had: this module knew
+Every evidence check lives in `src/unsourced/` and is imported, never copied,
+so there is one definition and it cannot drift. It already had: this module knew
 five placeholder markers, `unsourced` knew ten, so `-` and `none` passed one
 path and failed the other.
 

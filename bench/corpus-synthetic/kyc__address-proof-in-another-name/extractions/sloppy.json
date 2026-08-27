@@ -1,0 +1,60 @@
+{
+  "fields": {
+    "application_reference": {
+      "value": "APP-2026-12220",
+      "quote": "Application reference:  APP-2026-12220"
+    },
+    "application_date": {
+      "value": "25 August 2026",
+      "quote": "Application date:       25 August 2026"
+    },
+    "applicant_name": {
+      "value": "Priya Anand Raghavan",
+      "quote": "Full legal name:        Priya Anand Raghavan"
+    },
+    "date_of_birth": {
+      "value": "12 July 1994",
+      "quote": "Date of birth:          12 July 1994"
+    },
+    "place_of_birth": {
+      "value": "Leeds, United Kingdom",
+      "quote": "Place of birth:         Leeds, United Kingdom"
+    },
+    "country_of_citizenship": {
+      "value": "United Kingdom",
+      "quote": "Country of citizenship: United Kingdom"
+    },
+    "document_type": {
+      "value": "Passport",
+      "quote": "Document type:          Passport"
+    },
+    "name_on_document": {
+      "value": "Priya Anand Raghavan",
+      "quote": "Name as shown on document:  Priya Anand Raghavan"
+    },
+    "document_expiry": {
+      "value": "04 March 2030",
+      "quote": "Date of expiry:         04 March 2030"
+    },
+    "address_proof_type": {
+      "value": "Utility bill",
+      "quote": "Document type:          Utility bill"
+    },
+    "address_proof_provider": {
+      "value": "Northern Grid Energy",
+      "quote": "Provider:               Northern Grid Energy"
+    },
+    "address_proof_addressed_to": {
+      "value": "Michael J Raghavan",
+      "quote": "Addressed to:           Michael J Raghavan"
+    },
+    "address_proof_date": {
+      "value": "02 August 2026",
+      "quote": "Statement date:         02 August 2026"
+    },
+    "address_proof_format": {
+      "value": "TBD",
+      "quote": "Submitted as:           Original PDF from provider"
+    }
+  }
+}

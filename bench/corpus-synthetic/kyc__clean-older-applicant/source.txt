@@ -1,0 +1,30 @@
+CUSTOMER ONBOARDING PACK
+Pyligent Financial Services — Individual Account Application
+
+Application reference:  APP-2026-11903
+Application date:       25 August 2026
+
+SECTION 1 — APPLICANT
+Full legal name:        Margaret Rose Okonjo
+Date of birth:          19 November 1974
+Place of birth:         Leeds, United Kingdom
+Country of citizenship: United Kingdom
+Country of residence:   United Kingdom
+
+SECTION 2 — IDENTITY DOCUMENT
+Document type:          Passport
+Document number:        548912337
+Name as shown on document:  Margaret Rose Okonjo
+Date of expiry:         04 March 2029
+
+SECTION 3 — PROOF OF ADDRESS
+Document type:          Utility bill
+Provider:               Northern Grid Energy
+Addressed to:           Margaret Rose Okonjo
+Statement date:         28 July 2026
+Submitted as:           Original PDF from provider
+
+SECTION 4 — DECLARATIONS
+Politically exposed person (PEP):        No
+Sanctions screening result:              Clear
+Source of funds:                         Employment income

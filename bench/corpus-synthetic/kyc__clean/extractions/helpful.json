@@ -1,0 +1,64 @@
+{
+  "fields": {
+    "application_reference": {
+      "value": "APP-2026-11842",
+      "quote": "Application reference:  APP-2026-11842"
+    },
+    "application_date": {
+      "value": "25 August 2026",
+      "quote": "Application date:       25 August 2026"
+    },
+    "applicant_name": {
+      "value": "Jonathan Alexander Whitfield",
+      "quote": "Full legal name:        Jonathan Alexander Whitfield"
+    },
+    "date_of_birth": {
+      "value": "03 February 2005",
+      "quote": "Date of birth:          03 February 2005"
+    },
+    "place_of_birth": {
+      "value": "Leeds, United Kingdom",
+      "quote": "Place of birth:         Leeds, United Kingdom"
+    },
+    "country_of_citizenship": {
+      "value": "United Kingdom",
+      "quote": "Country of citizenship: United Kingdom"
+    },
+    "document_type": {
+      "value": "Passport",
+      "quote": "Document type:          Passport"
+    },
+    "name_on_document": {
+      "value": "Jonathan Alexander Whitfield",
+      "quote": "Full legal name:        Jonathan Alexander Whitfield"
+    },
+    "document_expiry": {
+      "value": "12 June 2031",
+      "quote": "Date of expiry:         12 June 2031"
+    },
+    "address_proof_type": {
+      "value": "Utility bill",
+      "quote": "Document type:          Utility bill"
+    },
+    "address_proof_provider": {
+      "value": "Northern Grid Energy",
+      "quote": "Provider:               Northern Grid Energy"
+    },
+    "address_proof_addressed_to": {
+      "value": "Jonathan Alexander Whitfield",
+      "quote": "Addressed to:           Jonathan Alexander Whitfield"
+    },
+    "address_proof_date": {
+      "value": "02 August 2026",
+      "quote": "Statement date:         02 August 2026"
+    },
+    "address_proof_format": {
+      "value": "Original PDF from provider",
+      "quote": "Submitted as:           Original PDF from provider"
+    },
+    "pep_status": {
+      "value": "No",
+      "quote": "Politically exposed person (PEP):        No"
+    }
+  }
+}

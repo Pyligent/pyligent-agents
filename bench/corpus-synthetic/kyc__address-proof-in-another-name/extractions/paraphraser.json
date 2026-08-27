@@ -1,0 +1,64 @@
+{
+  "fields": {
+    "application_reference": {
+      "value": "APP-2026-12220",
+      "quote": "The document states that application reference is APP-2026-12220."
+    },
+    "application_date": {
+      "value": "25 August 2026",
+      "quote": "The document states that application date is 25 August 2026."
+    },
+    "applicant_name": {
+      "value": "Priya Anand Raghavan",
+      "quote": "The document states that applicant name is Priya Anand Raghavan."
+    },
+    "date_of_birth": {
+      "value": "12 July 1994",
+      "quote": "The document states that date of birth is 12 July 1994."
+    },
+    "place_of_birth": {
+      "value": "Leeds, United Kingdom",
+      "quote": "The document states that place of birth is Leeds, United Kingdom."
+    },
+    "country_of_citizenship": {
+      "value": "United Kingdom",
+      "quote": "The document states that country of citizenship is United Kingdom."
+    },
+    "document_type": {
+      "value": "Passport",
+      "quote": "The document states that document type is Passport."
+    },
+    "name_on_document": {
+      "value": "Priya Anand Raghavan",
+      "quote": "The document states that name on document is Priya Anand Raghavan."
+    },
+    "document_expiry": {
+      "value": "04 March 2030",
+      "quote": "The document states that document expiry is 04 March 2030."
+    },
+    "address_proof_type": {
+      "value": "Utility bill",
+      "quote": "The document states that address proof type is Utility bill."
+    },
+    "address_proof_provider": {
+      "value": "Northern Grid Energy",
+      "quote": "The document states that address proof provider is Northern Grid Energy."
+    },
+    "address_proof_addressed_to": {
+      "value": "Michael J Raghavan",
+      "quote": "The document states that address proof addressed to is Michael J Raghavan."
+    },
+    "address_proof_date": {
+      "value": "02 August 2026",
+      "quote": "The document states that address proof date is 02 August 2026."
+    },
+    "address_proof_format": {
+      "value": "Original PDF from provider",
+      "quote": "The document states that address proof format is Original PDF from provider."
+    },
+    "pep_status": {
+      "value": "No",
+      "quote": "The document states that pep status is No."
+    }
+  }
+}
