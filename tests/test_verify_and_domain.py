@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 import pytest
+from level4_invoice_intake.app import invoice_gates
+from level4_invoice_intake.policy import HEADER, LINES, TRANSPOSED
+from shopdesk import data, money
+from shopdesk.errors import RefundNotPermitted
 
 from pyligent_agents.testing import ScriptedTurn, build_test_stack
 from pyligent_agents.verify import (
@@ -17,11 +21,6 @@ from pyligent_agents.verify import (
     quotes_appear_in_source,
     required_keys,
 )
-
-from level4_invoice_intake.app import invoice_gates
-from level4_invoice_intake.policy import HEADER, LINES, TRANSPOSED
-from shopdesk import data, money
-from shopdesk.errors import RefundNotPermitted
 
 SOURCE = data.SUPPLIER_INVOICE_TEXT
 GOOD = {**HEADER, **LINES, "_source_text": SOURCE,

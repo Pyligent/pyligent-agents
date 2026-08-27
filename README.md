@@ -1,32 +1,113 @@
 # Pyligent Agents
 
-**Harness, loop and graph engineering for production AI agents.**
+**Evidence-backed extraction of collateral terms from ISDA agreements — with the
+audit trail that makes a recommendation defensible.**
 
 [![ci](https://github.com/pyligent/pyligent-agents/actions/workflows/ci.yml/badge.svg)](https://github.com/pyligent/pyligent-agents/actions/workflows/ci.yml)
 [![python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-The argument, in one line:
+A Credit Support Annex is a signed contract that a margin system holds as a row
+in a table. When those two disagree — an amendment nobody re-keyed, a term read
+into the wrong field — every margin call against that counterparty is sized
+wrong, and nothing in the margin system looks broken.
 
-> A multi-agent system is not more model. It is more **structure** — and
-> structure only helps when the task actually needs it.
-
-This is that structure: three layers you can adopt one at a time, a domain you
-supply yourself, and guardrails that fail a test when you remove them.
+This repository reads the agreement, derives the constraints, and shows you the
+disagreements with the clause that settles each one. It writes nothing.
 
 ```bash
-pip install pyligent-agents
-
-pyligent-agents steps           # the ten build steps
-pyligent-agents new my_agent    # a project whose guardrail tests already pass
+python examples/run.py shadow --drift
 ```
+
+```
+── MATERIAL · threshold ───────────────────────────────────
+  agreement says : 0
+  system says    : 5000000
+  impact         : changes when a call is made and by how much
+  clause         : ""Threshold" means with respect to each party: USD 0."
+```
+
+The parties moved to a VM CSA in 2017 and the Threshold went to zero. The margin
+system still holds 5,000,000, and has been sizing every call against an
+unsecured band that no longer exists. No reconciliation of that system against
+*itself* would ever find this. Only reading the agreement finds it.
+
+---
+
+## Where this stops
+
+Deliberately, at a **certified constraint pack** — the terms, machine-readable,
+each traceable to signed language:
+
+```
+agreement ─▶ extraction ─▶ evidence check ─▶ gates ─▶ CDM ─▶ constraints ─▶ │ certified │
+                                                                            └─────┬─────┘
+                                                                    allocation, optimisation
+                                                                    and settlement are
+                                                                    downstream and not here
+```
+
+Certification is not "did it parse". It asks whether every constraint an
+optimiser needs is present, whether each one traces to a clause that was
+machine-checked against the source, and — the part usually skipped — whether
+anything in the agreement could **not** be expressed:
+
+```
+  constraints derived : 14
+  every one traceable : yes
+  certified for use   : NO
+    · 1 term(s) in the agreement are not expressible as constraints and must be
+      read by a human before this counterparty is optimised.
+```
+
+A pack that silently drops a Valuation Agent's discretion or a ratings trigger
+looks complete and is not. The optimiser then solves the wrong problem with
+total confidence.
+
+---
+
+## Shadow mode, and why it is safe to say yes to
+
+A trial starts by watching, not touching. Shadow mode is a first-class mode
+whose guarantee is a test, not a promise:
 
 ```python
-import pyligent_agents
+def test_shadow_mode_cannot_reach_a_tool_with_an_external_effect():
+    outcome = stack.harness.run_tool(
+        ToolUse(id="t1", name="issue_refund", input={...}),
+        phase=Phase.ACT,
+        approver=lambda ctx: True,       # a human saying yes...
+    )
+    assert outcome.denied                # ...and it is still denied
 ```
 
-**No required dependencies.** **No tools shipped.** **145 tests that run offline
-in five seconds with no API key.**
+Note the approver. The guarantee does not depend on how the stack happened to be
+configured — the tier is denied outright.
+
+Two more questions every regulated review asks, answered by the tool rather than
+a slide:
+
+```bash
+pyligent-agents doctor            # where does the document text actually go?
+pyligent-agents validation-pack   # the evidence a model-risk review asks for
+```
+
+`validation-pack` inventories the enforced controls, the reproducibility basis,
+the measurement baselines and — the section reviewers actually read — what this
+system does not do. It reports; it certifies nothing, and says so.
+
+---
+
+## How it is built
+
+Three layers, adoptable one at a time: a **harness** that owns context and
+permission, a **loop** that owns when to stop, and a **graph** that owns what
+survives a crash. The collateral work above is an application of them, and the
+patterns generalise — [`docs/PATTERNS.md`](docs/PATTERNS.md) works them through
+on an ordinary support desk, away from the domain.
+
+**No required dependencies.** **No tools shipped.** **231 tests that run offline
+in six seconds with no API key.**
 
 ---
 
@@ -285,6 +366,48 @@ the retry and hide the bug.
 
 ---
 
+## Scoring the output: `evals/`
+
+Tests prove the loop stops, the gate fires, the refund happens once. They say
+nothing about whether the extraction is any good. That is a different question
+and it needs a gold set.
+
+```bash
+python evals/run_evals.py
+```
+
+Fifteen labelled cases over the three document types, scored four ways:
+
+```
+  SYSTEM         FALSE ACC FALSE REF  FIELD ACC  EVIDENCE   REASON
+  ----------------------------------------------------------------
+  faithful            0          0       100.0%    100.0%   100.0%
+  paraphraser         0          7       100.0%      0.0%   100.0%
+  helpful             4          1        95.7%    100.0%   100.0%
+  sloppy              0          7        81.5%    100.0%    87.5%
+```
+
+Rank by field accuracy and `helpful` comes **second**, ahead of `sloppy`. It is
+also the only system in the table that approved a flawed document — four times.
+It is not a bad extractor; it is a good one with an instinct to be useful. When
+the passport reads `Jonathon` and the application says `Jonathan`, it writes down
+whichever makes the file consistent. Every correction is individually
+defensible, and the aggregate is a system that cannot find what it was hired to
+find. Looking that way costs it 4% of field accuracy.
+
+`paraphraser` is the other trap: every value right, not one quote real.
+*Requiring* citations misses this. *Checking* them catches it.
+
+So the report never leads with a single accuracy figure. It counts the two
+decision errors separately and treats them asymmetrically in code — a false
+refer costs an analyst ten minutes, a false accept is what the counterparty
+calls about. `false_accept_rate` has a regression tolerance of **zero** and CI
+fails on any increase.
+
+📄 [`evals/README.md`](evals/README.md)
+
+---
+
 ## The examples
 
 Four applications on one ordinary domain — a support desk for an online retailer
@@ -335,7 +458,8 @@ the largest line on the bill despite being cheapest per run.
 | Choosing an architecture | [`docs/LADDER.md`](docs/LADDER.md) |
 | Reviewing someone's agent PR | [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md) |
 | Writing tests | [`docs/TESTING.md`](docs/TESTING.md) |
-| Curious about a decision | [`docs/adr/`](docs/adr/) |
+| Measuring output quality | [`evals/README.md`](evals/README.md) |
+| Curious about a decision | [`docs/adr/`](docs/adr/) — start with [0006](docs/adr/0006-gates-cite-published-guidance.md) |
 | Ready to build | `pyligent-agents new my_agent && cd my_agent && pytest` |
 
 ---
@@ -383,8 +507,18 @@ Stated here rather than discovered later:
 - **The citation check catches *fabricated* evidence, not *irrelevant* evidence.**
   A genuine sentence that does not support the claim passes.
 - **`ScriptedLLM` proves control flow, not output quality.** It will never tell
-  you a prompt got worse. A gold-set eval harness is separate work and is
-  deliberately not in this library.
+  you a prompt got worse — that is what [`evals/`](evals/README.md) is for, and
+  the two answer different questions. Neither is a substitute for measuring your
+  own documents against your own gold set.
+- **A domain gate is only as good as the domain knowledge behind it.** The CSA
+  gate set once asserted `MTA <= Threshold` — fluent, specific, and wrong for
+  every standard VM CSA, where the Threshold is zero. The demo passed and the
+  tests passed; reading the ISDA source caught it. Gates that implement
+  published guidance now cite it and are held to it by a conformance test. See
+  [ADR 0006](docs/adr/0006-gates-cite-published-guidance.md).
+- **The shipped domain gates are worked examples, not a compliance product.**
+  They implement two public documents against synthetic files. Your policy,
+  your regulator and your counterparties are yours to encode.
 - **Pyligent Agents does not sandbox your tools.** They run in your process with your
   privileges. See [`SECURITY.md`](SECURITY.md).
 - **`estimate_tokens` is a heuristic** used only for triggering decisions. Real

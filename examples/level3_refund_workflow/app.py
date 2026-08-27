@@ -16,6 +16,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from shopdesk import data, money
+
 from pyligent_agents import idempotency_key
 from pyligent_agents.graph import AgentNode, Graph, HumanGate, RetryPolicy, Step
 from pyligent_agents.graph.state import GraphState
@@ -29,8 +31,6 @@ from pyligent_agents.loop import (
     Predicate,
     no_verification,
 )
-
-from shopdesk import data, money
 
 DRAFT_SYSTEM = """\
 You draft replies from an online retailer's support desk to a customer who has

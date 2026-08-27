@@ -18,11 +18,11 @@ import json
 from dataclasses import dataclass
 from typing import Any
 
+from shopdesk.data import Ticket
+
 from pyligent_agents import Phase
 from pyligent_agents.harness import Harness
 from pyligent_agents.loop import AgentContract, Budget, ModelSaysDone, no_verification
-
-from shopdesk.data import Ticket
 
 CATEGORIES = ("late_delivery", "return_request", "missing_order",
               "acknowledgement", "other")

@@ -18,8 +18,8 @@ from .hooks import (
     ToolCallContext,
     ToolResultContext,
     Verdict,
-    default_hooks,
     defang_untrusted_content,
+    default_hooks,
     redact_secrets,
 )
 from .memory import MemoryStore

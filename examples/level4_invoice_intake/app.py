@@ -23,6 +23,8 @@ from __future__ import annotations
 import json
 from typing import Any
 
+from shopdesk import data, money
+
 from pyligent_agents import idempotency_key
 from pyligent_agents.graph import GateNode, Graph, MapNode, NodeContext, ReduceNode, Step
 from pyligent_agents.graph.state import GraphState
@@ -44,8 +46,6 @@ from pyligent_agents.verify import (
     non_empty,
     numeric_range,
 )
-
-from shopdesk import data, money
 
 HEADER_SYSTEM = """\
 You extract header fields from a supplier invoice.

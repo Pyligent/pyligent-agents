@@ -3,12 +3,11 @@
 from __future__ import annotations
 
 import pytest
+from document_intake import app, policy
+from document_intake.documents import DOCUMENTS
 
 from pyligent_agents.testing import build_test_stack
 from pyligent_agents.verify import quote_is_in
-
-from document_intake import app, policy
-from document_intake.documents import DOCUMENTS
 
 GENERIC_GATES = 5   # evidence_gated_extraction ships five
 
@@ -67,14 +66,14 @@ def test_every_document_type_shares_the_five_generic_gates(kind):
 
 def test_each_document_type_adds_its_own_domain_gates():
     counts = {k: len(v.gates()) - GENERIC_GATES for k, v in DOCUMENTS.items()}
-    assert counts == {"csa": 2, "invoice": 2, "kyc": 4}
+    assert counts == {"csa": 9, "invoice": 2, "kyc": 9}
 
 
 # --- the flaws, and exactly which gate catches each ----------------------
 
 
 @pytest.mark.parametrize("kind,expected", [
-    ("csa", "mta_within_threshold"),
+    ("csa", "mta_not_transposed_with_threshold"),
     ("invoice", "lines_sum_to_total"),
     ("kyc", "name_matches_document"),
 ])

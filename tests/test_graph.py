@@ -3,15 +3,15 @@
 from __future__ import annotations
 
 import pytest
+from level3_refund_workflow import app as refund
+from level3_refund_workflow import policy as refund_policy
+from level4_invoice_intake import app as invoice
+from level4_invoice_intake import policy as invoice_policy
 
 from pyligent_agents import idempotency_key
 from pyligent_agents.core.errors import GraphError
 from pyligent_agents.graph import Graph, GraphState, RetryPolicy, Step
 from pyligent_agents.testing import assert_effects_fire_once, build_test_stack
-
-from level3_refund_workflow import app as refund, policy as refund_policy
-from level4_invoice_intake import app as invoice, policy as invoice_policy
-
 
 # --- validation happens before anything costs money -----------------------
 
@@ -189,10 +189,24 @@ def test_compensation_unwinds_completed_side_effects(tmp_path, registry):
     undone = []
     g = (Graph("g")
          .add(Step(id="a", fn=lambda s: {"y": 1}, provides=("y",),
+                   idempotency=lambda st: "a:once",
                    compensate=lambda st, out: undone.append(out)))
          .add(Step(id="b", fn=lambda s: 1 / 0, depends_on=("a",))))
     r = _refund_stack(tmp_path, registry).runner(g).start("g")
     assert r.status == "failed" and undone == [{"y": 1}]
+
+
+def test_compensation_without_an_idempotency_key_fails_at_build_time(tmp_path, registry):
+    """You cannot undo an effect the graph cannot tell whether it made.
+
+    Compensation says "this landed, unwind it". Without a key there is no record
+    that it landed, so on resume the graph can neither make it once nor safely
+    undo it. That is the duplicate custodian instruction; it is a build error.
+    """
+    g = Graph("g").add(Step(id="a", fn=lambda s: {"y": 1}, provides=("y",),
+                            compensate=lambda st, out: None))
+    with pytest.raises(GraphError, match="declares `compensate` but no `idempotency`"):
+        g.validate()
 
 
 # --- conditional routing --------------------------------------------------

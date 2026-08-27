@@ -145,9 +145,9 @@ def test_a_transposed_digit_is_caught_from_the_cli(tmp_path):
 
 
 def test_assert_capped_rejects_an_agent_that_finishes(registry):
-    from pyligent_agents.testing import assert_capped, build_test_stack, turn
-
     from level2_order_agent import app
+
+    from pyligent_agents.testing import assert_capped, build_test_stack, turn
 
     stack = build_test_stack(lambda c: turn("Done, nothing to compute."), tools=registry)
     with pytest.raises(AssertionError, match="not a runaway test"):
