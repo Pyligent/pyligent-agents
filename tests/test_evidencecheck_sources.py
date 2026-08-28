@@ -120,3 +120,47 @@ def test_pdf_without_a_backend_explains_the_two_ways_forward(tmp_path, monkeypat
     # Two ways forward: install a backend, or convert it yourself.
     msg = str(exc.value)
     assert "pip install" in msg and "evidence-check extracted.txt out.json" in msg
+
+
+# --- regressions found on real SEC filings -------------------------------
+
+
+def test_a_void_element_in_the_head_does_not_swallow_the_document():
+    """`meta` and `link` have no closing tag.
+
+    They were in the skip set, so the counter that suppressed their content was
+    incremented and never decremented, and every character after the first
+    `<meta>` was discarded in silence. One real SEC exhibit lost 95% of its
+    text: 72,000 characters became 3,699, with no error raised anywhere.
+
+    Silent truncation is the worst failure a loader can have — everything
+    downstream still works, every check still passes, and the answer is about a
+    document nobody read.
+    """
+    markup = ("<html><head>"
+              '<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">'
+              '<link href="x.css" rel="stylesheet">'
+              "</head><body>"
+              '<p>"Threshold" means with respect to each party: USD 0.</p>'
+              "</body></html>")
+    src = from_html(markup)
+    assert "Threshold" in src.text
+    assert src.spans, "no spans recorded: the skip counter never reset"
+
+
+def test_script_content_is_still_suppressed_after_that_fix():
+    src = from_html("<html><body><script>var x = 'not document text';</script>"
+                    "<p>real text</p></body></html>")
+    assert "not document text" not in src.text and "real text" in src.text
+
+
+def test_a_windows_1252_document_decodes_by_its_declared_charset(tmp_path):
+    """Older filings are routinely cp1252. Decoding those bytes as UTF-8
+    mangles the markup badly enough that the parser gives up early."""
+    p = tmp_path / "old.htm"
+    p.write_bytes(
+        b'<html><head><meta charset="windows-1252"></head><body>'
+        b'<p>Threshold \x93means\x94 zero \x97 per party.</p></body></html>')
+    text = load(p).text
+    assert "Threshold" in text and "zero" in text
+    assert "�" not in text, "decoded with the wrong codec"

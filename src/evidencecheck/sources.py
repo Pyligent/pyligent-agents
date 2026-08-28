@@ -27,8 +27,15 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
-# Elements whose content is not document text.
-_SKIP = {"script", "style", "head", "meta", "link", "noscript"}
+# Elements whose *content* is not document text. Void elements must never
+# appear here: they have no closing tag, so a skip counter incremented on one
+# is never decremented, and every character after it is silently discarded.
+# `meta` and `link` were in this set, which cost one real SEC exhibit 95% of
+# its text — 72,000 characters became 3,699, with no error anywhere.
+_SKIP = {"script", "style", "noscript", "template"}
+# Belt and braces: even if a skip element is left unclosed by malformed markup,
+# these end the region rather than swallowing the document.
+_SKIP_RESET = {"body", "html"}
 # Elements that end a line when flattened.
 _BLOCK = {"p", "div", "br", "tr", "table", "h1", "h2", "h3", "h4", "h5", "h6",
           "li", "ul", "ol", "section", "article", "header", "footer", "hr"}
@@ -129,6 +136,8 @@ class _Flattener(HTMLParser):
         return sum(len(p) for p in self.parts)
 
     def handle_starttag(self, tag: str, attrs) -> None:
+        if tag in _SKIP_RESET:
+            self._skip = 0
         if tag in _SKIP:
             self._skip += 1
             return
@@ -146,6 +155,8 @@ class _Flattener(HTMLParser):
             self.parts.append("\n")
 
     def handle_endtag(self, tag: str) -> None:
+        if tag in _SKIP_RESET:
+            self._skip = 0
         if tag in _SKIP:
             self._skip = max(0, self._skip - 1)
             return
@@ -190,15 +201,54 @@ def from_text(text: str, *, path: str = "") -> Source:
     return Source(text=text, media_type="text/plain", ingested_by="text", path=path)
 
 
-def from_pdf(path: str | Path) -> Source:
+def _quieten_backend() -> None:
+    """Stop the PDF backend writing to our output.
+
+    The report is meant to be diffable and pipeable. A loader that prints
+    pydantic warnings and model-download notices to stdout makes it neither,
+    and the noise is not the caller's problem to filter.
+    """
+    import logging
+    import warnings
+
+    warnings.filterwarnings("ignore", message=r".*protected namespace.*")
+    for name in ("docling", "docling_core", "RapidOCR", "rapidocr", "PIL"):
+        logging.getLogger(name).setLevel(logging.ERROR)
+
+
+def _converter(*, ocr: bool):
+    from docling.document_converter import DocumentConverter  # type: ignore
+
+    if ocr:
+        return DocumentConverter()
+    try:
+        from docling.datamodel.base_models import InputFormat  # type: ignore
+        from docling.datamodel.pipeline_options import PdfPipelineOptions  # type: ignore
+        from docling.document_converter import PdfFormatOption  # type: ignore
+
+        opts = PdfPipelineOptions()
+        opts.do_ocr = False
+        return DocumentConverter(
+            format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=opts)})
+    except ImportError:
+        # A backend whose options moved is still a usable backend.
+        return DocumentConverter()
+
+
+def from_pdf(path: str | Path, *, ocr: bool = False) -> Source:
     """Adapter. Requires an extraction backend; this package ships none.
 
     Deliberate: PDF layout extraction is a large commoditised problem, and the
     people who have solved it emit page and cell references this tool can use
     directly. Competing with them would cost months and lose provenance.
+
+    **OCR is off by default.** Executed agreements are almost always digital
+    PDFs with a text layer, and running OCR over one costs minutes per document
+    on CPU for no gain. Pass `ocr=True` for a scan.
     """
+    _quieten_backend()
     try:
-        from docling.document_converter import DocumentConverter  # type: ignore
+        import docling.document_converter  # noqa: F401  (availability probe)
     except ImportError as exc:
         raise RuntimeError(
             f"Reading {path} needs a PDF backend, which this package does not "
@@ -209,7 +259,7 @@ def from_pdf(path: str | Path) -> Source:
         ) from exc
 
     try:
-        doc = DocumentConverter().convert(str(path)).document
+        doc = _converter(ocr=ocr).convert(str(path)).document
         text = doc.export_to_markdown()
     except Exception as exc:  # noqa: BLE001 — any backend failure, one message
         # A backend traceback is not an error message. Whatever went wrong
@@ -226,6 +276,38 @@ def from_pdf(path: str | Path) -> Source:
                   ingested_by="adapter/docling", path=str(path))
 
 
+_META_CHARSET = re.compile(
+    rb"""charset\s*=\s*["']?\s*([A-Za-z0-9_\-]+)""", re.IGNORECASE)
+
+
+def decode(raw: bytes) -> str:
+    """Decode a document, honouring what it says about itself.
+
+    Older filings are routinely windows-1252, and decoding those bytes as UTF-8
+    does not merely mangle a few characters — it corrupts the markup badly
+    enough that the parser gives up early and returns a fraction of the
+    document, with no error. One real SEC exhibit lost 95% of its text that
+    way: 72,000 characters of a 2016 VM CSA became 3,699.
+
+    Silent truncation is the worst failure a loader can have. Everything
+    downstream still works, the checks still pass, and the answer is about a
+    document nobody read.
+    """
+    declared = _META_CHARSET.search(raw[:4096])
+    candidates = []
+    if declared:
+        candidates.append(declared.group(1).decode("ascii", "ignore"))
+    candidates += ["utf-8", "cp1252", "latin-1"]
+
+    for enc in candidates:
+        try:
+            return raw.decode(enc)
+        except (UnicodeDecodeError, LookupError):
+            continue
+    # latin-1 maps every byte, so this is unreachable in practice.
+    return raw.decode("utf-8", errors="replace")
+
+
 def load(path: str | Path) -> Source:
     """Read a document, choosing the loader by extension."""
     p = Path(path)
@@ -234,6 +316,7 @@ def load(path: str | Path) -> Source:
     suffix = p.suffix.casefold()
     if suffix == ".pdf":
         return from_pdf(p)
+    text = decode(p.read_bytes())
     if suffix in (".html", ".htm", ".xhtml"):
-        return from_html(p.read_text(errors="replace"), path=str(p))
-    return from_text(p.read_text(errors="replace"), path=str(p))
+        return from_html(text, path=str(p))
+    return from_text(text, path=str(p))
