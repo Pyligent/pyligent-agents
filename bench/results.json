@@ -1,0 +1,97 @@
+{
+  "documents": 12,
+  "corpus": [
+    {
+      "name": "a04-12897_1ex10d3",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "b80637exv10w11",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "c12319exv10w8",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "cas_execution993",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "clmt-20231003xex10d3",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "d48314exv10w4",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex1015",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-1211_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ex10-3",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "file009",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "m0325exhibit414",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "r10q-1207102",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    }
+  ],
+  "scores": [
+    {
+      "extractor": "claude-sonnet-5",
+      "documents": 12,
+      "fields": 85,
+      "findings": 1,
+      "evidence_integrity": 0.9882,
+      "by_code": {
+        "FABRICATED_EVIDENCE": 1,
+        "SILENT_REPAIR": 0,
+        "PLACEHOLDER_VALUE": 0,
+        "MISSING_EVIDENCE": 0,
+        "EMPTY_VALUE": 0
+      }
+    },
+    {
+      "extractor": "gemini-2.5-pro",
+      "documents": 6,
+      "fields": 45,
+      "findings": 8,
+      "evidence_integrity": 0.8222,
+      "by_code": {
+        "FABRICATED_EVIDENCE": 8,
+        "SILENT_REPAIR": 0,
+        "PLACEHOLDER_VALUE": 0,
+        "MISSING_EVIDENCE": 0,
+        "EMPTY_VALUE": 0
+      }
+    },
+    {
+      "extractor": "gpt-4o",
+      "documents": 12,
+      "fields": 77,
+      "findings": 14,
+      "evidence_integrity": 0.8182,
+      "by_code": {
+        "FABRICATED_EVIDENCE": 13,
+        "SILENT_REPAIR": 0,
+        "PLACEHOLDER_VALUE": 0,
+        "MISSING_EVIDENCE": 1,
+        "EMPTY_VALUE": 0
+      }
+    }
+  ]
+}

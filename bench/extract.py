@@ -22,6 +22,13 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from _env import load_env  # noqa: E402
+
+# Read .env if there is one, so a key never has to be exported by hand
+# or pasted where it would be recorded.
+load_env(Path(__file__).resolve().parents[1] / ".env")
 
 PROMPT = """\
 Extract the following fields from the document below.

@@ -176,3 +176,47 @@ def test_a_clean_extraction_produces_nothing():
         "threshold": {"value": 0, "quote": q_thr},
     })
     assert r.findings == () and r.ok
+
+
+# --- false positives found on real SEC filings ---------------------------
+
+
+def test_a_clause_pointer_is_not_a_competing_amount():
+    """Found on a real filing. A CSA saying an amount is "specified as such for
+    that party in Paragraph 13" is not stating thirteen of anything, and
+    reporting it as a competing figure invents a discrepancy in a correct
+    extraction."""
+    f = one(0, '"Minimum Transfer Amount" means, with respect to a party, the '
+               'amount specified as such for that party in Paragraph 13.',
+            source='"Minimum Transfer Amount" means, with respect to a party, the '
+                   'amount specified as such for that party in Paragraph 13.')
+    assert f is None
+
+
+def test_a_quote_marked_as_truncated_is_not_a_fabrication():
+    """A model that quotes accurately and marks where it stopped has cited
+    honestly. Punishing that rewards the worse behaviour."""
+    src = ('"Threshold" means with respect to Party A: Infinity; provided that '
+           'for so long as Party A is not above the required ratings and either '
+           'condition applies.')
+    assert one("Infinity",
+               '"Threshold" means with respect to Party A: Infinity; provided '
+               'that for so long as Party A is not above the required ratings...',
+               source=src) is None
+
+
+def test_a_stitched_quote_is_still_a_fabrication():
+    """The finding that survived verification on real filings: a model joining
+    two real fragments produces a sentence that is nowhere in the document.
+    Every word is genuine and the citation is unverifiable, which is exactly
+    what this check is for."""
+    src = "between WELLS FARGO COMMODITIES, LLC (Party A) and MONTANA RENEWABLES, LLC"
+    f = one("Wells Fargo",
+            "WELLS FARGO COMMODITIES, LLC and MONTANA RENEWABLES, LLC", source=src)
+    assert f is not None and f.code == "FABRICATED_EVIDENCE"
+
+
+def test_an_ellipsis_cannot_be_used_to_smuggle_a_short_quote_through():
+    """Trimming only helps when what remains is substantive and real."""
+    f = one("anything", "the...", source="the quick brown fox")
+    assert f is not None and f.code == "FABRICATED_EVIDENCE"

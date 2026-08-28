@@ -31,6 +31,38 @@ def contains(haystack: str, needle: str) -> bool:
     return squash(needle).casefold() in squash(haystack).casefold()
 
 
+_ELLIPSIS = re.compile(r"\s*(?:\.\s*\.\s*\.|…|\[\s*\.\.\.\s*\])\s*$")
+_MIN_TRIMMED = 20
+
+# "in Paragraph 13", "under Section 4.2", "pursuant to clause 5(b)" — pointers,
+# not quantities. Removing them before looking for competing numbers stops a
+# correct extraction being reported as a repair.
+_REFERENCE = re.compile(
+    r"\b(?:paragraph|para|clause|section|annex|appendix|part|exhibit|schedule)"
+    r"\s*\d+(?:\s*[().]\s*[a-z0-9ivx]+\s*\)?)*",
+    re.IGNORECASE)
+
+
+def trimmed_quote(quote: str, source: str) -> str:
+    """Drop a trailing ellipsis when what remains is genuinely in the source.
+
+    A model that quotes accurately and marks where it stopped has cited
+    honestly. Reporting that as fabrication punishes the better behaviour, and
+    a tool that does so is not one people keep running.
+    """
+    trimmed = _ELLIPSIS.sub("", quote)
+    if trimmed is quote or trimmed == quote:
+        return quote
+    if len(trimmed) >= _MIN_TRIMMED and contains(source, trimmed):
+        return trimmed
+    return quote
+
+
+def strip_references(text: str) -> str:
+    """Remove clause pointers so their digits cannot read as amounts."""
+    return _REFERENCE.sub(" ", text)
+
+
 # --- §4.2 numbers ---------------------------------------------------------
 
 _CURRENCY = re.compile(r"[£$€¥₹]|\b(?:USD|GBP|EUR|JPY|CHF|CAD|AUD|CNY|HKD|SGD|INR)\b",

@@ -25,6 +25,8 @@ from .normalize import (
     parse_number,
     proper_nouns,
     squash,
+    strip_references,
+    trimmed_quote,
 )
 from .report import Finding, Report, sha256
 
@@ -42,11 +44,17 @@ def _empty(value: Any) -> bool:
 
 
 def _competing_numbers(value: Any, quote: str) -> list[str]:
-    """Numbers the quote states that are not the extracted one."""
+    """Numbers the quote states that are not the extracted one.
+
+    Clause pointers are excluded. A CSA that says an amount is "specified as
+    such for that party in Paragraph 13" is not stating thirteen of anything,
+    and reporting it as a competing figure is the tool inventing a discrepancy
+    in a correct extraction.
+    """
     target = parse_number(value)
     if target is None:
         return []
-    found = numbers_in(quote)
+    found = numbers_in(strip_references(quote))
     if not found:
         return []                       # §3.3 no number cited: inference, not repair
     if any(abs(n - target) < 1e-9 for n in found):
@@ -101,7 +109,7 @@ def check_field(name: str, value: Any, quote: str, source: str) -> Finding | Non
                        "No evidence was cited for this value.", value, quote)
 
     # §3.2 — the citation is not in the document.
-    if not contains(source, quote):
+    if not contains(source, trimmed_quote(quote, source)):
         return Finding("FABRICATED_EVIDENCE", name,
                        "The cited text does not appear in the document. Whatever "
                        "the value is, nothing here supports it.", value, quote)
