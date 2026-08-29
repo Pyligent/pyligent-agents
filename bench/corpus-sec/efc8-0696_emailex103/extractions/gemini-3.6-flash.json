@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "WACHOVIA BANK, NATIONAL ASSOCIATION",
+      "evidence_quote": "WACHOVIA BANK, NATIONAL ASSOCIATION"
+    },
+    "party_b": {
+      "value": "WACHOVIA AUTO LOAN OWNER TRUST 2008-1",
+      "evidence_quote": "WACHOVIA AUTO LOAN OWNER TRUST 2008-1"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA Agreements Subject to New York Law Only"
+    },
+    "threshold": {
+      "value": "Infinity for Party A (subject to being zero under specified trigger or collateralization conditions); infinity for Party B.",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A: infinity; provided that the Threshold with respect to Party A shall be zero for so long as no Relevant Entity has the First Trigger Required Ratings or a Collateralization Event is occurring"
+    },
+    "minimum_transfer_amount": {
+      "value": "USD $100,000 for Party A (or USD $50,000 if S&P rates the Notes and aggregate Note Balance falls below $50,000,000); USD $100,000 for Party B (or USD $50,000 under the same note balance condition).",
+      "evidence_quote": "USD $100,000"
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to nearest integral multiple of USD $10,000; Return Amount rounded down to nearest integral multiple of USD $10,000.",
+      "evidence_quote": "The\n      Delivery Amount will be rounded up to the nearest integral multiple of USD\n      $10,000.  The Return Amount will be rounded down to the nearest\n      integral multiple of USD $10,000."
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "100%"
+    }
+  }
+}

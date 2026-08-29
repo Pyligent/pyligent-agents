@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "GBP",
+      "evidence_quote": "\"Base Currency\" means GBP."
+    },
+    "eligible_currency": {
+      "value": "GBP, United States Dollars and Euros",
+      "evidence_quote": "\"Eligible Currency\" means the Base Currency and each other currency\n            specified here: United States Dollars and Euros."
+    },
+    "threshold": {
+      "value": "For Party A: infinity, unless rating downgrades occur without compliance with Part 5.2 of the Agreement, then zero; for Party B: infinity.",
+      "evidence_quote": "\"THRESHOLD\" means, for Party A:\n\n            1.    infinity, unless (i) Party A: (a)  ceases to be rated as high\n                  as Moody's Required Ratings I and/or  (b)  ceases to be rated\n                  as  high  as  S&P's  Required  Rating  AND  (ii) it  has  not\n                  otherwise complied with Part 5.2(i)(x)(a), (b)  or (c) and/or\n                  Part  5.2(ii)(a),(b)  and  (d)   of  the Agreement, then  its\n                  Threshold shall be zero, or\n\n            2.    in   the   event  that  Party  A  has  complied   with   Part\n                  5.2(i)(x)(a),(b) or (c) and/or Part 5.2(ii)(a),(b) or (d)  of\n                  the Agreement,  its  Threshold shall continue to be infinity,\n                  unless it (or its successor)  ceases  to  be rated as high as\n                  Moody's  Required  Ratings  II, then its Threshold  shall  be\n                  zero,  until  such  time  as  it  has   complied   with  Part\n                  5.2(y)(a),(b) or (c).\n\n                  \"THRESHOLD\" means, for Party B: infinity"
+    },
+    "minimum_transfer_amount": {
+      "value": "GBP100,000 for Party A and Party B, provided that if an Event of Default or Additional Termination Event occurs with respect to Party A, the Minimum Transfer Amount with respect to Party A shall be zero.",
+      "evidence_quote": "\"MINIMUM TRANSFER AMOUNT\" means, with respect to Party  A and\n                  Party  B,  GBP100,000;  provided,  that  if  (1)  an Event of\n                  Default has occurred and is continuing with respect  to Party\n                  A,  or  (2)  an Additional Termination Event has occurred  in\n                  respect of which Party A is an Affected, the Minimum Transfer\n                  Amount with respect to such party shall be zero."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and Return Amount will be rounded up and down to the nearest integral multiple of GPB10,000 respectively, subject to the maximum Return Amount being equal to the Credit Support Balance.",
+      "evidence_quote": "\"ROUNDING\". The Delivery Amount and the Return Amount will be\n                  rounded up and  down  to  the  nearest  integral  multiple of\n                  GPB10,000 respectively, subject to the maximum Return  Amount\n                  being equal to the Credit Support Balance."
+    },
+    "party_a": {
+      "value": "Barclays Bank PLC",
+      "evidence_quote": "Barclays Bank PLC"
+    },
+    "party_b": {
+      "value": "Gracechurch Card Funding (No. 4) PLC.",
+      "evidence_quote": "Gracechurch Card Funding (No. 4) PLC."
+    },
+    "valuation_percentage": {
+      "value": "100% for cash in an Eligible Currency; 83% to 99% for specified negotiable debt obligations depending on maturity, issuer, and rating.",
+      "evidence_quote": "(A)   cash in an Eligible Currency                            100%"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "CALYON NEW YORK BRANCH",
+      "evidence_quote": "CALYON NEW YORK BRANCH"
+    },
+    "party_b": {
+      "value": "ACCREDITED HOME LENDERS, INC.",
+      "evidence_quote": "ACCREDITED HOME LENDERS, INC."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "Cash, in the form of USD."
+    },
+    "threshold": {
+      "value": "Party A: infinite; Party B: USD 50,000 (provided that if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B, then the Threshold with respect to Party B shall be zero)",
+      "evidence_quote": "\u201cThreshold\u201d means, with respect to Party A, infinite; with respect to Party B shall be USD 50,000; provided that, if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B, then the Threshold with respect to Party B shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 250,000 (shall not apply to the Independent Amount; if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B, then the Minimum Transfer Amount with respect to Party B shall be zero)",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means, with respect to a party, USD 250,000; provided that, notwithstanding anything to the contrary contained herein, the Minimum Transfer Amount shall not apply to the Independent Amount, and provided further that, if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B, then the Minimum Transfer Amount with respect to Party B shall be zero."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount shall be rounded up and down respectively to the nearest integral multiple of USD 1,000.",
+      "evidence_quote": "The Delivery Amount and the Return Amount shall be rounded up and down respectively to the nearest integral multiple of USD 1,000."
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "100%"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "JPMORGAN CHASE BANK, N.A.",
+      "evidence_quote": "JPMORGAN CHASE BANK, N.A."
+    },
+    "party_b": {
+      "value": "CENTEX CORPORATION",
+      "evidence_quote": "CENTEX CORPORATION"
+    },
+    "threshold": {
+      "value": "Not Applicable for Party A; for Party B, initially not applicable, but if long-term senior unsecured debt rating of Party B is less than \"BBB-\" by S&P and less than \"Baa3\" by Moody's, then zero.",
+      "evidence_quote": "\u201cThreshold\u201d, means with respect to Party A: Not\nApplicable."
+    },
+    "minimum_transfer_amount": {
+      "value": "$250,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party B: $250,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of $10,000, respectively.",
+      "evidence_quote": "The Delivery Amount will be rounded up and the\nReturn Amount will be rounded down to the nearest integral multiple of $10,000,\nrespectively."
+    },
+    "governing_law": {
+      "value": "New York UCC",
+      "evidence_quote": "This Credit Support Annex is a Security Agreement under the New York UCC."
+    },
+    "valuation_percentage": {
+      "value": "100% for US-CASH; 99% for US-TBILL; 99%, 98%, 95% for US-TNOTE depending on maturity; 99%, 98%, 95% for US-TBOND depending on maturity.",
+      "evidence_quote": "Percentage shown is the Valuation Percentage applicable to the indicated combination\nof ICAD and Remaining Maturity."
+    }
+  }
+}

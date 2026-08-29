@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "WACHOVIA BANK, NATIONAL ASSOCIATION",
+      "evidence_quote": "WACHOVIA\n      BANK, NATIONAL ASSOCIATION"
+    },
+    "party_b": {
+      "value": "WACHOVIA AUTO OWNER TRUST 2008-A",
+      "evidence_quote": "WACHOVIA\n      AUTO OWNER TRUST 2008-A"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA\nAgreements Subject to New York Law Only"
+    },
+    "threshold": {
+      "value": "Infinity for Party A (provided that Threshold shall be zero if no Relevant Entity has the First Trigger Required Ratings or a Collateralization Event / Ratings Event occurs); infinity for Party B.",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to\n      Party A: infinity; provided that\n      the Threshold with respect to Party A shall be zero for so long as no\n      Relevant Entity has the First Trigger Required Ratings or a\n      Collateralization Event is occurring and (i) no Relevant Entity has had\n      the First Trigger Required Ratings since this Annex was executed, or (ii)\n      at least 30 Local Business Days have elapsed since the last time a\n      Relevant Entity had the First Trigger Required Ratings, or (iii) a\n      Collateralization Event occurred when this Annex was executed, or (iv) at\n      least 10 Local Business Days have elapsed since the last time a\n      Collateralization Event occurred, or (v) a Ratings Event is\n      occurring."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD $100,000 for Party A (reduced to USD $50,000 if S&P is rating the Notes and the aggregate Note Balance falls below $50,000,000).",
+      "evidence_quote": "\u201cMinimum\n      Transfer Amount\u201d\n      means with respect to Party A: USD $100,000; provided, however, that\n      if S&P is rating the Notes and the aggregate Note Balance of the rated\n      Notes falls below $50,000,000, then the Minimum Transfer Amount shall mean\n      USD $50,000."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to the nearest integral multiple of USD $10,000; Return Amount rounded down to the nearest integral multiple of USD $10,000.",
+      "evidence_quote": "Rounding.  The\n      Delivery Amount will be rounded up to the nearest integral multiple of USD\n      $10,000.  The Return Amount will be rounded down to the nearest\n      integral multiple of USD $10,000."
+    },
+    "valuation_percentage": {
+      "value": "As listed in Annex A and Annex B based on the instrument and rating trigger.",
+      "evidence_quote": "The instruments with the Valuation Percentages listed in\n      (a) Annex A shall be applicable with respect to calculating Moody\u2019s First\n      Trigger Credit Support Amount and Moody\u2019s Second Trigger Credit Support\n      Amount, and (b) Annex B shall be applicable with respect to calculating\n      S&P Credit Support Amount."
+    }
+  }
+}

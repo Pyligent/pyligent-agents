@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "eligible_currency": {
+      "value": "U.S. Dollars",
+      "evidence_quote": "Cash: immediately available cash funds that are denominated in U.S. Dollars."
+    },
+    "threshold": {
+      "value": "Party A: zero; Party B: zero",
+      "evidence_quote": "\u201cThreshold\u201d means for Party A: zero; and\n\n \n\n\u201cThreshold\u201d means for Party B: zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "Party A: $100,000; Party B: $100,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A: $100,000; and\n\n \n\n\u201cMinimum Transfer Amount\u201d means with respect to Party B: $100,000,"
+    },
+    "rounding": {
+      "value": "rounded up and down respectively to the nearest integral multiple of $10,000",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up and down \n\n \n\n \n\n \n\n2\n\n \n\n \n\n \n\nrespectively to the nearest integral multiple of $10,000."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA Agreements Subject to New York Law Only"
+    },
+    "party_a": {
+      "value": "WELLS FARGO COMMODITIES, LLC",
+      "evidence_quote": "WELLS FARGO COMMODITIES, LLC (\u201cParty A\u201d)"
+    },
+    "party_b": {
+      "value": "MONTANA RENEWABLES, LLC",
+      "evidence_quote": "MONTANA RENEWABLES, LLC (\u201cParty B\u201d)"
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "100%"
+    }
+  }
+}

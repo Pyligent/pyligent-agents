@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "BARCLAYS BANK PLC",
+      "evidence_quote": "Party A:  BARCLAYS BANK PLC"
+    },
+    "party_b": {
+      "value": "LEGG MASON, INC.",
+      "evidence_quote": "Party B:  LEGG MASON, INC."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA Agreements subject to New York Law Only"
+    },
+    "threshold": {
+      "value": "Party A: infinite; Party B: zero",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A:  infinite \n\n\n\n\n\n\u201cThreshold\u201d means with respect to Party B: zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "$750,000, provided that if an Event of Default or Potential Event of Default occurs, it is zero for that party; and where the Credit Support Amount for both parties is zero and there are no outstanding Transactions, it is zero for both parties.",
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Party A or Party B:  $750,000, but provided that if (i) an Event of Default or a Potential Event of Default has occurred with respect to a party, the Minimum Transfer Amount for such party shall be zero; and (ii) where the Credit Support Amount with respect to both parties on a Valuation Date is zero and there are no outstanding Transactions, the Minimum Transfer Amount with respect to both parties on such day shall be zero."
+    },
+    "rounding": {
+      "value": "rounded up and down to the nearest integral multiple of USD10,000",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up and down, in each case, to the nearest integral multiple of USD10,000, respectively."
+    },
+    "valuation_percentage": {
+      "value": "Cash: 100%; Treasury Securities with remaining term <= 2 years: 99.25%; Treasury Securities > 2 years but <= 5 years: 98.5%; Treasury Securities > 5 years but <= 10 years: 97.25%; Treasury Securities > 10 years: 97%",
+      "evidence_quote": "(A)\n\n\nCash\n\n\n[ X ]\n\n\n   100%\n\n\n\n\n(B)\n\n\nnegotiable debt obligations issued by the U.S. Treasury Department having a remaining term to maturity of not more than 2 years (\u201cTreasury Securities\u201d)\n\n\n[ X ]\n\n\n  99.25%\n\n\n\n\n(C)\n\n\nTreasury Securities having a remaining term to maturity of more than 2 years but not more than 5 years.\n\n\n[ X ]\n\n\n    98.5%\n\n\n\n\n(D)\n\n\nTreasury Securities having a remaining term to maturity of more than 5 years but not more than 10 years\n\n\n[ X ]\n\n\n    97.25%\n\n\n\n\n(E)\n\n\nTreasury Securities having a remaining term to maturity of more than ten years\n\n\n[ X ]\n\n\n    97%"
+    }
+  }
+}

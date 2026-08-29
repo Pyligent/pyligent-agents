@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "MORGAN STANLEY",
+      "evidence_quote": "MORGAN STANLEY"
+    },
+    "party_b": {
+      "value": "TILES TRUST NO. 2006-1",
+      "evidence_quote": "TILES TRUST NO. 2006-1"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "eligible_currency": {
+      "value": "US dollars",
+      "evidence_quote": "\u201cEligible Currency\u201d means US dollars."
+    },
+    "threshold": {
+      "value": "Infinity; provided, however, that the S&P Threshold with respect to Party A shall be zero if an S&P Trigger Event has occurred and is continuing; and, provided, further, that the S&P Threshold shall be infinity at any time that Party A has performed any obligation or taken any action permitted or required by the Agreement (other than pledging Posted Collateral pursuant to this Annex) that would prevent such S&P Trigger Event from becoming an Event of Default or a Termination Event.",
+      "evidence_quote": "\u201cS&P Threshold\u201d means with respect to Party A:  Infinity; provided, however, that the S&P Threshold with respect to Party A shall be zero if an S&P Trigger Event has occurred and is continuing; and, provided, further, that the S&P Threshold shall be infinity at any time that Party A has performed any obligation or taken any action permitted or required by the Agreement (other than pledging Posted Collateral pursuant to this Annex) that would prevent such S&P Trigger Event from becoming an Event of Default or a Termination Event."
+    },
+    "minimum_transfer_amount": {
+      "value": "U.S. $100,000; provided that if Party A's S&P Threshold is infinity, for the Party B Return Amount, the Minimum Transfer Amount is zero.",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d, with respect to a party on any Valuation Date, means U.S. $100,000; provided that if Party A's S&P Threshold is infinity, for the Party B Return Amount, the Minimum Transfer Amount is zero."
+    },
+    "rounding": {
+      "value": "The Delivery Amount, rounded up, and with respect to the Return Amount, rounded down, to the nearest integral multiple of $1,000 respectively.",
+      "evidence_quote": "The Delivery Amount, rounded up, and with respect to the Return Amount, rounded down, to the nearest integral multiple of $1,000 respectively."
+    },
+    "valuation_percentage": {
+      "value": "zero for any asset not identified as Eligible Collateral; 100% for Cash (USD)",
+      "evidence_quote": "Any asset that is not identified herein as being Eligible Collateral will have a Valuation Percentage of zero."
+    }
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "documents": 100,
+  "corpus": [
+    {
+      "name": "16_c__-_Credit_Support_Annex",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "2008csajp-1__1_",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "EX-11.14",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a01927exv4w9",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a04-12897_1ex10d3",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a07-17944_1ex4d11",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a07-17944_1ex4d12",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a07-17944_1ex4d13",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a07-17944_2ex4d10",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a07-17944_2ex4d9",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a2093388zex-10_47",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a2093388zex-10_51",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a2185763zex-10_6b",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a2186769zex-10_41b",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a2187860zex-10_41b",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a2187860zex-10_6b",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a32569exv99w2",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a37441exv99w2",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "a4845871ex101",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "b62669weexv10w1",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "b80637exv10w11",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "b80637exv10w8",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "c12319exv10w8",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "c26685exv10w8",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "c48210exv99w2",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "c48459exv10w9",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "cas_execution993",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "chk060204a_exh993",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "clmt-20231003xex10d3",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "csa_isda-mstagmt",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "d48314exv10w4",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "d48314exv10w5",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "d48314exv10w6",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "d520702",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "d602294",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex1015",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex107",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex121",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex411",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex417",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex419",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex420",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex423",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex426",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex48",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex9949",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "dex996",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-0697_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-1070_exhibit995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-1177_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-1252_exh996",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-1285_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-1487_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-1976_emailex996",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-1987_emailex996",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-2058_jb1987ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-2336_emailex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-2502_ex996",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-2523_emailex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc6-2903_5999350ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-0019_6011520ex994",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-0037_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-0840_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-1207_6154275ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-1211_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-1437_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-1884_ex995",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-1885_ex993",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc7-2680_emailex102",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc8-0696_emailex103",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "efc8-0998_ex103",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ex10-3",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ex10-5",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ex10-7",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ex10-8",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ex10_2",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ex99_8",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ex_865661",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "exh45",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "file009",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "file010",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "file013",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "file11",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "file15",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "isda-credit-support-annex-1-11-dec-2023",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "m0325exhibit414",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "r10q-1207102",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "sp4exh105",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ss134501_ex1001",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "ss134502_ex1001",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "sume_ex10z3",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "tiles8k20051-ex101_1229",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "tiles8k20061-ex101_1229",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "v074692_ex99-12",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "v078324_ex99-4",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "v078378_ex99-8",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "v078505_ex99-9",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "v110696_ex99-5",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "v110696_ex99-8",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    },
+    {
+      "name": "v40177exv99w2",
+      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
+    }
+  ],
+  "scores": [
+    {
+      "extractor": "gemini-3.6-flash",
+      "documents": 100,
+      "fields": 673,
+      "findings": 4,
+      "evidence_integrity": 0.9941,
+      "by_code": {
+        "FABRICATED_EVIDENCE": 3,
+        "SILENT_REPAIR": 0,
+        "PLACEHOLDER_VALUE": 0,
+        "MISSING_EVIDENCE": 0,
+        "EMPTY_VALUE": 1
+      }
+    }
+  ]
+}

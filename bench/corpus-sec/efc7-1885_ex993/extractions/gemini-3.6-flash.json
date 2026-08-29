@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "BEAR STEARNS FINANCIAL PRODUCTS INC.",
+      "evidence_quote": "BEAR STEARNS FINANCIAL PRODUCTS INC."
+    },
+    "party_b": {
+      "value": "COUNTRYWIDE HOME LOANS, INC.",
+      "evidence_quote": "COUNTRYWIDE HOME LOANS, INC."
+    },
+    "threshold": {
+      "value": "With respect to Party A: zero if a Collateral Event has occurred and has been continuing (i) for at least 30 Local Business Days if attributable to Moody's, (ii) for at least 10 Local Business Days if attributable to S&P, or (iii) since execution; otherwise infinity. With respect to Party B: infinity.",
+      "evidence_quote": "\u201cThreshold\u201d means, with respect to Party A and any Valuation Date, zero if a Collateral Event has occurred and has been continuing (i) for at least 30 Local Business Days if such Collateral Event is attributable to credit ratings of Moody\u2019s, (ii) for at least 10 Local Business Days if such Collateral Event is attributable to credit ratings of S&P or (iii) since this Annex was executed; otherwise, infinity."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000 with respect to Party A and Party B; provided, however, that if the aggregate Class Certificate Balance of the Certificates rated by S&P ceases to be more than USD 50,000,000, the \u201cMinimum Transfer Amount\u201d shall be USD 50,000.",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means USD 100,000 with respect to Party A and Party B; provided, however, that if the aggregate Class Certificate Balance of the Certificates rated by S&P ceases to be more than USD 50,000,000, the \u201cMinimum Transfer Amount\u201d shall be USD 50,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up to the nearest integral multiple of USD 10,000. The Return Amount will be rounded down to the nearest integral multiple of USD 1,000.",
+      "evidence_quote": "Rounding: The Delivery Amount will be rounded up to the nearest integral multiple of USD 10,000. The Return Amount will be rounded down to the nearest integral multiple of USD 1,000."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA Credit Support Annex (Bilateral Form - ISDA Agreements Subject to New York Law Only version)"
+    },
+    "valuation_percentage": {
+      "value": "Varies by collateral type and trigger status as specified in Paragraph 13(b)(ii): Cash (100% S&P Approved / 80% S&P Required / 100% Moody's First Trigger / 100% Moody's Second Trigger); U.S. Treasury <1 yr (98.04% / 78.43% / 100% / 100%); U.S. Treasury 1-5 yrs (98.04% / 78.43% / 100% / 97%); U.S. Treasury 5-10 yrs (92.59% / 74.07% / 100% / 94%).",
+      "evidence_quote": "\u201cValuation Percentage\u201d shall mean, for purposes of determining the S&P Approved Ratings Value, the S&P Required Ratings Value, the Moody\u2019s First Trigger Value or the Moody\u2019s Second Trigger Value with respect to any Eligible Collateral or Posted Collateral, the applicable S&P Approved Ratings Valuation Percentage, S&P Required Ratings Valuation Percentage, Moody\u2019s First Trigger Valuation Percentage or Moody\u2019s Second Trigger Valuation Percentage for such Eligible Collateral or Posted Collateral, respectively, in each case as set forth in Paragraph 13(b)(ii)."
+    }
+  }
+}

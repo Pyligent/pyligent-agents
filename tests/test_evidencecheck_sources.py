@@ -164,3 +164,39 @@ def test_a_windows_1252_document_decodes_by_its_declared_charset(tmp_path):
     text = load(p).text
     assert "Threshold" in text and "zero" in text
     assert "�" not in text, "decoded with the wrong codec"
+
+
+def test_invisible_characters_do_not_make_a_real_quote_look_invented():
+    """A zero-width space between two words must not read as fabrication.
+
+    Found against a real SEC exhibit (clmt-20231003xex10d3), whose filer's editor
+    left U+200B between block elements. Three correctly-transcribed quotes were
+    reported as FABRICATED_EVIDENCE — the checker accusing correct work, which is
+    the most damaging error this tool can make. `\\s` does not match U+200B: it is
+    category Cf, not whitespace.
+    """
+    from evidencecheck.sources import find_flexible
+
+    source = "Threshold for Party A: zero; and\n\n​\n\nThreshold for Party B: zero."
+    quote = "Threshold for Party A: zero; and Threshold for Party B: zero."
+    assert find_flexible(source, quote) >= 0
+
+    for ch in ("­", "‌", "‍", "⁠", "﻿"):
+        assert find_flexible(f"alpha{ch} beta", "alpha beta") >= 0, ch
+
+
+def test_invisible_tolerance_does_not_admit_invented_text():
+    """The fix must not turn the check into a rubber stamp."""
+    from evidencecheck.sources import find_flexible
+
+    source = "​\"Eligible Currency\" means each currency specified in Paragraph 13."
+    assert find_flexible(source, "means the Base Currency and each other currency") < 0
+
+
+def test_offsets_still_index_the_original_text():
+    """Stripping invisibles up front would shift every offset; locate() needs real ones."""
+    from evidencecheck.sources import find_flexible
+
+    source = "​​padding here THE TARGET"
+    at = find_flexible(source, "THE TARGET")
+    assert source[at:at + 10] == "THE TARGET"

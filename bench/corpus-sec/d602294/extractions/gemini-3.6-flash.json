@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "Deutsche Bank AG",
+      "evidence_quote": "Deutsche\n      Bank AG (hereinafter referred to as \u201cParty\n      A\u201d\n      or\n\u201cPledgor\u201d)"
+    },
+    "party_b": {
+      "value": "The Bank of New York, not in its individual or corporate capacity, but solely as Swap Contract Administrator for CWABS, Inc., Asset-Backed Certificates, Series 2006-BC5 pursuant to a Swap Contract Administration Agreement",
+      "evidence_quote": "The\n      Bank\n      of New York, not in its individual or corporate capacity, but solely as Swap\n      Contract Administrator for CWABS, Inc., Asset-Backed Certificates, Series\n      2006-BC5 pursuant to a Swap Contract Administration Agreement \n\n    (hereinafter\n      referred to as \u201cParty\n      B\u201d\n      or\n\u201cSecured\n      Party\u201d)."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "(for\n      the avoidance of doubt, all Eligible Collateral to be denominated in\n      USD)"
+    },
+    "threshold": {
+      "value": "With respect to Party A: zero if (i) a Collateral Event has occurred and has been continuing (x) for at least 30 days or (y) since this Annex was executed, or (ii) a S&P Required Ratings Downgrade Event has occurred and is continuing; otherwise, infinity. With respect to Party B: infinity.",
+      "evidence_quote": "\u201cThreshold\u201d\n                means, with respect to Party A and any Valuation Date, zero if (i)\n                a\n                Collateral Event has occurred and has been continuing (x) for at\n                least 30\n                days or (y) since this Annex was executed, or (ii) a S&P Required\n                Ratings Downgrade Event has occurred and is continuing; otherwise,\n                infinity.\n\n              \n\n                \n\u00a0\n\n                \n\u00a0\u00a0\u201cThreshold\u201d\n                  means, with respect to Party B and any Valuation Date,\n                  infinity."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000 with respect to Party A and Party B; provided, however, that if the aggregate Certificate Principal Balance and note principal balance of Certificates and Notes rated by S&P ceases to be more than USD 50,000,000, the \u201cMinimum Transfer Amount\u201d shall be USD 50,000.",
+      "evidence_quote": "\u201cMinimum\n                Transfer Amount\u201d means\n                USD 100,000 with respect to Party A and Party B; provided, however,\n                that\n                if the aggregate Certificate Principal Balance and note principal\n                balance\n                of Certificates and Notes rated by S&P ceases to be more than USD\n                50,000,000, the \u201cMinimum\n                Transfer Amount\u201d\n                shall be USD 50,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up to the nearest integral multiple of USD 10,000. The Return Amount will be rounded down to the nearest integral multiple of USD 1,000.",
+      "evidence_quote": "Rounding:\n                The Delivery Amount will be rounded up to the nearest integral multiple\n                of\n                USD 10,000. The Return Amount will be rounded down to the nearest\n                integral\n                multiple of USD 1,000."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA\n                Credit\n                Support Annex (Bilateral Form - ISDA Agreements Subject to New York\n                Law\n                Only version)"
+    },
+    "valuation_percentage": {
+      "value": "The applicable S&P Valuation Percentage, Moody\u2019s First Trigger Valuation Percentage, or Moody\u2019s Second Trigger Valuation Percentage as set forth in Paragraph 13(b)(ii) (Cash: 100%; Fixed-rate debt obligations: 83.9% to 100% depending on maturity and rating agency).",
+      "evidence_quote": "\u201cValuation\n      Percentage\u201d\n      shall\n      mean, for purposes of determining the S&P Value, Moody\u2019s First Trigger\n      Value, or Moody\u2019s Second Trigger Value with respect to any Eligible Collateral\n      or Posted Collateral, the applicable S&P Valuation Percentage, Moody\u2019s First\n      Trigger Valuation Percentage, or Moody\u2019s Second Trigger Valuation Percentage for\n      such Eligible Collateral or Posted Collateral, respectively, in each case as\n      set\n      forth in Paragraph 13(b)(ii)."
+    }
+  }
+}

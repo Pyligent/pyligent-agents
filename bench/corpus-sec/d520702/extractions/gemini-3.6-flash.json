@@ -1,0 +1,49 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "LEHMAN BROTHERS SPECIAL FINANCING INC.",
+      "evidence_quote": "LEHMAN BROTHERS SPECIAL FINANCING INC."
+    },
+    "party_b": {
+      "value": "THE BANK OF NEW YORK, not in its individual or corporate capacity but solely as Swap Contract Administrator for CWABS Asset-Backed Certificates Trust 2006-BC2, Asset-Backed Certificates, Series 2006-BC2, pursuant to a Swap Contract Administration Agreement",
+      "evidence_quote": "THE BANK OF NEW YORK, not in its individual or corporate capacity but solely as Swap Contract Administrator for CWABS Asset-Backed Certificates Trust 2006-BC2, Asset-Backed Certificates, Series 2006-BC2, pursuant to a Swap Contract Administration Agreement"
+    },
+    "threshold": {
+      "value": "zero at any time that (1) Party A (or to the extent applicable, its Credit Support Provider) does not have the required ratings set forth in Part 1(h)(A) of the Schedule from Standard & Poor\u2019s and has failed to transfer its rights and obligations under this Agreement within 30 days of its downgrade or (2) Party A (or to the extent applicable, its Credit Support Provider) does not have the required ratings from Moody\u2019s; otherwise the Threshold shall be unlimited.",
+      "evidence_quote": "\u201cThreshold\u201d means, with respect to Party A, zero at any time that (1) Party A (or to the extent applicable, its Credit Support Provider) does not have the required ratings set forth in Part 1(h)(A) of the Schedule from Standard & Poor\u2019s and has failed to transfer its rights and obligations under this Agreement within 30 days of its downgrade or (2) Party A (or to the extent applicable, its Credit Support Provider) does not have the required ratings from Moody\u2019s; otherwise the Threshold shall be unlimited."
+    },
+    "minimum_transfer_amount": {
+      "value": "$100,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means, with respect to a party, $100,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will be rounded up and down respectively to the nearest integral multiple of $1,000.",
+      "evidence_quote": "\u201cRounding\u201d. The Delivery Amount and the Return Amount will be rounded up and down respectively to the nearest integral multiple of $1,000."
+    },
+    "valuation_percentage": {
+      "value": [
+        {
+          "collateral_type": "cash",
+          "valuation_percentage": "100.0%"
+        },
+        {
+          "collateral_type": "Negotiable debt obligations issued by the U.S. Treasury Department having a maturity at issuance of not more than one year.",
+          "valuation_percentage": "98.5%"
+        },
+        {
+          "collateral_type": "Negotiable debt obligations issued by the U.S. Treasury Department having a maturity at issuance of more than one year but not more than ten years.",
+          "valuation_percentage": "89.9%"
+        },
+        {
+          "collateral_type": "Negotiable debt obligations issued by the U.S. Treasury Department having a maturity at issuance of more than ten years.",
+          "valuation_percentage": "83.9%"
+        },
+        {
+          "collateral_type": "demand and time deposits in, certificates of deposit of, bankers\u2019 acceptances payable within 183 days of issuance issued by, or federal funds sold by any U.S. federal or state depository institution or trust company, the commercial paper and/or debt obligations of which (or, in the case of the principal depository institution in a holding company system, the commercial paper or debt obligations of such holding company) at the time of such investment or contractual commitment providing for such investment have a long-term credit rating of \u201cAaa\u201d by Moody\u2019s and \u201cAAA\u201d by Standard & Poor\u2019s, in the case of long-term debt obligations, or \u201cPrime-1\u201d by Moody\u2019s and \u201cA-1+\u201d by Standard & Poor\u2019s, in the case of commercial paper and short-term obligations; provided, that in the case of commercial paper and short-term debt obligations with a maturity of longer than 91 days, the issuer thereof must also have at the time of such investment a long-term credit rating of \u201cAaa\u201d by Moody\u2019s and \u201cAAA\u201d by Standard & Poor\u2019s.",
+          "valuation_percentage": "98.0%"
+        }
+      ],
+      "evidence_quote": "(A) cash. 100.0% (B) Negotiable debt obligations issued by the U.S. Treasury Department having a maturity at issuance of not more than one year. 98.5% (C) Negotiable debt obligations issued by the U.S. Treasury Department having a maturity at issuance of more than one year but not more than ten years. 89.9% (D) Negotiable debt obligations issued by the U.S. Treasury Department having a maturity at issuance of more than ten years. 83.9% (E) demand and time deposits in, certificates of deposit of, bankers\u2019 acceptances payable within 183 days of issuance issued by, or federal funds sold by any U.S. federal or state depository institution or trust company, the commercial paper and/or debt obligations of which (or, in the case of the principal depository institution in a holding company system, the commercial paper or debt obligations of such holding company) at the time of such investment or contractual commitment providing for such investment have a long-term credit rating of \u201cAaa\u201d by Moody\u2019s and \u201cAAA\u201d by Standard & Poor\u2019s, in the case of long-term debt obligations, or \u201cPrime-1\u201d by Moody\u2019s and \u201cA-1+\u201d by Standard & Poor\u2019s, in the case of commercial paper and short-term obligations; provided, that in the case of commercial paper and short-term debt obligations with a maturity of longer than 91 days, the issuer thereof must also have at the time of such investment a long-term credit rating of \u201cAaa\u201d by Moody\u2019s and \u201cAAA\u201d by Standard & Poor\u2019s. 98.0%"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "Cash USD"
+    },
+    "threshold": {
+      "value": "zero",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party B: zero;"
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party B: USD 100,000 at any time subject to the following: (1) the Minimum Transfer Amount for Party B shall be zero upon the occurrence and during the continuance of an Event of Default, Potential Event of Default, Termination Event with respect to Party B, and (2) if the Credit Support Amount of a party is, or is deemed to be zero and, but for its Minimum Transfer Amount the other party would be required to make a transfer to the first party under Paragraph 3(b) the Minimum Transfer Amount for that other party is zero."
+    },
+    "rounding": {
+      "value": "USD 100,000",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up and down respectively to the nearest integral multiple of USD 100,000."
+    },
+    "party_a": {
+      "value": "NATIONAL BANK OF CANADA",
+      "evidence_quote": "NATIONAL BANK OF CANADA (\u201cParty A\u201d)."
+    },
+    "party_b": {
+      "value": "PAN ATLANTIC BANK AND TRUST LIMITED",
+      "evidence_quote": "PAN ATLANTIC BANK AND TRUST LIMITED (\u201cParty B\u201d)"
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "100%"
+    }
+  }
+}

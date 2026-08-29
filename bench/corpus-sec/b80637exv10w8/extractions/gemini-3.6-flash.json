@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "WRIGHT EXPRESS CORPORATION",
+      "evidence_quote": "WRIGHT EXPRESS CORPORATION"
+    },
+    "party_b": {
+      "value": "BARCLAYS BANK PLC",
+      "evidence_quote": "BARCLAYS BANK PLC"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements subject to New York Law Only)"
+    },
+    "threshold": {
+      "value": "USD 10,000,000 for Party A (subject to conditions); USD 35,000,000 for Party B (subject to conditions)",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A: USD 10million;\nprovided that if (1)\u00a0the obligations under Party A\u2019s revolving credit\nfacility become secured; or (2)\u00a0an Event of Default has occurred or is\ncontinuing with respect to Party A, then the Threshold shall be zero.\n\n\n\n\n    \u00a0\n    \u00a0\n    \u00a0\n    \u201cThreshold\u201d means with respect to Party B: USD 35million; provided that, if\nan Event of Default has occurred and is continuing with respect to Party B,\nthen the Threshold shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000 for Party A or Party B (subject to conditions)",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A or\nParty B: USD100,000, but provided that if: (i)\u00a0an Event of Default or a\nPotential Event of Default has occurred with respect to a party, the Minimum\nTransfer Amount for such party shall be zero; and (ii)\u00a0where the Credit\nSupport Amount with respect to both parties on a Valuation Date is zero for\nthe purposes of calculating a Return Amount, the Minimum Transfer Amount, as\napplicable, shall be zero and Rounding shall not apply."
+    },
+    "rounding": {
+      "value": "Rounded up and down to the nearest integral multiple of USD 10,000",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be\nrounded up and down, in each case, to the nearest integral multiple of\nUSD10,000, respectively."
+    },
+    "valuation_percentage": {
+      "value": "100.0%",
+      "evidence_quote": "100.0"
+    }
+  }
+}

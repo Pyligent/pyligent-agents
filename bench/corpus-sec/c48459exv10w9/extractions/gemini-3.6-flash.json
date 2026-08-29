@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA Agreements Subject to New York Law Only"
+    },
+    "minimum_transfer_amount": {
+      "value": "$50,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party B, $50,000."
+    },
+    "party_a": {
+      "value": "HSBC Bank USA, N.A.",
+      "evidence_quote": "HSBC Bank USA, N.A. (\u201cParty A\u201d)"
+    },
+    "party_b": {
+      "value": "Volkswagen Auto Loan Enhanced Trust 2008-2",
+      "evidence_quote": "Volkswagen Auto Loan Enhanced Trust 2008-2 (\u201cParty B\u201d)"
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of $10,000.00, respectively.",
+      "evidence_quote": "Rounding. The Delivery Amount will be rounded up and the\nReturn Amount will be rounded down to the nearest integral multiple of\n$10,000.00, respectively."
+    },
+    "threshold": {
+      "value": "Party B: Not Applicable",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party B: Not Applicable."
+    },
+    "valuation_percentage": {
+      "value": "The Valuation Percentage shall equal the percentage specified under such Rating Agency\u2019s name above. If Party A is rated by more than one Rating Agency specified above, the Valuation Percentage shall equal the lowest of the applicable percentages specified above.",
+      "evidence_quote": "The Valuation Percentage shall equal the percentage specified under such Rating Agency\u2019s name\nabove. If Party A is rated by more than one Rating Agency specified above, the Valuation\nPercentage shall equal the lowest of the applicable percentages specified above."
+    }
+  }
+}

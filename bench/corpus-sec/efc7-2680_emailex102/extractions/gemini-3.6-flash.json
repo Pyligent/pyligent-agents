@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "Deutsche Bank AG, New York Branch",
+      "evidence_quote": "Deutsche Bank AG, New York Branch (hereinafter referred to as \"Party A\" or\n                                   \"Pledgor\")"
+    },
+    "party_b": {
+      "value": "Deutsche Bank National Trust Company, not in its individual or corporate capacity but solely as Supplemental Interest Trustee on behalf of the Supplemental Interest Trust in respect of IndyMac INDA Mortgage Loan Trust 2007-AR8",
+      "evidence_quote": "Deutsche Bank National Trust Company, not in its individual or corporate\n      capacity but solely as Supplemental Interest Trustee on behalf of the\n   Supplemental Interest Trust in respect of IndyMac INDA Mortgage Loan Trust\n                                    2007-AR8\n           (hereinafter referred to as \"Party B\" or \"Secured Party\")."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "(for the avoidance of doubt, all Eligible Collateral to be denominated in USD)"
+    },
+    "threshold": {
+      "value": "Party A: S&P Threshold is zero if an S&P Approved Ratings Downgrade Event has occurred and is continuing (for at least 10 Local Business Days or since execution), otherwise infinity; Fitch Threshold is zero if a Fitch First Trigger Downgrade Event has occurred and is continuing (for at least 30 calendar days or since execution), otherwise infinity. Party B: Infinity.",
+      "evidence_quote": "\"S&P  Threshold\"  means,  with respect to Party A and any  Valuation\n            Date, if an S&P Approved Ratings Downgrade Event has occurred and is\n            continuing and such S&P Approved  Ratings  Downgrade  Event has been\n            continuing  (i) for at least 10 Local  Business  Days or (ii)  since\n            this Annex was executed, zero; otherwise, infinity.\n\n            \"Fitch  Threshold\"  means, with respect to Party A and any Valuation\n            Date, if a Fitch First Trigger  Downgrade  Event has occurred and is\n            continuing  and such Fitch First  Trigger  Downgrade  Event has been\n            continuing  (i) for at least 30  calendar  days or (ii)  since  this\n            Annex was executed, zero; otherwise, infinity.\n\n            \"Threshold\"  means,  with respect to Party B and any Valuation Date,\n            infinity."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 25,000",
+      "evidence_quote": "\"Minimum  Transfer  Amount\" means USD 25,000 with respect to Party A\n            and Party B."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to the nearest integral multiple of USD 10,000; Return Amount rounded down to the nearest integral multiple of USD 10,000.",
+      "evidence_quote": "Rounding:  The  Delivery  Amount  will be rounded up to the  nearest\n            integral  multiple of USD 10,000.  The Return Amount will be rounded\n            down to the nearest integral multiple of USD 10,000."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA Credit Support Annex (Bilateral Form - ISDA\n            Agreements  Subject to New York Law Only  version)"
+    },
+    "valuation_percentage": {
+      "value": "Cash: S&P Approved Ratings 100%, S&P Required Ratings 80%, Fitch 100%; Fixed-rate negotiable debt obligations issued by U.S. Treasury (maturity <= 1 year): S&P Approved Ratings 98.0%, S&P Required Ratings 78.4%, Fitch 99.5%; Fixed-rate negotiable debt obligations issued by U.S. Treasury (maturity > 1 year but <= 10 years): S&P Approved Ratings 92.6%, S&P Required Ratings 74.1%, Fitch 93.9%; Fixed-rate negotiable debt obligations issued by U.S. Treasury (maturity > 10 years but <= 15 years): S&P Approved Ratings 84.6%, S&P Required Ratings 67.7%, Fitch 92.7%.",
+      "evidence_quote": "                      S&P Approved    S&P Required\n                         Ratings         Ratings           Fitch\n                        Valuation       Valuation        Valuation\n     Collateral        Percentage      Percentage       Percentage\n     ----------        ----------      ----------       ----------\n(A) Cash                  100%             80%             100%\n\n(B) Fixed-rate\n    negotiable debt       98.0%           78.4%            99.5%\n    obligations\n    issued by the\n    U.S. Treasury\n    Department\n    having a\n    remaining\n    maturity on\n    such date of\n    not more than\n    one year\n\n(C) Fixed-rate\n    negotiable debt\n    obligations\n    issued by the\n    U.S. Treasury\n    Department\n    having a\n    remaining             92.6%           74.1%            93.9%\n    maturity on\n    such date of\n    more than one\n    year but not\n    more than ten\n    years\n\n(D) Fixed-rate\n    negotiable debt\n    obligations\n    issued by the\n    U.S. Treasury\n    Department\n    having a\n    remaining             84.6%           67.7%            92.7%\n    maturity on\n    such date of\n    more than ten\n    years but not\n    more than 15\n    years"
+    }
+  }
+}

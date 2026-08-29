@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "BANK OF AMERICA, N.A.",
+      "evidence_quote": "BANK OF AMERICA, N.A."
+    },
+    "party_b": {
+      "value": "CENTEX CORPORATION",
+      "evidence_quote": "CENTEX CORPORATION"
+    },
+    "threshold": {
+      "value": "Party A: Not Applicable; Party B: Initially, not applicable; provided, however, if the long-term senior unsecured debt rating of Party B is less than \u201cBBB-\u201d by S&P and less than \u201cBaa3\u201d by Moody\u2019s, then the Threshold shall be zero.",
+      "evidence_quote": "\u201cThreshold\u201d, means with respect to Party A: Not Applicable.\n\n    \u00a0\n\n\n\n\n\n    \u00a0\n    \u00a0\n    \u00a0\n    \u201cThreshold\u201d, means with respect to Party B: Initially, not applicable;\nprovided, however, if the long-term senior unsecured debt rating of Party B\nis less than \u201cBBB-\u201d by S&P and less than \u201cBaa3\u201d by Moody\u2019s, then the\nThreshold shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "$250,000 for Party A; $250,000 for Party B",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A:\n$250,000.\n\n\n\n\n\n    \u00a0\n\n\n\n    \u00a0\n    \u00a0\n    \u00a0\n    \u201cMinimum Transfer Amount\u201d means with respect to Party B: $250,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of $10,000, respectively.",
+      "evidence_quote": "Rounding. The Delivery Amount will be rounded up and the\nReturn Amount will be rounded down to the nearest integral multiple of $10,000,\nrespectively."
+    },
+    "valuation_percentage": {
+      "value": "US-CASH: 100%; US-TBILL: 99%; US-TNOTE: 99% (under 1 year), 98% (1 to 5 years), 95% (5 to 10 years); US-TBOND: 99% (under 1 year), 98% (1 to 5 years), 95% (5 to 10 years), 95% (more than 10 years)",
+      "evidence_quote": "Percentage shown is the Valuation Percentage applicable to the indicated combination\nof ICAD and Remaining Maturity."
+    }
+  }
+}

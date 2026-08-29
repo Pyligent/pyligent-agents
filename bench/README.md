@@ -170,6 +170,50 @@ PYLIGENT_LIVE_MODEL=1 pytest -m live -s
 
 ---
 
+## First run on the 100-document corpus
+
+`gemini-3.6-flash`, 100 documents, 673 fields, no failures.
+
+| | |
+|---|---|
+| evidence integrity | **99.4%** |
+| fabricated | 3 |
+| silent repair | 0 |
+| placeholder | 0 |
+| empty value | 1 |
+
+The first run reported **six** fabrications. Three were the checker's fault, and
+finding that out was worth more than the run.
+
+One exhibit's filer left **U+200B zero-width spaces** between block elements. Python's
+`\s` does not match U+200B — it is category Cf, not whitespace — so three quotes that
+transcribed exactly what a reader sees were reported as invented. A tool whose entire
+value is being trusted when it says "this citation is not real" cannot afford to
+accuse correct work; that is worse than missing a fabrication, because it teaches
+people to ignore the output. `normalize.squash` now removes invisible characters, with
+regression tests covering both directions — the real quote passes, invented text is
+still refused, and offsets still index the original document so `Source.locate`
+keeps resolving real positions.
+
+The three that survived are real, and they are not all the same thing:
+
+- **`2008csajp` / `eligible_currency`** — a genuine fabrication. The model cited
+  *"means the Base Currency and each other currency specified here"*. The document
+  says *"means each currency specified as such in Paragraph 13"*. Plausible,
+  ISDA-shaped, and absent.
+- **`efc6-1070` / `threshold`** and **`efc7-2680` / `valuation_percentage`** — quotes
+  stitched across a page break, joining real fragments over intervening page furniture
+  (`13`, `<PAGE>`, `REFERENCE NUMBER: N727633N`). Every word is in the document; the
+  sentence is not.
+
+The check is right to flag all three — a citation that is not verbatim cannot be
+verified by the person relying on it. But an invented definition and a quote stitched
+over a page number are different failures with different remedies, and the report
+currently gives them one code. Splitting them is worth doing before anyone triages a
+large run.
+
+---
+
 ## Adding a document
 
 ```

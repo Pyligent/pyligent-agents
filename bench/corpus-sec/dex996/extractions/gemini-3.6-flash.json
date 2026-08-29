@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000 with respect to Party A and Party B; provided, however, that if the Outstanding Amount of the Notes rated by S&P is less than USD 50,000,000, the \u201cMinimum Transfer Amount\u201d shall be reduced to USD 50,000.",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means USD 100,000 with respect to Party A and Party B; provided, however, that if the Outstanding Amount of the Notes rated by S&P is less than USD 50,000,000, the \u201cMinimum Transfer Amount\u201d shall be reduced to USD 50,000."
+    },
+    "party_a": {
+      "value": "DEUTSCHE BANK AG, NEW YORK BRANCH",
+      "evidence_quote": "DEUTSCHE BANK AG, NEW YORK\n \nBRANCH"
+    },
+    "party_b": {
+      "value": "WORLD OMNI AUTO RECEIVABLES TRUST 2008-B",
+      "evidence_quote": "WORLD OMNI AUTO RECEIVABLES\n \nTRUST 2008-B"
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of USD 10,000, respectively.",
+      "evidence_quote": "Rounding: The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of USD 10,000, respectively."
+    },
+    "threshold": {
+      "value": "For Party A: zero if a Collateral Event has occurred and has been continuing (i) for at least 30 Local Business Days if such Collateral Event is attributable to credit ratings of Moody\u2019s, (ii) for at least 10 Local Business Days if such Collateral Event is attributable to credit ratings of S&P or (iii) since this Annex was executed; otherwise, infinity. For Party B: infinity.",
+      "evidence_quote": "\u201cThreshold\u201d means, with respect to Party A and any Valuation Date, zero if a Collateral Event has occurred and has been continuing (i) for at least 30 Local Business Days if such Collateral Event is attributable to credit ratings of Moody\u2019s, (ii) for at least 10 Local Business Days if such Collateral Event is attributable to credit ratings of S&P or (iii) since this Annex was executed; otherwise, infinity."
+    },
+    "valuation_percentage": {
+      "value": "The applicable S&P First Trigger Valuation Percentage, S&P Second Trigger Valuation Percentage, Moody\u2019s First Trigger Valuation Percentage or Moody\u2019s Second Trigger Valuation Percentage for such Eligible Collateral or Posted Collateral, respectively, in each case as set forth in Annexes A and B hereto, as applicable.",
+      "evidence_quote": "\u201cValuation Percentage\u201d shall mean, for purposes of determining the S&P First Trigger Value, the S&P Second Trigger Value, the Moody\u2019s First Trigger Value or the Moody\u2019s Second Trigger Value with respect to any Eligible Collateral or Posted Collateral, the applicable S&P First Trigger Valuation Percentage, S&P Second Trigger Valuation Percentage, Moody\u2019s First Trigger Valuation Percentage or Moody\u2019s Second Trigger Valuation Percentage for such Eligible Collateral or Posted Collateral, respectively, in each case as set forth in Annexes A and B hereto, as applicable."
+    }
+  }
+}

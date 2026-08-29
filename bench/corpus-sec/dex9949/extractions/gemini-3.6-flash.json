@@ -1,0 +1,16 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "English law",
+      "evidence_quote": "ISDA Agreements Subject to English Law"
+    },
+    "party_a": {
+      "value": "CALYON",
+      "evidence_quote": "CALYON"
+    },
+    "party_b": {
+      "value": "SEMILION ENTERPRISES INC.",
+      "evidence_quote": "SEMILION ENTERPRISES INC."
+    }
+  }
+}

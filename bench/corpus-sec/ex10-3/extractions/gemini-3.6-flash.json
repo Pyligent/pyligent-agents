@@ -1,0 +1,40 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "USD",
+      "evidence_quote": "USD shall be the Base and Termination Currency."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "Cash denominated\n    in United States Dollars (\u201cUSD\u201d)"
+    },
+    "threshold": {
+      "value": "USD 0 (zero) for Party A; USD 0 (zero) for Party B",
+      "evidence_quote": "\u201cThreshold\u201d\n    means with respect to Party A: USD 0 (zero).\n\n\n\n\n\n\n\n\n\n\u201cThreshold\u201d\nmeans with respect to Party B: USD 0 (zero)."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000 for Party A; USD 100,000 for Party B",
+      "evidence_quote": "\u201cMinimum\n    Transfer Amount\u201d means with respect to Party A: USD 100,000; and\n\n\n\n\n\n\n\n\n\n\u201cMinimum\nTransfer Amount\u201d means with respect to Party B: USD 100,000"
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up and Return Amount rounded down to the nearest multiple of USD 10,000",
+      "evidence_quote": "\u201cRounding\u201d\n    means the Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest multiple of USD 10,000."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA\n    Agreements Subject to New York Law Only"
+    },
+    "party_a": {
+      "value": "FalconX Bravo, Inc.",
+      "evidence_quote": "FalconX\n    Bravo, Inc."
+    },
+    "party_b": {
+      "value": "Pineapple Financial Inc.",
+      "evidence_quote": "Pineapple\n    Financial Inc."
+    },
+    "valuation_percentage": {
+      "value": "100% for Cash USD; 99% for Securities; 100% for USDC; 83.33% for BTC; 83.33% for ETH; 70% for SOL",
+      "evidence_quote": "Cash denominated\n    in United States Dollars (\u201cUSD\u201d)\u00a0\n    \u00a0100%"
+    }
+  }
+}

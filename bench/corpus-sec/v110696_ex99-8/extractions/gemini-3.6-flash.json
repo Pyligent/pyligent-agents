@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "LEHMAN BROTHERS SPECIAL FINANCING INC.",
+      "evidence_quote": "LEHMAN BROTHERS SPECIAL FINANCING INC."
+    },
+    "party_b": {
+      "value": "WELLS FARGO BANK, N.A., NOT IN ITS INDIVIDUAL CAPACITY BUT SOLELY AS TRUSTEE OF THE SUPPLEMENTAL INTEREST TRUST FOR STRUCTURED ADJUSTABLE RATE MORTGAGE LOAN TRUST MORTGAGE PASS-THROUGH CERTIFICATES, SERIES 2008-1",
+      "evidence_quote": "WELLS FARGO BANK, N.A., NOT IN ITS INDIVIDUAL CAPACITY BUT SOLELY AS TRUSTEE OF THE SUPPLEMENTAL INTEREST TRUST FOR STRUCTURED ADJUSTABLE RATE MORTGAGE LOAN TRUST MORTGAGE PASS-THROUGH CERTIFICATES, SERIES 2008-1"
+    },
+    "threshold": {
+      "value": "Infinity for Party A, provided that if a Collateralization Event or a Ratings Event has occurred and is continuing, the Threshold shall be zero (subject to specified exceptions).",
+      "evidence_quote": "\u201cThreshold\u201d means, with respect to Party A, infinity, provided that if a Collateralization Event or a Ratings Event has occurred and is continuing, the Threshold with respect to Party A shall be zero, except that the Threshold in respect of Party A shall be infinity so long as"
+    },
+    "minimum_transfer_amount": {
+      "value": "$100,000 with respect to a party; provided that if the aggregate Principal Balance of the Certificates rated by S&P ceases to be more than $50,000,000, it shall mean $50,000.",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d\u00a0means, with respect to a party, $100,000; provided, however, that if the aggregate Principal Balance of the Certificates rated by S&P ceases to be more than $50,000,000, then the Minimum Transfer Amount shall mean $50,000."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to the nearest integral multiple of $1,000; Return Amount rounded down to the nearest integral multiple of $1,000.",
+      "evidence_quote": "\u201cRounding\u201d. The Delivery Amount will be rounded up to the nearest integral multiple of $1,000 and the Return Amount will be rounded down to the nearest integral multiple of $1,000."
+    },
+    "valuation_percentage": {
+      "value": "Cash: 100% (S&P Collateralization Event), 80% (S&P Ratings Event), 100% (Moody's First Trigger), 100% (Moody's Second Trigger); U.S. Treasury obligations <= 1 year: 98%, 78.44%, 100%, 100%; U.S. Treasury obligations 1-5 years: 98%, 78.44%, 100%, 94%; U.S. Treasury obligations 5-10 years: 92.60%, 74.1%, 100%, 94%; U.S. Treasury obligations > 10 years: 88.6%, 70.9%, 100%, 87%.",
+      "evidence_quote": "(A)\n              \n              \n                Cash.\n\n              \n              \u00a0\n              \n                100%\n\n              \n              \u00a0\n              \n                80%\n\n              \n              \u00a0\n              \n                100%\n\n              \n              \u00a0\n              \n                100%"
+    }
+  }
+}

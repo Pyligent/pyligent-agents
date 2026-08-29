@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "BARCLAYS BANK PLC",
+      "evidence_quote": "BARCLAYS BANK PLC"
+    },
+    "party_b": {
+      "value": "THE BANK OF NEW YORK, not in its individual or corporate capacity but solely as Swap Contract Administrator for CWABS, Inc. Asset-Backed Certificates Series 2006-7, pursuant to a Swap Contract Administration",
+      "evidence_quote": "THE BANK OF NEW YORK, not in its\n                                     individual or corporate capacity but\n                                     solely as Swap Contract Administrator\n                                     for CWABS, Inc. Asset-Backed\n                                     Certificates Series 2006-7, pursuant to\n                                     a Swap Contract Administration"
+    },
+    "threshold": {
+      "value": "For Party A: 1. infinity, unless (i) a Ratings Event occurs and is continuing and (ii) Party A has not otherwise complied with Part 1(h) of this Agreement, then its Threshold shall be zero, or 2. in the event that Party A has otherwise complied with Part 1(h)of this Agreement, its Threshold shall continue to be infinity. For Party B: infinity",
+      "evidence_quote": "\"Threshold\" means for Party A:\n\n                  1.   infinity, unless (i) a Ratings Event occurs and is\n                       continuing and (ii) Party A has not otherwise complied\n                       with Part 1(h) of this Agreement, then its Threshold\n                       shall be zero, or\n\n                  2.   in the event that Party A has otherwise complied with\n                       Part 1(h)of this Agreement, its Threshold shall\n                       continue to be infinity.\n\n                  \"Threshold\" means, for Party B: infinity"
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000, provided, however, with respect to the Secured Party at any time when the Secured Party is a Defaulting Party, \"Minimum Transfer Amount\" means zero.",
+      "evidence_quote": "\"Minimum Transfer Amount\" means USD 100,000, provided,\n                  however, with respect to the Secured Party at any time when\n                  the Secured Party is a Defaulting Party, \"Minimum Transfer\n                  Amount\" means zero."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will not be rounded.",
+      "evidence_quote": "Rounding: The Delivery Amount and the Return Amount will not\n                  be rounded."
+    },
+    "valuation_percentage": {
+      "value": "100% for cash in U.S Dollar; 98.6% for negotiable debt obligations issued after 18 July 1984 by the U.S. Treasury Department having a residual maturity on such date of less than 1 year (with local and foreign currency issuer ratings of Moody's Aa2 and S&P AA or above)",
+      "evidence_quote": "(A)   cash in U.S Dollar                            100%\n\n            (B)   negotiable debt obligations issued after      98.6%\n                  18 July 1984 by the U.S. Treasury\n                  Department having a residual maturity on\n                  such date of less than 1 year (with local\n                  and foreign currency issuer ratings of\n                  Moody's Aa2 and S&P AA or above)"
+    }
+  }
+}

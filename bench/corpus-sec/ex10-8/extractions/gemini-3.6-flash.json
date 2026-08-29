@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "THE ROYAL BANK OF SCOTLAND PLC",
+      "evidence_quote": "THE ROYAL BANK OF SCOTLAND PLC"
+    },
+    "party_b": {
+      "value": "ARRAN FUNDING LIMITED",
+      "evidence_quote": "ARRAN FUNDING LIMITED"
+    },
+    "governing_law": {
+      "value": "English law",
+      "evidence_quote": "ISDA AGREEMENTS SUBJECT TO ENGLISH LAW"
+    },
+    "eligible_currency": {
+      "value": "Base Currency",
+      "evidence_quote": "\"ELIGIBLE CURRENCY\" means the Base Currency."
+    },
+    "threshold": {
+      "value": "with respect to Party A, [ ], and with respect to Party B, not applicable",
+      "evidence_quote": "\"THRESHOLD\" means with respect to Party A, [ ], and with respect to Party B, not applicable."
+    },
+    "valuation_percentage": {
+      "value": "100 per cent.",
+      "evidence_quote": "Valuation Percentage of 100 per cent."
+    }
+  }
+}

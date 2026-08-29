@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "EDF Energy Services, LLC",
+      "evidence_quote": "EDF Energy Services, LLC"
+    },
+    "party_b": {
+      "value": "Summer Energy Northeast, LLC (formerly: REP Energy, LLC)",
+      "evidence_quote": "Summer Energy Northeast, LLC\n\n(formerly: \u00a0REP Energy, LLC)"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "New York Law"
+    },
+    "valuation_percentage": {
+      "value": "100% for Cash and Letters of Credit (subject to conditions); 80% for POR Collateral",
+      "evidence_quote": "100%"
+    },
+    "threshold": {
+      "value": "With respect to Party A, $20,000,000; unless an Event of Default or a \u201cCredit Event Upon Merger\u201d Specified Condition has occurred and is continuing with respect to Party A, in which case Party A\u2019s Threshold is zero. With respect to Party B, zero dollars, $0.",
+      "evidence_quote": "With respect to Party A, $20,000,000; unless an Event of Default or a \u201cCredit Event Upon Merger\u201d Specified Condition has occurred and is continuing with respect to Party A, in which case Party A\u2019s Threshold is zero.\n\nWith respect to Party B, zero dollars, $0."
+    },
+    "minimum_transfer_amount": {
+      "value": "With respect to Party A: $1.00, and with respect to Party B: $1.00.",
+      "evidence_quote": "with respect to Party A: \u00a0$1.00, and with respect to Party B: \u00a0$1.00."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up to the nearest integral amount of $50,000. The Return Amount will be rounded down to the nearest integral amount of $50,000 unless the Secured Party\u2019s Exposure at the time of the demand made pursuant to Paragraph 3(b) is equal to or less than zero, in which case the Return Amount is not subject to rounding.",
+      "evidence_quote": "The Delivery Amount will be rounded up to the nearest integral amount of $50,000. \u00a0The Return Amount will be rounded down to the nearest integral amount of $50,000 unless the Secured Party\u2019s Exposure at the time of the demand made pursuant to Paragraph 3(b) is equal to or less than zero, in which case the Return Amount is not subject to rounding."
+    }
+  }
+}

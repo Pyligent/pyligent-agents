@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "ABN AMRO BANK N.V.",
+      "evidence_quote": "ABN\n                AMRO BANK N.V."
+    },
+    "party_b": {
+      "value": "LEHMAN XS TRUST, SERIES 2007-7N",
+      "evidence_quote": "LEHMAN\n                XS TRUST, SERIES 2007-7N"
+    },
+    "eligible_currency": {
+      "value": "United States Dollars",
+      "evidence_quote": "all Eligible Collateral shall be denominated in United States\n                Dollars."
+    },
+    "threshold": {
+      "value": "Infinity for Party A (subject to zero during certain rating events/trigger conditions); infinity for Party B.",
+      "evidence_quote": "\u201cThreshold\u201d\n                means with respect to Party A: infinity; provided\n                that the Threshold with respect to Party A shall be zero for so long\n                as no\n                Relevant Entity has the First Trigger Required Ratings or a\n                Collateralization Event is occurring"
+    },
+    "minimum_transfer_amount": {
+      "value": "USD $100,000 for Party A (or USD $50,000 if S&P is rating the Certificates and aggregate Certificate Principal Balances fall below $50,000,000); USD $100,000 for Party B (or aggregate Value of Posted Collateral if less, or USD $50,000 under the same condition).",
+      "evidence_quote": "\u201cMinimum\n                Transfer Amount\u201d\n                means\n                with respect to Party A: USD $100,000; provided,\n                however,\n                that if S&P is rating the Certificates and the aggregate Certificate\n                Principal Balances of the rated Certificates falls below $50,000,000,\n                then\n                the Minimum Transfer Amount shall mean USD $50,000."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to the nearest integral multiple of USD $10,000 (or $1,000 if S&P is rating the Certificates); Return Amount rounded down to the nearest integral multiple of USD $10,000 (or $1,000 if S&P is rating the Certificates).",
+      "evidence_quote": "Rounding.\n                The Delivery Amount will be rounded up to the nearest integral multiple\n                of\n                USD $10,000; provided,\n                however,\n                that if S&P is rating the Certificates, the Delivery Amount will be\n                rounded up to the nearest integral multiple of $1,000. The Return\n                Amount\n                will be rounded down to the nearest integral multiple of USD $10,000;\n                provided,\n                however,\n                that if S&P is rating the Certificates, the Return Amount will be\n                rounded down to the nearest integral multiple of\n                $1,000."
+    },
+    "valuation_percentage": {
+      "value": "100% for Cash; 98.5% (S&P) / 97.5% (Fitch) / 100% (Moody's) for US Treasury obligations maturity <= 1 year; varying percentages for other maturities and agency debentures.",
+      "evidence_quote": "The following Valuation\n                Percentages1\n                shall apply to Eligible Collateral with respect to Party A"
+    }
+  }
+}

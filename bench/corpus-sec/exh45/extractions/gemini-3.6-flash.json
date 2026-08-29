@@ -1,0 +1,24 @@
+{
+  "fields": {
+    "threshold": {
+      "value": "Threshold shall not apply with respect to Counterparty. With respect to Morgan, Threshold is determined by Credit Ratings: Infinity if S&P is A-1 or above, Moody's long-term senior unsecured debt is A1 or above, or Moody's short-term senior unsecured debt is P-1 or above; US$0 if S&P is Below A-1, Moody's long-term is Below A1 or A1 on negative watch, or Moody's short-term is Below P-1 or P-1 on negative watch; U.S.$0 if Morgan has no Credit Rating or an Event of Default has occurred and is continuing with respect to Morgan.",
+      "evidence_quote": "\"Threshold\" shall not apply with respect to the Counterparty and, with respect to Morgan, shall mean the amounts determined on the basis of the lower of the Credit Ratings set forth in the following table, provided, however, that if (i) Morgan has no Credit Rating, or (ii) an Event of Default has occurred and is continuing with respect to Morgan, Morgan's Threshold shall be U.S.$0:"
+    },
+    "minimum_transfer_amount": {
+      "value": "U.S. $250,000",
+      "evidence_quote": "\"Minimum Transfer Amount\", with respect to a party on any Valuation Date, means U.S. $250,000."
+    },
+    "rounding": {
+      "value": "Rounded up and down to the nearest integral multiple of $100,000, respectively.",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up and down to the nearest integral multiple of $100,000, respectively."
+    },
+    "governing_law": {
+      "value": "the law specified as the Governing Law in the Schedule to the Agreement",
+      "evidence_quote": "This Amendment shall be governed by, and construed in accordance with the law specified as the Governing Law in the Schedule to the Agreement"
+    },
+    "valuation_percentage": {
+      "value": "100% for USD Cash; 98.75% for U.S. Treasury debt with remaining maturity <= 1 year; 91.7% for U.S. Treasury debt with remaining maturity > 1 year but < 10 years; 80.5% for U.S. Treasury debt with remaining maturity >= 10 years; 97.75% for Agency Securities with remaining maturity <= 1 year; 90.0% for Agency Securities with remaining maturity > 1 year but < 10 years; 78.5% for Agency Securities with remaining maturity >= 10 years; 96.5% for USD Commercial Paper rated A1/P1 by S&P/Moody's with remaining maturity <= 30 days.",
+      "evidence_quote": "(A)      USD Cash                                       X             100%\n--------------------------------------------------------------------------------\n(B)      Negotiable debt obligations issued by          X           98.75%\n         the U.S. Treasury Department having a\n         remaining maturity of one year or less\n         from the Valuation Date\n--------------------------------------------------------------------------------\n\n(C)      Negotiable debt obligations issued by the      X            91.7%\n         U.S. Treasury Department having a remaining\n         maturity of more than one year but less than\n         ten years from the Valuation Date\n\n--------------------------------------------------------------------------------\n(D)      Negotiable debt obligations issued by the      X            80.5%\n         U.S. Treasury Department having a remaining\n         maturity of ten years or more From the\n         Valuation Date\n--------------------------------------------------------------------------------\n(E)      Agency Securities having a remaining maturity  X           97.75%\n         of one year or less from the Valuation Date\n--------------------------------------------------------------------------------\n(F)      Agency Securities having a remaining maturity  X            90.0%\n         of more than one year but less than ten years\n         from the Valuation Date\n--------------------------------------------------------------------------------\n(G)      Agency Securities having a remaining           X            78.5%\n         maturity of ten years or more from the\n         Valuation Date\n--------------------------------------------------------------------------------\n(H)      USD denominated Commercial Paper rated         X            96.5%\n         A1/P1 by S&P and Moody's respectively, that\n        (a) settles within DTC, (b) is  not issued by\n         Morgan or any of its Affiliates and (c) has a\n         remaining maturity of 30 days or less from the\n         Valuation Date"
+    }
+  }
+}

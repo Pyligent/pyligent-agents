@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "HSBC BANK USA, NATIONAL ASSOCIATION",
+      "evidence_quote": "HSBC BANK USA, NATIONAL ASSOCIATION (\u201cParty A\u201d)"
+    },
+    "party_b": {
+      "value": "NISSAN AUTO RECEIVABLES 2008-A OWNER TRUST",
+      "evidence_quote": "NISSAN AUTO RECEIVABLES 2008-A OWNER TRUST (\u201cParty B\u201d)"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA Agreements Subject to New York Law Only"
+    },
+    "threshold": {
+      "value": "Infinity for Party A (subject to reduction to zero upon specified Moody's or S&P rating triggers/downgrades); Not Applicable for Party B.",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A: Infinity; provided that for (a) so long as the Moody\u2019s First Ratings Trigger Requirements apply and either (i) the Moody\u2019s First Ratings Trigger Requirements have applied since this Annex was executed or (ii) at least 30 Local Business Days have elapsed since the last time the Moody\u2019s First Ratings Trigger Requirements did not apply, the Threshold shall be zero; or (b) so long as (i) an S&P Approved Ratings Downgrade has occurred and has been continuing for at least 10 Local Business Days or since this Credit Support Annex was executed or (ii) an S&P Required Ratings Downgrade has occurred and has been continuing, the Threshold shall be zero.\n\n     \n\n     \n    \n    \n    \u201cThreshold\u201d means with respect to Party B: Not Applicable."
+    },
+    "minimum_transfer_amount": {
+      "value": "$50,000 for Party A; $50,000 for Party B.",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A, $50,000.\n\n     \n\n     \n    \n    \n    \u201cMinimum Transfer Amount\u201d means with respect to Party B, $50,000."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up and Return Amount rounded down to the nearest integral multiple of $10,000.00.",
+      "evidence_quote": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of $10,000.00, respectively."
+    },
+    "valuation_percentage": {
+      "value": "Varies by eligible collateral type and rating trigger/downgrade level (e.g., Cash US Dollars: 100% / 100% / 100% / 80%). If Party A is rated by more than one Rating Agency, the Valuation Percentage equals the lowest of the applicable percentages specified.",
+      "evidence_quote": "The Valuation Percentage shall equal the percentage specified under such Rating Agency\u2019s name above. If Party A is rated by more than one Rating Agency specified above, the Valuation Percentage shall equal the lowest of the applicable percentages specified above."
+    }
+  }
+}

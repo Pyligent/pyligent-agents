@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "Cogent Capital Corp",
+      "evidence_quote": "Cogent Capital Corp"
+    },
+    "party_b": {
+      "value": "Aegis Assessment, Inc.",
+      "evidence_quote": "Aegis Assessment, Inc."
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "100%"
+    },
+    "threshold": {
+      "value": "Party A: Infinity; Party B: Infinity",
+      "evidence_quote": "\"Threshold\" means with respect to Party A: Infinity \"Threshold\" means\n          with respect to Party B: Infinity"
+    },
+    "minimum_transfer_amount": {
+      "value": "Party A: $0; Party B: $0",
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Party A: $ 0 \"Minimum\n          Transfer Amount\" means with respect to Party B: $ 0"
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will be rounded up and down to the nearest integral multiple of $1000, respectively.",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up\n          and down to the nearest integral multiple of $1000, respectively."
+    }
+  }
+}

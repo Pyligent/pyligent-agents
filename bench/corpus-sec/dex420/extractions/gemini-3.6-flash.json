@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "BARCLAYS BANK PLC",
+      "evidence_quote": "BARCLAYS BANK PLC"
+    },
+    "party_b": {
+      "value": "ACCREDITED HOME LENDERS, INC.",
+      "evidence_quote": "ACCREDITED HOME LENDERS, INC."
+    },
+    "threshold": {
+      "value": "Infinite for Party A; USD 50,000 for Party B (zero if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B)",
+      "evidence_quote": "\u201cThreshold\u201d means, with respect to Party A, infinite; with respect to Party B shall be USD 50,000; provided that, if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B, then the Threshold with respect to Party B shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 250,000 with respect to a party (does not apply to the Independent Amount; zero for Party B if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B)",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means, with respect to a party, USD 250,000; provided that, notwithstanding anything to the contrary contained herein, the Minimum Transfer Amount shall not apply to the Independent Amount, and provided further that, if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B, then the Minimum Transfer Amount with respect to Party B shall be zero."
+    },
+    "rounding": {
+      "value": "Rounded up and down respectively to the nearest integral multiple of USD 10,000",
+      "evidence_quote": "Rounding. The Delivery Amount and the Return Amount shall be rounded up and down respectively to the nearest integral multiple of USD 10,000."
+    },
+    "valuation_percentage": {
+      "value": "100% for US-CASH; ranging from 90% to 99.5% for other securities depending on ICAD code and Remaining Maturity",
+      "evidence_quote": "Percentage shown is the Valuation Percentage applicable to the indicated combination of ICAD and Remaining Maturity."
+    }
+  }
+}

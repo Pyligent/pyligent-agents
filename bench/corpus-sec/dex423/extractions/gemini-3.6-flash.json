@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "HSBC BANK USA, NATIONAL ASSOCIATION",
+      "evidence_quote": "HSBC BANK USA, NATIONAL ASSOCIATION"
+    },
+    "party_b": {
+      "value": "ACCREDITED HOME LENDERS, INC.",
+      "evidence_quote": "ACCREDITED HOME LENDERS, INC."
+    },
+    "valuation_percentage": {
+      "value": "Varies by ICAD Code and Remaining Maturity (e.g., 100% for US-CASH; 99.5% for US-TBILL; 95%\u201399.5% for US-TNOTE, US-TBOND, US-GNMA, US-FNMA, US-FHLMC, US-FHLB, US-FHLBNC, US-FHLBNCDN, US-NCAD, US-NCADN, US-GNMAMBS, US-FNMAMBS, US-FHLMCMBS, US-ARM; 95% for US-STRIP, US-TIPS; 90% for Agency CMO\u2019s and REMICS)",
+      "evidence_quote": "Percentage shown is the Valuation Percentage applicable to the indicated combination of ICAD and Remaining Maturity."
+    },
+    "threshold": {
+      "value": "Infinite for Party A; USD 50,000 for Party B (and zero if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B)",
+      "evidence_quote": "\u201cThreshold\u201d means, with respect to Party A, infinite; with respect to Party B shall be USD 50,000; provided that, if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B, then the Threshold with respect to Party B shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 250,000 for a party (does not apply to the Independent Amount, and zero for Party B if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B)",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means, with respect to a party, USD 250,000; provided that, notwithstanding anything to the contrary contained herein, the Minimum Transfer Amount shall not apply to the Independent Amount, and provided further that, if an Event of Default or Additional Termination Event has occurred and is continuing with respect to Party B, then the Minimum Transfer Amount with respect to Party B shall be zero."
+    },
+    "rounding": {
+      "value": "Rounded up and down respectively to the nearest integral multiple of USD 10,000",
+      "evidence_quote": "The Delivery Amount and the Return Amount shall be rounded up and down respectively to the nearest integral multiple of USD 10,000."
+    },
+    "governing_law": {
+      "value": "New York UCC",
+      "evidence_quote": "This Credit Support Annex is a Security Agreement under the New York UCC."
+    }
+  }
+}

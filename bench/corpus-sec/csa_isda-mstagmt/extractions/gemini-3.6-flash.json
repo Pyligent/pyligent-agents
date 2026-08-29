@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "BEAR, STEARNS INTERNATIONAL LIMITED",
+      "evidence_quote": "BEAR, STEARNS INTERNATIONAL LIMITED"
+    },
+    "party_b": {
+      "value": "CBO REIT II, Inc. and CRIIMI NEWCO, LLC",
+      "evidence_quote": "CBO REIT II, Inc. and CRIIMI NEWCO, LLC"
+    },
+    "threshold": {
+      "value": "0",
+      "evidence_quote": "\"Threshold\" means zero with respect to Party A and Party B."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000",
+      "evidence_quote": "\"Minimum Transfer Amount\", means USD100,000."
+    },
+    "rounding": {
+      "value": "nearest integral multiple of USD10,000",
+      "evidence_quote": "Rounding. The Delivery Amount and the Return Amount will be rounded to the nearest integral multiple of USD10,000."
+    },
+    "valuation_percentage": {
+      "value": "100% for Cash (ranges from 97% to 100% depending on asset type)",
+      "evidence_quote": "Cash                                                               100%"
+    }
+  }
+}

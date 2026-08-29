@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "MERRILL LYNCH CAPITAL SERVICES, INC.",
+      "evidence_quote": "MERRILL LYNCH CAPITAL SERVICES, INC."
+    },
+    "party_b": {
+      "value": "PPLUS TRUST SERIES GSC-2",
+      "evidence_quote": "PPLUS TRUST SERIES GSC-2"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA Agreements Subject to New York Law Only"
+    },
+    "eligible_currency": {
+      "value": "US dollars and any currency other than US dollars provided that such currency is freely available",
+      "evidence_quote": "\u201cEligible Currency\u201d means US dollars and any currency other than US dollars provided that such currency is freely available."
+    },
+    "threshold": {
+      "value": "Party A: Infinity (or zero if an S&P Ratings Event has occurred and is continuing; infinity if Party A obtains an Eligible Guarantee or replacement counterparty and confirmation from S&P); Party B: Not applicable",
+      "evidence_quote": "\u201cS&P Threshold\u201d means with respect to Party A:  Infinity; provided, however, that the S&P Threshold with respect to Party A shall be zero if an S&P Ratings Event has occurred and is continuing; and, provided, further, that the S&P Threshold shall be infinity at any time that Party A has obtained (I) (x) an Eligible Guarantee or (y) a replacement counterparty with a S&P short-term debt rating of at least \u201cA-1\u201d and (II) received written confirmation from S&P that any such action will not result in the withdrawal or downgrading of the rating (or credit estimate) of the Trust Certificates."
+    },
+    "minimum_transfer_amount": {
+      "value": "50,000 units denominated in the Termination Currency with respect to each of Party A and Party B",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means 50,000 units denominated in the Termination Currency with respect to each of Party A and Party B."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of 10,000 units denominated in the Termination Currency, respectively.",
+      "evidence_quote": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of 10,000 units denominated in the Termination Currency, respectively."
+    },
+    "valuation_percentage": {
+      "value": "The highest Valuation Percentage specified for such type of security in Exhibit I or zero if a Valuation Percentage is not specified for such type of security in Exhibit I",
+      "evidence_quote": "\u201cApplicable Valuation Percentage\u201d means with respect to a type of security, the highest Valuation Percentage specified for such type of security in Exhibit I or zero if a Valuation Percentage is not specified for such type of security in Exhibit I."
+    }
+  }
+}

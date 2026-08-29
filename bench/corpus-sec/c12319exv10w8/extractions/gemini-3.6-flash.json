@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "HSBC Bank USA, National Association",
+      "evidence_quote": "HSBC Bank USA, National Association (\u201cParty A\u201d)"
+    },
+    "party_b": {
+      "value": "Volkswagen Auto Loan Enhanced Trust 2007-1",
+      "evidence_quote": "Volkswagen Auto Loan Enhanced Trust 2007-1 (\u201cParty B\u201d)"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "threshold": {
+      "value": "Infinity for Party A (subject to being reduced to zero upon certain rating downgrade triggers); Not Applicable for Party B.",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A: Infinity"
+    },
+    "minimum_transfer_amount": {
+      "value": "$100,000 when the Notional Amount is greater than $50 million, or otherwise $50,000 (applies to both Party A and Party B).",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A: (i) $100,000 when the Notional Amount is greater than $50 million, or (ii) otherwise, $50,000."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up and Return Amount rounded down to the nearest integral multiple of $10,000.00.",
+      "evidence_quote": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of $10,000.00, respectively."
+    },
+    "valuation_percentage": {
+      "value": "Equal to the percentage specified under the applicable Rating Agency's column, or the lowest of the applicable percentages if rated by more than one Rating Agency.",
+      "evidence_quote": "The Valuation Percentage shall equal the percentage specified under such Rating Agency\u2019s name above. If Party A is rated by more than one Rating Agency specified above, the Valuation Percentage shall equal the lowest of the applicable percentages specified above."
+    }
+  }
+}

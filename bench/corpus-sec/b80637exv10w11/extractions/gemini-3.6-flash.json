@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "WACHOVIA BANK, NATIONAL ASSOCIATION",
+      "evidence_quote": "WACHOVIA BANK, NATIONAL ASSOCIATION"
+    },
+    "party_b": {
+      "value": "WRIGHT EXPRESS CORPORATION",
+      "evidence_quote": "WRIGHT EXPRESS CORPORATION"
+    },
+    "governing_law": {
+      "value": "New York law",
+      "evidence_quote": "ISDA Agreements Subject to New York Law Only"
+    },
+    "threshold": {
+      "value": "For Party A: determined by Credit Rating (ranging from $40,000,000 to zero); For Party B: $9,000,000 (zero if an Event of Default exists with respect to Party B)",
+      "evidence_quote": "\u201cThreshold\u201d means, for Party B: $9,000,000; provided that if an Event of Default exists with respect Party B, the Threshold shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "$100,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means, for a party on any date of determination, $100,000."
+    },
+    "rounding": {
+      "value": "rounded down to the nearest integral multiple of $100,000",
+      "evidence_quote": "Rounding: The Delivery Amount and the Return Amount will be rounded down to the nearest integral multiple of $100,000."
+    },
+    "valuation_percentage": {
+      "value": "Cash: 100%; Treasury Bills/Notes/Bonds: 98%; Agency Securities/GNMA Certificates: 92%; Letters of Credit: 100% (unless a Letter of Credit Default applies or 20 or fewer Local Business Days remain prior to expiration, in which case 0%)",
+      "evidence_quote": "100% unless either (i) a Letter of Credit Default shall apply with respect to such Letter of Credit or (ii) twenty (20) or fewer Local Business Days remain prior to the expiration of such Letter of Credit, in which case the Valuation Percentage shall be 0."
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA  Agreements Subject to New York Law Only"
+    },
+    "party_a": {
+      "value": "HSBC BANK USA, N.A.",
+      "evidence_quote": "HSBC BANK USA, N.A."
+    },
+    "party_b": {
+      "value": "U.S. BANK NATIONAL ASSOCIATION, NOT IN ITS INDIVIDUAL CAPACITY BUT SOLELY IN ITS CAPACITY AS SUPPLEMENTAL INTEREST TRUST TRUSTEE FOR THE BENEFIT OF THE RAAC SERIES 2006-SP4 SUPPLEMENTAL INTEREST TRUST",
+      "evidence_quote": "U.S. BANK NATIONAL ASSOCIATION, NOT IN ITS INDIVIDUAL CAPACITY BUT SOLELY IN ITS CAPACITY AS SUPPLEMENTAL INTEREST TRUST TRUSTEE FOR THE BENEFIT OF THE RAAC SERIES 2006-SP4 SUPPLEMENTAL INTEREST TRUST"
+    },
+    "valuation_percentage": {
+      "value": "The Valuation Percentage shall equal the percentage specified under such Rating Agency's name above. If the Class [ ] Notes are rated by more than one Rating Agency specified above and a Ratings Event has occurred with respect to more than one Rating Agency, the Valuation Percentage shall equal the lowest of the applicable percentages specified above.",
+      "evidence_quote": "The Valuation  Percentage  shall equal the percentage  specified  under such Rating  Agency's name above. If the Class [ ] Notes are rated by more than one Rating  Agency  specified  above and a Ratings  Event has occurred with respect to more than one Rating Agency,  the Valuation  Percentage  shall equal the lowest of the applicable percentages specified above."
+    },
+    "threshold": {
+      "value": "Infinity; provided that for so long as Party A is above the Moody's First Trigger Required Ratings and either (i) Party A has had been below the Moody's First Trigger Required Ratings since this Annex was executed or (ii) at least 30 Local Business Days have elapsed since the last time Party A had been below the Moody's First Trigger Required Ratings, the Threshold with respect to Party A shall be zero; further, provided, if a Ratings Event has occurred and is continuing pursuant to Part 5(f) of the Agreement, the threshold shall be zero in the event Party A fails to assign all of its rights and obligations under the Agreement on or before the thirtieth (30) day after the date of a Ratings Event (as described in [Part 5(f)] of the Schedule) continues to exist.",
+      "evidence_quote": "\"THRESHOLD\"  means  for  Pledgor:  Infinity;  provided  that for so long as  Party A is above  the Moody's  First  Trigger  Required  Ratings and either (i) Party A has had been below the Moody's  First  Trigger  Required  Ratings since this Annex was executed or (ii) at least 30 Local  Business  Days have  elapsed  since the last  time  Party A had been  below the Moody's First Trigger  Required  Ratings,  the Threshold with respect to Party A shall be zero;  further,  provided,  if a Ratings Event has occurred and is continuing pursuant to Part 5(f) of the  Agreement,  the threshold  shall be zero in the event Party A fails to assign all of its rights and obligations  under the Agreement on or before the thirtieth (30)  day  after  the  date of a  Ratings  Event  (as  described  in  [Part  5(f)] of the Schedule) continues to exist."
+    },
+    "minimum_transfer_amount": {
+      "value": "$100,000 for any Delivery Amount of Pledgor, unless the Pledgor is a Defaulting Party, in which case it is zero, and $100,000 for any Return Amount of the Secured Party, unless the Secured Party is a Defaulting Party, in which case it is zero.",
+      "evidence_quote": "\"MINIMUM  TRANSFER  AMOUNT\" is $100,000 for any Delivery Amount of Pledgor,  unless the Pledgor is a Defaulting  Party,  in which case it is zero,  and  $100,000  for any Return  Amount of the Secured Party,  unless the Secured Party is a Defaulting  Party,  in which case it is zero."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up to the nearest integral multiple of $1,000, and the Return Amount will be rounded down to the nearest integral multiple of $1,000.",
+      "evidence_quote": "The  Delivery  Amount  will be rounded up to the nearest  integral  multiple of $1,000, and the Return Amount will be rounded down to the nearest integral multiple of $1,000."
+    }
+  }
+}

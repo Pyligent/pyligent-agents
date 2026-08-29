@@ -1,0 +1,20 @@
+{
+  "fields": {
+    "threshold": {
+      "value": "With respect to Aron: Not Applicable; With respect to Counterparty: Not applicable.",
+      "evidence_quote": "\"Threshold\" means with respect to Aron: Not Applicable.\n  \n\n\n \n\n \n\n\u201cThreshold\u201d means with respect to Counterparty: Not applicable."
+    },
+    "minimum_transfer_amount": {
+      "value": "With respect to Aron and Counterparty: (i) except with respect to Part 7, USD0, and (ii) with respect to Part 7, U.S.$250,000 (provided that it shall be zero upon the occurrence and during the continuance of an Event of Default, Potential Event of Default, Termination Event or Specified Condition).",
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Counterparty: (i) except with respect to Part 7, USD0, and (ii) with respect to Part 7, U.S.$250,000; provided that the Minimum Transfer Amount for Counterparty shall be zero upon the occurrence and during the continuance of an Event of Default, Potential Event of Default, Termination Event or Specified Condition with respect to such party."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will be rounded up and down to the nearest integral multiple of USD $100,000, respectively.",
+      "evidence_quote": "Rounding.  The Delivery Amount and the Return Amount will be rounded up and down to the nearest integral multiple of USD $100,000, respectively."
+    },
+    "valuation_percentage": {
+      "value": "Cash: 100%, Treasury Bills: 99.5%, Treasury Notes: 99%, Treasury Bonds: 99%",
+      "evidence_quote": "(A)\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Cash \n \n 100% \n \n (B)\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Negotiable debt obligations issued by the U.S. Treasury Department having a remaining maturity of not more than one year (\"Treasury Bills\") and maturing not more than 180 days from the date of Transfer by the Pledgor to the Secured Party \n \n 99.5% \n \n (C)\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Negotiable debt obligations\u00a0                                                        issued by the U.S. Treasury\u00a0                                                        Department having a remaining\u00a0               maturity of more than one year\u00a0                                     but not more than 10 years\u00a0                        (\"Treasury Notes\") \n \n 99% \n \n (D)\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0Negotiable debt obligations\u00a0                                                        issued by the U.S. Treasury\u00a0                                                        Department having a remaining\u00a0               maturity of more than 10 years\u00a0                                                    (\"Treasury Bonds\") \n \n 99%"
+    }
+  }
+}

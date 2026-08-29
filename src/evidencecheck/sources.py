@@ -104,16 +104,27 @@ class Source:
         return Locator(char_start=at, char_end=at + len(quote))
 
 
+# The same invisible characters normalize.squash removes; see there for why.
+from .normalize import INVISIBLE  # noqa: E402
+
+_GAP = rf"[\s{INVISIBLE}]+"
+_INVISIBLE_RE = re.compile(f"[{INVISIBLE}]")
+
+
 def find_flexible(haystack: str, needle: str) -> int:
     """Index of `needle` in `haystack`, treating any whitespace run as equal.
 
     Documents wrap wherever the layout felt like it, so a quote that is real
     can still fail a literal `in` test. Returns -1 when absent.
+
+    The returned offset indexes the ORIGINAL haystack. Invisible characters are
+    absorbed by the pattern rather than stripped beforehand, because stripping would
+    shift every offset and `Source.locate` resolves real positions with them.
     """
-    tokens = [re.escape(t) for t in needle.split()]
+    tokens = [re.escape(t) for t in _INVISIBLE_RE.sub("", needle).split()]
     if not tokens:
         return -1
-    m = re.search(r"\s+".join(tokens), haystack, re.IGNORECASE)
+    m = re.search(_GAP.join(tokens), haystack, re.IGNORECASE)
     return m.start() if m else -1
 
 

@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "LEHMAN BROTHERS SPECIAL FINANCING INC.",
+      "evidence_quote": "LEHMAN BROTHERS SPECIAL FINANCING INC."
+    },
+    "party_b": {
+      "value": "THE BANK OF NEW YORK, not in its individual or corporate capacity but solely as Swap Contract Administrator for CWABS Asset-Backed Certificates Trust 2006-14, Asset-Backed Certificates, Series 2006-14, pursuant to a Swap Contract Administration Agreement",
+      "evidence_quote": "THE BANK OF NEW YORK, not in its\n   individual or corporate capacity but solely as Swap Contract Administrator\n  for CWABS Asset-Backed Certificates Trust 2006-14, Asset-Backed Certificates,\n      Series 2006-14, pursuant to a Swap Contract Administration Agreement"
+    },
+    "threshold": {
+      "value": "zero at any time that (1) Party A (or to the extent applicable, its Credit Support Provider) does not have the required ratings set forth in Part 1(h)(A) of the Schedule from Standard & Poor's and has failed to transfer its rights and obligations under this Agreement within 30 days of its downgrade or (2) Party A (or to the extent applicable, its Credit Support Provider) does not have the required ratings from Moody's; otherwise the Threshold shall be unlimited.",
+      "evidence_quote": "\"Threshold\" means, with respect to Party A, zero at any time that (1) Party A (or to the extent applicable, its Credit Support Provider) does not have the required ratings set forth in Part 1(h)(A) of the Schedule from Standard & Poor's and has failed to transfer its rights and obligations under this Agreement within 30 days of its downgrade or (2) Party A (or to the extent applicable, its Credit Support Provider) does not have the required ratings from Moody's; otherwise the Threshold shall be unlimited."
+    },
+    "minimum_transfer_amount": {
+      "value": "$100,000",
+      "evidence_quote": "\"Minimum Transfer Amount\" means, with respect to a party, $100,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will be rounded up and down respectively to the nearest integral multiple of $1,000.",
+      "evidence_quote": "\"Rounding\". The Delivery Amount and the Return Amount will be rounded up and down respectively to the nearest integral multiple of $1,000."
+    },
+    "valuation_percentage": {
+      "value": "cash: 100.0%; Negotiable debt obligations issued by the U.S. Treasury Department having a maturity at issuance of not more than one year: 98.5%; Negotiable debt obligations issued by the U.S. Treasury Department having a maturity at issuance of more than one year but not more than ten years: 89.9%; Negotiable debt obligations issued by the U.S. Treasury Department having a maturity at issuance of more than ten years: 83.9%; demand and time deposits in, certificates of deposit of, bankers' acceptances payable within 183 days of issuance issued by, or federal funds sold by any U.S. federal or state depository institution or trust company: 98.0%",
+      "evidence_quote": "(A)      cash.                                                            100.0%\n\n                  (B)      Negotiable debt obligations issued by the U.S.\n                           Treasury 98.5% Department having a maturity at\n                           issuance of not more than one year.                               98.5%\n\n                  (C)      Negotiable debt obligations issued by the U.S.\n                           Treasury Department having a maturity at issuance of\n                           more than one year but not more than ten years.                   89.9%\n\n                  (D)      Negotiable debt obligations issued by the U.S.\n                           Treasury Department having a maturity at issuance of\n                           more than ten years.                                              83.9%\n\n                  (E)      demand and time deposits in, certificates of deposit              98.0%"
+    }
+  }
+}

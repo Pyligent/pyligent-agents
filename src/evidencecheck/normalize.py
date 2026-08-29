@@ -18,10 +18,24 @@ from datetime import date, datetime
 
 _WS = re.compile(r"\s+")
 
+# Characters with no visual extent: zero-width spaces and joiners, soft hyphens,
+# directional marks, the BOM. HTML exporters and word processors scatter them through
+# filed documents, and Python's `\s` matches none of them — U+200B is category Cf, not
+# whitespace. A quote can therefore transcribe exactly what a reader sees and still
+# fail a match because an invisible character sits between two words.
+#
+# Found against a real SEC exhibit, where three correct quotes were reported as
+# fabricated. Removing these is not leniency: nobody can quote a character they cannot
+# see, so their presence can never be evidence that a quote was invented. They are
+# removed rather than treated as spaces because they render as nothing at all —
+# "alpha<ZWSP>beta" reads as "alphabeta".
+INVISIBLE = "\u00ad\u200b\u200c\u200d\u200e\u200f\u2060\ufeff"
+_INVISIBLE = re.compile(f"[{INVISIBLE}]")
+
 
 def squash(text: object) -> str:
     """Collapse whitespace. Documents wrap wherever the layout felt like it."""
-    return _WS.sub(" ", str(text)).strip()
+    return _WS.sub(" ", _INVISIBLE.sub("", str(text))).strip()
 
 
 def contains(haystack: str, needle: str) -> bool:

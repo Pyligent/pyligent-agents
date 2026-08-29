@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "ABN AMRO BANK N.V.",
+      "evidence_quote": "ABN\n                AMRO BANK N.V."
+    },
+    "party_b": {
+      "value": "GREENPOINT MORTGAGE FUNDING TRUST, SERIES 2007-AR2",
+      "evidence_quote": "GREENPOINT\n                MORTGAGE FUNDING \n\n              TRUST,\n                SERIES 2007-AR2"
+    },
+    "eligible_currency": {
+      "value": "United States Dollars",
+      "evidence_quote": "all Eligible Collateral shall be denominated in United States\n                Dollars."
+    },
+    "threshold": {
+      "value": "For Party A: infinity; provided that Threshold shall be zero under specified rating/collateralization events. For Party B: infinity.",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A: infinity; provided\n                that the Threshold with respect to Party A shall be zero for so long\n                as no\n                Relevant Entity has the First Trigger Required Ratings or a\n                Collateralization Event is occurring and (i) no Relevant Entity has\n                had\n                the First Trigger Required Ratings since this Annex was executed,\n                or (ii)\n                at least 30 Local Business Days have elapsed since the last time\n                a\n                Relevant Entity had the First Trigger Required Ratings, or (iii)\n                no\n                Relevant Entity has met the Hedge Counterparty Ratings Requirement\n                since\n                this Annex was executed, or (iv) at least 30 calendar days have elapsed\n                since the last time a Collateralization Event occurred or (v) a Ratings\n                Event is occurring."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD $100,000 for Party A (reduced to USD $50,000 if aggregate Certificate Principal Balances falls below $50,000,000); USD $100,000 for Party B (or aggregate Value of Posted Collateral if less, and reduced to USD $50,000 if aggregate Certificate Principal Balances falls below $50,000,000).",
+      "evidence_quote": "\u201cMinimum\n                Transfer Amount\u201d\n                means\n                with respect to Party A: USD $100,000; provided,\n                however,\n                that if S&P is rating the Certificates and the aggregate Certificate\n                Principal Balances of the rated Certificates falls below $50,000,000,\n                then\n                the Minimum Transfer Amount shall mean USD $50,000."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to nearest integral multiple of USD $10,000 ($1,000 if S&P is rating the Certificates); Return Amount rounded down to nearest integral multiple of USD $10,000 ($1,000 if S&P is rating the Certificates).",
+      "evidence_quote": "The Delivery Amount will be rounded up to the nearest integral multiple\n                of\n                USD $10,000; provided,\n                however,\n                that if S&P is rating the Certificates, the Delivery Amount will be\n                rounded up to the nearest integral multiple of $1,000. The Return\n                Amount\n                will be rounded down to the nearest integral multiple of USD $10,000;\n                provided,\n                however,\n                that if S&P is rating the Certificates, the Return Amount will be\n                rounded down to the nearest integral multiple of\n                $1,000."
+    },
+    "valuation_percentage": {
+      "value": "Varies by collateral type and rating agency (Cash: 100%; U.S. Treasury obligations: 83.9% to 100%; U.S. Agency Debentures: 77.9% to 100%).",
+      "evidence_quote": "The following Valuation Percentages1 \n                shall apply to Eligible Collateral with respect to Party A; provided,\n                however,\n                that all Eligible Collateral shall be denominated in United States\n                Dollars."
+    }
+  }
+}

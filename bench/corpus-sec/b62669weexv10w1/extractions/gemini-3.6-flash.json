@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "BANK OF AMERICA, N.A.",
+      "evidence_quote": "BANK OF AMERICA, N.A."
+    },
+    "party_b": {
+      "value": "WRIGHT EXPRESS CORPORATION",
+      "evidence_quote": "WRIGHT EXPRESS CORPORATION"
+    },
+    "governing_law": {
+      "value": "New York law",
+      "evidence_quote": "ISDA AGREEMENTS SUBJECT TO NEW YORK LAW ONLY"
+    },
+    "threshold": {
+      "value": "Party A as Pledgor: not applicable; Party B as Pledgor: $5,000,000.00",
+      "evidence_quote": "\"Threshold\" means, on any day, with respect to Party A as Pledgor, not applicable, and with respect to Party B as Pledgor, $5,000,000.00."
+    },
+    "minimum_transfer_amount": {
+      "value": "Party A: $250,000.00; Party B: $250,000.00",
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Party A:\n                  $250,000.00\n\n                  \"Minimum Transfer Amount\" means with respect to Party B:\n                  $250,000.00"
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of $10,000.00, respectively.",
+      "evidence_quote": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of $10,000.00, respectively."
+    },
+    "valuation_percentage": {
+      "value": "Varies by asset class and remaining maturity (e.g., US-CASH: 100%, US-TBILL: 99.5%, US-TNOTE: 99.5%/98%/95%, US-TBOND: 99.5%/98%/95%/95%, Agency CMOs and REMICS: 90%).",
+      "evidence_quote": "Percentage shown is the Valuation Percentage applicable to the indicated combination of ICAD and Remaining Maturity."
+    }
+  }
+}

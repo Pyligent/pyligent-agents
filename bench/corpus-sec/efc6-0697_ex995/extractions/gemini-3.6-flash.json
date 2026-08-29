@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "LEHMAN BROTHERS SPECIAL FINANCING INC.",
+      "evidence_quote": "LEHMAN BROTHERS SPECIAL FINANCING INC."
+    },
+    "party_b": {
+      "value": "THE BANK OF NEW YORK, not in its individual or corporate capacity but solely as Swap Contract Administrator for CWABS, Inc. Asset-Backed Certificates Series 2006-3, pursuant to a Swap Contract Administration Agreement",
+      "evidence_quote": "THE BANK OF NEW YORK, not in its individual or corporate capacity but solely\n   as Swap Contract Administrator for CWABS, Inc. Asset-Backed Certificates\n     Series 2006-3, pursuant to a Swap Contract Administration Agreement"
+    },
+    "threshold": {
+      "value": "Zero at any time that (1) Party A (or to the extent applicable, its Credit Support Provider) does not have the Required Ratings set forth in Part 1(h)(A) of the Schedule from Standard & Poor's and has failed to transfer its rights and obligations under this Agreement within 30 days of its downgrade or (2) Party A (or to the extent applicable, its Credit Support Provider) does not have the Required Ratings from Moody's; otherwise the Threshold shall be unlimited.",
+      "evidence_quote": "\"Threshold\" means, with respect to Party A, zero at any time\n               that (1) Party A (or to the extent applicable, its Credit\n               Support Provider) does not have the Required Ratings set forth\n               in Part 1(h)(A) of the Schedule from Standard & Poor's and has\n               failed to transfer its rights and obligations under this\n               Agreement within 30 days of its downgrade or (2) Party A (or to\n               the extent applicable, its Credit Support Provider) does not\n               have the Required Ratings from Moody's; otherwise the Threshold\n               shall be unlimited."
+    },
+    "minimum_transfer_amount": {
+      "value": "$100,000",
+      "evidence_quote": "\"Minimum Transfer Amount\" means, with respect to a party,\n               $100,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will be rounded up and down respectively to the nearest integral multiple of $1,000.",
+      "evidence_quote": "\"Rounding\". The Delivery Amount and the Return Amount will be\n               rounded up and down respectively to the nearest integral\n               multiple of $1,000."
+    },
+    "valuation_percentage": {
+      "value": "100% for cash; 99% for Negotiable debt obligations issued by the U.S. Treasury Department; 98% for demand and time deposits, certificates of deposit, bankers' acceptances, or federal funds",
+      "evidence_quote": "(A)  cash.                                                   100%\n\n          (B)  Negotiable debt obligations issued by the U.S.           99%\n               Treasury Department.\n\n          (C)  demand and time deposits in, certificates of             98%"
+    }
+  }
+}
