@@ -64,11 +64,27 @@ def test_doctor_flags_an_unpriced_model():
     assert "register_model" in out
 
 
+def _why(result):
+    """Everything needed to diagnose a failure from a CI log alone.
+
+    `assert "issue_refund" in ""` names the symptom and hides the cause: the child
+    wrote its explanation to stderr and the assertion threw it away. On a platform
+    you cannot reproduce locally, that difference costs a full push-and-wait cycle
+    per guess.
+    """
+    return (f"\nreturncode: {result.returncode}"
+            f"\nstdout: {result.stdout[-1500:]!r}"
+            f"\nstderr: {result.stderr[-1500:]!r}")
+
+
 def test_graph_can_be_inspected_without_running_it():
-    out = _cli("graph", "show", "level3_refund_workflow.app:build_graph").stdout
-    assert "issue_refund" in out and "idempotent" in out
-    assert "graph TD" in _cli("graph", "mermaid",
-                              "level3_refund_workflow.app:build_graph").stdout
+    shown = _cli("graph", "show", "level3_refund_workflow.app:build_graph")
+    assert shown.returncode == 0, _why(shown)
+    assert "issue_refund" in shown.stdout and "idempotent" in shown.stdout, _why(shown)
+
+    mermaid = _cli("graph", "mermaid", "level3_refund_workflow.app:build_graph")
+    assert mermaid.returncode == 0, _why(mermaid)
+    assert "graph TD" in mermaid.stdout, _why(mermaid)
 
 
 def test_new_scaffolds_a_project_whose_tests_pass(tmp_path):
