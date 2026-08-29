@@ -1,7 +1,7 @@
 {
   "source_url": "SEC EDGAR exhibit (public filing)",
   "licence": "US federal government work, public domain",
-  "provenance": "SEC EDGAR exhibit or published ISDA form",
+  "provenance": "EDGAR filing marker 'EX-1' present in the document",
   "original_filename": "c48459exv10w9.htm",
   "sha256": "096c63f875b240bc76e0fc8888dcecb3f9cddf192456fb8821ee41995188e816",
   "chars": 30487,

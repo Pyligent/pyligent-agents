@@ -1,14 +1,6 @@
 {
-  "documents": 100,
+  "documents": 97,
   "corpus": [
-    {
-      "name": "16_c__-_Credit_Support_Annex",
-      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
-    },
-    {
-      "name": "2008csajp-1__1_",
-      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
-    },
     {
       "name": "EX-11.14",
       "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
@@ -338,10 +330,6 @@
       "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
     },
     {
-      "name": "isda-credit-support-annex-1-11-dec-2023",
-      "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
-    },
-    {
       "name": "m0325exhibit414",
       "provenance": "SEC EDGAR exhibit (public filing) (US federal government work, public domain)"
     },
@@ -405,12 +393,12 @@
   "scores": [
     {
       "extractor": "gemini-3.6-flash",
-      "documents": 100,
-      "fields": 673,
-      "findings": 4,
-      "evidence_integrity": 0.9941,
+      "documents": 97,
+      "fields": 654,
+      "findings": 3,
+      "evidence_integrity": 0.9954,
       "by_code": {
-        "FABRICATED_EVIDENCE": 3,
+        "FABRICATED_EVIDENCE": 2,
         "SILENT_REPAIR": 0,
         "PLACEHOLDER_VALUE": 0,
         "MISSING_EVIDENCE": 0,

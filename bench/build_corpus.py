@@ -37,10 +37,38 @@ CONFIDENTIAL = re.compile(
 )
 
 
-def _is_public(path: Path) -> tuple[bool, str]:
+# An EDGAR-filed document carries its filing furniture: the exhibit type, the
+# SGML header, or the <PAGE> markers of a text filing. This is checked rather than
+# assumed, because the licence line below is a claim about someone else's rights.
+SEC_MARKER = re.compile(
+    r"<TYPE>|<SEQUENCE>|SEC-HEADER|<PAGE>|\bEX-\d|\bEX-99|\bExhibit\s+\d", re.I
+)
+
+PUBLIC_DOMAIN = "US federal government work, public domain"
+
+
+def _is_public(path: Path, text: str) -> tuple[bool, str, str]:
+    """Whether this document may be redistributed, and on what evidence.
+
+    The first version of this function asserted `US federal government work, public
+    domain` for everything it admitted. That was a claim about copyright with nothing
+    behind it, in the tool whose entire subject is unsupported claims. It was wrong for
+    three files: two ISDA-published forms, which are ISDA's copyright and not a federal
+    work at all, and one named securitisation's transaction document carrying its own
+    legal notice.
+
+    So provenance is now evidence, like everything else here. A document is admitted
+    only if it carries EDGAR filing furniture. Anything else is refused rather than
+    relabelled: this corpus is redistributed and sent to third-party APIs, and
+    "probably fine" is not a licence.
+    """
     if CONFIDENTIAL.search(path.name):
-        return False, "excluded: filename indicates an executed bilateral agreement"
-    return True, "SEC EDGAR exhibit or published ISDA form"
+        return False, "", "excluded: filename indicates an executed bilateral agreement"
+    m = SEC_MARKER.search(text[:4000])
+    if not m:
+        return False, "", ("excluded: no EDGAR filing marker, so its provenance and "
+                           "licence cannot be established from the document itself")
+    return True, PUBLIC_DOMAIN, f"EDGAR filing marker {m.group(0)!r} present in the document"
 
 
 def build(sources: list[Path], out: Path, *, limit: int) -> int:
@@ -49,19 +77,20 @@ def build(sources: list[Path], out: Path, *, limit: int) -> int:
     written = skipped_private = skipped_notcsa = skipped_dupe = 0
 
     for path in sources:
-        public, note = _is_public(path)
+        try:
+            text = load(path).text
+        except Exception:
+            skipped_notcsa += 1
+            continue
+
+        public, licence, note = _is_public(path, text)
         if not public:
             skipped_private += 1
+            print(f"  refused  {path.name[:52]:<52} {note}")
             continue
 
         verdict = classify(path)
         if not verdict.is_csa:
-            skipped_notcsa += 1
-            continue
-
-        try:
-            text = load(path).text
-        except Exception:
             skipped_notcsa += 1
             continue
 
@@ -79,7 +108,7 @@ def build(sources: list[Path], out: Path, *, limit: int) -> int:
             json.dumps(
                 {
                     "source_url": "SEC EDGAR exhibit (public filing)",
-                    "licence": "US federal government work, public domain",
+                    "licence": licence,
                     "provenance": note,
                     "original_filename": path.name,
                     "sha256": digest,
@@ -100,7 +129,7 @@ def build(sources: list[Path], out: Path, *, limit: int) -> int:
     print(f"  written:              {written}")
     print(f"  skipped, not a CSA:   {skipped_notcsa}")
     print(f"  skipped, duplicate:   {skipped_dupe}")
-    print(f"  skipped, CONFIDENTIAL:{skipped_private}")
+    print(f"  refused on provenance:{skipped_private}")
     print(f"  corpus → {out}")
     return written
 

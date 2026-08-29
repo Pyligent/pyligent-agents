@@ -1,7 +1,7 @@
 {
   "source_url": "SEC EDGAR exhibit (public filing)",
   "licence": "US federal government work, public domain",
-  "provenance": "SEC EDGAR exhibit or published ISDA form",
+  "provenance": "EDGAR filing marker '<TYPE>' present in the document",
   "original_filename": "a2093388zex-10_51.txt",
   "sha256": "0deb28cbb276c26a5fe1cd3f5e8b37614d0d689c7c82381c28d3c1b0ad969c5c",
   "chars": 53445,

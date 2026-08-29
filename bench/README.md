@@ -170,47 +170,63 @@ PYLIGENT_LIVE_MODEL=1 pytest -m live -s
 
 ---
 
-## First run on the 100-document corpus
+## First run on the corpus
 
-`gemini-3.6-flash`, 100 documents, 673 fields, no failures.
+`gemini-3.6-flash`, 97 documents, 654 fields, no failures.
 
 | | |
 |---|---|
-| evidence integrity | **99.4%** |
-| fabricated | 3 |
+| evidence integrity | **99.5%** |
+| fabricated | 2 |
 | silent repair | 0 |
 | placeholder | 0 |
 | empty value | 1 |
 
-The first run reported **six** fabrications. Three were the checker's fault, and
-finding that out was worth more than the run.
+Two things went wrong on the way to that number, and both are worth more than it.
 
-One exhibit's filer left **U+200B zero-width spaces** between block elements. Python's
-`\s` does not match U+200B — it is category Cf, not whitespace — so three quotes that
-transcribed exactly what a reader sees were reported as invented. A tool whose entire
-value is being trusted when it says "this citation is not real" cannot afford to
-accuse correct work; that is worse than missing a fabrication, because it teaches
-people to ignore the output. `normalize.squash` now removes invisible characters, with
-regression tests covering both directions — the real quote passes, invented text is
-still refused, and offsets still index the original document so `Source.locate`
-keeps resolving real positions.
+### The checker accused correct work
 
-The three that survived are real, and they are not all the same thing:
+The first run reported six fabrications. Three were the checker's fault. One exhibit's
+filer left **U+200B zero-width spaces** between block elements; Python's `\s` does not
+match U+200B, because it is category Cf and not whitespace. Three quotes that
+transcribed exactly what a reader sees were reported as invented.
 
-- **`2008csajp` / `eligible_currency`** — a genuine fabrication. The model cited
-  *"means the Base Currency and each other currency specified here"*. The document
-  says *"means each currency specified as such in Paragraph 13"*. Plausible,
-  ISDA-shaped, and absent.
-- **`efc6-1070` / `threshold`** and **`efc7-2680` / `valuation_percentage`** — quotes
-  stitched across a page break, joining real fragments over intervening page furniture
-  (`13`, `<PAGE>`, `REFERENCE NUMBER: N727633N`). Every word is in the document; the
-  sentence is not.
+A tool whose value rests on being believed when it says *"this citation is not real"*
+cannot afford to accuse correct work. That error is worse than missing a fabrication,
+because it teaches people to ignore the output. `normalize.squash` now removes
+invisible characters before matching, and `find_flexible` absorbs them in its gap
+pattern rather than stripping them up front, so offsets still index the original
+document and `Source.locate` keeps resolving real positions.
 
-The check is right to flag all three — a citation that is not verbatim cannot be
-verified by the person relying on it. But an invented definition and a quote stitched
-over a page number are different failures with different remedies, and the report
-currently gives them one code. Splitting them is worth doing before anyone triages a
-large run.
+### The corpus builder asserted a licence it had not checked
+
+The first version stamped `US federal government work, public domain` onto every
+record it admitted. That was a claim about someone else's copyright with nothing
+behind it — written into the tool whose entire subject is unsupported claims.
+
+It was wrong for three files: two ISDA-published forms, which are ISDA's copyright and
+not federal works at all, and one named securitisation's transaction document carrying
+its own legal notice. None was caught by the confidential-filename filter, because
+nothing in their names suggested anything.
+
+Provenance is now evidence like everything else. A document is admitted only if it
+carries EDGAR filing furniture — `<TYPE>`, `<SEQUENCE>`, `SEC-HEADER`, `<PAGE>`, or an
+`EX-` exhibit tag — and the marker that admitted it is recorded in its `meta.json`.
+Anything else is **refused rather than relabelled**: this corpus is redistributed and
+sent to third-party APIs, and "probably fine" is not a licence. Eight documents are now
+refused, five on filename and three on provenance.
+
+### What survived
+
+Both remaining findings are quotes **stitched across a page break** — `efc6-1070`
+/`threshold` and `efc7-2680`/`valuation_percentage` — joining real fragments over
+intervening page furniture (`13`, `<PAGE>`, `REFERENCE NUMBER: N727633N`). Every word
+is in the document; the sentence is not.
+
+The check is right to flag them: a citation that is not verbatim cannot be verified by
+the person relying on it. But stitching over a page number and inventing a definition
+outright are different failures with different remedies, and they currently share one
+code. Splitting `FABRICATED_EVIDENCE` is worth doing before anyone triages a large run.
 
 ---
 
