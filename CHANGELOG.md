@@ -5,6 +5,85 @@ All notable changes to this project are documented here. This project follows
 
 ## [Unreleased]
 
+### Added — a benchmark corpus of documents that *are* CSAs
+
+- **`bench/classify.py`** decides whether a filing *is* a Credit Support Annex
+  rather than whether it mentions one. SEC full-text search answers the second
+  question, so a corpus built from `q="Credit Support Annex"` is mostly filings
+  with nothing to extract, and every score computed on it really measures how
+  often a model correctly finds nothing. The discriminator is the annex's own
+  vocabulary: the phrase is a name and travels into prose, while `Delivery
+  Amount` and `Return Amount` are operative terms of the transfer obligation and
+  do not. Measured: 119/120 known annexes admitted (scores 33–44), **0/24 hard
+  negatives** admitted (0–11), nothing in between. The one refusal is an
+  Amendment Agreement naming a CSA once — the document the phrase search is
+  wrong about. Every verdict carries the evidence that produced it, so a disputed
+  call is inspected rather than re-tuned.
+- **`bench/build_corpus.py`** and a **97-document corpus** of SEC exhibits, each
+  record carrying its source, licence, content hash, and the classifier evidence
+  that admitted it.
+- **First scored run.** `gemini-3.6-flash`, 97 documents, 654 fields: **99.5%
+  evidence integrity**, 2 fabricated, 0 silent repair, 0 placeholder. Both
+  survivors are quotes stitched across a page break — real fragments joined over
+  page furniture — rather than inventions.
+
+### Added — one live model call in CI
+
+- The Anthropic backend had **no test of any kind**, though it is the path most
+  likely to be tried first. Backend selection, the workspace header and the
+  identity-linked-key error translation are all testable without a credential, so
+  those run in ordinary CI and cost nothing.
+- A `live-model` job makes **one real call**, verifying the reply survives
+  `normalise_extraction` and that every quote it cites is actually in the source.
+  **Measured cost: $0.0096 per run** (473 in + 547 out, `claude-sonnet-5` at list
+  price), ≈$0.50/year on the weekly schedule. It skips itself where no secret is
+  configured, so forks see it neutral rather than red.
+- This exists because a deterministic suite cannot see provider drift.
+  `gemini-2.5-flash` now returns `404 NOT_FOUND` to new keys — *"no longer
+  available to new users"* — and nothing caught it, because nothing called it.
+
+### Fixed — the checker was accusing correct work
+
+- **Invisible characters no longer read as fabrication.** An SEC exhibit's filer
+  left **U+200B zero-width spaces** between block elements. Python's `\s` does not
+  match U+200B — it is category Cf, not whitespace — so three quotes that
+  transcribed exactly what a reader sees were reported as `FABRICATED_EVIDENCE`.
+  For a tool whose value rests on being believed when it says *"this citation is
+  not real"*, a false accusation is worse than a miss: it teaches people to ignore
+  the output. `normalize.squash` now removes invisible characters, and
+  `find_flexible` absorbs them in its gap pattern rather than stripping them up
+  front, so offsets still index the original document and `Source.locate` keeps
+  resolving real positions.
+
+### Fixed — reports now print on Windows
+
+- Python on Windows picks the console's ANSI code page for stdout, and cp1252
+  cannot encode the box rules, check marks, arrows and em dashes every report
+  here prints. The first line of output raised `UnicodeEncodeError` and the
+  process died with a traceback instead of a report — which is what a Windows
+  user got running `evidence-check` on a real document. A verification tool that
+  cannot print its verdict has failed at the only thing it does.
+- `evidencecheck.console.use_utf8_stdout()` retunes stdout and stderr, called
+  from both console entry points, the examples, the evals and the bench scripts.
+  Guarded by a test that runs them under `PYTHONIOENCODING=cp1252`, so the
+  regression is caught on Linux and macOS too, not only on the one Windows job.
+
+### Fixed — the corpus builder asserted a licence it had not checked
+
+- The first version stamped `US federal government work, public domain` onto
+  every record it admitted. That was a claim about someone else's copyright with
+  nothing behind it, written into the tool whose entire subject is unsupported
+  claims. It was wrong for three files: two ISDA-published forms, which are
+  ISDA's copyright and not federal works, and one named securitisation's
+  transaction document carrying its own legal notice. The
+  confidential-filename filter caught none of them, because nothing in their
+  names suggested anything — a pattern list only refuses what someone thought to
+  name.
+- Provenance is now evidence: a document is admitted only if it carries EDGAR
+  filing furniture, and the marker that admitted it is recorded. Anything else is
+  **refused rather than relabelled**, because this corpus is redistributed and
+  sent to third-party APIs.
+
 ### Changed
 
 - **Licence is Apache-2.0, was MIT.** The explicit patent grant is what legal

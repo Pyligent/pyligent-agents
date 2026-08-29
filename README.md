@@ -106,8 +106,10 @@ survives a crash. The collateral work above is an application of them, and the
 patterns generalise — [`docs/PATTERNS.md`](docs/PATTERNS.md) works them through
 on an ordinary support desk, away from the domain.
 
-**No required dependencies.** **No tools shipped.** **420 tests that run offline
-in six seconds with no API key.**
+**No required dependencies.** **No tools shipped.** **443 tests that run offline
+in sixteen seconds with no API key** — plus one live-model test in CI, opt-in and
+costed at $0.0096 a run, because a deterministic suite cannot notice a provider
+retiring a model.
 
 ---
 
@@ -492,7 +494,10 @@ what the gates above are. And a genuine quote can still be the wrong clause;
 every claim here is about *support*, never about truth.
 [`docs/SPEC-evidence-checks.md`](docs/SPEC-evidence-checks.md) defines each check
 precisely enough for a second implementation to agree; `bench/` scores evidence
-integrity across extractors, free and offline.
+integrity across extractors, free and offline, over **97 SEC exhibits verified to
+*be* Credit Support Annexes** rather than to mention one — a distinction that
+decides whether the corpus has anything to extract at all
+([`bench/README.md`](bench/README.md)).
 
 `no_silent_repair()` catches what the other evidence gates cannot see: a
 citation that is genuine and names a *different* value. `evidence_present`

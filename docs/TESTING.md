@@ -178,15 +178,37 @@ ones.
 
 ## Running against a real model
 
-Everything above runs offline. When you want a live smoke test:
+Everything above runs offline. The live tests are marked `live` and skipped unless
+you ask for them twice — the marker plus an environment variable — so nobody with a
+key exported pays for a test run by accident:
 
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-PYLIGENT_AGENTS_BACKEND=anthropic pytest tests/test_smoke_live.py
+PYLIGENT_LIVE_MODEL=1 pytest -m live -s
 ```
 
 Keep those tests separate and few. They tell you the wiring is right; they cannot
 tell you the guardrails hold.
+
+**Have at least one.** A deterministic backend cannot see a provider retiring a
+model. `gemini-2.5-flash` began returning `404 NOT_FOUND` to new keys — *"no longer
+available to new users"* — and nothing in this repository noticed, because nothing
+called it. The Anthropic path had the same exposure for longer: it is the backend
+most likely to be tried first by someone evaluating the project, and it had no test
+of any kind.
+
+Most of a backend is testable without a credential — which model prefix routes
+where, whether the workspace header is sent, whether an identity-linked key's
+unhelpful 400 is translated into an instruction. Those belong in the ordinary suite.
+Only the last mile needs the network.
+
+What the live test asserts is the *contract*, not the model's accuracy: that the
+reply survives `normalise_extraction`, and that every quote it cites is genuinely in
+the source. A live test that accepted an invented quote would be worse than no live
+test. Accuracy is what `bench/run.py` measures, over a corpus, with evidence.
+
+CI runs exactly one such call, on a ~500-character document, at a **measured
+$0.0096 per run** — about $0.50 a year on its weekly schedule. It skips itself where
+no secret is configured, so a fork sees it neutral rather than red.
 
 ---
 
