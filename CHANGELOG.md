@@ -5,6 +5,16 @@ All notable changes to this project are documented here. This project follows
 
 ## [Unreleased]
 
+### Changed
+
+- **Licence is Apache-2.0, was MIT.** The explicit patent grant is what legal
+  and open-source review functions in regulated industries ask for, and it is
+  the standard for enterprise-consumable open source. It also resolves a real
+  inconsistency: the evidence checks were written as Apache-2.0 and merged into
+  an MIT-declared package, so the repository was claiming two things at once.
+  `NOTICE` added per the licence's convention.
+
+
 ### Added — memory bound to its evidence
 
 - **`MemoryStore` notes now record what they were derived from**, by content

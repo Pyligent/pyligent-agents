@@ -5,7 +5,7 @@ audit trail that makes a recommendation defensible.**
 
 [![ci](https://github.com/pyligent/pyligent-agents/actions/workflows/ci.yml/badge.svg)](https://github.com/pyligent/pyligent-agents/actions/workflows/ci.yml)
 [![python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org)
-[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![license](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 A Credit Support Annex is a signed contract that a margin system holds as a row
 in a table. When those two disagree — an amendment nobody re-keyed, a term read
@@ -704,4 +704,5 @@ all very welcome. The house rule:
 [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
 · [`SECURITY.md`](SECURITY.md)
 
-MIT licensed.
+Apache-2.0 licensed. The patent grant is the reason: it is what legal and open-source review functions in regulated industries ask for, and it costs
+nothing to give.
