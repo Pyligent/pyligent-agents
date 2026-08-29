@@ -103,6 +103,19 @@ def test_new_scaffolds_a_project_whose_tests_pass(tmp_path):
         timeout=120, **TEXT)
     assert result.returncode == 0, result.stdout[-1500:]
 
+    # Run the generated app itself, not only its tests. A scaffold can have passing
+    # tests and still be broken on the path a user actually takes: `main()` is not
+    # exercised by the generated test file, so a NameError there ships silently.
+    # That is not hypothetical — an automated edit once inserted a call into this
+    # template without its import, and every test still passed.
+    ran = subprocess.run(
+        [sys.executable, str(target / "orderbot.py")], capture_output=True, cwd=target,
+        env={"PYTHONPATH": os.pathsep.join([str(ROOT / "src"), str(target)]),
+             "PATH": os.environ.get("PATH", ""),
+             "PYLIGENT_AGENTS_BACKEND": "scripted"},
+        timeout=120, **TEXT)
+    assert ran.returncode == 0, _why(ran)
+
 
 def test_new_refuses_to_overwrite(tmp_path):
     target = tmp_path / "taken"

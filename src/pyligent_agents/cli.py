@@ -22,6 +22,8 @@ import os
 import sys
 from pathlib import Path
 
+from evidencecheck.console import use_utf8_stdout
+
 from . import PermissionTier, __version__, get_settings
 
 STEPS = [
@@ -145,7 +147,6 @@ def build(harness: Harness, goal: str = "Answer the user's question.") -> Agent:
 
 
 def main() -> None:
-    use_utf8_stdout()
     stack = build_stack(registry=build_registry())
     result = build(stack.harness).run("Ask me something.")
     print(result.answer)
@@ -169,7 +170,6 @@ from pyligent_agents.testing import (
 )
 
 from {name} import build, build_registry
-from evidencecheck.console import use_utf8_stdout
 
 
 def _stack(policy):
@@ -482,6 +482,7 @@ def cmd_trace(a) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    use_utf8_stdout()
     p = argparse.ArgumentParser(
         prog="pyligent-agents",
         description="Harness, loop and graph engineering for production agents.")
