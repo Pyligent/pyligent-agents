@@ -14,7 +14,13 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-ENV = {"PYTHONPATH": f"{ROOT / 'src'}:{ROOT / 'examples'}", "PATH": "/usr/bin:/bin",
+# PYTHONPATH is separated by os.pathsep — ";" on Windows, not ":". Joining with a
+# literal colon there produces one nonsensical path, so `examples/` never lands on
+# sys.path, the CLI fails to import the graph it was asked to show, and the test
+# sees empty output rather than an error it can read. PATH is inherited for the
+# same reason: "/usr/bin:/bin" names nothing on Windows.
+ENV = {"PYTHONPATH": os.pathsep.join([str(ROOT / "src"), str(ROOT / "examples")]),
+       "PATH": os.environ.get("PATH", ""),
        "PYLIGENT_AGENTS_BACKEND": "scripted"}
 
 
@@ -237,3 +243,17 @@ def test_no_file_io_relies_on_the_machines_locale():
         "these calls decode/encode with the machine's locale and will fail on a "
         "non-UTF-8 platform:\n  " + "\n  ".join(offenders)
     )
+
+
+def test_the_subprocess_env_is_usable_on_this_platform():
+    """PYTHONPATH must split on os.pathsep into directories that exist.
+
+    Joined with a literal ":", this is one nonsensical path on Windows: `examples/`
+    never reaches sys.path, the CLI cannot import the graph it was asked to show,
+    and the test sees empty output rather than an error naming the cause. That is a
+    slow thing to diagnose from a CI log, so assert the precondition directly.
+    """
+    entries = ENV["PYTHONPATH"].split(os.pathsep)
+    assert len(entries) == 2, f"PYTHONPATH did not split into two paths: {entries}"
+    for entry in entries:
+        assert Path(entry).is_dir(), f"not a directory: {entry!r}"
