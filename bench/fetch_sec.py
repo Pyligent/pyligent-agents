@@ -27,6 +27,8 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+from evidencecheck.console import use_utf8_stdout
+
 FTS = "https://efts.sec.gov/LATEST/search-index?q={q}&forms={forms}"
 ARCHIVE = "https://www.sec.gov/Archives/edgar/data/{cik}/{acc}/{doc}"
 COURTESY_DELAY_S = 0.15          # SEC asks for <= 10 requests/second
@@ -144,6 +146,7 @@ def fetch(hits: list[dict], root: Path, *, agent: str) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    use_utf8_stdout()
     p = argparse.ArgumentParser(description="Fetch public filings into the corpus.")
     p.add_argument("--query", default="Credit Support Annex")
     p.add_argument("--forms", default="8-K,10-K,10-Q")

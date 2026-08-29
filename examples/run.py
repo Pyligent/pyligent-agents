@@ -41,6 +41,7 @@ from level4_invoice_intake import policy as l4p
 from shopdesk import data  # noqa: E402
 from shopdesk.tools import build_registry  # noqa: E402
 
+from evidencecheck.console import use_utf8_stdout
 from pyligent_agents import build_stack, get_settings  # noqa: E402
 from pyligent_agents.core.errors import (  # noqa: E402
     BudgetExhausted,
@@ -521,6 +522,7 @@ def cmd_demo(a) -> int:
 
 
 def main(argv=None) -> int:
+    use_utf8_stdout()
     p = argparse.ArgumentParser(prog="examples/run.py", description=__doc__,
                                formatter_class=argparse.RawDescriptionHelpFormatter)
     sub_ = p.add_subparsers(dest="cmd", required=True)

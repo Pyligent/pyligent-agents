@@ -26,6 +26,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 from classify import classify  # noqa: E402
 
+from evidencecheck.console import use_utf8_stdout
 from evidencecheck.sources import load  # noqa: E402
 
 # Executed bilateral agreements. Excluded on filename, before anything reads them.
@@ -135,6 +136,7 @@ def build(sources: list[Path], out: Path, *, limit: int) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    use_utf8_stdout()
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("roots", nargs="+", type=Path)
     p.add_argument("--out", type=Path, default=Path(__file__).parent / "corpus-sec")

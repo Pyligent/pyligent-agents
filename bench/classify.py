@@ -26,6 +26,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+from evidencecheck.console import use_utf8_stdout
 from evidencecheck.sources import load  # noqa: E402
 
 # Operative terms. These are defined in the annex and used by its mechanics; prose
@@ -133,6 +134,7 @@ def classify(path: Path) -> Verdict:
 
 
 def main(argv: list[str] | None = None) -> int:
+    use_utf8_stdout()
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("paths", nargs="+", help="files or directories to classify")
     p.add_argument("--json", type=Path, help="write full verdicts here")

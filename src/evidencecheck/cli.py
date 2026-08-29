@@ -18,6 +18,7 @@ from typing import Any
 
 from . import __version__
 from .checks import check
+from .console import use_utf8_stdout
 from .report import CRITICAL, Report
 from .sources import Source, load
 
@@ -151,6 +152,7 @@ def main(argv: list[str] | None = None) -> int:
     A stranger should not have to read --help to run the one thing this does.
     `evidence-check contract.html out.json` is the whole interface.
     """
+    use_utf8_stdout()
     argv = list(sys.argv[1:] if argv is None else argv)
 
     p = argparse.ArgumentParser(

@@ -145,6 +145,7 @@ def build(harness: Harness, goal: str = "Answer the user's question.") -> Agent:
 
 
 def main() -> None:
+    use_utf8_stdout()
     stack = build_stack(registry=build_registry())
     result = build(stack.harness).run("Ask me something.")
     print(result.answer)
@@ -168,6 +169,7 @@ from pyligent_agents.testing import (
 )
 
 from {name} import build, build_registry
+from evidencecheck.console import use_utf8_stdout
 
 
 def _stack(policy):

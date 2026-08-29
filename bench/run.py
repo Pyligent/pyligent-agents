@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from corpus import Entry, extractors_in, load_corpus  # noqa: E402
 
 from evidencecheck import check  # noqa: E402
+from evidencecheck.console import use_utf8_stdout
 from evidencecheck.sources import load as load_source  # noqa: E402
 
 CODES = ("FABRICATED_EVIDENCE", "SILENT_REPAIR", "PLACEHOLDER_VALUE",
@@ -117,6 +118,7 @@ def render(entries: list[Entry], scores: dict[str, Score]) -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
+    use_utf8_stdout()
     p = argparse.ArgumentParser(description="Evidence integrity across extractors.")
     p.add_argument("--corpus", default=str(Path(__file__).resolve().parent / "corpus"))
     p.add_argument("--json", help="write the scores here as JSON")

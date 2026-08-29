@@ -26,6 +26,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _env import load_env  # noqa: E402
 
+from evidencecheck.console import use_utf8_stdout
+
 # Read .env if there is one, so a key never has to be exported by hand
 # or pasted where it would be recorded.
 load_env(Path(__file__).resolve().parents[1] / ".env")
@@ -117,6 +119,7 @@ def parse_json(text: str) -> dict:
 
 
 def main(argv: list[str] | None = None) -> int:
+    use_utf8_stdout()
     p = argparse.ArgumentParser(description="Generate extractions for a corpus.")
     p.add_argument("--corpus", required=True)
     p.add_argument("--model", required=True)

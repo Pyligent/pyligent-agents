@@ -6,6 +6,7 @@ contributor does is run it.
 
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -163,3 +164,29 @@ def test_assert_effects_fire_once_reports_the_keys(tmp_path, registry):
     stack.store.record_effect("r1", "k2", "n", {})
     with pytest.raises(AssertionError, match="k1"):
         assert_effects_fire_once(stack, "r1")
+
+
+@pytest.mark.parametrize("entry", [
+    ["examples/run.py", "demo", "all"],
+    ["bench/run.py", "--corpus", "bench/corpus-synthetic"],
+    ["evals/run_evals.py", "--system", "faithful", "--check"],
+])
+def test_entry_points_survive_a_legacy_codepage(entry):
+    """Windows picks cp1252 for stdout, and cp1252 cannot encode `─`, `✓` or `→`.
+
+    Every report here prints at least one of them, so before `use_utf8_stdout` the
+    first line of output raised UnicodeEncodeError and the process died with a
+    traceback instead of a report. Eleven tests failed this way on
+    windows-latest, and a Windows user running `evidence-check` got the same
+    thing: no findings, just `charmap` in a stack trace.
+
+    PYTHONIOENCODING reproduces that on any platform, which is why this test can
+    guard the fix from Linux and macOS as well.
+    """
+    env = {**os.environ, "PYTHONIOENCODING": "cp1252"}
+    result = subprocess.run(
+        [sys.executable, *entry], cwd=ROOT, env=env,
+        capture_output=True, text=True,
+    )
+    assert "UnicodeEncodeError" not in result.stderr, result.stderr[-600:]
+    assert result.returncode == 0, result.stderr[-600:]

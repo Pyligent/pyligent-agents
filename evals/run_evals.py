@@ -30,6 +30,7 @@ from dataset import DATASET  # noqa: E402
 from document_intake import app  # noqa: E402
 from personas import PERSONAS, build_policy  # noqa: E402
 
+from evidencecheck.console import use_utf8_stdout  # noqa: E402
 from pyligent_agents.evals import (  # noqa: E402
     CaseOutcome,
     compare,
@@ -88,6 +89,7 @@ def _rule(t: str, c: str = "=") -> None:
 
 
 def main(argv=None) -> int:
+    use_utf8_stdout()
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--system", default="", choices=[*PERSONAS, ""],
