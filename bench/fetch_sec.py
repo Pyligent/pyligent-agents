@@ -138,7 +138,7 @@ def fetch(hits: list[dict], root: Path, *, agent: str) -> int:
             "licence": "US federal government work, public domain",
             "company": h["company"], "form": h["form"], "filed": h["filed"],
             "retrieved_by": "bench/fetch_sec.py",
-        }, indent=2))
+        }, indent=2), encoding="utf-8")
         (target / "extractions").mkdir(exist_ok=True)
         saved += 1
         print(f"  {name}  {h['company'][:44]}")

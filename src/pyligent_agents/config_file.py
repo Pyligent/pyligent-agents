@@ -182,7 +182,7 @@ def load(path: str | Path, *, allow_secrets: bool = False) -> Config:
     p = Path(path)
     if not p.exists():
         raise ConfigError(f"no configuration file at {p}")
-    text = p.read_text()
+    text = p.read_text(encoding="utf-8")
 
     if not allow_secrets:
         found = scan_for_secrets(text)

@@ -122,7 +122,7 @@ def build(sources: list[Path], out: Path, *, limit: int) -> int:
                 },
                 indent=2,
             )
-        )
+        , encoding="utf-8")
         written += 1
         if written >= limit:
             break

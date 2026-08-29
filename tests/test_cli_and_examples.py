@@ -18,15 +18,23 @@ ENV = {"PYTHONPATH": f"{ROOT / 'src'}:{ROOT / 'examples'}", "PATH": "/usr/bin:/b
        "PYLIGENT_AGENTS_BACKEND": "scripted"}
 
 
+# `text=True` alone decodes a child's output with the machine's ANSI codepage —
+# cp1252 on most Windows installs. These children deliberately emit UTF-8 (see
+# evidencecheck.console), so the parent must be told to read UTF-8 rather than
+# guess from the locale. Without this the fix to the child's *output* simply moves
+# the UnicodeError into the test harness's *input*.
+TEXT = {"text": True, "encoding": "utf-8", "errors": "replace"}
+
+
 def _cli(*args, cwd=None, env=None):
     return subprocess.run([sys.executable, "-m", "pyligent_agents", *args], capture_output=True,
-                          text=True, cwd=cwd or ROOT, env={**ENV, **(env or {})}, timeout=120)
+                          cwd=cwd or ROOT, env={**ENV, **(env or {})}, timeout=120, **TEXT)
 
 
 def _example(*args, cwd=None):
     return subprocess.run([sys.executable, str(ROOT / "examples" / "run.py"), *args],
-                          capture_output=True, text=True, cwd=cwd or ROOT,
-                          env={**ENV, "HOME": str(cwd or ROOT)}, timeout=240)
+                          capture_output=True, cwd=cwd or ROOT,
+                          env={**ENV, "HOME": str(cwd or ROOT)}, timeout=240, **TEXT)
 
 
 # --- the library CLI ------------------------------------------------------
@@ -62,18 +70,22 @@ def test_new_scaffolds_a_project_whose_tests_pass(tmp_path):
     assert _cli("new", str(target)).returncode == 0
     assert (target / "orderbot.py").exists()
     assert (target / "tests" / "test_orderbot.py").exists()
-    assert "Who verifies" in (target / "README.md").read_text()
+    assert "Who verifies" in (target / "README.md").read_text(encoding="utf-8")
 
+    # PATH and PYTHONPATH are platform-shaped: os.pathsep is ";" on Windows, and
+    # "/usr/bin:/bin" names nothing there. Inherit PATH rather than inventing one.
     result = subprocess.run(
-        [sys.executable, "-m", "pytest", "-q"], capture_output=True, text=True, cwd=target,
-        env={"PYTHONPATH": f"{ROOT / 'src'}:{target}", "PATH": "/usr/bin:/bin"}, timeout=120)
+        [sys.executable, "-m", "pytest", "-q"], capture_output=True, cwd=target,
+        env={"PYTHONPATH": os.pathsep.join([str(ROOT / "src"), str(target)]),
+             "PATH": os.environ.get("PATH", "")},
+        timeout=120, **TEXT)
     assert result.returncode == 0, result.stdout[-1500:]
 
 
 def test_new_refuses_to_overwrite(tmp_path):
     target = tmp_path / "taken"
     target.mkdir()
-    (target / "x.py").write_text("keep me")
+    (target / "x.py").write_text("keep me", encoding="utf-8")
     assert _cli("new", str(target)).returncode == 2
 
 
@@ -186,7 +198,42 @@ def test_entry_points_survive_a_legacy_codepage(entry):
     env = {**os.environ, "PYTHONIOENCODING": "cp1252"}
     result = subprocess.run(
         [sys.executable, *entry], cwd=ROOT, env=env,
-        capture_output=True, text=True,
+        capture_output=True, **TEXT,
     )
     assert "UnicodeEncodeError" not in result.stderr, result.stderr[-600:]
     assert result.returncode == 0, result.stderr[-600:]
+
+
+def test_no_file_io_relies_on_the_machines_locale():
+    """`Path.read_text()` with no encoding decodes with the platform's ANSI codepage.
+
+    On Windows that is cp1252, which cannot decode the UTF-8 these tools read and
+    write — extraction JSON full of curly quotes, memory notes quoting legal text,
+    a scaffolded README with an em dash. JSON is UTF-8 by specification, so reading
+    it through the locale is wrong everywhere; Windows is merely where it raises.
+
+    This is checked structurally rather than by running under every locale, because
+    the failure is silent on a UTF-8 machine and only appears on someone else's.
+    """
+    import ast
+
+    offenders = []
+    for path in sorted(ROOT.rglob("*.py")):
+        if any(part in {".venv", "node_modules", ".git"} or part.startswith("corpus")
+               for part in path.parts):
+            continue
+        try:
+            tree = ast.parse(path.read_text(encoding="utf-8"))
+        except (SyntaxError, UnicodeDecodeError):
+            continue
+        for node in ast.walk(tree):
+            if (isinstance(node, ast.Call)
+                    and isinstance(node.func, ast.Attribute)
+                    and node.func.attr in {"read_text", "write_text"}
+                    and not any(kw.arg == "encoding" for kw in node.keywords)):
+                offenders.append(f"{path.relative_to(ROOT)}:{node.lineno}")
+
+    assert not offenders, (
+        "these calls decode/encode with the machine's locale and will fail on a "
+        "non-UTF-8 platform:\n  " + "\n  ".join(offenders)
+    )

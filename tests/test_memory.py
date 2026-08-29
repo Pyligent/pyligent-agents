@@ -147,7 +147,7 @@ def test_forgetting_a_wrong_note_is_maintenance(store):
 
 def test_a_corrupt_note_does_not_take_the_others_with_it(store):
     seed(store)
-    (store.root / "broken.json").write_text("{not json")
+    (store.root / "broken.json").write_text("{not json", encoding="utf-8")
     assert len(store.recall("atlas", sources={}, include_unusable=True)) == 2
 
 
@@ -243,6 +243,6 @@ def test_notes_written_before_provenance_existed_still_load(store):
     import json
     (store.root / "legacy.json").write_text(json.dumps(
         {"name": "legacy", "kind": "observation", "body": "an older fact",
-         "tags": [], "created_at": 1.0, "updated_at": 1.0, "revisions": 1}))
+         "tags": [], "created_at": 1.0, "updated_at": 1.0, "revisions": 1}), encoding="utf-8")
     r = store.recall("older fact", sources={})
     assert r[0].freshness is Freshness.UNBOUND and r[0].usable

@@ -55,7 +55,7 @@ class Entry:
 def _read_extraction(path: Path) -> Extraction:
     from evidencecheck.cli import normalise_extraction
 
-    payload = json.loads(path.read_text())
+    payload = json.loads(path.read_text(encoding="utf-8"))
     return Extraction(extractor=path.stem,
                       fields=normalise_extraction(payload), path=path)
 
@@ -81,7 +81,7 @@ def load_corpus(root: str | Path) -> list[Entry]:
         if not extractions:
             continue
         meta_path = d / "meta.json"
-        meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
+        meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
         entries.append(Entry(name=d.name, source_path=sources[0],
                              extractions=extractions, meta=meta))
     return entries

@@ -18,13 +18,13 @@ CSA = """<html><body>
 @pytest.fixture
 def doc(tmp_path):
     p = tmp_path / "csa.html"
-    p.write_text(CSA)
+    p.write_text(CSA, encoding="utf-8")
     return p
 
 
 def write(tmp_path, payload):
     p = tmp_path / "out.json"
-    p.write_text(json.dumps(payload))
+    p.write_text(json.dumps(payload), encoding="utf-8")
     return p
 
 
@@ -88,7 +88,7 @@ def test_a_missing_file_exits_two_not_one(doc, tmp_path):
 
 def test_malformed_json_exits_two_with_the_parse_error(tmp_path, doc, capsys):
     bad = tmp_path / "bad.json"
-    bad.write_text("{not json")
+    bad.write_text("{not json", encoding="utf-8")
     assert main(["check", "--source", str(doc), "--extraction", str(bad)]) == 2
     assert "not valid JSON" in capsys.readouterr().err
 

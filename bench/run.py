@@ -137,7 +137,7 @@ def main(argv: list[str] | None = None) -> int:
             {"documents": len(entries),
              "corpus": [{"name": e.name, "provenance": e.provenance} for e in entries],
              "scores": [s.to_dict() for s in scores.values()]},
-            indent=2))
+            indent=2), encoding="utf-8")
         print(f"\nwrote {a.json}")
     return 0
 

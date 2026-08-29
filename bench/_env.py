@@ -20,7 +20,7 @@ def load_env(path: str | Path = ".env", *, override: bool = False) -> list[str]:
     if not p.exists():
         return []
     names = []
-    for raw in p.read_text().splitlines():
+    for raw in p.read_text(encoding="utf-8").splitlines():
         line = raw.strip()
         if not line or line.startswith("#"):
             continue

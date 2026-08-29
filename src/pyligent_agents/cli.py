@@ -306,7 +306,7 @@ def cmd_validation_pack(a) -> int:
     systems = {}
     for b in baselines:
         try:
-            data = _json.loads(b.read_text())
+            data = _json.loads(b.read_text(encoding="utf-8"))
             systems[b.stem] = data.get("metrics", {})
         except (OSError, ValueError):
             systems[b.stem] = {"error": "unreadable"}
@@ -335,7 +335,7 @@ def cmd_validation_pack(a) -> int:
 
     text = _json.dumps(out, indent=2)
     if a.out:
-        _Path(a.out).write_text(text)
+        _Path(a.out).write_text(text, encoding="utf-8")
         print(f"validation pack written to {a.out}")
     else:
         print(text)

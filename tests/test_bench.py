@@ -24,18 +24,18 @@ def build(tmp_path, extractions: dict[str, dict], meta: dict | None = None) -> P
     root = tmp_path / "corpus"
     d = root / "doc-1"
     (d / "extractions").mkdir(parents=True)
-    (d / "source.txt").write_text(DOC)
+    (d / "source.txt").write_text(DOC, encoding="utf-8")
     (d / "meta.json").write_text(json.dumps(meta or {"source_url": "https://x/1",
-                                                     "licence": "public domain"}))
+                                                     "licence": "public domain"}), encoding="utf-8")
     for name, payload in extractions.items():
-        (d / "extractions" / f"{name}.json").write_text(json.dumps(payload))
+        (d / "extractions" / f"{name}.json").write_text(json.dumps(payload), encoding="utf-8")
     return root
 
 
 def test_a_document_without_extractions_is_skipped(tmp_path):
     root = tmp_path / "corpus"
     (root / "lonely").mkdir(parents=True)
-    (root / "lonely" / "source.txt").write_text(DOC)
+    (root / "lonely" / "source.txt").write_text(DOC, encoding="utf-8")
     assert load_corpus(root) == []
 
 

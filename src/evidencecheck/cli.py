@@ -111,7 +111,7 @@ def cmd_check(a: argparse.Namespace) -> int:
         return 2
 
     try:
-        payload = json.loads(Path(a.extraction).read_text())
+        payload = json.loads(Path(a.extraction).read_text(encoding="utf-8"))
     except FileNotFoundError:
         print(f"no extraction at {a.extraction}", file=sys.stderr)
         return 2

@@ -160,7 +160,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"\n  {len(accepted)}/{len(verdicts)} are CSAs")
 
     if a.json:
-        a.json.write_text(json.dumps([v.as_dict() for v in verdicts], indent=2))
+        a.json.write_text(json.dumps([v.as_dict() for v in verdicts], indent=2), encoding="utf-8")
         print(f"  verdicts → {a.json}")
     return 0
 

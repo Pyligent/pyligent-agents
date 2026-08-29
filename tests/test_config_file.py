@@ -65,7 +65,7 @@ def test_a_reference_key_holding_a_value_rather_than_a_name_is_caught():
 def test_loading_a_file_with_a_credential_is_refused(tmp_path):
     """The control that matters: refusal at load, not a linter someone remembers."""
     p = tmp_path / "pyligent.yaml"
-    p.write_text("extractor:\n  api_key_env: sk-ant-api03-AAAAAAAAAAAAAAAAAAAA\n")
+    p.write_text("extractor:\n  api_key_env: sk-ant-api03-AAAAAAAAAAAAAAAAAAAA\n", encoding="utf-8")
     with pytest.raises(ConfigError) as exc:
         load(p)
     # The message has to say why, because the person reading it is about to
@@ -75,5 +75,5 @@ def test_loading_a_file_with_a_credential_is_refused(tmp_path):
 
 def test_a_clean_file_loads(tmp_path):
     p = tmp_path / "pyligent.yaml"
-    p.write_text(GOOD)
+    p.write_text(GOOD, encoding="utf-8")
     assert load(p).get("extractor.provider") == "anthropic"

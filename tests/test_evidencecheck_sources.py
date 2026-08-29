@@ -78,10 +78,10 @@ def test_plain_text_has_no_spans_and_that_is_fine():
 
 def test_the_loader_picks_a_reader_by_extension(tmp_path):
     h = tmp_path / "x.html"
-    h.write_text(SEC_EXHIBIT)
+    h.write_text(SEC_EXHIBIT, encoding="utf-8")
     assert load(h).ingested_by == "html/native"
     t = tmp_path / "x.txt"
-    t.write_text("plain")
+    t.write_text("plain", encoding="utf-8")
     assert load(t).ingested_by == "text"
 
 

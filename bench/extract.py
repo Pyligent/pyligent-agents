@@ -150,7 +150,7 @@ def main(argv: list[str] | None = None) -> int:
             failed += 1
             continue
         out.parent.mkdir(exist_ok=True)
-        out.write_text(json.dumps(payload, indent=2))
+        out.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         done += 1
         print(f"  {d.name}")
 
