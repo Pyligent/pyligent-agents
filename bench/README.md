@@ -28,7 +28,8 @@ the wrong clause entirely. Integrity is a floor, not a verdict.
 
 | | |
 |---|---|
-| `bench/corpus/` | **empty.** Real filings go here. |
+| `bench/corpus/` | 12 real SEC exhibits. |
+| `bench/corpus-sec/` | **100 real SEC exhibits**, each verified to *be* a CSA. See below. |
 | `bench/corpus-synthetic/` | 15 constructed documents × 4 extractors, for testing the harness. |
 
 The separation is deliberate and the naming is not incidental. The synthetic
@@ -39,6 +40,60 @@ run cannot be screenshotted as a real one without the word `synthetic` in the
 frame.
 
 **No claim about any model should be published from `corpus-synthetic/`.**
+
+---
+
+## Documents that *are* a CSA, not documents that mention one
+
+`fetch_sec.py --query "Credit Support Annex"` returns full-text hits, and full-text
+hits are mostly wrong for this purpose. A 10-K whose notes say the parties entered
+into a Credit Support Annex contains the phrase exactly once and contains no annex.
+Build a corpus from that search and most of it has nothing to extract, so every score
+computed on it is really a measure of how often a model correctly finds nothing.
+
+`classify.py` separates the two using the annex's own vocabulary. "Credit Support
+Annex" is a name and travels into prose freely. "Delivery Amount" and "Return Amount"
+are operative defined terms of the transfer obligation: a document that *is* an annex
+cannot avoid them, and a document merely referring to one has no reason to use them.
+The gate requires both legs plus corroboration from paragraph structure or the
+Paragraph 11/13 elections.
+
+Every verdict carries the evidence that produced it, so a disputed call is inspected
+rather than re-tuned:
+
+```bash
+python bench/classify.py path/to/filings --json verdicts.json
+```
+
+Measured separation on the material to hand:
+
+| set | n | admitted | score range |
+|---|---|---|---|
+| hand-verified CSAs (`bench/corpus/`) | 12 | 12 | 36–44 |
+| SEC exhibits | 108 | 107 | 33–44 |
+| hard negatives — design docs discussing CSAs at length | 24 | **0** | 0–11 |
+
+Nothing scores between 11 and 33. The single rejected exhibit is an *Amendment
+Agreement* to an ISDA Master that names a CSA once — the exact document full-text
+search is wrong about, correctly refused.
+
+Zero false accepts is the number that matters here, for the same reason it does in
+`evals/`: admitting a non-annex silently poisons every score computed afterwards,
+while refusing a real one costs a single document.
+
+### Building it
+
+```bash
+python bench/build_corpus.py path/to/filings --out bench/corpus-sec --limit 100
+```
+
+`build_corpus.py` enforces provenance in code, not in instructions. Benchmark
+documents are sent to third-party model APIs, so only public material may enter: SEC
+EDGAR exhibits and ISDA's published forms. **Executed bilateral agreements between
+named counterparties are excluded unconditionally, by filename pattern, before
+anything reads them.** A corpus builder is precisely where such a file slips through
+unnoticed, because it looks like every other CSA. Each record's `meta.json` carries
+the source, licence, content hash, and the classifier evidence that admitted it.
 
 ---
 
@@ -72,6 +127,46 @@ data.
 **Never use real identity documents for the KYC case.**
 [MIDV-2020](https://arxiv.org/abs/2107.00396) is mock by construction and exists
 precisely because real ID data is security-protected.
+
+---
+
+## The one live call in CI
+
+Every other job in `ci.yml` runs against the deterministic backend and spends nothing.
+That is the right default, and it leaves one gap: a provider can rename a model, retire
+a version, or change a response shape, and this repo would learn about it from a user.
+
+That is not hypothetical. `gemini-2.5-flash` now returns `404 NOT_FOUND` to new keys —
+*"no longer available to new users"* — and no test caught it, because no test had ever
+called it. The Anthropic path had the same exposure: it was the backend most likely to
+be tried first by anyone evaluating this project, and nothing exercised it.
+
+So `ci.yml` has a `live-model` job that makes exactly one real call and verifies the
+reply survives `normalise_extraction` **and** that every quote it cites is genuinely
+present in the source. A live test that accepted an invented quote would be worse than
+no live test at all.
+
+**Measured cost** — `claude-sonnet-5`, list price, not an estimate:
+
+| | |
+|---|---|
+| input / output tokens | 473 / 547 |
+| per run | **$0.0096** |
+| weekly schedule | ≈ $0.50/year |
+| if also enabled on every push to main (~200/mo) | ≈ $1.92/month |
+
+The test document is ~500 characters specifically to keep that figure true. It is a
+contract test, not an accuracy test: accuracy is what `run.py` measures, over a corpus,
+with evidence.
+
+Secrets are unavailable to `pull_request` runs from forks, so the job is restricted to
+this repository and skips itself when no key is configured — a fork sees it neutral,
+never red. Locally it is opt-in twice over: the `live` marker plus
+`PYLIGENT_LIVE_MODEL=1`, so a developer with a key exported never pays by accident.
+
+```bash
+PYLIGENT_LIVE_MODEL=1 pytest -m live -s
+```
 
 ---
 

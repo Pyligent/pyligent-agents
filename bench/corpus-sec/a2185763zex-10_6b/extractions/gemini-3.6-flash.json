@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "Credit Suisse Energy LLC",
+      "evidence_quote": "Credit Suisse Energy LLC"
+    },
+    "party_b": {
+      "value": "Noble Environmental Power 2006 Hold Co, LLC",
+      "evidence_quote": "Noble Environmental Power 2006 Hold Co, LLC"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "threshold": {
+      "value": "Not Applicable for Party B; for Party A, determined by credit ratings.",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party B:  Not Applicable."
+    },
+    "minimum_transfer_amount": {
+      "value": "$*** for Party A; $*** for Party B",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A: $***."
+    },
+    "rounding": {
+      "value": "Rounded up and down respectively to the nearest integral multiple of US$50,000.",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up and down respectively to the nearest integral multiple of US$50,000."
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "100%"
+    }
+  }
+}

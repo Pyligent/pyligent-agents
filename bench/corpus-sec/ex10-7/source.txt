@@ -1,0 +1,1148 @@
+<DOCUMENT>
+<TYPE>EX-10
+<SEQUENCE>23
+<FILENAME>ex10-7.txt
+<DESCRIPTION>EXHIBIT 10.7
+<TEXT>
+                                                                   EXHIBIT 10.7
+
+
+
+
+
+                             ISDA{reg-trade-mark}
+             INTERNATIONAL SWAPS AND DERIVATIVES ASSOCIATION, INC.
+
+
+                             CREDIT SUPPORT ANNEX
+
+                            to the Schedule to the
+
+                             ISDA MASTER AGREEMENT
+
+
+                            dated as of 19 June 2003
+
+                                    between
+
+              Barclays Bank PLC  and   Gracechurch Card Funding (No. 4) PLC.
+                          ("PARTY A")            ("PARTY B")
+
+
+This  Annex  supplements,  forms  part  of,  and is subject to, the ISDA Master
+Agreement referred to above and is part of its  Schedule.   For the purposes of
+this Agreement, including, without limitation, Sections  1(c),  2(a),  5 and 6,
+the  credit support arrangements set out in this Annex constitute a Transaction
+(for which this Annex constitutes the Confirmation).
+
+
+PARAGRAPH 1.  INTERPRETATION
+
+Capitalised  terms  not  otherwise  defined  in this Annex or elsewhere in this
+Agreement  have  the  meanings specified pursuant  to  Paragraph  10,  and  all
+references in this Annex to Paragraphs are to Paragraphs of this Annex.  In the
+event of any inconsistency  between this Annex and the other provisions of this
+Schedule, this Annex will prevail,  and  in  the  event  of  any  inconsistency
+between Paragraph 11 and the other provisions of this Annex, Paragraph  11 will
+prevail.   For  the  avoidance of doubt, references to "transfer" in this Annex
+mean, in relation to cash, payment, and in relation to the assets, delivery.
+
+
+PARAGRAPH 2.  CREDIT SUPPORT OBLIGATIONS
+
+(a)   DELIVERY AMOUNT.   Subject  to  Paragraphs 3 and 4, upon a demand made by
+the Transferee on or promptly following  a  Valuation  Date,  if  the  Delivery
+Amount  for  that  Valuation  Date  equals  or exceeds the Transferor's Minimum
+Transfer Amount, then the Transferor will transfer  to  the Transferee Eligible
+Credit Support having a Value as of the date of transfer  at least equal to the
+applicable  Delivery  Amount  (rounded  pursuant  to  Paragraph 11(b)(iii)(D)).
+Unless otherwise specified in Paragraph 11(b), the "Delivery Amount" applicable
+to the Transferor for any Valuation Date will equal the amount by which:
+
+      (i)   the Credit Support Amount
+
+      exceeds
+
+      (ii)  the  Value  as  of that Valuation Date of the  Transferor's  Credit
+      Support Balance (adjusted  to  include  any  prior Delivery Amount and to
+      exclude any prior Return Amount, the transfer of which, in each case, has
+      not yet been completed and for which the relevant Settlement Day falls on
+      or after such Valuation Date).
+
+(b)   RETURN AMOUNT.  Subject to Paragraphs 3 and 4,  upon a demand made by the
+Transferor on or promptly following a Valuation Date, if  the Return Amount for
+that Valuation Date equals or exceeds the Transferee's Minimum Transfer Amount,
+then the Transferee will transfer to the Transferor Equivalent  Credit  Support
+specified  by  the  Transferor in that demand having a Value as of the date  of
+transfer as close as  practicable  to  the  applicable  Return  Amount (rounded
+pursuant to Paragraph 11(b)(iii)(D)) and the Credit Support Balance  will, upon
+such
+
+<PAGE>
+
+
+transfer, be reduced accordingly.  Unless otherwise specified in Paragraph
+11(b), the "Return Amount" applicable to the Transferee for any Valuation  Date
+will equal the amount by which:
+
+      (i)   the  Value  as  of  that  Valuation Date of the Transferor's Credit
+      Support Balance (adjusted to include  any  prior  Delivery  Amount and to
+      exclude any prior Return Amount, the transfer of which, in each case, has
+      not yet been completed and for which the relevant Settlement Day falls on
+      or after such Valuation Date).
+
+      exceeds
+
+      (ii)  the Credit Support Amount.
+
+
+PARAGRAPH 3.  TRANSFERS, CALCULATIONS AND EXCHANGES
+
+(a)   TRANSFERS.   All  transfers  under  this  Annex  of  any  Eligible Credit
+Support, Equivalent Credit Support, Interest Amount or Equivalent Distributions
+shall  be  made  in  accordance  with  the  instructions  of the Transferee  or
+Transferor, as applicable, and shall be made:
+
+      (i)   in  the  case of cash, by transfer into one or more  bank  accounts
+      specified by the recipient;
+
+      (ii)  in the case  of  certificated  securities which cannot or which the
+      parties have agreed will not be delivered  by  book-entry, by delivery in
+      appropriate physical form to the recipient or its  account accompanied by
+      any duly executed instruments of transfer, transfer  tax  stamps  and any
+      other  documents necessary to constitute a legally valid transfer of  the
+      transferring party's legal and beneficial title to the recipient; and
+
+      (iii) in  the  case  of  securities which the parties have agreed will be
+      delivered  by  book-entry,  by   the   giving   of  written  instructions
+      (including,  for  the avoidance of doubt, instructions  given  by  telex,
+      facsimile transmission  or  electronic  messaging system) to the relevant
+      depository  institution  or  other  entity specified  by  the  recipient,
+      together  with  a  written  copy of the instructions  to  the  recipient,
+      sufficient, if complied with,  to  result in a legally effective transfer
+      of the transferring party's legal and beneficial title to the recipient.
+
+Subject to Paragraph 4 and unless otherwise  specified,  if  a  demand  for the
+transfer of Eligible Credit Support or Equivalent Credit Support is received by
+the  Notification Time, then the relevant transfer will be made not later  than
+the close of business on the Settlement Day relating to the date such demand is
+received;  if  a  demand  is  received  after  the  Notification Time, then the
+relevant  transfer will be made not later than the close  of  business  on  the
+Settlement Day relating to the day after the date such demand is received.
+
+(b)   CALCULATIONS.   All  calculations  of  Value and Exposure for purposes of
+Paragraphs 2 and 4(a) will be made by the relevant  Valuation  Agent  as of the
+relevant  Valuation  Time.  The Valuation Agent will notify each party (or  the
+other party, if the Valuation  Agent  is a party) of its calculations not later
+than the Notification Time on the Local  Business  Day following the applicable
+Valuation  Date  (or,  in  the case of Paragraph 4(a), following  the  date  of
+calculation).
+
+(c)   EXCHANGES.
+
+      (i)   Unless otherwise  specified  in Paragraph 11, the Transferor may on
+      any Local Business Day by notice inform  the Transferee that it wishes to
+      transfer  to the Transferee Eligible Credit  Support  specified  in  that
+      notice (the "New Credit Support") in exchange for certain Eligible Credit
+      Support  (the   "Original  Credit  Support")  specified  in  that  notice
+      comprised in the Transferor's Credit Support Balance.
+
+      (ii)  If the Transferee  notifies the Transferor that it has consented to
+      the proposed exchange, (A) the Transferor will be obliged to transfer the
+      New  Credit  Support  to the  Transferee  on  the  first  Settlement  Day
+      following  the date on which  it  receives  notice  (which  may  be  oral
+      telephonic notice)  from  the  Transferee  of  its  consent  and  (B) the
+      Transferee  will  be  obliged  to  transfer  to the Transferor Equivalent
+      Credit Support in respect of the Original Credit  Support  not later than
+      the  Settlement  Day following the date on which the Transferee  receives
+      the New Credit Support,  unless  otherwise  specified  in Paragraph 11(d)
+      (the "Exchange Date"); provided that the Transferee will  only be obliged
+      to  transfer  Equivalent  Credit Support with a Value as of the  date  of
+      transfer as close as practicable  to, but in any event not more than, the
+      Value of the New Credit Support as of that date.
+
+<PAGE>
+
+
+PARAGRAPH 4.  DISPUTE RESOLUTION
+
+(a)   DISPUTED CALCULATIONS OR VALUATIONS.   If  a  party (a "Disputing Party")
+reasonably disputes (I) the Valuation Agent's calculation  of a Delivery Amount
+or a Return Amount or (II) the Value of any transfer of Eligible Credit Support
+or Equivalent Credit Support, then:
+
+      (1)   the Disputing Party will notify the other party  and  the Valuation
+      Agent (if the Valuation Agent is not the other party) not later  than the
+      close of business on the Local Business Day following, in the case of (I)
+      above, the date that the demand is received under Paragraph 2 or,  in the
+      case of (II) above, the date of transfer;
+
+      (2)   in  the case of (I) above, the appropriate party will transfer  the
+      undisputed amount to the other party not later than the close of business
+      on the Settlement  Day  following  the  date  that the demand is received
+      under Paragraph 2;
+
+      (3)   the parties will consult with each other  in  an attempt to resolve
+      the dispute; and
+
+      (4)   if they fail to resolve the dispute by the Resolution Time. then:
+
+            (i)   in  the  case  of  a dispute involving a Delivery  Amount  or
+            Return Amount, unless otherwise  specified  in Paragraph 11(c), the
+            Valuation Agent will recalculate the Exposure  and  the Value as of
+            the Recalculation Date by:
+
+                  (A)    utilising  any  calculations  of  that  part   of  the
+                  Exposure  attributable  to  the Transactions that the parties
+                  have agreed are not in dispute;
+
+                  (B)    calculating that part  of the Exposure attributable to
+                  the Transactions in dispute by seeking four actual quotations
+                  at mid-market from Reference Market-makers  for  purposes  of
+                  calculating  Market  Quotation,  and  taking  the  arithmetic
+                  average  of  those obtained; provided that if four quotations
+                  are not available  for  a  particular Transaction, then fewer
+                  than four quotations may be used for that Transaction, and if
+                  no quotations are available  for  a  particular  Transaction,
+                  then the Valuation Agent's original calculations will be used
+                  for the Transaction; and
+
+                  (C)    utilising   the   procedures  specified  in  Paragraph
+                  11(e)(ii) for calculating  the  Value,  if  disputed,  of the
+                  outstanding Credit Support Balance;
+
+            (ii)  in  the case of a dispute involving the Value of any transfer
+            of Eligible  Credit  Support  or  Equivalent  Credit  Support,  the
+            Valuation  Agent  will  recalculate  the  Value  as  of the date of
+            transfer pursuant to Paragraph 11(e)(ii).
+
+Following a recalculation pursuant to this Paragraph, the Valuation  Agent will
+notify  each  party (or the other party, if the Valuation Agent is a party)  as
+soon as possible  but  in any event not later than the Notification Time on the
+Local Business Day following  the Resolution Time.  The appropriate party will,
+upon demand following such notice  given  the  Valuation  Agent  or  resolution
+pursuant  to  (3)  above  and  subject  to Paragraph 3(a), make the appropriate
+transfer.
+
+(b)   NO EVENT OF DEFAULT.  The failure by  a  party  to make a transfer of any
+amount which is the subject of a dispute to which Paragraph  4(a)  applies will
+not  constitute  an Event of Default for as long as the procedures set  out  in
+this Paragraph 4 are  being  carried  out.   For  the  avoidance of doubt, upon
+completion of those procedures, Section 5(a)(i) of this Agreement will apply to
+any failure by a party to make a transfer required under  the final sentence of
+Paragraph 4(a) on the relevant due date.
+
+
+
+
+
+
+PARAGRAPH  5.   TRANSFER  OF  TITLE,  NO  SECURITY INTEREST, DISTRIBUTIONS  AND
+INTEREST AMOUNT
+
+(a)   TRANSFER OF TITLE.  Each party agrees  that all right, title and interest
+in and to any Eligible Credit Support, Equivalent  Credit  Support,  Equivalent
+Distributions  or  Interest Amount which it transfers to the other party  under
+the terms of this Annex  shall  vest  in  the  recipient  free and clear of any
+liens,  claims,  charges  or  encumbrances  or  any  other  interest   of   the
+transferring  party or of any third person (other than a lien routinely imposed
+on all securities in a relevant clearance system).
+
+<PAGE>
+
+
+(b)   NO SECURITY  INTEREST.   Nothing  in  this Annex is intended to create or
+does  create  in  favour of either party any mortgage,  charge,  lien,  pledge,
+encumbrance  or  other   security  interest  in  any  cash  or  other  property
+transferred by one party to the other party under the terms of this Annex.
+
+(c)   DISTRIBUTIONS AND INTEREST AMOUNT.
+
+      (i)   DISTRIBUTIONS.   The Transferee will transfer to the Transferor not
+      later than the Settlement  Day  following  each  Distributions Date cash,
+      securities or other property of the same type, nominal value, description
+      and amount as the relevant Distributions ("Equivalent  Distributions") to
+      the  extent that a Delivery Amount would not be created or  increased  by
+      the transfer,  as  calculated  by  the  Valuation  Agent (and the date of
+      calculation will be deemed a Valuation Date for this purpose).
+
+      (ii)  INTEREST   AMOUNT.    Unless   otherwise  specified  in   Paragraph
+      11(f)(iii), the Transferee will transfer  to  the Transferor at the times
+      specified  in  Paragraph 11(f)(ii) the relevant Interest  Amount  to  the
+      extent that a Delivery  Amount  would  not be created or increased by the
+      transfer,  as  calculated  by  the  Valuation  Agent  (and  the  date  of
+      calculation will be deemed a Valuation Date for this purpose).
+
+PARAGRAPH 6.  DEFAULT
+
+If any Early Termination Date is designated  or  deemed to occur as a result of
+an Event of Default in relation to a party, an amount equal to the Value of the
+Credit Support Balance, determined as though the Early  Termination Date were a
+Valuation  Date, will be deemed to be an Unpaid Amount due  to  the  Transferor
+(which may or  may  not  be the Defaulting Party) for purposes of Section 6(e).
+For the avoidance of doubt,  if  Market  Quotation  is  the  applicable payment
+measure  for  purposes  of  Section 6(e), then the Market Quotation  determined
+under Section 6(e) in relation  to  the  Transaction  constituted by this Annex
+will be deemed to be zero, and if Loss is the applicable  payment  measure  for
+purposes  of  Section  6(e),  then  the  Loss  determined under Section 6(e) in
+relation to the Transaction will be limited to the  Unpaid  Amount representing
+the Value of the Credit Support Balance.
+
+PARAGRAPH 7.  REPRESENTATION
+
+Each party represents to the other party (which representation  will  be deemed
+to  be  repeated as of each date on which it transfers Eligible Credit Support,
+Equivalent  Credit  Support or Equivalent Distributions) that is the sole owner
+of  or  otherwise has the  right  to  transfer  all  Eligible  Credit  Support,
+Equivalent Credit Support or Equivalent Distributions it transfers to the other
+party under  this  Annex,  free  and  clear  of  any  security  interest,  lien
+encumbrance  or  other  restriction  (other  than lien routinely imposed on all
+securities in a relevant clearance system).
+
+PARAGRAPH 8.  EXPENSES
+
+Each party will pay its own costs and expenses  (including any stamp, transfer,
+or similar transaction tax or duty payable on any  transfer  it  is required to
+make under this Annex) in connection with performing its obligations under this
+Annex,  and  neither  party  will  be  liable  for  any such costs and expenses
+incurred by the other party.
+
+PARAGRAPH 9.  MISCELLANEOUS
+
+(a)   DEFAULT  INTEREST.   Other than in the case of an  amount  which  is  the
+subject of dispute under Paragraph  4(a),  if  a Transferee fails to make, when
+due, any transfer of Equivalent Credit Support, Equivalent Distributions or the
+Interest  Amount,  it  will  be obliged to pay the Transferor  (to  the  extent
+permitted under applicable law) an amount equal to interest at the Default Rate
+multiplied by the Value on the relevant Valuation Date of the items of property
+that were required to be transferred,  from  (and  including) the date that the
+Equivalent Credit Support, Equivalent Distributions  or  Interest  Amount  were
+required  to  be  transferred  to  (but  excluding) the date of transfer of the
+Equivalent Credit Support, Equivalent Distributions  or  Interest Amount.  This
+interest will be calculated on the basis of daily compounding  and  the  actual
+number of days elapsed.
+
+(b)   GOOD  FAITH  AND  COMMERCIALLY  REASONABLE  MANNER.   Performance  of all
+obligations  under this Annex, including, but not limited to, all calculations,
+valuations and  determinations made by either party, will be made in good faith
+and in a commercially reasonable manner.
+
+(c)   DEMANDS AND NOTICES.  All demands and notices given by a party under this
+Annex will be given as specified in Section 12 of this Agreement.
+
+<PAGE>
+
+
+(d)   SPECIFICATIONS OF CERTAIN MATTERS.  Anything referred to in this Annex as
+being  specified in  Paragraph  11  also  may  be  specified  in  one  or  more
+Confirmations or other documents and this Annex will be construed accordingly.
+
+PARAGRAPH 10.  DEFINITIONS
+
+As used in this Annex:
+
+"Base Currency" means the currency specified as such in Paragraph 11(a)(i).
+
+"Base Currency  Equivalent"  means,  with  respect  to an amount on a Valuation
+Date,  in  the case of an amount denominated in the Base  Currency,  such  Base
+Currency and, in the case of an amount denominated in a currency other than the
+Base Currency  (the  "Other Currency"), the amount of Base Currency required to
+purchase such amount of the Other Currency at the spot exchange rate determined
+by the Valuation Agent for value on such Valuation Date.
+
+"Credit Support Amount"   means,  with  respect  to a Transferor on a Valuation
+Date,  (i)  the  Transferee's  Exposure  plus  (ii)  all   Independent  Amounts
+applicable  to  the  Transferor,  if  any, minus (iii) all Independent  Amounts
+applicable to the Transferee, if any, minus  (iv)  the  Transferor's Threshold;
+provided, however, that the Credit Support Amount will be  deemed  to  be  zero
+whenever  the  calculation  of  Credit Support Amount yields a number less than
+zero.
+
+"Credit Support Balance"  means,  with  respect  to a Transferor on a Valuation
+Date, the aggregate of all Eligible Credit Support that has been transferred to
+or received by the Transferee under this Annex, together with any Distributions
+and  all  proceeds  of any such Eligible Credit Support  or  Distributions,  as
+reduced  pursuant  to  Paragraph   2(b),   3(c)(ii)   or   6.   Any  Equivalent
+Distributions  or  Interest  Amount  (or  portion  of  either) not  transferred
+pursuant  to  Paragraph 5(c)(i) or (ii) will form part of  the  Credit  Support
+Balance.
+
+"Delivery Amount"  has the meaning specified in Paragraph 2(a).
+
+"Disputing Party"  has the meaning specified in Paragraph 4.
+
+"Distributions"   means,  with respect to any Eligible Credit Support comprised
+in the Credit Support Balance consisting of securities, all principal, interest
+and other payments and distributions  of  cash  or  other  property  to which a
+holder of securities of the same type, nominal value, description and amount as
+such Eligible Credit Support would be entitled from time to time.
+
+"Distribution  Date"   means,  with  respect  to  any  Eligible  Credit Support
+comprised in the Credit Support Balance other than cash, each date  on  which a
+holder of such Eligible Credit Support is entitled to receive Distributions or,
+if  that  date  is  not a Local Business Day, the next following Local Business
+Day.
+
+"Eligible Credit Support"   means,  with respect to a party, the items, if any,
+specified as such for that party in Paragraph  11(b)(ii) including, in relation
+to any securities, if applicable, the proceeds of any redemption in whole or in
+party of such securities by the relevant issuer.
+
+"Eligible  Currency"   means  each  currency specified  as  such  in  Paragraph
+11(a)(ii), if such currency is freely available.
+
+"Equivalent Credit Support"  means, in  relation to any Eligible Credit Support
+comprised in the Credit Support Balance,  Eligible  Credit  Support of the same
+type, nominal value, description and amount as that Eligible Credit Support.
+
+"Equivalent Distributions"  has the meaning specified in Paragraph 5(c)(i).
+
+"Exchange Date"  has the meaning specified in Paragraph 11(d).
+
+"Exposure"  means, with respect to a party on a Valuation Date  and  subject to
+Paragraph 4 in the case of a dispute, the amount, if any, that would be payable
+to  that  party by the other party (expressed as a positive number) or by  that
+party to the  other  party (expressed as a negative number) pursuant to Section
+6(e)(ii)(1) of this Agreement  if  all Transactions (other than the Transaction
+constituted by this Annex) were being  terminated  as of the relevant Valuation
+Time, on the basis that (i) that party is not the Affected  Party  and (ii) the
+Base  Currency  is  the  Termination Currency; provided  that Market Quotations
+will be determined by the  Valuation  Agent  on  behalf of that party using its
+estimates  at  mid-market of the amounts that would  be  paid  for  Replacement
+Transactions (as that term is defined in the definition of "Market Quotation").
+
+
+<PAGE>
+
+
+"Independent Amount"   means,  with  respect  to  a  party,  the  Base Currency
+Equivalent  of  the  amount  specified  as  such  for  that  party in Paragraph
+11(b)(iii)(A); if not amount is specified, zero.
+
+"Interest Amount"  means, with respect to an Interest Period, the aggregate sum
+of the Base Currency Equivalents of the amounts of interest determined for each
+relevant currency and calculated for each day in that Interest  Period  on  the
+principal amount of the portion of the Credit Support Balance comprised of cash
+in  such  currency,  determined  by  the  Valuation  Agent for each such day as
+follows:
+
+      (x)   the amount of cash in such currency on that day; multiplied by
+
+      (y)   the relevant Interest Rate in effect for that day; divided by
+
+      (z)   360 (or, in the case of pounds sterling, 365).
+
+"Interest  Period"   means  the  period  from (and including)  the  last  Local
+Business Day on which an Interest Amount was  transferred  (or,  if no Interest
+Amount  has  yet  been  transferred,  the  Local Business Day on which Eligible
+Credit Support or Equivalent Credit Support in the form of cash was transferred
+to or received by the Transferee) to (but excluding)  the Local Business Day on
+which the current Interest Amount is transferred.
+
+"Interest Rate"  means with respect to an Eligible Currency, the rate specified
+in Paragraph 11(f)(i) for that currency.
+
+"Local Business Day"  , unless otherwise specified in Paragraph 11(h), means:
+
+      (i)   in  relation to a transfer of cash or other  property  (other  than
+      securities)  under  this  Annex, a day on which commercial banks are open
+      for business (including dealings in foreign exchange and foreign currency
+      deposits) in the place where  the  relevant  account  is  located and, if
+      different, in the principal financial centre, if any, of the  currency of
+      such payment;
+
+      (ii)  in relation to a transfer of securities under this Annex,  a day on
+      which the clearance system agreed between the parties for delivery of the
+      securities  is  open  for  the  acceptance  and  execution  of settlement
+      instructions or, if delivery of the securities is contemplated  by  other
+      means,  a  day on which commercial banks are open for business (including
+      dealings in  foreign  exchange  and  foreign  currency  deposits)  in the
+      place(s) agreed between the parties for this purpose.
+
+      (iii) in  relation  to  a  valuation  under  this  Annex,  a day on which
+      commercial  banks  are  open for business (including dealings in  foreign
+      exchange and foreign currency  deposits)  in the place of location of the
+      Valuation Agent and in the place(s) agreed  between  the parties for this
+      purpose; and
+
+      (iv)  in relation to any notice or other communication  under this Annex,
+      a day on which commercial banks are open for business (including dealings
+      in foreign exchange and foreign currency deposits) in the place specified
+      in the address for notice most recently provided by the recipient.
+
+"Minimum Transfer Amount"  means, with respect to a party, the amount specified
+as such for that party in Paragraph 11(b)(iii)(C); if no amount  is  specified,
+zero.
+
+"New Credit Support"  has the meaning specified in Paragraph 3(c)(i).
+
+"Notification Time"  has the meaning specified in Paragraph 11(c)(iv).
+
+"Recalculation  Date"  means the Valuation Date that gives rise to the  dispute
+under Paragraph 4; provided however, that if a subsequent Valuation Date occurs
+under  Paragraph  2   prior   to  the  resolution  of  the  dispute,  then  the
+"Recalculation Date" means the most recent Valuation Date under Paragraph 2.
+
+"Resolution Time"  has the meaning specified in Paragraph 11(c)(i).
+
+"Return Amount"  has the meaning specified in Paragraph 2(b).
+
+"Settlement Day"  means, in relation  to a date, (i) with respect to a transfer
+of cash or other property (other than securities),  the next Local Business Day
+and (ii) with respect to a transfer of securities, the first Local Business Day
+after such date on which settlement of a trade in the  relevant  securities, if
+effected  on  such  date, would have been settled in accordance with  customary
+practice when settling  through the clearance system agreed between the parties
+for delivery of such securities  or,  otherwise,  on  the  market in which such
+securities  are  principally traded
+
+<PAGE>
+
+(or, in either case, if there is no such customary practice,  on the first Local
+Business Day after such date on which it is  reasonably  practicable  to deliver
+such securities).
+
+"Threshold"  means,  with  respect  to a party, the Base Currency Equivalent of
+the amount specified as such for that  party  in Paragraph 11(b)(iii)(B); if no
+amount is specified, zero.
+
+"Transferee"  means, in relation to each Valuation  Date,  the party in respect
+of  which  Exposure is a positive number and, in relation to a  Credit  Support
+Balance, the  party  which,  subject  to  this  Annex, owes such Credit Support
+Balance or, as the case may be, the Value of such Credit Support Balance to the
+other party.
+
+"Transferor"  means, in relation to a Transferee, the other party.
+
+"Valuation Agent"  has the meaning specified in Paragraph 11(c)(i).
+
+"Valuation Date"  means each date specified in or otherwise determined pursuant
+to Paragraph 11(c)(ii).
+
+"Valuation  Percentage"  means, for any item of Eligible  Credit  Support,  the
+percentage specified in Paragraph 11(b)(ii).
+
+"Valuation Time"  has the meaning specified in Paragraph 11(c)(iii).
+
+"Value"  means,  for  any  Valuation  Date  or  other  date  for which Value is
+calculated, and subject to Paragraph 4 in the case of a dispute,  with  respect
+to:
+
+      (i)   Eligible Credit Support comprised in a Credit Support Balance  that
+      is:
+
+            (A)   an  amount  of  cash,  the  Base  Currency Equivalent of such
+            amount multiplied by the applicable Valuation  Percentage,  if any;
+            and
+
+            (B)   a  security,  the  Base  Currency Equivalent of the bid price
+            obtained  by  the  Valuation Agent  multiplied  by  the  applicable
+            Valuation Percentage, if any; and
+
+      (ii)  items that are comprised  in  a  Credit Support Balance and are not
+      Eligible Credit Support, zero.
+
+
+PARAGRAPH 11. ELECTIONS AND VARIABLES
+
+(a)   BASE CURRENCY AND ELIGIBLE CURRENCY.
+
+      (i)   "Base Currency" means GBP.
+
+      (i)   "Eligible Currency" means the Base Currency and each other currency
+            specified here: United States Dollars and Euros.
+
+      It is agreed  by the  parties  that  where the  Credit  Support  Amount is
+      transferred  in a currency  other than the Base  Currency,  the  Valuation
+      Percentage  specified  in  Paragraph  11(b)(ii)  shall  be  reduced  by  a
+      percentage  agreed by the parties  and  approved  by the  relevant  rating
+      agency  ("ADDITIONAL  VALUATION  PERCENTAGE"),  such Additional  Valuation
+      Percentage  being 6% or such lower percentage as agreed by the parties and
+      approved by the  relevant  rating  agency.  For the purpose of this Annex,
+      references  to the "relevant  rating  agency" shall mean the rating agency
+      whose  Ratings  Criteria  will be used to determine the amount of Eligible
+      Credit Support that Party A is required to transfer to Party B following a
+      credit ratings downgrade of Party A.
+
+
+(b)   CREDIT SUPPORT OBLIGATIONS.
+
+      (i)   DELIVERY AMOUNT, RETURN AMOUNT AND CREDIT SUPPORT AMOUNT.
+
+
+            (A)   "DELIVERY AMOUNT":  Paragraph  2(a)  shall apply, except that
+                  the words, "upon a demand made by the  Transferee"  shall  be
+                  deleted  and  the word "that" on the second line of Paragraph
+                  2(a) shall be replaced with the word "a".
+
+            (B)   "RETURN AMOUNT"  has  the  meaning  as specified in Paragraph
+                  2(b).
+
+<PAGE>
+
+
+
+            (C)    "CREDIT SUPPORT AMOUNT" has the meaning  specified under the
+                  relevant  definition  of Ratings Criteria.  In  circumstances
+                  where more than one of the Ratings Criteria apply to Party A,
+                  the Credit Support Amount shall be calculated by reference to
+                  the  Ratings  Criteria  which   would   result   in  Party  A
+                  transferring the greatest amount of Eligible Credit  Support.
+                  Under  no  circumstances will Party A be required to transfer
+                  more  Eligible   Credit  Support  than  the  greatest  amount
+                  calculated in accordance  with  the  Ratings Criteria set out
+                  below.
+
+
+      (ii)  ELIGIBLE  CREDIT  SUPPORT.  The  following items  will  qualify  as
+            "Eligible Credit Support" for Party A:
+
+                                                                      VALUATION
+                                                                      PERCENTAGE
+
+            (A)   cash in an Eligible Currency                            100%
+
+            (B)   negotiable debt obligations issued  after 18 July 1984   99%
+                  by the U.S. Treasury Department
+                  having a residual maturity on such date of less than
+                  1 year (with local and foreign currency issuer ratings
+                  of Moody's Aa2 and  S&P AA or above)
+
+            (C)   negotiable debt obligations issued after 18 July 1984    97%
+                  by the U.S. Treasury Department
+                  having a residual maturity on such date equal to or
+                  greater than 1 year but less than 5 years (with local
+                  and foreign currency issuer ratings of Moody's Aa2
+                  and S&P AA or above)
+
+            (D)   negotiable debt obligations issued after18 July 1984     95%
+                  by the U.S. Treasury Department
+                  having a residual maturity on such date
+                  equal to or greater than 5 years but less than
+                  10 years (with local and foreign currency issuer ratings
+                  of Moody's Aa2 and  S&P AA or above)
+
+            (E)   negotiable debt obligations of the Federal               95%
+                  Republic of Germany (with local and foreign currency
+                  issuer ratings of Moody's Aa2 and S&P AA
+                  or above) with a residual maturity of less than 10 years
+                  at the date of their transfer to the Secured Party.
+
+            (F)   negotiable debt obligations of the Republic of France    95%
+                  (with local and foreign currency issuer ratings of
+                  Moody's Aa2 and  S&P AA or above) with
+                  a residual maturity of less than 10 years at the date of
+                  their transfer to the Secured Party.
+
+            (G)   negotiable debt obligations of Belgium                   95%
+                  (with local and foreign currency issuer ratings of
+                  Moody's Aa2 and  S&P AA or above) with
+                  a residual maturity of less than 10 years at the date of
+                  their transfer to the Secured Party.
+
+            (H)   negotiable debt obligations of the United Kingdom        95%
+                  (with local and foreign currency issuer ratings of
+                  Moody's Aa2 and S&P AA or above) with
+                  a residual maturity of less than 10 years at the date of
+                  their transfer to the Secured Party.
+
+            (I)   negotiable debt obligations of Italy                     95%
+                  (with local and foreign currency issuer ratings of
+                  Moody's Aa2 and S&P AA or above) with
+
+
+<PAGE>
+
+                  a residual Maturity of less than 10 years at the date of
+                  their transfer to the Secured Party.
+
+            (J)   negotiable debt obligations of the Netherlands           95%
+                  (with local and foreign currency issuer ratings of
+                  Moody's Aa2 and S&P AA or above) with
+                  a residual maturity of less than 10 years at the date of
+                  their transfer to the Secured Party.
+
+            (K)   negotiable debt obligations of Sweden                    95%
+                  (with local and foreign currency issuer ratings of
+                  Moody's Aa2 and S&P AA or above) with
+                  a residual maturity of less than 10 years at the date of
+                  their transfer to the Secured Party.
+
+            (L)   negotiable debt obligations of the US Government         97%
+
+                  National Mortgage Association, the US Federal
+                  National Mortgage Association, the US Federal
+                  Home Loan Mortgage Corporation,
+                  the US Student Loans Marketing Association
+                  or a US Federal Home Loan Bank (all entities rated
+                  Moody's Aa1 and S&P AA+ or above) with
+                  a residual maturity on such date equal to or greater than
+                  1 year but less than 3 years.
+
+            (M)   negotiable debt obligations of the US Government         90%
+
+                  National Mortgage Association, the US Federal
+                  National Mortgage Association, the US Federal
+                  Home Loan Mortgage Corporation,
+                  the US Student Loans Marketing Association
+                  or a US Federal Home Loan Bank (all entries rated
+                  Moody's Aa1 and S&P AA+ or above) with
+                  a residual maturity on such date equal to or greater than
+                  3 years but less than 5 years.
+
+            (N)   negotiable debt obligations of the US Government         87%
+
+                  National Mortgage Association, the US Federal
+                  National Mortgage Association, the US Federal
+                  Home Loan Mortgage Corporation,
+                  the US Student Loans Marketing Association
+                  or a US Federal Home Loan Bank (all entries rated
+                  Moody's Aa1 and S&P AA+ or above) with a
+                  residual maturity on such date equal to or greater than
+                  5 years but less than 7 years.
+
+            (O)   negotiable debt obligations of the US Government         83%
+
+                  National Mortgage Association, the US Federal
+                  National Mortgage Association, the US Federal
+                  Home Loan Mortgage Corporation,
+                  the US Student Loans Marketing Association
+                  or a US Federal Home Loan Bank (all entries rated Moody's
+                  Aa1 and S&P AA+ or above) with a residual
+                  maturity on such date equal to or greater than 7 years but
+                  less than 10 years.
+
+            For the avoidance of doubt, where  negotiable  debt obligations are
+            rated by only one of the above relevant rating agencies, the rating
+            applied will be based on the rating of that agency.
+
+            Where the ratings of the relevant agencies differ  with  respect to
+            the same negotiable debt obligation, the lower of the ratings shall
+            apply.
+
+
+<PAGE>
+
+
+       (iii)THRESHOLDS.
+
+            (A)   "INDEPENDENT  AMOUNT"  means,  for Party A and Party B,  with
+                  respect to each Transaction, zero.
+
+            (B)   "THRESHOLD" means, for Party A:
+
+            1.    infinity, unless (i) Party A: (a)  ceases to be rated as high
+                  as Moody's Required Ratings I and/or  (b)  ceases to be rated
+                  as  high  as  S&P's  Required  Rating  AND  (ii) it  has  not
+                  otherwise complied with Part 5.2(i)(x)(a), (b)  or (c) and/or
+                  Part  5.2(ii)(a),(b)  and  (d)   of  the Agreement, then  its
+                  Threshold shall be zero, or
+
+            2.    in   the   event  that  Party  A  has  complied   with   Part
+                  5.2(i)(x)(a),(b) or (c) and/or Part 5.2(ii)(a),(b) or (d)  of
+                  the Agreement,  its  Threshold shall continue to be infinity,
+                  unless it (or its successor)  ceases  to  be rated as high as
+                  Moody's  Required  Ratings  II, then its Threshold  shall  be
+                  zero,  until  such  time  as  it  has   complied   with  Part
+                  5.2(y)(a),(b) or (c).
+
+                  "THRESHOLD" means, for Party B: infinity
+
+            (C)   "MINIMUM TRANSFER AMOUNT" means, with respect to Party  A and
+                  Party  B,  GBP100,000;  provided,  that  if  (1)  an Event of
+                  Default has occurred and is continuing with respect  to Party
+                  A,  or  (2)  an Additional Termination Event has occurred  in
+                  respect of which Party A is an Affected, the Minimum Transfer
+                  Amount with respect to such party shall be zero.
+
+            (D)   "ROUNDING". The Delivery Amount and the Return Amount will be
+                  rounded up and  down  to  the  nearest  integral  multiple of
+                  GPB10,000 respectively, subject to the maximum Return  Amount
+                  being equal to the Credit Support Balance.
+
+(c)   VALUATION AND TIMING.
+
+      (i)   "VALUATION AGENT" means, Party A in all circumstances.
+
+      (ii)  "VALUATION DATE" means every day; provided that if such day is  not
+            a Local Business Day then the Valuation Date shall be the preceding
+            day that is a Local Business Day.
+
+      (iii) "VALUATION TIME" means 5.00p.m. New York time on the Local Business
+            Day   immediately   preceding   the   Valuation  Date  or  date  of
+            calculation, as applicable; provided that the calculations of Value
+            and Exposure will be made as approximately  the  same  time  on the
+            same date.
+
+      (iv)  "NOTIFICATION  TIME"  means  by  2:00p.m.,  London time, on a Local
+            Business Day.
+
+(d)   EXCHANGE  DATE.  "Exchange Date" has the meaning specified  in  paragraph
+      3(c)(ii).
+
+(e)   DISPUTE RESOLUTION.
+
+      (i)   "RESOLUTION  TIME"  means  2:00 p.m., London, on the Local Business
+            Day following the date on which  notice is given that gives rise to
+            a dispute under Paragraph 4.
+
+      (ii)  "VALUE".   For   the   purpose  of  Paragraph   4(a)(4)(i)(C)   and
+            4(a)(4)(ii), the Value of the outstanding Credit Support Balance or
+            of any transfer of Eligible  Credit  Support  or  Equivalent Credit
+            Support, as the case may be, will be calculated as follows:
+
+            For  Eligible Credit Support comprised in a Credit Support  Balance
+            that is  an  amount  of  cash, the Base Currency Equivalent of such
+            amount.
+
+      (iii) "ALTERNATIVE". The provisions of Paragraph 4 will apply.
+
+(f)   DISTRIBUTION AND INTEREST AMOUNT.
+
+      (ii)  INTEREST RATE.  The "INTEREST  RATE"  will  be  with respect to the
+            Base Currency, the overnight rate for such day, as  set forth under
+            the  heading  "SONIA"  on  Telerate  Page  3937  under  the heading
+            "Sterling  Overnight  Index"  as  of 9.00 a.m., London time or  any
+            successor page and if for any
+
+<PAGE>
+
+
+            reason  Telerate Page 3937 should be  unavailable  the Interest Rate
+            shall be such rate as agreed between the parties reflecting the then
+            prevailing  market  rate.  In the event that the parties  agree that
+            Eligible Credit Support may include  currencies  other than the Base
+            Currency,  the  "INTEREST  RATE" with respect to each such  currency
+            shall be such rate as may be agreed  between the parties at the time
+            that it is agreed that  Eligible  Credit  Support  may include  such
+            currency.
+
+
+       (ii) "TRANSFER  OF INTEREST AMOUNT". The transfer of the Interest Amount
+            will be made  on  the first Local Business Day following the end of
+            each calendar month  to  the  extent  that  Party  B has earned and
+            received such amount of interest and that a Delivery  Amount  would
+            not  be  created  or  increased  by that transfer, and on any other
+            Local  Business  Day  on  which  Equivalent   Credit   Support   is
+            transferred  to the Transferor pursuant to Paragraph 2(b), provided
+            that Party B shall  only be obliged to transfer any Interest Amount
+            to Party A to the extent that it has received such amount.
+
+      (iii) "ALTERNATIVE  TO INTEREST  AMOUNT".  The  provisions  of  Paragraph
+            5(c)(ii) will apply.   For the purposes of calculating the Interest
+            Amount  the amount of interest  calculated  for  each  day  of  the
+            Interest  Period  shall,  with respect to any Eligible Currency, be
+            compounded daily.
+
+      (iv)  INTEREST  AMOUNT" The definition  of  "INTEREST  AMOUNT"  shall  be
+            deleted and replaced with the following:
+
+            "INTEREST AMOUNT"  means,  with  respect  to an Interest Period and
+            each portion of the Credit Support Balance  comprised of cash in an
+            Eligible  Currency, the sum of the amounts of  interest  determined
+            for each day  in  that  Interest  Period  by the Valuation Agent as
+            follows:
+
+            (x)   the amount of such currency comprised  in  the Credit Support
+                  Balance at the close of business for general  dealings in the
+                  relevant currency on such day (or, if such day is not a Local
+                  Business  Day,  on  the immediately preceding Local  Business
+                  Day); multiplied by
+
+            (y)   the relevant Interest Rate; divided by
+
+            (z)   360 (or in the case of Pounds Sterling, 365).
+
+(g)   ADDRESSES FOR TRANSFERS.
+
+      Party A:
+
+<TABLE>
+<CAPTION>
+GBP Cash                    EUR Cash                    USD Cash
+<S>                          <C>                        <C>
+Barclays Bank London        Barclays Bank London        Barclays Bank PLC
+Sort Code 20-00-00          A/c number 44295577         A/C 050035428
+A/c number: 50654140        A/c name: Barclays Capital  A/c name: Barclays Capital
+A/c name: Barclays Capital  Ref: Collateral             Ref: Collateral
+Ref: Collateral
+
+</TABLE>
+
+
+
+      Party B: to be advised
+
+(h)   OTHER PROVISIONS.
+
+   (I)TRANSFER TIMING
+
+            (D)   The final paragraph of  Paragraph  3(a)  shall be deleted and
+                  replaced with the following:
+
+                  "Subject to Paragraph 4, and unless otherwise  specified, any
+                  transfer  of  Eligible  Credit  Support or Equivalent  Credit
+                  Support (whether by the Transferor pursuant to Paragraph
+
+<PAGE>
+
+
+                  2(a) or by the Transferee pursuant to Paragraph 2(b)) shall be
+                  made not later than the close of  business  on the  Settlement
+                  Day."
+
+            (E)   The  definition  of  Settlement  Day  shall  be  deleted  and
+                  replaced with the following:
+
+                  "SETTLEMENT  DAY" means the next Local Business Day after the
+                  Demand Date
+
+            (F)   For the purposes of this Paragraph 11(h)(i):
+
+                  "DEMAND DATE" means, with respect to a transfer by a party.
+
+                   (i)   in the case of a  transfer  pursuant  to  Paragraph  2,
+                         Paragraph  3  or   Paragraph   4(a)(2),   the  relevant
+                         Valuation  Date.  For the  avoidance of doubt,  for the
+                         purposes of  Paragraph  2 and  Paragraph  4(a)(2),  the
+                         Transferor  will be  deemed  to  receive  notice of the
+                         demand by the Transferee to make a transfer of Eligible
+                         Credit Support; and
+
+                  (ii)   in  the  case  of  a  transfer pursuant  to  Paragraph
+                         3(c)(ii)(A),  the date on  which  the  Transferee  has
+                         given its consent to the proposed exchange.
+
+      for the avoidance of doubt, on each Demand Date the Transferor shall
+      deliver to the Transferee and the Trustee a statement showing the amount
+      of Eligible Credit Support to be delivered.
+
+
+      (II)  EARLY TERMINATION
+
+            The heading for Paragraph 6  shall  be  deleted  and  replaced with
+            "Early Termination" and the following shall be added after the word
+            "Default" in the first line of Paragraph 6, "or a Termination Event
+            in relation to all (but not less than all) Transactions".
+
+      (III) COSTS OF TRANSFER ON EXCHANGE
+
+            Notwithstanding  Paragraph  8,  the  Transferor will be responsible
+            for, and will reimburse the Transferee  for, all transfer and other
+            taxes and other costs involved in the transfer  of  Eligible Credit
+            Support either from the Transferor to the Transferee  or  from  the
+            Transferee to the Transferor hereto.
+
+      (IV)  CUMULATIVE RIGHTS
+
+            The  rights, powers and remedies of the Transferee under this Annex
+            shall  be  in  addition to all rights, powers and remedies given to
+            the Transferee by the Agreement or by virtue of any statute or rule
+            of  law,  all  of  which  rights,  powers  and  remedies  shall  be
+            cumulative  and  may  be  exercised  successively  or  concurrently
+            without  impairing the rights  of  the  Transferee  in  the  Credit
+            Support Balance created pursuant to this Annex.
+
+      (V)  SINGLE TRANSFEROR AND SINGLE TRANSFEREE
+
+            Party A and  Party  B  agree  that, notwithstanding anything to the
+            contrary in this Annex, (including, without limitation, the recital
+            hereto, Paragraph 2 or the definitions  in  Paragraph  10), (a) the
+            term "Transferee" as used in this Annex means only Party B, (b) the
+            term  "Transferor"  as used in this Annex means only Party  A,  (c)
+            only Party A will be  required to make Transfers of Eligible Credit
+            Support hereunder; and (d) in the calculation of any Credit Support
+            Amount, where the Transferee's  Exposure  would  be  expressed as a
+            negative number, such Exposure shall be deemed to be zero.
+
+      (VI)  RATINGS CRITERIA
+
+            "RATINGS CRITERIA" means, the criteria used by S&P ("S&P CRITERIA")
+            and  the  criteria  used  by Moody's ("MOODY'S CRITERIA")  for  the
+            purposes of determining the amount of Eligible Credit Support Party
+            A  is required to transfer hereunder  following  a  credit  ratings
+            downgrade where
+
+<PAGE>
+
+
+            Party A has opted to or is  required to  transfer  Eligible  Credit
+            Support in support of its obligations under the Agreement  pursuant
+            to Part 5.2 of the Agreement.
+
+            MOODY'S CRITERIA
+
+            "CREDIT SUPPORT AMOUNT" shall mean, with respect to a Transferor on
+            a Valuation Date:
+
+            (A) the Transferee's Exposure multiplied by "A" and (B) the product
+            of  "B"  multiplied by the sum of the Currency Amount(s) as defined
+            in the Confirmation  for  each  outstanding  Transaction  under the
+            Agreement, where:
+
+            (i)   "A"  means 102% and "B" means 2% if the short-term, unsecured
+                  and unsubordinated  debt  obligations  of  Party  A  (or  its
+                  successor)  and,  if relevant, any Credit Support Provider of
+                  Party A cease to be  rated  as  high as "Prime-1" and "A2" by
+                  Moody's.
+
+            (ii)  "A" means 102% and "B" means 3% if  the short-term, unsecured
+                  and  unsubordinated  debt  obligations of  Party  A  (or  its
+                  successor) and, if relevant,  any  Credit Support Provider of
+                  Party A cease to be rated as high as  "Prime-2"  and  "A3" by
+                  Moody's.
+
+            (iii) "A" means 0% and "B" means 0% in all other cases.
+
+
+
+            S&P CRITERIA
+
+            "CREDIT SUPPORT AMOUNT" shall mean with respect to a Transferor  on
+            a Valuation Date the greater of:
+
+            (A)
+
+            (i)   MTM + VB = CR;
+
+            (ii)  MTM + (VB x 0.1) = BRCR; or
+
+            (iii) CR x CM1 x CM2 = CCR
+
+            where applicable, and;
+
+            (B)   0
+
+            If  the  Transaction under this Agreement is an Interest Rate Swap,
+            Basis Swap  or  Currency  Swap  (as defined in the Confirmation for
+            each outstanding Transaction under  this  Agreement),  then (A)(i),
+            (ii) or (iii) will apply respectively.
+
+            Where:
+
+            "MTM" means Transferees Exposure;
+
+            "VB" means the Currency Amount (as defined in the Confirmation  for
+            each  outstanding  Transaction  under  this  Agreement)  times  the
+            relevant percentage set out in Table A below;
+
+            "CM1" and "CM2" mean the multiplication factors set out in Table  B
+            below.   The currency of each leg of the Transaction will determine
+            which factor to use for each of CM1 and CM2.
+
+<PAGE>
+
+
+            TABLE A
+
+
+<TABLE>
+<CAPTION>
+                                                         VOLATILITY BUFFER
+<S>                        <C>             <C>              <C>                                             <C>
+Counterparty               The Group 1,    Remaining   Term   Remaining Term (as defined in the 2000 ISDA    Remaining  Term   (as
+                           Group  2  or    (as  defined  in   Definitions) of Transaction up to 10 years,    defined  in  the 2000
+                           Group  3  is    the   2000  ISDA   but greater than 5 years                       ISDA Definitions)  of
+                           dependent on    Definitions)  of                                                  Transaction more than
+                           the currency    Transaction   up                                                  10 years
+                           of       the    to 5 years
+                           Transaction.
+The  rating  by  S&P  of Party  A's  Group 1     0.6%            1.05%                                      1.5%
+long-term unsecured, unsubordinated
+obligations  is at least  equal  to
+"A+"
+                                     Group 2     1.05%           1.75%                                      3.0%
+                                     Group 3     1.5%            2.45%                                      4.5%
+The  rating by  S&P  of  Party  A's  Group 1     0.9%            1.10%                                      1.9%
+long-term unsecured, unsubordinated
+obligations is equal to "A"
+                                     Group 2     1.35%           2.45%                                      4.5%
+                                     Group 3     1.8%            3.15%                                      6.0%
+The rating  by  S&P  of  Party  A's  Group 1     1.2%            2.25%                                      4.5%
+long-term unsecured, unsubordinated
+obligations is less than "A"
+                                     Group 2     1.5%            3.15%                                      6.0%
+                                     Group 3     2.1%            3.85%                                      7.5%
+
+Group 1 currencies are: Belgian francs,  Deutschemarks,  Dutch guilders, Euro, European Currency Units, French franca, Japanese yen,
+Swiss francs and U.S. dollars.
+
+Group 2 currencies are: Australian dollars, British pounds sterling, Canadian dollars, Danish kroner,
+New Zealand dollars and Swedish kroner.
+
+Group 3 currencies are: Hong Kong dollars, Italian lire and Spanish pesetas.
+
+</TABLE>
+
+            TABLE B
+
+
+<TABLE>
+<CAPTION>
+MULTIPLICATION FACTORS FOR CURRENCY SWAPS
+<S>                           <C>
+U.S. dollars                       1.000
+Canadian dollars                   1.020
+New Zealand dollars                1.020
+Australian dollars                 1.030
+Hong Kong dollars                  1.030
+Belgian dollars                    1.040
+British pounds sterling            1.040
+Danish kroner                      1.040
+Dutch gilders                      1.040
+European Currency Units            1.040
+Euro                               1.040
+French francs                      1.040
+German marks                       1.040
+Japanese yen                       1.040
+Italian lire                       1.045
+
+<PAGE>
+
+
+Spanish pesetas                    1.045
+Swedish kroner                     1.045
+Swiss francs                       1.045
+</TABLE>
+
+
+
+
+
+
+      (I)   CALCULATIONS.
+
+            Paragraph  3(b)  of  this  Annex  shall be amended by inserting the
+            words "and shall provide each party  (or  the  other  party, if the
+            Valuation Agent is a party) with a description in reasonable detail
+            of  how such calculations were made, upon request" after  the  word
+            "calculations" in the third line thereof.
+
+      (VIII)DEMANDS AND NOTICES.
+
+            All demands,  specifications  and  notices under this Annex will be
+            made  pursuant  to  Section 12 of this  Agreement,  save  than  any
+            demand, specification or notice:
+
+      (IX)  EXPOSURE.
+
+            For the purpose of calculating  "Exposure"  in  Paragraph 10 of the
+            Annex,  the  Valuation  Agent  shall,  unless otherwise  agreed  in
+            writing by the Rating Agencies, seek two  quotations from Reference
+            Market-makers; provided that if 2 Reference  Market-makers  are not
+            available  to  provide  a  quotation,  then  fewer than 2 Reference
+            Market-makers  may be used for such purpose, and  if  no  Reference
+            Market-makers are  available,  then the Valuation Agent's estimates
+            at  mid-market  will  be  used. Where  more  than  1  quotation  is
+            obtained,  the  quotation  representing   the  greatest  amount  of
+            Exposure shall be used by the Valuation Agent.
+
+
+
+
+
+
+
+
+</TEXT>
+</DOCUMENT>

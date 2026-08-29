@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "BANK OF AMERICA, N.A.",
+      "evidence_quote": "BANK OF AMERICA, N.A."
+    },
+    "party_b": {
+      "value": "GE CAPITAL CREDIT CARD MASTER NOTE TRUST",
+      "evidence_quote": "GE CAPITAL CREDIT CARD MASTER NOTE TRUST"
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "Collateral (all denominated in USD)"
+    },
+    "threshold": {
+      "value": "With respect to Party A: US$0 if certain rating downgrade conditions occur, otherwise infinite; With respect to Party B: infinity.",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A:  US$0 in the event that (I) Party A fails to assign all of its rights and obligations under the Agreement or enter into any other Qualifying Substitute Arrangement on or before the thirtieth (30) day after the date of a Fitch Downgrade (as described in Part 1(o) of the Schedule) continues to exist, (II) 10 Local Business Days after an S&P Approved Ratings Downgrade has occurred and Party A has not entered into any other Qualifying Substitute Arrangements, (III) 10 Local Business Days after an S&P Required Ratings Downgrade has occurred or (IV) no Relevant Entity has the Moody\u2019s First Trigger Required Ratings and either (i) no Relevant Entity has had the Moody\u2019s First Trigger Required Ratings since this Annex was executed or (ii) at least 30 Local Business days have elapsed since the last time a Relevant Entity had the Moody\u2019s First Trigger Required Ratings; otherwise, the Threshold shall be infinite.  With respect to Party B:  infinity"
+    },
+    "minimum_transfer_amount": {
+      "value": "US$50,000 for Party A and Party B; provided that if Party A is a Defaulting Party, Zero for Party A.",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A and Party B:  US$50,000; provided however, that if Party A is a Defaulting Party at the time, \u201cMinimum Transfer Amount\u201d with respect to Party A shall be Zero."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to the nearest integral multiple of US$10,000; Return Amount rounded down to the nearest integral multiple of US$10,000.",
+      "evidence_quote": "The Delivery Amount will be rounded up to the nearest integral multiple of US$10,000 and the Return Amount will be rounded down to the nearest integral multiple of US$10,000."
+    },
+    "governing_law": {
+      "value": "State of New York",
+      "evidence_quote": "The terms and conditions of this Annex shall be governed and construed in accordance with the laws of the State of New York"
+    },
+    "valuation_percentage": {
+      "value": "Cash: 100% (S&P Approved/Fitch), 80% (S&P Required), 100% (Moody's First Trigger), 100% (Moody's Second Trigger); US Treasury <= 1 year: 98.5%, 78.8%, 100%, 100%; US Treasury 1 to 10 years: 89.9%, 71.9%, 100%, 94%; US Treasury > 10 years: 83.9%, 67.1%, 100%, 88%.",
+      "evidence_quote": "Moody\u2019s First Trigger Valuation Percentage"
+    }
+  }
+}

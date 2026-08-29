@@ -1,0 +1,32 @@
+{
+  "source_url": "SEC EDGAR exhibit (public filing)",
+  "licence": "US federal government work, public domain",
+  "provenance": "SEC EDGAR exhibit or published ISDA form",
+  "original_filename": "ex10-8.txt",
+  "sha256": "95e0704ae7750a880793d7c8c641e339487e55a63b0cc371db6ed7559b335dff",
+  "chars": 65782,
+  "classifier_score": 35,
+  "operative_terms": [
+    "delivery amount",
+    "return amount",
+    "credit support amount",
+    "valuation percentage",
+    "valuation agent",
+    "valuation date",
+    "minimum transfer amount",
+    "independent amount",
+    "interest amount"
+  ],
+  "structural_headings": [
+    "interpretation",
+    "security interest",
+    "credit support obligations",
+    "transfer timing",
+    "dispute resolution",
+    "distributions and interest amount",
+    "demands and notices",
+    "elections and variables"
+  ],
+  "distinct_paragraph_numbers": 11,
+  "admitted_because": "9 operative terms, 8 headings, 11 paragraph numbers"
+}

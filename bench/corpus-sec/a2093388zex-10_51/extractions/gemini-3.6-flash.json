@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "Citibank, N.A.",
+      "evidence_quote": "Citibank, N.A."
+    },
+    "party_b": {
+      "value": "GBC Florida, Inc.",
+      "evidence_quote": "GBC Florida, Inc.."
+    },
+    "governing_law": {
+      "value": "New York law",
+      "evidence_quote": "ISDA AGREEMENTS SUBJECT TO NEW YORK LAW ONLY"
+    },
+    "threshold": {
+      "value": "zero",
+      "evidence_quote": "\"THRESHOLD\" shall mean, with respect to both Party A and Party B, zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000",
+      "evidence_quote": "\"MINIMUM TRANSFER AMOUNT\" shall mean, USD 100,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will not be rounded.",
+      "evidence_quote": "The Delivery Amount and the Return Amount will not be rounded."
+    },
+    "valuation_percentage": {
+      "value": "100% for Cash and US Treasury/Ginnie Mae obligations with remaining maturity less than one year; 98% for US Treasury/Ginnie Mae obligations with remaining maturity one year or greater but less than 10 years; 95% for US Treasury/Ginnie Mae obligations with remaining maturity 10 years or greater, and Freddie Mac/Fannie Mae obligations",
+      "evidence_quote": "(A)  Cash                                                              /X/             /X/           [100%]\n\n(B) (x) Negotiable debt obligations issued by the U.S.\nTreasury Department or the Government National Mortgage\nAssociation (\"Ginnie Mae\"), or (y) mortgage backed\nsecurities issued by Ginnie Mae (but with respect to either\n(x) or (y) excluding interest only or principal only\nstripped securities, securities representing residual\ninterests in mortgage pools, or securities that are not\nlisted on a national securities exchange or regularly quoted\nin a national quotation service) and in each case having a\nremaining maturity of:\n\n(i)    less than one year                                              /X/             /X/           [100%]\n\n(ii)   one year or greater but less than 10 years                      /X/             /X/            [98%]\n\n(iii)  10 years or greater                                             /X/             /X/            [95%]\n\n(C)  (x) Negotiable debt obligations issued by the Federal             /X/             /X/            [95%]"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "NEW YORK LAW",
+      "evidence_quote": "NEW YORK LAW"
+    },
+    "party_a": {
+      "value": "Citibank, N.A.",
+      "evidence_quote": "Citibank, N.A."
+    },
+    "party_b": {
+      "value": "Gold Banc Corporation, Inc.",
+      "evidence_quote": "Gold Banc Corporation, Inc."
+    },
+    "threshold": {
+      "value": "zero",
+      "evidence_quote": "\"THRESHOLD\". shall mean, with respect to both Party A and Party B, zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000",
+      "evidence_quote": "\"MINIMUM TRANSFER AMOUNT\" shall mean, USD 100,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will not be rounded.",
+      "evidence_quote": "The Delivery Amount and the Return Amount will not be rounded."
+    },
+    "valuation_percentage": {
+      "value": "100% for Cash and U.S. Treasury/Ginnie Mae debt with remaining maturity less than one year; 98% for U.S. Treasury/Ginnie Mae debt with remaining maturity one year or greater but less than 10 years; 95% for U.S. Treasury/Ginnie Mae debt with remaining maturity 10 years or greater and Freddie Mac/Fannie Mae debt or mortgage-backed securities; determined by the Pledgor and Secured Party for other collateral.",
+      "evidence_quote": "The Valuation Percentage shall be determined by the Pledgor and Secured Party.."
+    }
+  }
+}

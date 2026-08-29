@@ -1,0 +1,16 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA AGREEMENTS SUBJECT TO NEW YORK LAW ONLY"
+    },
+    "party_a": {
+      "value": "ABN AMRO BANK N.V.",
+      "evidence_quote": "ABN AMRO BANK N.V."
+    },
+    "party_b": {
+      "value": "NISSAN AUTO RECEIVABLES 2004-C OWNER TRUST",
+      "evidence_quote": "NISSAN AUTO RECEIVABLES 2004-C\n                                                    OWNER TRUST"
+    }
+  }
+}

@@ -54,6 +54,9 @@ where = ["src"]
 testpaths = ["tests"]
 pythonpath = ["src", "examples", "evals"]
 addopts = "-q"
+markers = [
+    "live: makes a real, paid API call. Skipped unless PYLIGENT_LIVE_MODEL=1.",
+]
 
 [tool.ruff]
 line-length = 100

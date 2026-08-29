@@ -1,0 +1,1145 @@
+<DOCUMENT>
+<TYPE>EX-99
+<SEQUENCE>4
+<FILENAME>chk060204a_exh993.txt
+<DESCRIPTION>CREDIT SUPPORT ANNEX TO THE SCHEDULE
+<TEXT>
+                                                                   EXHIBIT 99.3
+                                                                   ------------
+
+
+                                      ISDA
+
+              International Swaps and Derivatives Association, Inc.
+
+                              CREDIT SUPPORT ANNEX
+
+                             to the Schedule to the
+
+                              ISDA MASTER AGREEMENT
+
+                            dated as of May 28, 2004
+
+                                     between
+
+                                DEUTSCHE BANK AG,
+                                   ("Party A")
+
+                                       and
+
+                   CHESAPEAKE EXPLORATION LIMITED PARTNERSHIP
+                                   ("Party B")
+
+This Credit  Support  Annex  supplements,  forms part of, and is subject to, the
+above-referenced  Agreement,  is part of its  Schedule  and is a Credit  Support
+Document under this Agreement with respect to each party.
+
+Accordingly, the parties agree as follows:
+
+PARAGRAPH 1.      Interpretation
+
+(a)      DEFINITIONS AND INCONSISTENCY.  Capitalized terms not otherwise defined
+         herein or  elsewhere  in this  Agreement  have the  meanings  specified
+         pursuant  to  Paragraph  12,  and  all  references  in  this  Annex  to
+         Paragraphs  are to  Paragraphs  of  this  Annex.  In the  event  of any
+         inconsistency  between  this  Annex  and the other  provisions  of this
+         Schedule,   this  Annex  will   prevail,   and  in  the  event  of  any
+         inconsistency  between  Paragraph 13 and the other  provisions  of this
+         Annex, Paragraph 13 will prevail.
+
+(b)      SECURED PARTY AND PLEDGOR. All references in this Annex to the "Secured
+         Party"  will be to either  party when acting in that  capacity  and all
+         corresponding  references to the  "Pledgor"  will be to the other party
+         when acting in that capacity;  PROVIDED,  HOWEVER, that if Other Posted
+         Support is held by a party to this Annex, all references herein to that
+         party as the Secured  Party with respect to that Other  Posted  Support
+         will be to that party as the  beneficiary  thereof and will not subject
+         that support or that party as the beneficiary  thereof to provisions of
+         law generally relating to security interests and secured parties.
+
+PARAGRAPH 2.      Security Interest
+
+Each party,  as the Pledgor,  hereby pledges to the other party,  as the Secured
+Party, as security for its Obligations,  and grants to the Secured Party a first
+priority  continuing  security interest in, lien on and right of Set-off against
+all Posted Collateral Transferred to or received by the Secured Party hereunder.
+Upon the Transfer by the Secured Party to the Pledgor of Posted Collateral,  the
+security  interest and lien granted  hereunder on that Posted Collateral will be
+released immediately and, to the extent possible,  without any further action by
+either party.
+
+
+<PAGE>
+
+PARAGRAPH 3.      CREDIT SUPPORT OBLIGATIONS
+
+(a)  DELIVERY  AMOUNT.  Subject to Paragraphs 4 and 5, upon a demand made by the
+     Secured  Party on or promptly  following a Valuation  Date, if the Delivery
+     Amount for that  Valuation  Date  equals or exceeds the  Pledgor's  Minimum
+     Transfer  Amount,  then the Pledgor  will  Transfer  to the  Secured  Party
+     Eligible  Credit Support having a Value as of the date of Transfer at least
+     equal to the applicable Delivery Amount (rounded pursuant to Paragraph 13).
+     Unless  otherwise   specified  in  Paragraph  13,  the  "Delivery   Amount"
+     applicable to the Pledgor for any  Valuation  Date will equal the amount by
+     which:
+
+     (i)  the Credit Support Amount exceeds
+
+     (ii) the Value as of that  Valuation Date of all Posted Credit Support held
+          by the Secured Party.
+
+(b)  RETURN  AMOUNT.  Subject to  Paragraphs  4 and 5, upon a demand made by the
+     Pledgor on or promptly following a Valuation Date, if the Return Amount for
+     that Valuation date equals or exceeds the Secured Party's Minimum  Transfer
+     Amount,  then the Secured Party will Transfer to the Pledgor  Posted Credit
+     Support  specified  by the Pledgor in that demand  having a Value as of the
+     date of Transfer as close as practicable  to the  applicable  Return Amount
+     (rounded pursuant to Paragraph 13). Unless otherwise specified in Paragraph
+     13, the "RETURN  AMOUNT"  applicable to the Secured Party for any Valuation
+     Date will equal the amount by which:
+
+     (i) the Value as of that  Valuation  Date of all Posted Credit Support held
+     by the Secured Party exceeds
+
+     (ii) the Credit Support Amount.
+
+     "CREDIT SUPPORT AMOUNT" means,  unless otherwise specified in Paragraph 13,
+     for any Valuation Date (i) the Secured Party's  Exposure for that Valuation
+     Date plus (ii) the aggregate of all Independent  Amounts  applicable to the
+     Pledgor,  if any,  minus (iii) all  Independent  Amounts  applicable to the
+     Secured  Party,  if any,  minus  (iv) the  Pledgor's  Threshold;  PROVIDED,
+     HOWEVER,  that the Credit Support Amount will be deemed to be zero whenever
+     the calculation of Credit Support Amount yields a number less than zero.
+
+PARAGRAPH 4.      CONDITIONS PRECEDENT, TRANSFER TIMING, CALCULATIONS AND
+                  SUBSTITUTIONS
+
+(a)  CONDITIONS  PRECEDENT.  Each  Transfer  obligation  of  the  Pledgor  under
+     Paragraphs 3 and 5 and of the Secured Party under Paragraphs 3, 4(d)(ii), 5
+     and 6(d) is subject to the conditions precedent that:
+
+     (i) no Event of Default,  Potential Event of Default or Specified Condition
+     has occurred and is continuing with respect to the other party; and
+
+     (ii)  no  Early   Termination  Date  for  which  any  unsatisfied   payment
+     obligations exist has occurred or been designated as the result of an Event
+     of Default or Specified Condition with respect to the other party.
+
+(b)  TRANSFER  TIMING.  Subject to  Paragraphs  4(a) and 5 and unless  otherwise
+     specified,  if a demand for the  Transfer  of  Eligible  Credit  Support or
+     Posted Credit Support is made by the  Notification  Time, then the relevant
+     Transfer  will be made not  later  than the close of  business  on the next
+     Local Business Day; if a demand is made after the  Notification  Time, then
+     the relevant  Transfer will be made not later than the close of business on
+     the second Local Business Day thereafter.
+
+(c)  CALCULATIONS.  All  calculations  of Value and  Exposure  for  purposes  of
+     Paragraphs  3 and  6(d)  will  be  made by the  Valuation  Agent  as of the
+     Valuation  Time.  The Valuation  Agent will notify each party (or the other
+     party,  if the Valuation  Agent is a party) of its  calculations  not later
+     than  the  Notification  Time  on the  Local  Business  Day  following  the
+     applicable  Valuation Date (or in the case of Paragraph 6(d), following the
+     date of calculation).
+
+(d)  SUBSTITUTIONS.
+
+     (i) Unless otherwise  specified in Paragraph 13, upon notice to the Secured
+     Party  specifying the items of Posted Credit  Support to be exchanged,  the
+     Pledgor  may, on any Local  Business  Day,  Transfer  to the Secured  Party
+     substitute Eligible Credit Support (the "Substitute Credit Support"); and
+
+     (ii)  subject to Paragraph  4(a),  the Secured  Party will  Transfer to the
+     Pledgor the items of Posted Credit Support  specified by the Pledgor in its
+     notice not later than the Local  Business Day  following  the date on which
+     the Secured Party receives the Substitute Credit Support,  unless otherwise
+     specified in  Paragraph 13 (the  "Substitution  Date");  provided  that the
+     Secured Party will only be obligated to Transfer Posted Credit Support with
+     a Value as of the date of Transfer of that Posted  Credit  Support equal to
+     the Value as of that date of the Substitute Credit Support.
+
+                                       2
+<PAGE>
+PARAGRAPH 5.      DISPUTE RESOLUTION
+
+If a party (a "Disputing Party") disputes (I) the Valuation Agent's  calculation
+of a Delivery  Amount or a Return  Amount or (II) the Value of any  Transfer  of
+Eligible Credit Support or Posted Credit  Support,  then (1) the Disputing Party
+will notify the other party and the Valuation  Agent (if the Valuation  Agent is
+not the other party) not later than the close of business on the Local  Business
+Day following (X) the date that the demand is made under Paragraph 3 in the case
+of (I) above or (Y) the date of Transfer in the case of (II) above,  (2) subject
+to Paragraph 4(a), the appropriate  party will Transfer the undisputed amount to
+the other party not later than the close of business on the Local  Business  Day
+following (X) the date that the demand is made under  Paragraph 3 in the case of
+(I) above or (Y) the date of Transfer in the case of (II) above, (3) the parties
+will  consult  with each other in an attempt to resolve  the  dispute and (4) if
+they fail to resolve the dispute by the Resolution Time, then:
+
+     (i) In the case of a dispute  involving a Delivery Amount or Return Amount,
+     unless  otherwise  specified  in  Paragraph  13, the  Valuation  Agent will
+     recalculate the Exposure and the Value as of the Recalculation Date by:
+
+           (A) utilizing any  calculations  of Exposure for the  Transaction (or
+           Swap Transactions) that the parties have agreed are not in dispute;
+
+           (B)   calculating  the  Exposure  for  the   Transactions   (or  Swap
+           Transactions)  in  dispute  by  seeking  four  actual  quotations  at
+           mid-market from Reference  Market-makers  for purposes of calculating
+           Market  Quotation,   and  taking  the  arithmetic  average  of  those
+           obtained;  provided that if four  quotations  are not available for a
+           particular  Transaction (or Swap  Transaction),  then fewer than four
+           quotations may be used for that  Transaction  (or Swap  Transaction),
+           and if no quotations are available for a particular  Transaction  (or
+           Swap Transaction),  then the Valuation Agent's original  calculations
+           will be used for that Transaction (or Swap Transaction); and
+
+           (C)   utilizing  the   procedures   specified  in  Paragraph  13  for
+           calculating the Value, if disputed, of Posted Credit Support.
+
+     (ii) In the  case of a  dispute  involving  the  Value of any  Transfer  of
+     Eligible Credit Support or Posted Credit Support,  the Valuation Agent will
+     recalculate the Value as of the date of Transfer pursuant to Paragraph 13.
+
+Following a recalculation  pursuant to this Paragraph,  the Valuation Agent will
+notify each party (or the other party,  if the  Valuation  Agent is a party) not
+later  than the  Notification  Time on the  Local  Business  Day  following  the
+Resolution  Time. The appropriate  party will, upon demand following that notice
+by the  Valuation  Agent or a  resolution  pursuant  to (3) above and subject to
+Paragraphs 4(a) and 4(b), make the appropriate Transfer.
+
+PARAGRAPH 6.      HOLDING AND USING POSTED COLLATERAL
+
+(a)  CARE OF POSTED  COLLATERAL.  Without  limiting the Secured  Party's  rights
+     under  Paragraph  6(c), the Secured Party will exercise  reasonable care to
+     assure the safe custody of all Posted  Collateral to the extent required by
+     applicable  law, and in any event the Secured  Party will be deemed to have
+     exercised  reasonable care if it exercises at least the same degree of care
+     as it would exercise with respect to its own property.  Except as specified
+     in the preceding sentence, the Secured Party will have no duty with respect
+     to Posted Collateral,  including,  without limitation,  any duty to collect
+     any Distributions, or enforce or preserve any rights pertaining thereto.
+
+(b)  ELIGIBILITY TO HOLD POSTED COLLATERAL; CUSTODIANS.
+
+     (i) GENERAL.  Subject to the  satisfaction  of any conditions  specified in
+     Paragraph  13 for holding  Posted  Collateral,  the  Secured  Party will be
+     entitled to hold Posted  Collateral or to appoint an agent (a  "Custodian")
+     to hold Posted Collateral for the Secured Party. Upon notice by the Secured
+     Party to the  Pledgor of the  appointment  of a  Custodian,  the  Pledgor's
+     obligations  to make any Transfer will be discharged by making the Transfer
+     to that Custodian.  The holding of Posted Collateral by a Custodian will be
+     deemed to be the holding of that Posted Collateral by the Secured Party for
+     which the Custodian is acting.
+
+     (ii) FAILURE TO SATISFY  CONDITIONS.  If the Secured Party or its Custodian
+     fails to satisfy any conditions for holding Posted Collateral,  then upon a
+     demand made by the  Pledgor,  the Secured  Party will,  not later than five
+     Local  Business  Days after the demand,  Transfer or cause its Custodian to
+     Transfer all Posted  Collateral  held by it to a Custodian  that  satisfies
+     those conditions or to the Secured Party if it satisfies those conditions.
+
+                                       3
+<PAGE>
+     (iii) LIABILITY. The Secured Party will be liable for the acts or omissions
+     of its  Custodian to the same extent that the Secured Party would be liable
+     hereunder for its own acts or omissions.
+
+(c)  USE OF POSTED  COLLATERAL.  Unless otherwise  specified in Paragraph 13 and
+     without limiting the rights and obligations of the parties under Paragraphs
+     3, 4(d)(ii),  5, 6(d) and 8, if the Secured Party is not a Defaulting Party
+     or an Affected  Party with  respect to a Specified  Condition  and no Early
+     Termination  Date has occurred or been designated as the result of an Event
+     of Default or Specified  Condition with respect to the Secured Party,  then
+     the  Secured  Party  will,  notwithstanding  Section  9-207 of the New York
+     Uniform Commercial Code, have the right to:
+
+     (i)  sell,  pledge,  rehypothecate,   assign,  invest,  use,  commingle  or
+     otherwise  dispose  of,  or  otherwise  use  in  its  business  any  Posted
+     Collateral it holds,  free from any claim or right of any nature whatsoever
+     of the Pledgor, including any equity or right of redemption by the Pledgor;
+     and
+
+     (ii) register any Posted  Collateral in the name of the Secured Party,  its
+     Custodian or a nominee for either.
+
+For purposes of the  obligation to Transfer  Eligible  Credit  Support or Posted
+Credit  Support  pursuant  to  Paragraphs  3 and 5 and any  rights  or  remedies
+authorized under this Agreement, the Secured Party will be deemed to continue to
+hold all Posted Collateral and to receive Distributions made thereon, regardless
+of whether the Secured Party has exercised any rights with respect to any Posted
+Collateral pursuant to (i) or (ii) above.
+
+(d)  DISTRIBUTIONS AND INTEREST AMOUNT.
+
+     (i) DISTRIBUTIONS. Subject to Paragraph 4(a), if the Secured Party receives
+     or is deemed to receive  Distributions  on a Local  Business  Day,  it will
+     Transfer to the Pledgor not later than the following Local Business Day any
+     Distributions  it  receives  or is deemed to receive  to the extent  that a
+     Delivery  Amount  would not be created or increased  by that  Transfer,  as
+     calculated  by the  Valuation  Agent (and the date of  calculation  will be
+     deemed to be a Valuation Date for this purpose).
+
+     (ii)  INTEREST  AMOUNT.  Unless  otherwise  specified  in  Paragraph 13 and
+     subject to  Paragraph  4(a),  in lieu of any  interest,  dividends or other
+     amounts paid or deemed to have been paid with respect to Posted  Collateral
+     in the form of Cash (all of which may be retained  by the  Secured  Party),
+     the Secured  Party will  Transfer to the Pledgor at the times  specified in
+     Paragraph 13 the Interest Amount to the extent that a Delivery Amount would
+     not be  created  or  increased  by  that  Transfer,  as  calculated  by the
+     Valuation  Agent  (and  the  date of  calculation  will be  deemed  to be a
+     Valuation Date for this purpose).  The Interest  Amount or portion  thereof
+     not  Transferred   pursuant  to  this  Paragraph  will  constitute   Posted
+     Collateral in the form of Cash and will be subject to the security interest
+     granted under Paragraph 2.
+
+PARAGRAPH 7.      EVENTS OF DEFAULT
+
+For purposes of Section 5(a)(iii)(l) of this Agreement, an Event of Default will
+exist with respect to a party if:
+
+     (i) that party fails (or fails to cause its  Custodian) to make,  when due,
+     any  Transfer of Eligible  Collateral,  Posted  Collateral  or the Interest
+     Amount, as applicable, required to be made by it and that failure continues
+     for two Local  Business  Days after notice of that failure is given to that
+     party;
+
+     (ii)  that  party  fails to  comply  with any  restriction  or  prohibition
+     specified  in this Annex with  respect  to any of the rights  specified  in
+     Paragraph  6(c) and that failure  continues  for five Local  Business  Days
+     after notice of that failure is given to that party; or
+
+     (iii)  that  party  fails  to  comply  with or  perform  any  agreement  or
+     obligation other than those specified in Paragraphs 7(i) and 7(ii) and that
+     failure continues for 30 days after notice of that failure is given to that
+     party.
+
+                                       4
+<PAGE>
+PARAGRAPH 8.      CERTAIN RIGHTS AND REMEDIES
+
+(a)  SECURED PARTY'S RIGHTS AND REMEDIES. If at any time (1) an Event of Default
+     or  Specified  Condition  with  respect to the Pledgor has  occurred and is
+     continuing or (2) an Early Termination Date has occurred or been designated
+     as the result of an Event of Default or Specified Condition with respect to
+     the  Pledgor,  then,  unless  the  Pledgor  has  paid  in  full  all of its
+     Obligations  that are then due, the Secured  Party may exercise one or more
+     of the following rights and remedies:
+
+     (i) all rights and remedies  available to a secured party under  applicable
+     law with respect to Posted Collateral held by the Secured Party;
+
+     (ii) any other rights and remedies available to the Secured Party under the
+     terms of Other Posted Support, if any;
+
+     (iii) the right to Set-off any amounts  payable by the Pledgor with respect
+     to any Obligations  against any Posted Collateral or the Cash equivalent of
+     any Posted  Collateral  held by the Secured Party (or any obligation of the
+     Secured Party to Transfer that Posted Collateral); and
+
+     (iv) the right to liquidate any Posted Collateral held by the Secured Party
+     through one or more public or private sales or other dispositions with such
+     notice,  if any, as may be required  under  applicable  law,  free from any
+     claim or right of any  nature  whatsoever  of the  Pledgor,  including  any
+     equity or right of redemption by the Pledgor (with the Secured Party having
+     the right to purchase any or all of the Posted  Collateral  to be sold) and
+     to apply the proceeds (or the Cash equivalent thereof) from the liquidation
+     of the Posted Collateral to any amounts payable by the Pledgor with respect
+     to any obligations in that order as the Secured Party may elect.
+
+Each  party  acknowledges  and  agrees  that  Posted  Collateral  in the form of
+securities may decline  speedily in value and is of a type customarily sold on a
+recognized market, and, accordingly, the Pledgor is not entitled to prior notice
+of any sale of that Posted  Collateral by the Secured  Party,  except any notice
+that is required under the applicable law and cannot be waived.
+
+(b)  PLEDGOR'S RIGHTS AND REMEDIES. If at any time an Early Termination Date has
+     occurred  or been  designated  as the  result  of an  Event of  Default  or
+     Specified  Condition with respect to the Secured Party, then (except in the
+     case of an Early  Termination  Date relating to less than all  Transactions
+     (or Swap Transactions)  where the Secured Party has paid in full all of its
+     obligations that are then under Section 6(e) of this Agreement):
+
+     (i) the Pledgor may exercise all rights and remedies available to a pledgor
+     under applicable law with respect to Posted  Collateral held by the Secured
+     Party;
+
+     (ii) the Pledgor may exercise  any other  rights and remedies  available to
+     the Pledgor under the terms of Other Posted Support, if any;
+
+     (iii) the Secured  Party will be  obligated  immediately  to  Transfer  all
+     Posted Collateral and the Interest Amount to the Pledgor; and
+
+     (iv) to the extent that Posted  Collateral or the Interest Amount is not so
+     Transferred pursuant to (iii) above, the Pledgor may:
+
+           (A) Set-off any amounts  payable by the Pledgor  with  respect to any
+           Obligations  against any Posted  Collateral or the Cash equivalent of
+           any Posted Collateral held by the Secured Party (or any obligation of
+           the Secured Party to Transfer that Posted Collateral); and
+
+           (B) to the extent that the Pledgor  does not  Set-off  under  (iv)(A)
+           above,  withhold  payment  of any  remaining  amounts  payable by the
+           Pledgor  with  respect  to any  Obligations,  up to the  Value of any
+           remaining  Posted  Collateral  held by the Secured Party,  until that
+           Posted Collateral is Transferred to the Pledgor.
+
+(c)  DEFICIENCIES  AND EXCESS  PROCEEDS.  The Secured Party will Transfer to the
+     Pledgor any proceeds and Posted Credit Support remaining after liquidation,
+     Set-off  and/or   application   under   Paragraphs   8(a)  and  8(b)  after
+     satisfaction  in full of all amounts payable by the Pledgor with respect to
+     any  Obligations;  the  Pledgor in all events  will  remain  liable for any
+     amounts remaining unpaid after any liquidation,  Set-off and/or application
+     under Paragraphs 8(a) and 8(b).
+
+(d)  FINAL RETURNS.  When no amounts are or thereafter may become payable by the
+     Pledgor with respect to any Obligations (except for any potential liability
+     under Section 2(d) of this  Agreement),  the Secured Party will Transfer to
+     the Pledgor all Posted Credit Support and the Interest Amount, if any.
+
+                                       5
+<PAGE>
+PARAGRAPH 9.      REPRESENTATIONS
+
+Each party represents to the other party (which  representations  will be deemed
+to be repeated as of each date on which it, as the Pledgor,  Transfers  Eligible
+Collateral) that:
+
+     (i) it has the  power  to  grant a  security  interest  in and  lien on any
+     Eligible Collateral it Transfers as the Pledgor and has taken all necessary
+     actions to authorize the granting of that security interest and lien;
+
+     (ii) it is the sole owner of or  otherwise  has the right to  Transfer  all
+     Eligible  Collateral it Transfers to the Secured Party hereunder,  free and
+     clear of any security  interest,  lien,  encumbrance or other  restrictions
+     other than the security interest and lien granted under Paragraph 2;
+
+     (iii) upon the Transfer of any  Eligible  Collateral  to the Secured  Party
+     under the terms of this  Annex,  the  Secured  Party  will have a valid and
+     perfected  first  priority  security  interest  therein  (assuming that any
+     central clearing corporation or any third-party  financial  intermediary or
+     other entity not within the control of the Pledgor involved in the Transfer
+     of that Eligible Collateral gives the notices and takes the action required
+     of it under applicable law for perfection of that interest); and
+
+     (iv) the  performance  by it of its  obligations  under this Annex will not
+     result in the creation of any security interest, lien or other encumbrances
+     on any Posted  Collateral other than the security interest and lien granted
+     under Paragraph 2.
+
+PARAGRAPH 10.     EXPENSES
+
+(a)  GENERAL.  Except as otherwise  provided in Paragraphs 10(b) and 10(c), each
+     party will pay its own costs and expenses in connection with performing its
+     obligations under this Annex and neither party will be liable for any costs
+     and expenses incurred by the other party in connection herewith.
+
+(b)  POSTED  CREDIT  SUPPORT.  The Pledgor will promptly pay when due all taxes,
+     assessments  or charges  of any nature  that are  imposed  with  respect to
+     Posted Credit  Support held by the Secured Party upon becoming aware of the
+     same,  regardless of whether any portion of that Posted  Credit  Support is
+     subsequently  disposed of under  Paragraph  6(c),  except for those  taxes,
+     assessments  and  charges  that  result  from the  exercise  of the Secured
+     Party's rights under Paragraph 6(c).
+
+(c)  LIQUIDATION/APPLICATION  OF POSTED CREDIT SUPPORT. All reasonable costs and
+     expenses  incurred by or on behalf of the  Secured  Party or the Pledgor in
+     connection  with the  liquidation  and/or  application of any Posted Credit
+     Support  under  Paragraph 8 will be payable,  on demand and pursuant to the
+     Expenses Section of this Agreement, by the Defaulting Party or, if there is
+     no Defaulting Party, equally by the parties.
+
+PARAGRAPH 11.     MISCELLANEOUS
+
+(a)  DEFAULT  INTEREST.  A Secured  Party  that  fails to make,  when  due,  any
+     Transfer of Posted  Collateral or the Interest  Amount will be obligated to
+     pay the Pledgor (to the extent  permitted  under  applicable law) an amount
+     equal to interest at the Default Rate  multiplied by the Value of the items
+     of property that were required to be Transferred,  from (and including) the
+     date  that  Posted  Collateral  or  Interest  Amount  was  required  to  be
+     Transferred  to (but  excluding)  the  date  of  Transfer  of  that  Posted
+     Collateral  or Interest  Amount.  This  Interest  will be calculated on the
+     basis of daily compounding and the actual number of days elapsed.
+
+(b)  FURTHER ASSURANCES.  Promptly following a demand made by a party, the other
+     party will  execute,  deliver,  file and record  any  financing  statement,
+     specific assignment or other document and take any other action that may be
+     necessary or desirable  and  reasonably  requested by that party to create,
+     preserve,  perfect or validate any security  interest or lien granted under
+     Paragraph  2, to enable that party to exercise or enforce its rights  under
+     this Annex with respect to Posted Credit  Support or an Interest  Amount or
+     to effect or document a release of a security interest on Posted Collateral
+     or an Interest Amount.
+
+(c)  FURTHER  PROTECTION.  The Pledgor will  promptly give notice to the Secured
+     Party of, and defend  against,  any suit,  action,  proceeding or lien that
+     involves  Posted Credit  Support  Transferred  by the Pledgor or that could
+     adversely  affect  the  security  interest  and  lien  granted  by it under
+     Paragraph 2, unless that suit, action,  proceeding or lien results from the
+     exercise of the Secured Party's rights under Paragraph 6(c).
+
+                                       6
+<PAGE>
+(d)  GOOD  FAITH  AND  COMMERCIALLY   REASONABLE  MANNER.   Performance  of  all
+     obligations  under  this  Annex,   including,   but  not  limited  to,  all
+     calculations,  valuations and determinations  made by either party, will be
+     made in good faith and in a commercially reasonable manner.
+
+(e)  DEMANDS AND  NOTICES.  All  demands and notices  made by a party under this
+     Annex will be made as specified in the Notices  Section of this  Agreement,
+     except as otherwise provided in Paragraph 13.
+
+(f)  SPECIFICATIONS  OF CERTAIN MATTERS.  Anything  referred to in this Annex as
+     being  specified  in  Paragraph  13 also  may be  specified  in one or more
+     Confirmations   or  other  documents  and  this  Annex  will  be  construed
+     accordingly.
+
+PARAGRAPH 12.     DEFINITIONS
+
+As used in this Annex: -
+
+"CASH" means the lawful currency of the United States of America.
+
+"CREDIT SUPPORT AMOUNT" has the meaning specified in Paragraph 3.
+
+"CUSTODIAN" has the meaning specified in Paragraphs 6(b)(i) and 13.
+
+"DELIVERY AMOUNT" has the meaning specified in Paragraph 3(a).
+
+"DISPUTING PARTY" has the meaning specified in Paragraph 5.
+
+"DISTRIBUTIONS"  means with respect to Posted  Collateral  other than Cash,  all
+principal,  interest  and  other  payments  and  distributions  of cash or other
+property  with  respect  thereto,  regardless  of whether the Secured  Party has
+disposed of that Posted Collateral under Paragraph 6(c).  Distributions will not
+include any item of property  acquired by the Secured Party upon any disposition
+or liquidation of Posted Collateral or, with respect to any Posted Collateral in
+the  form of  Cash,  any  distributions  on that  collateral,  unless  otherwise
+specified herein.
+
+"ELIGIBLE  COLLATERAL"  means,  with  respect  to a party,  the  items,  if any,
+specified as such for that party in Paragraph 13.
+
+"ELIGIBLE CREDIT SUPPORT" means Eligible Collateral and Other Eligible Support.
+
+"EXPOSURE"  means for any  Valuation  Date or other date for which  Exposure  is
+calculated and subject to Paragraph 5 in the case of a dispute,  the amount,  if
+any,  that would be payable  to a party that is the  Secured  Party by the other
+party  (expressed as a positive  number) or by a party that is the Secured Party
+to the  other  party  (expressed  as a  negative  number)  pursuant  to  Section
+6(e)(ii)(2)(A)  of this Agreement as if all Transactions (or Swap  Transactions)
+were being  terminated as of the relevant  Valuation Time:  provided that Market
+Quotation  will be  determined  by the  Valuation  Agent using its  estimates at
+mid-market of the amounts that would be paid for  Replacement  Transactions  (as
+that term is defined in the definition of "Market Quotation").
+
+"INDEPENDENT  AMOUNT" means,  with respect to a party,  the amount  specified as
+such for that party in Paragraph 13; if no amount is specified, zero.
+
+"INTEREST AMOUNT" means,  with respect to an Interest Period,  the aggregate sum
+of the amounts of interest  calculated  for each day in that Interest  Period on
+the  principal  amount  of  Posted  Collateral  in the form of Cash  held by the
+Secured Party on that day,  determined by the Secured Party for each such day as
+follows:
+
+     (x) the amount of that Cash on that day; multiplied by
+
+     (y) the Interest Rate in effect for that day; divided by
+
+     (z) 365.
+
+"INTEREST  PERIOD" means the period from (and including) the last Local Business
+Day on which an Interest Amount was  Transferred  (or, if no Interest Amount has
+yet been  Transferred,  the Local Business Day on which Posted Collateral in the
+form of Cash was  Transferred  to or  received  by the  Secured  Party)  to (but
+excluding) the Local Business Day on which the current  Interest Amount is to be
+Transferred.
+
+"INTEREST RATE" means the rate specified in Paragraph 13.
+
+"LOCAL BUSINESS DAY" unless otherwise specified in Paragraph 13, has the meaning
+specified in the Definitions  Section of this Agreement,  except that references
+to a payment in clause (c)  thereof  will be deemed to include a Transfer  under
+this Annex.
+
+                                       7
+<PAGE>
+"MINIMUM  TRANSFER AMOUNT" means,  with respect to a party, the amount specified
+as such for that party in Paragraph 13; if no amount is specified, zero.
+
+"NOTIFICATION TIME" has the meaning specified in Paragraph 13.
+
+"OBLIGATIONS" means, with respect to a party, all present and future obligations
+of that party under this Agreement and any additional  obligations specified for
+that party in Paragraph 13.
+
+"OTHER  ELIGIBLE  SUPPORT"  means,  with respect to a party,  the items, if any,
+specified as such for that party in Paragraph 13.
+
+"OTHER POSTED  SUPPORT"  means all Other  Eligible  Support  Transferred  to the
+Secured Party that remains in effect for the benefit of that Secured Party.
+
+"PLEDGOR"  means either  party,  when that party (i) receives a demand for or is
+required to Transfer  Eligible  Credit Support under  Paragraph 3(a) or (ii) has
+Transferred Eligible Credit Support under Paragraph 3(a).
+
+"POSTED   COLLATERAL"   means   all   Eligible   Collateral,   other   property,
+Distributions,  and all  proceeds  thereof  that  have  been  Transferred  to or
+received  by the  Secured  Party  under  this Annex and not  Transferred  to the
+Pledgor  pursuant  to  Paragraph  3(b),  4(d)(ii)  or 6(d)(i) or released by the
+Secured  Party under  Paragraph  8. Any Interest  Amount or portion  thereof not
+Transferred  pursuant to Paragraph 6(d)(ii) will constitute Posted Collateral in
+the form of Cash.
+
+"POSTED CREDIT SUPPORT" means Posted Collateral and Other Posted Support.
+
+"RECALCULATION  DATE"  means the  Valuation  Date that gives rise to the dispute
+under Paragraph 5; PROVIDED, however, that if a subsequent Valuation Date occurs
+under   Paragraph  3  prior  to  the   resolution  of  the  dispute,   then  the
+"Recalculation Date" means the most recent Valuation Date under Paragraph 3.
+
+"RESOLUTION TIME" has the meaning specified in Paragraph 13.
+
+"RETURN AMOUNT" has the meaning specified in Paragraph 3(b).
+"SECURED PARTY" means either party, when that party (i) makes a demand for or is
+entitled to receive  Eligible  Credit Support under Paragraph 3(a) or (ii) holds
+or is deemed to hold Posted Credit Support.
+
+"SPECIFIED  CONDITION"  means,  with respect to a party,  any event specified as
+such for that party in Paragraph 13.
+
+"SUBSTITUTE CREDIT SUPPORT" has the meaning specified in Paragraph 4(d)(i).
+
+"SUBSTITUTION DATE" has the meaning specified in Paragraph 4(d)(ii).
+
+"THRESHOLD"  means,  with respect to a party,  the amount  specified as such for
+that party in Paragraph 13; if no amount is specified, zero.
+
+"TRANSFER"  means,  with respect to any Eligible Credit  Support,  Posted Credit
+Support  or  Interest  Amount and in  accordance  with the  instructions  of the
+Secured Party, Pledgor or Custodian, as applicable:
+
+     (i) in the case of Cash,  payment or delivery by wire  transfer into one or
+     more bank accounts specified by the recipient;
+
+     (ii)  in the  case  of  certificated  securities  that  cannot  be  paid or
+     delivered by book-entry,  payment or delivery in appropriate  physical form
+     to  the  recipient  or  its  account   accompanied  by  any  duly  executed
+     instruments of transfer,  assignments in blank, transfer tax stamps and any
+     other  documents  necessary to constitute a legally  valid  transfer to the
+     recipient;
+
+     (iii)  in  the  case  of  securities  that  can be  paid  or  delivered  by
+     book-entry,  the giving of written  instructions to the relevant depository
+     institution  or other entity  specified by the  recipient,  together with a
+     written  copy  thereof to the  recipient,  sufficient  if complied  with to
+     result in a legally  effective  transfer  of the  relevant  interest to the
+     recipient; and
+
+     (iv) in the case of Other  Eligible  Support or Other  Posted  Support,  as
+     specified in Paragraph 13.
+
+                                       8
+<PAGE>
+"VALUATION AGENT" has the meaning specified in Paragraph 13.
+
+"VALUATION DATE" means each date specified in or otherwise  determined  pursuant
+to Paragraph 13.
+
+"VALUATION  PERCENTAGE"  means,  for  any  item  of  Eligible  Collateral,   the
+percentage specified in Paragraph 13.
+
+"VALUATION TIME" has the meaning specified in Paragraph 13.
+
+"VALUE" means for any Valuation Date or other date for which Value is calculated
+and subject to Paragraph 5 in the case of a dispute, with respect to:
+
+     (i) Eligible Collateral or Posted Collateral that is:
+
+           (A) Cash, the amount thereof; and
+
+           (B) a  security,  the  bid  price  obtained  by the  Valuation  Agent
+           multiplied by the applicable Valuation Percentage, if any;
+
+     (ii) Posted  Collateral  that  consists of items that are not  specified as
+     Eligible Collateral, zero; and
+
+     (iii) Other  Eligible  Support and Other  Posted  Support,  as specified in
+     Paragraph 13.
+
+PARAGRAPH 13.     ELECTIONS AND VARIABLES
+
+As used in this  Paragraph  13,  "PART 6" means Part 6 of the  Schedule  to this
+Agreement.
+
+(a)      SECURITY INTEREST FOR "OBLIGATIONS".  The term "OBLIGATIONS" as used in
+         this Annex includes the following additional obligations:
+
+         (i)      with respect to Party A, not applicable; and
+
+         (ii)     with  respect  to Party  B,  "Obligations"  means  any and all
+                  present  and  future  obligations  of  Party  B  under  or  in
+                  connection  with this Agreement and the other Secured  Trading
+                  Line Documents.
+
+(b)      CREDIT SUPPORT OBLIGATIONS.
+
+         (i)      This Annex is amended  to delete  the  definition  of (and all
+                  references to) "Credit Support Amount" therein.  This Annex is
+                  further  amended by  restating  Paragraph 3 thereof to read in
+                  its entirety as follows:
+
+                  "PARAGRAPH 3.     CREDIT SUPPORT OBLIGATIONS
+
+                  (a)      DELIVERY AMOUNT.
+
+                           (1)  WITH  RESPECT  TO TEMPORARY RESERVE  COLLATERAL.
+                                -----------------------------------------------
+                                Subject  to  Paragraphs  4 and 5,  upon a demand
+                                made  by  Party  A on or  promptly  following  a
+                                Calculation  Date, if the Cash Deficiency Amount
+                                for  such  Calculation  Date  specified  in  the
+                                related   Calculation  Date  Collateral   Notice
+                                delivered  pursuant  to clause  (j)(3) of Part 6
+                                equals or  exceeds  Party B's  Minimum  Transfer
+                                Amount,  then Party B will  Transfer  to Party A
+                                Eligible  Collateral or Other  Eligible  Support
+                                (collectively, "ELIGIBLE CREDIT SUPPORT") having
+                                a Value  as of the  date of  Transfer  at  least
+                                equal to such Cash  Deficiency  Amount (for such
+                                purposes, a "DELIVERY AMOUNT"), rounded pursuant
+                                to Paragraph 13.
+
+                           (2)  WITH RESPECT TO INTRA-YEAR  COLLATERAL.  Subject
+                                ------------------------------------------------
+                                to  Paragraphs  4 and 5,  upon a demand  made by
+                                Party A on or promptly  following an  Intra-Year
+                                Deficiency  Date, Party B will Transfer to Party
+                                A Eligible  Credit  Support having a Value as of
+                                the  date of  Transfer  at  least  equal  to the
+                                Intra-Year  Deficiency  Amount  specified in the
+                                notice  relating to such  Intra-Year  Deficiency
+                                Date delivered to Party B pursuant to clause (k)
+                                of  Part  6  (for  such  purposes,  a  "DELIVERY
+                                AMOUNT"),  rounded pursuant to Paragraph 13.
+
+                                       9
+<PAGE>
+                  (b)      RETURN AMOUNT.
+
+                           (1)  WITH  RESPECT TO TEMPORARY  RESERVE  COLLATERAL.
+                                ------------------------------------------------
+                                Subject  to  Paragraphs  4 and 5,  upon a demand
+                                made by Party B on or promptly following a Local
+                                Business  Day  on  which   Eligible   Properties
+                                pledged to Party A pursuant to clause  (j)(3)(B)
+                                of Part 6 become Qualified Mortgaged  Properties
+                                (each, a "MORTGAGE  QUALIFICATION DATE"), if the
+                                Forward  Value  of  such   Qualified   Mortgaged
+                                Properties   DIVIDED  BY  the  Minimum   Reserve
+                                Collateral  Ratio (for such purposes,  a "RETURN
+                                AMOUNT")  equals or  exceeds  Party A's  Minimum
+                                Transfer  Amount,  then Party A will Transfer to
+                                Party B Posted Credit Support specified by Party
+                                B in  that  demand  that  is  Temporary  Reserve
+                                Collateral  having  a  Value  as of the  date of
+                                Transfer as close as  practicable to such Return
+                                Amount (rounded pursuant to Paragraph 13).
+
+                           (2)  WITH RESPECT TO INTRA-YEAR  COLLATERAL.  Subject
+                                ------------------------------------------------
+                                to  Paragraphs  4 and 5,  upon a demand  made by
+                                Party  B  on  or  promptly   following  a  Local
+                                Business  Day, if the  Intra-Year  Excess Amount
+                                (for such purposes, a "RETURN AMOUNT") equals or
+                                exceeds Party A's Minimum Transfer Amount,  then
+                                Party A will  Transfer to Party B Posted  Credit
+                                Support specified by Party B in that demand that
+                                is  Intra-Year  Collateral  having a Value as of
+                                the date of Transfer as close as  practicable to
+                                such   Return   Amount   (rounded   pursuant  to
+                                Paragraph 13)."
+
+         (ii)     ELIGIBLE COLLATERAL.  The following items  will qualify  as
+                  "ELIGIBLE COLLATERAL":
+
+                           Cash
+
+         (iii)    OTHER  ELIGIBLE  SUPPORT.  The  following  items will qualify
+                  as "OTHER ELIGIBLE SUPPORT":
+
+                           Letters  of Credit  issued in favor of Party A on the
+                           terms set forth in Part 6 and this Annex.
+
+         (iv)     THRESHOLDS.
+
+                  (A)      "INDEPENDENT AMOUNT" means:  Inapplicable
+
+                  (B)      "THRESHOLD" means:  Inapplicable
+
+                  (C)      "MINIMUM TRANSFER AMOUNT" means:
+
+                           (1)  with respect to Party A, U.S.$250,000;  PROVIDED
+                                that the  Minimum  Transfer  Amount  for Party A
+                                shall be zero upon the occurrence and during the
+                                continuance  of an Event of  Default,  Potential
+                                Event of Default,  Termination Event, Additional
+                                Termination  Event or Specified  Condition  with
+                                respect to such party; and
+
+                           (2)  with respect to Party B, U.S.$250,000;  PROVIDED
+                                that the  Minimum  Transfer  Amount  for Party B
+                                shall be zero upon the occurrence and during the
+                                continuance  of an Event of  Default,  Potential
+                                Event of Default,  Termination Event, Additional
+                                Termination  Event or Specified  Condition  with
+                                respect to such party.
+
+                  (D)      ROUNDING.  The  Delivery  Amounts and Return  Amounts
+                           will  be  rounded  up and  down  respectively  to the
+                           nearest integral multiple of U.S.$10,000.
+
+                                       10
+<PAGE>
+(c)      VALUATION AND TIMING.
+
+         (i)      "VALUATION AGENT" means the Calculation Agent.
+
+         (ii)     "VALUATION DATE" means:
+
+                  (1)      for purposes of Paragraph 3(a) (Delivery Amounts):
+
+                           (x)   for   Temporary   Reserve   Collateral,    each
+                                 Calculation Date; and
+
+                           (y)  for  Intra-Year   Collateral,   each  Intra-Year
+                                Determination Date; and
+
+                  (2)      for purposes of Paragraph 3(b) (Return Amounts):
+
+                           (x) for Temporary Reserve  Collateral,  each Mortgage
+                               Qualification Date; and
+
+                           (y) for  Intra-Year  Collateral,  each Local Business
+                               Day.
+
+         (iii)    "VALUE" has the meaning given to it in the Agreement.
+
+         (iv)     "VALUATION  TIME"  means  the close of  business  on the Local
+                  Business Day before the Valuation Date or date of calculation,
+                  as  applicable,  PROVIDED that the  calculations  of Value and
+                  Delivery  Amount or Return Amount (as the case may be) will be
+                  made as of approximately the same time on the same date.
+
+         (v)      "NOTIFICATION TIME" means 1:00 p.m., New York time, on a Local
+                  Business Day.
+
+         (vi)     TRANSFER TIMING.  Notwithstanding  anything to the contrary in
+                  this Annex  (including  Paragraph 3(b) or Paragraph 4(b)), the
+                  Secured  Party  shall  not be  obligated  to  Transfer  to the
+                  Pledgor  Posted Credit  Support except on the dates and in the
+                  amounts required pursuant to the terms of Part 6.
+
+         (vii)    CALCULATIONS. Paragraph 4(c) of this Annex is restated to read
+                  in its entirety as follows:
+
+                  "All  calculations of Delivery  Amounts and Return Amounts for
+                  purposes of Intra-Year  Collateral  and Paragraph 6(d) will be
+                  made by the  Valuation  Agent as of the  Valuation  Time.  The
+                  Valuation Agent will notify each party (or the other party, if
+                  the Valuation Agent is a party) of its  calculations not later
+                  than the Notification Time on the Local Business Day following
+                  the  applicable  Valuation  Date (or in the case of  Paragraph
+                  6(d), following the date of calculation).
+
+(d)      CONDITIONS  PRECEDENT AND SECURED  PARTY'S  RIGHTS AND  REMEDIES.  Each
+         Termination  Event  specified  below with  respect to a party will be a
+         "SPECIFIED  CONDITION"  for that party (the  specified  party being the
+         Affected Party if a Termination  Event or Additional  Termination Event
+         occurs with respect to that party):
+
+                                                    PARTY A      PARTY B
+         Illegality                                 [X]          [X]
+         Force Majeure Event                        [X]          [X]
+         Tax Event                                  [ ]          [ ]
+         Tax Event Upon Merger                      [ ]          [ ]
+         Credit Event Upon Merger                   [X]          [X]
+
+(e)      SUBSTITUTION.
+
+         (i)      "SUBSTITUTION  DATE" has the meaning  specified  in  Paragraph
+                  4(d)(ii).
+
+         (ii)     ADDITIONAL SUBSTITUTION  CONDITIONS.  In addition to any other
+                  conditions  regarding  substitutions  of Posted Credit Support
+                  for other  Eligible  Credit  Support  set forth in this Annex,
+                  substitutions  of  collateral  are  subject  to the  terms and
+                  conditions set forth in Part 6.
+
+                                       11
+<PAGE>
+(f)      DISPUTE RESOLUTION.
+
+         (i)      "RESOLUTION TIME" means 1:00 p.m., New York time, on the Local
+                  Business Day  following  the date on which the notice is given
+                  that gives rise to a dispute under Paragraph 5.
+
+         (ii)     VALUE. For the purpose of Paragraph 5(ii), the Value of Posted
+                  Credit  Support  will be  calculated  in  accordance  with the
+                  requirements of Part 6.
+
+         (iii)    ALTERNATIVE.  The provisions of Paragraph 5 will apply, except
+                  to the following extent:
+
+                  (A)      pending the resolution of a dispute,  Transfer of the
+                           undisputed Value of Eligible Credit Support or Posted
+                           Credit Support  involved in the relevant  demand will
+                           be due as  provided  in  Paragraph 5 if the demand is
+                           given by the  Notification  Time,  but will be due on
+                           the second Local Business Day after the demand if the
+                           demand is given after the Notification Time; and
+
+                  (B)      the   Disputing   Party  need  not  comply  with  the
+                           provisions of Paragraph  5(II)(2) if the amount to be
+                           Transferred  does not  exceed the  Disputing  Party's
+                           Minimum Transfer Amount.
+
+         (iv)     AMENDMENT.  Paragraphs 5(i) and (ii) of this Annex are amended
+                  to read in their entirety as follows:
+
+                  "(i)     In the case of a dispute  involving a Delivery Amount
+                           or Return  Amount  that is  dependent  in whole or in
+                           part  upon  a   determination   of  the  Natural  Gas
+                           Mark-to-Market  Amount for any Valuation Date, unless
+                           otherwise  specified in Paragraph  13, the  Valuation
+                           Agent will recalculate the Natural Gas Mark-to-Market
+                           Amount and the Value as of the Recalculation Date by:
+
+                           (A)      utilizing  any  calculations  of Natural Gas
+                                    Mark-to-Market  Amount for the  Transactions
+                                    that  the  parties  have  agreed  are not in
+                                    dispute; and
+
+                           (B)      calculating  that  part of the  Natural  Gas
+                                    Mark-to-Market  Amount  attributable  to the
+                                    Transactions  in  dispute  by  seeking  four
+                                    actual  quotations at mid-market  from third
+                                    parties  for  purposes  of  calculating  the
+                                    relevant  Close-out  Amount,  and taking the
+                                    arithmetic   average   of  those   obtained;
+                                    PROVIDED  that  if four  quotations  are not
+                                    available for a particular Transaction, then
+                                    fewer than four  quotations  may be used for
+                                    that  Transaction,  and if no quotations are
+                                    available for a particular Transaction, then
+                                    the Valuation Agent's original  calculations
+                                    will be used for the Transaction.
+
+                  (ii)     In the case of a dispute  involving  the Value of any
+                           Transfer of Eligible  Credit Support or Posted Credit
+                           Support,  the Valuation  Agent will  recalculate  the
+                           Value as of the date of Transfer pursuant to Part 6."
+
+      (g)      HOLDING AND USING POSTED COLLATERAL.
+
+         (i)      ELIGIBILITY TO HOLD POSTED COLLATERAL; CUSTODIANS. Party A and
+                  its  Custodian  will be  entitled  to hold  Posted  Collateral
+                  pursuant  to  Paragraph  6(b);  PROVIDED  that  the  following
+                  conditions applicable to it are satisfied:
+
+                  (A)      Party A is not a Defaulting Party.
+
+                  (B)      Posted  Collateral may be  held only in the following
+                           jurisdictions: New York.
+
+                  Initially,  the Custodian for Party A is Deutsche Bank AG, New
+                  York Branch.
+
+         (ii)     USE OF POSTED  COLLATERAL.  The  provisions of Paragraph  6(c)
+                  will  apply  to  Party A, but  only  with  respect  to  Posted
+                  Collateral that is Cash.
+
+                                 12
+<PAGE>
+(h)      DISTRIBUTIONS AND INTEREST AMOUNT.
+
+         (i)      INTEREST  RATE.  The "INTEREST  RATE" will be, with respect to
+                  Eligible Collateral in the form of Cash, for any day, the rate
+                  opposite the caption "Federal Funds  (Effective)" for such day
+                  as  published  for such  day in  Federal  Reserve  Publication
+                  H.15(519)  or any  successor  publication  as published by the
+                  Board of Governors of the Federal Reserve System.  No Interest
+                  Rate will apply to any other Eligible Collateral.
+
+         (ii)     TRANSFER  OF INTEREST  AMOUNT.  The  Transfer of the  Interest
+                  Amount  will be made on the first Local  Business  Day of each
+                  calendar  month  and on any  Local  Business  Day that  Posted
+                  Collateral in the form of Cash is  Transferred  to the Pledgor
+                  pursuant to Paragraph 3(b).
+
+         (iii)    ALTERNATIVE  TO INTEREST  AMOUNT.  The provisions of Paragraph
+                  6(d)(ii) will apply.
+
+(i)      OTHER ELIGIBLE SUPPORT AND OTHER POSTED SUPPORT.
+
+         (i)      "VALUE"  with  respect  to Other  Eligible  Support  and Other
+                  Posted  Support  shall be the "Value"  thereof  determined  in
+                  accordance with the definition of such term in Part 6.
+
+         (ii)     "TRANSFER" means, with respect to Letters of Credit:
+
+                  (1)      for purposes of Paragraph  3(a)  (Delivery  Amounts),
+                           delivery  of a Letter of Credit by Party B to Party A
+                           at the address specified in this Annex or delivery of
+                           an executed  amendment  to such Letter of Credit,  in
+                           form and substance  satisfactory to Party A, by Party
+                           B to Party A at the address  specified in this Annex;
+                           and
+
+                  (2)      for  purposes of  Paragraph  3(b)  (Return  Amounts),
+                           return  of a Letter  of Credit by Party A to Party B,
+                           at the address  specified in this Annex,  or delivery
+                           of an executed amendment to such Letter of Credit, at
+                           the address specified in this Annex.
+
+(j)      DEMANDS AND NOTICES. All demands, specifications and notices under this
+         Annex will be made pursuant to the Notices  Section of this  Agreement,
+         unless otherwise specified here:
+
+         Party A:          Deutsche Bank AG
+                           60 Wall Street
+                           New York, NY  10005
+                           Attention:  Collateral Management and Valuations
+
+         Party B:          Chesapeake Exploration Limited Partnership
+                           6100 N. Western Avenue
+                           Oklahoma City, OK  73118
+                           Attention:  Cash Manager
+
+(k)      ADDRESSES FOR TRANSFERS OF CASH:
+
+         Party A:          Deutsche Bank AG, New York Branch
+                           New York, NY
+                           ABA:             026003780
+                           Account No.:     To be advised
+                           Reference:       To be advised
+
+         Party B:          Bank of Oklahoma, N.A.
+                           Oklahoma City, OK
+                           ABA:             103900036
+                           Account No.:     814109493
+
+                                       13
+<PAGE>
+(l)      OTHER PROVISIONS.
+
+         (i)      LIMIT ON SECURED PARTY'S LIABILITY. The Secured Party will not
+                  be liable  for any  losses or  damages  that the  Pledgor  may
+                  suffer  as a result of any  failure  by the  Secured  Party to
+                  perform,  or  any  delay  by  it in  performing,  any  of  its
+                  obligations  under this Annex if the failure or delay  results
+                  from  circumstances  beyond  the  reasonable  control  of  the
+                  Secured Party or its Custodian,  such as  interruption or loss
+                  of  computer or  communication  services,  labor  disturbance,
+                  natural disaster or local or national emergency.
+
+         (ii)     FURTHER  ASSURANCES.  If the Pledgor  fails (a) to execute and
+                  deliver  to  the  Secured  Party  such  financing  statements,
+                  assignments, or other documents or (b) to do such other things
+                  relating to the Posted  Collateral  as the  Secured  Party may
+                  reasonably  request  in  order to  protect  and  maintain  its
+                  security  interest  in the Posted  Collateral  and to protect,
+                  preserve,  and realize  upon the Posted  Collateral,  then the
+                  Secured  Party is hereby  authorized  by the Pledgor  (but not
+                  required) to complete and execute such  financing  statements,
+                  assignments,  and other  documents as the Secured  Party deems
+                  appropriate for such purposes. The Pledgor hereby appoints the
+                  Secured  Party,  during  the  term of this  Agreement,  as the
+                  Pledgor's agent and  attorney-in-fact  to complete and execute
+                  such financing statements, assignments and other documents and
+                  to perform  all other acts  which the  Secured  Party may deem
+                  appropriate  to protect and maintain its security  interest in
+                  the Posted  Collateral and to protect,  preserve,  and realize
+                  upon the  Posted  Collateral.  The  power-of-attorney  granted
+                  herein to the Secured Party is coupled with an interest and is
+                  irrevocable during the term of this Agreement.
+
+         (iii)    AGREEMENT AS TO SINGLE SECURED PARTY AND PLEDGOR.  Party A and
+                  Party B agree that,  notwithstanding  anything to the contrary
+                  in the recital to this Annex, Paragraph 1(b) or Paragraph 2 or
+                  the  definitions in Paragraph 12, (a) the term "SECURED PARTY"
+                  as used  in this  Annex  means  only  Party  A,  (b) the  term
+                  "PLEDGOR"  as used in this Annex  means only Party B, (c) only
+                  Party B makes  the  pledge  and  grant  in  Paragraph  2,  the
+                  acknowledgment in the final sentence of Paragraph 8(a) and the
+                  representations  in  Paragraph  9,  (d)  only  Party B will be
+                  required  to  make   Transfers  of  Eligible   Credit  Support
+                  hereunder (it being  understood  that Party A will be required
+                  to make Transfers of Posted Credit Support at the times and to
+                  the extent required hereunder) and (e) Paragraph 7 shall apply
+                  to Party B only and shall not apply to Party A.
+
+         (iv)     MODIFICATIONS TO THIS ANNEX. The following amendments are made
+                  to this Annex:
+
+                  (A) References  throughout  this Annex to "Swap  Transactions"
+                      are deleted.
+
+                  (B)      The  definition of "Exposure" in Paragraph 12 of this
+                           Annex is hereby deleted.
+
+                  (C)      SET-OFF.  For purposes of  Paragraphs 2 and 8 of this
+                           Annex, the reference to "Set-off" shall mean that the
+                           party  shall  have the right to  set-off  any  amount
+                           payable  by the  Pledgor  to the  Secured  Party with
+                           respect  to  any  Obligation   (whether   matured  or
+                           unmatured, whether or not contingent and irrespective
+                           of the currency,  place of payment or booking  office
+                           of the sum or  obligation),  PROVIDED  that no Posted
+                           Credit  Support  may be set off  against  Obligations
+                           owing to Party A under the Credit Agreement.
+
+         (v)      ADDITIONAL EXPENSES.  Notwithstanding  Paragraph 10, the costs
+                  and  expenses  (including  but not  limited to the  reasonable
+                  costs,  expenses and external  attorney's  fees of Party A) of
+                  establishing,  renewing,  substituting,  canceling, increasing
+                  and reducing the amount of one or more Letters of Credit shall
+                  be borne by Party B.
+
+         (vi)     LETTER  OF  CREDIT  PROVISIONS.  Each  posting  of a Letter of
+                  Credit by Party B hereunder  shall be subject to the terms and
+                  conditions set forth in Part 6, including clause (t) thereof.
+
+
+                            [signature page follows]
+
+                                    14
+<PAGE>
+
+
+
+
+
+DEUTSCHE BANK AG                                 CHESAPEAKE EXPLORATION LIMITED
+                                                 PARTNERSHIP
+
+                                                 By: Chesapeake Operating, Inc.,
+By:  /s/ GREGORY COLLETT                              its general partner
+     -----------------------------
+Name:  Gregory Collett
+Title: Vice President and
+       Counsel
+                                                 By:  /s/ MARTHA A. BURGER
+                                                     --------------------------
+                                                 Name:  Martha A. Burger
+                                                 Title: Treasurer
+
+By:  /s/ CARLO CARLTON
+     -----------------------------
+Name:  Carlo Carlton
+Title: Vice President and
+       Counsel
+
+                                       15
+
+</TEXT>
+</DOCUMENT>

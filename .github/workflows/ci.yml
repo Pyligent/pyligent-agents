@@ -3,6 +3,9 @@ name: ci
 on:
   push: { branches: [main] }
   pull_request:
+  schedule:
+    - cron: "17 6 * * 1"      # Mondays: catch provider-side drift within a week
+  workflow_dispatch:
 
 jobs:
   test:
@@ -54,3 +57,51 @@ jobs:
         run: |
           python -m pyligent_agents new /tmp/scaffold_check
           cd /tmp/scaffold_check && pip install pytest && python -m pytest -q
+
+  live-model:
+    # One real, paid API call, to keep the Anthropic path honest.
+    #
+    # Everything else in this file runs against the deterministic backend and spends
+    # nothing. That is the right default, but it leaves one gap: a provider can change
+    # a model name, retire a version, or alter a response shape, and this repo would
+    # not find out until a user did. Exactly that happened to the benchmark's Gemini
+    # path — `gemini-2.5-flash` began returning 404 NOT_FOUND for new keys, and no
+    # test noticed, because no test ever called it.
+    #
+    # MEASURED COST, claude-sonnet-5 at list price:
+    #   473 input + 547 output tokens = $0.0096 per run
+    #   weekly schedule                ≈ $0.50/year
+    #   plus pushes to main (~200/mo)  ≈ $1.92/month if enabled there
+    # The document is ~500 characters precisely so this stays true.
+    #
+    # Secrets are unavailable to pull_request runs from forks, so this job is
+    # restricted to this repository and skips itself when the key is absent — a fork
+    # sees it neutral, never red.
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -e ".[dev]" anthropic
+
+      - name: skip cleanly when no credential is configured
+        id: guard
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "No ANTHROPIC_API_KEY secret; the live model check will not run."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: one live Anthropic extraction, evidence verified against the source
+        if: steps.guard.outputs.run == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
+          PYLIGENT_LIVE_MODEL: "1"
+        run: python -m pytest tests/test_extract_backends.py -m live -q -s
+

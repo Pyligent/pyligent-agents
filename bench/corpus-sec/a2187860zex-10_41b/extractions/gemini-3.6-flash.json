@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "CITIGROUP ENERGY INC.",
+      "evidence_quote": "CITIGROUP ENERGY INC."
+    },
+    "party_b": {
+      "value": "Noble Environmental Power 2008 Hold Co., LLC",
+      "evidence_quote": "Noble\n  Environmental Power 2008 Hold Co., LLC"
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "ISDA Agreements Subject to New York Law Only"
+    },
+    "threshold": {
+      "value": "Zero for Party B; for Party A based on rating schedule",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party B:  Zero"
+    },
+    "minimum_transfer_amount": {
+      "value": "$250,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A:\n$250,000."
+    },
+    "rounding": {
+      "value": "rounded up and down, respectively, to the nearest integral multiple of US$50,000",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up and down,\n\nrespectively, to the nearest integral multiple of US$50,000."
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "100%"
+    }
+  }
+}

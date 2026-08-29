@@ -1,0 +1,416 @@
+<DOCUMENT>
+<TYPE>EX-99.5
+<SEQUENCE>6
+<FILENAME>efc6-1487_ex995.txt
+<TEXT>
+
+
+                                 EXHIBIT 99.5
+
+             The Credit Support Annex to the ISDA Master Agreement
+
+<PAGE>
+
+                                    ISDA(R)
+
+             International Swaps and Derivatives Association, Inc.
+
+                             CREDIT SUPPORT ANNEX
+
+                            to the Schedule to the
+
+                               Master Agreement
+
+                          dated as of April 28, 2006
+
+                                    between
+
+       LEHMAN BROTHERS           THE BANK OF NEW YORK, not in its individual or
+   SPECIAL FINANCING INC.        corporate capacity but solely as Swap Contract
+                                 Administrator for CWALT, Inc. Alternative Loan
+                                  Trust 2006-OC3, pursuant to a Swap Contract
+                                            Administration Agreement
+           Party A                                  Party B
+
+This Annex supplements, forms part of, and is subject to, the above-referenced
+Agreement, is part of its Schedule and is a Credit Support Document under this
+Agreement with respect to each party.
+
+Accordingly, the parties agree as follows:
+
+Paragraph 1. Interpretation
+
+(a) Definitions and Inconsistency. Capitalized terms not otherwise defined
+herein or elsewhere in this Agreement have the meanings specified pursuant to
+Paragraph 12, and all references in this Annex to Paragraphs are to Paragraphs
+of this Annex. In the event of any inconsistency between this Annex and the
+other provisions of this Schedule, this Annex will prevail and in the event of
+any inconsistency between Paragraph 13 and the other provisions of this Annex,
+Paragraph 13 will prevail.
+
+(b) Secured Party and Pledgor. All references in this Annex to the "Secured
+Party" will be to either party when acting in that capacity and all
+corresponding references to the "Pledgor" will be to the other party when
+acting in that capacity; provided, however, that if Other Posted Support is
+held by a party to this Annex, all references herein to that party as the
+Secured Party with respect to that Other Posted Support will be to that party
+as the beneficiary thereof and will not subject that support or that party as
+the beneficiary thereof to provisions of law generally relating to security
+interests and secured parties.
+
+Paragraph 2.  Security Interest
+
+Each party, as the Pledgor, hereby pledges to the other party, as the Secured
+Party, as security for its Obligations, and grants to the Secured Party a
+first priority continuing security interest in, lien on and right of Set-off
+against all Posted Collateral Transferred to or received by the Secured Party
+hereunder. Upon the Transfer by the Secured Party to the Pledgor of Posted
+Collateral, the security interest and lien granted hereunder on that Posted
+Collateral will be released immediately and, to the extent possible, without
+further action by either party.
+
+  Copyright (C) 1994 by International Swaps and Derivatives Association, Inc.
+
+<PAGE>
+
+                             CREDIT SUPPORT ANNEX
+                            Elections and Variables
+                          dated as of April 28, 2006
+                                    between
+                    LEHMAN BROTHERS SPECIAL FINANCING INC.
+              (hereinafter referred to as "Party A" or "Pledgor")
+                                      and
+ THE BANK OF NEW YORK, not in its individual or corporate capacity but solely
+    as Swap Contract Administrator for CWALT, Inc. Alternative Loan Trust
+                    2006-OC3, pursuant to a Swap Contract
+                           Administration Agreement
+           (hereinafter referred to as "Party B" or "Secured Party")
+
+Paragraph 13.  Elections and Variables
+
+(a)   Security Interest for "Obligations". The term "Obligations" as used in
+      this Annex includes the following additional obligations:
+
+      With respect to Party A, not applicable.
+
+      With respect to Party B, not applicable.
+
+(b)   Credit Support Obligations.
+
+      (i)   Delivery Amount, Return Amount and Credit Support Amount
+
+            (A)   "Delivery Amount" has the meaning specified in Paragraph
+                  3(a)
+
+            (B)   "Return Amount" has the meaning specified in Paragraph 3(b).
+
+            (C)   "Credit Support Amount" means, for any Valuation Date,
+                  "Credit Support Amount" means, for any Valuation Date, an
+                  amount equal to 100.0% of the Secured Party's Exposure for
+                  the next Valuation Date and the product of the Volatility
+                  Buffer and the Notional Amount.
+
+      (ii)  Eligible Collateral. At such time as Party A is required to post
+            collateral pursuant to Part 1(h)(A) of the Schedule), the
+            following items will qualify as "Eligible Collateral" (together
+            with such other collateral types (and related valuation
+            percentages) with respect to which Rating Agency Confirmation is
+            provided):
+
+                                                                   Valuation
+                 Collateral Type                                   Percentage
+                 ---------------                                   ----------
+
+            (A)  cash.                                               100.0%
+
+            (B)  Negotiable debt obligations issued by the U.S.       98.5%
+                 Treasury Department having a maturity at
+                 issuance of not more than one year.
+
+            (C)  Negotiable debt obligations issued by the U.S.       89.9%
+                 Treasury Department having a maturity at issuance
+                 of more than one year but not more than ten years.
+
+            (D)  Negotiable debt obligations issued by the U.S.       83.9%
+                 Treasury Department having a maturity at issuance
+                 of more than ten years.
+
+            (E)  demand and time deposits in, certificates of         98.0%
+                 deposit of, bankers' acceptances payable within
+                 183 days of issuance issued by, or federal
+                 funds sold by any U.S. federal or state
+                 depository institution or trust company, the
+                 commercial paper and/or debt obligations of
+                 which (or, in the case of the principal
+                 depository institution in a holding company
+
+
+                                      12
+<PAGE>
+
+                 system, the commercial paper or debt obligations of such
+                 holding company) at the time of such investment or
+                 contractual commitment providing for such investment have a
+                 long-term credit rating of "Aaa" by Moody's and "AAA" by
+                 Standard & Poor's, in the case of long-term debt
+                 obligations, or "Prime-1" by Moody's and "A-1+" by Standard
+                 & Poor's, in the case of commercial paper and short-term
+                 obligations; provided, that in the case of commercial paper
+                 and short-term debt obligations with a maturity of longer
+                 than 91 days, the issuer thereof must also have at the time
+                 of such investment a long-term credit rating of "Aaa" by
+                 Moody's and "AAA" by Standard & Poor's.
+
+      (iii) Other Eligible Support. The following items will qualify as "Other
+            Eligible Support" for the party specified: Not applicable.
+
+      (iv)  Thresholds.
+
+            (A)   "Independent Amount" shall not be applicable with respect to
+                  Party A or Party B unless otherwise specified in a
+                  Confirmation.
+
+            (B)   "Threshold" means, with respect to Party A, zero at any time
+                  that (1) Party A (or to the extent applicable, its Credit
+                  Support Provider) does not have the required ratings set
+                  forth in Part 1(h)(A) of the Schedule from Standard & Poor's
+                  and has failed to transfer its rights and obligations under
+                  this Agreement within 30 days of its downgrade or (2) Party
+                  A (or to the extent applicable, its Credit Support Provider)
+                  does not have the required ratings from Moody's; otherwise
+                  the Threshold shall be unlimited.
+
+            (C)   "Minimum Transfer Amount" means, with respect to a party,
+                  $100,000.
+
+            (D)   "Rounding". The Delivery Amount and the Return Amount will
+                  be rounded up and down respectively to the nearest integral
+                  multiple of $1,000.
+
+      (c)   Valuation and Timing.
+
+            (i)   "Valuation Agent" means Party A. All calculations by the
+                  Valuation Agent must be made in accordance with standard
+                  market practice, including, in the event of a dispute as to
+                  the Value of any Eligible Credit Support or Posted Credit
+                  Support, by making reference to quotations received by the
+                  Valuation Agent from commonly accepted third party sources.
+
+            (ii)  "Valuation Date" means, for purposes of each time that Party
+                  A is required to post collateral pursuant to Part 1(h)(A) of
+                  the Schedule, each Wednesday or, if such day is not a Local
+                  Business Day, the next following Local Business Day.
+
+            (iii) "Valuation Time" means the close of business in the location
+                  where the relevant product is traded, provided that the
+                  calculations of Value and Exposure will made as of
+                  approximately the same time on the same date.
+
+            (iv)  "Notification Time" means 3:00 p.m., New York time, on a
+                  Local Business Day.
+
+            (v)   Notice to S&P. At any time while Party A's Credit Support
+                  Provider shall fail to have the Approved Rating Thresholds
+                  from S&P, Party A shall provide to S&P not later than the
+                  Notification Time on the Local Business Day following each
+                  Valuation Date the calculations of Exposure and the Value of
+                  any Eligible Credit Support or Posted Credit Support for
+                  that Valuation Date.
+
+            (vi)  External Verification. Notwithstanding the definition of
+                  Valuation Agent and Valuation Date, at any time while the
+                  long-term unsecured debt or counterparty rating of Party A's
+                  Credit Support Provider is not above "BBB", the calculations
+                  of Exposure and the Value of any Eligible Credit Support or
+                  Posted Credit Support must be verified by an external
+
+
+                                      13
+<PAGE>
+
+                  mark quarterly. The external mark must be obtained by an
+                  independent third party, and cannot be verified by the same
+                  entity more than four times in any 12-month period. In
+                  addition, the external mark-to-market valuations should
+                  reflect the higher of two bids from counterparties that
+                  would be eligible and willing to provide the swap in the
+                  absence of the current provider. The Value of any Eligible
+                  Credit Support or Posted Credit Support and Exposure should
+                  be based on the greater of the calculations of the Valuation
+                  Agent and the external marks, and any deficiencies in Value
+                  and Exposure must be cured within three days.
+
+
+      (d)   Conditions Precedent and Secured Party's Rights and Remedies.
+            There will be no Specified Conditions for Party A and Party B.
+
+      (e)   Substitution
+
+            (i)   "Substitution Date" has the meaning specified in Paragraph
+                  4(d)(ii).
+
+            (ii)  "Consent." The Pledgor need not obtain the Secured Party's
+                  consent for any substitution pursuant to Paragraph 4(d).
+
+      (f)   Dispute Resolution
+
+            (i)   "Resolution Time" means 1:00 p.m. on the Local Business Day
+                  following the date on which notice is given that gives rise
+                  to a default.
+
+            (ii)  Value. For the purpose of Paragraph 5(i)c) and 5(ii), the
+                  Value of Posted Credit Support other than Cash will be
+                  calculated as follows:
+
+                  With respect to any Eligible Collateral in the form of
+                  securities listed in Paragraph 13(b)(ii) (referred to herein
+                  as "Collateral Obligations") the sum of (I)(x) the bid price
+                  quoted on such date by a mutually acceptable principal
+                  market maker for such Collateral Obligations, or (y) if no
+                  such quotation is available from a principal market maker
+                  for such date, such bid price as of the day, next preceding
+                  such date, on which such quotation was available, in either
+                  case multiplied by the applicable Valuation Percentage, plus
+                  (II) the accrued interest on such Collateral Obligations
+                  (except to the extent Transferred to a party pursuant to any
+                  applicable section of this Agreement or included in the
+                  applicable price referred to in (I) of this Clause) as of
+                  such date.
+
+            (ii)  "Alternative." Paragraph 5 will apply.
+
+      (g)   Holding and Using Posted Collateral.
+
+            (i)   "Eligibility to Hold Posted Collateral; Custodians."
+
+                  Party B and or its Custodian will be entitled to hold Posted
+                  Collateral pursuant to Paragraph 6(b), provided that the
+                  following conditions applicable to it are satisfied:
+
+                  (1)      The Custodian is a bank or trust company located in
+                           the United States having total assets of at least
+                           $250,000,000 and a short term unsecured debt or
+                           counterparty rating of "Prime-1" from Moody's and
+                           "A-1" from Standard & Poor's.
+
+                  Initially, the Custodian for Party B is:  The Bank of New
+                  York.
+
+            (ii)  "Use of Posted Collateral" The provisions of Paragraph 6(c)
+                  will not apply with respect to the collateral posted by
+                  Party A.
+
+      (h)   Distributions and Interest Amount.
+
+            (i)   "Interest Rate." The Interest Rate shall be the actual
+                  interest rate achieved on Posted Collateral in the form of
+                  Cash that is held by Party B's Custodian. . Party B's
+                  Custodian
+
+
+                                      14
+<PAGE>
+
+                  shall hold Posted Collateral in the form of Cash in such
+                  deposit or investment account as specified by Party A to
+                  Party B and reasonably acceptable to Party B's Custodian.
+
+            (ii)  "Transfer of Interest Amount." The Transfer of the Interest
+                  Amount will be made on the first Local Business Day of each
+                  calendar month and on any Local Business Day that Posted
+                  Collateral in the form of Cash is Transferred to the Pledgor
+                  pursuant to Paragraph 3(b).
+
+            (iii) "Alternative to Interest Amount." Not applicable.
+
+      (i)   Additional Representation(s). Not applicable.
+
+      (j)   "Other Eligible Support and Other Posted Support."
+
+            (i)   "Value" with respect to Other Eligible Support and Other
+                  Posted Support means: Not applicable.
+
+            (ii)  "Transfer" with respect to Other Eligible Support and Other
+                  Posted Support means: Not applicable.
+
+      (k)   Demands and Notices. All demands, specifications and notices made
+            by a party to this Annex will be made pursuant to the Notices
+            Section of this Agreement.
+
+      (l)   Addresses for Transfers. As agreed upon between the parties from
+            time to time.
+
+      (m)   Other Provisions.
+
+            (i)   "Volatility Buffer" shall mean the percentage set forth in
+                  the following table with respect to any Transaction (other
+                  than a Transaction identified in the related Confirmation as
+                  a Timing Hedge):
+
+<TABLE>
+<CAPTION>
+-----------------------------------------------------------------------------------------------------------------------------------
+The higher of  the             Remaining Weighted      Remaining Weighted      Remaining Weighted          Remaining Weighted
+short-term credit rating of    Average Life Maturity   Average Life Maturity   Average Life Maturity up    Average Life Maturity
+(i) Party A and (ii) the       up to 3 years           up to 5 years           to 10 years                 up to 30 years
+Credit Support Provider of
+Party A
+-----------------------------------------------------------------------------------------------------------------------------------
+<S>                            <C>                     <C>                     <C>                         <C>
+At least "A-2"                 2.75                    3.25                    4.00                        4.75
+-----------------------------------------------------------------------------------------------------------------------------------
+"A-3"                          3.25                    4.00                    5.00                        6.25
+-----------------------------------------------------------------------------------------------------------------------------------
+"BB+" or lower                 3.50                    4.50                    5.75                        7.50
+-----------------------------------------------------------------------------------------------------------------------------------
+</TABLE>
+
+
+                                      15
+<PAGE>
+
+            (ii)  Agreement as to Single Secured Party and Pledgor. Party A
+                  and Party B agree that, notwithstanding anything to the
+                  contrary in the recital of this Annex, Paragraph 1(b) or
+                  Paragraph 2 of the definitions in Paragraph 12, (a) the term
+                  "Secured Party" as used in this Annex means only Party = =
+                  B, (b) the term "Pledgor" as used in this Annex means only
+                  Party A, (c) only Party A makes the = = pledge and grant in
+                  Paragraph 2, the acknowledgment in the final sentence of
+                  Paragraph 8(a) and the representations in Paragraph 9 and
+                  (d) only Party A will be required to post Eligible Credit
+                  Support hereunder. Party A also agrees that it shall pay all
+                  costs of transferring Eligible Credit Support required to be
+                  delivered by Party A hereunder.
+
+
+            The parties executing this Credit Support Annex have executed the
+Master Agreement and have agreed as to the contents of this Credit Support
+Annex.
+
+                                             THE BANK OF NEW YORK, not in its
+ LEHMAN BROTHERS SPECIAL FINANCING           individual or corporate capacity
+               INC.                            but solely as Swap Contract
+                                              Administrator for CWALT, Inc.
+                                             Alternative Loan Trust 2006-OC3,
+                                               pursuant to a Swap Contract
+                                                 Administration Agreement
+
+              Party A                                    Party B
+
+
+
+
+          /s/ Miki Herrick                           /s/ Maria Tokarz
+--------------------------------------     ------------------------------------
+Name: Miki Herrick                         Name: Maria Tokarz
+
+Title: Vice President                      Title: Assistant Treasurer
+
+Date: April 28, 2006                       Date: April 28, 2006
+
+
+
+                                      16
+</TEXT>
+</DOCUMENT>

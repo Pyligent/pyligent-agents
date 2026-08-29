@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "party_a": {
+      "value": "ABN AMRO BANK N.V.",
+      "evidence_quote": "ABN AMRO BANK N.V. (\u201cParty A\u201d)"
+    },
+    "party_b": {
+      "value": "GE CAPITAL CREDIT CARD MASTER NOTE TRUST",
+      "evidence_quote": "GE CAPITAL CREDIT CARD MASTER NOTE TRUST"
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "Collateral (all denominated in USD)"
+    },
+    "threshold": {
+      "value": "With respect to Party A: US$0 in the event that (I) Party A fails to assign all of its rights and obligations under the Agreement or enter into any other Qualifying Substitute Arrangement on or before the thirtieth (30) day after the date of a Fitch Downgrade (as described in Part 1(o) of the Schedule) continues to exist, (II) 10 Local Business Days after an S&P Approved Ratings Downgrade has occurred and Party A has not entered into any other Qualifying Substitute Arrangements, (III) 10 Local Business Days after an S&P Required Ratings Downgrade has occurred or (IV) no Relevant Entity has the Moody\u2019s First Trigger Required Ratings and either (i) no Relevant Entity has had the Moody\u2019s First Trigger Required Ratings since this Annex was executed or (ii) at least 30 Local Business days have elapsed since the last time a Relevant Entity had the Moody\u2019s First Trigger Required Ratings; otherwise, the Threshold shall be infinite. With respect to party B: infinity.",
+      "evidence_quote": "\u201cThreshold\u201d means\nwith respect to Party A:  US$0 in the\nevent that (I) Party A fails to assign all of its rights and obligations under\nthe Agreement or enter into any other Qualifying Substitute Arrangement on or\nbefore the thirtieth (30) day after the date of a Fitch Downgrade (as described\nin Part 1(o) of the Schedule) continues to exist, (II) 10 Local Business Days\nafter an S&P\nApproved Ratings Downgrade has occurred and Party A has not entered into any\nother Qualifying Substitute Arrangements, (III) 10 Local Business Days after an S&P Required Ratings\nDowngrade has occurred or (IV) no Relevant Entity has the Moody\u2019s First Trigger\nRequired Ratings and either (i) no Relevant Entity has had the Moody\u2019s First\nTrigger Required Ratings since this Annex was executed or (ii) at least 30\nLocal Business days have elapsed since the last time a Relevant Entity had the\nMoody\u2019s First Trigger Required Ratings; otherwise, the Threshold shall be\ninfinite.  With respect to party B:  infinity."
+    },
+    "minimum_transfer_amount": {
+      "value": "US$50,000 for Party A and Party B; provided however, that if Party A is a Defaulting Party at the time, \u201cMinimum Transfer Amount\u201d shall be Zero.",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d\nmeans with respect to Party A and Party B: \nUS$50,000; provided however, that if Party A is a Defaulting Party at\nthe time, \u201cMinimum Transfer Amount\u201d shall be\nZero."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up to the nearest integral multiple of US$10,000 and the Return Amount will be rounded down to the nearest integral multiple of US$10,000.",
+      "evidence_quote": "The Delivery\nAmount will be rounded up to the nearest integral multiple of US$10,000 and the\nReturn Amount will be rounded down to the nearest integral multiple of\nUS$10,000."
+    },
+    "governing_law": {
+      "value": "laws of the State of New York",
+      "evidence_quote": "The terms and conditions of this  Annex shall be governed and construed in accordance with the laws of the State of New York and to the non-exclusive jurisdiction of the courts of the State of New York and the United States District Court located in the Borough of Manhattan in New York  City."
+    },
+    "valuation_percentage": {
+      "value": "Cash: 100% (S&P Approved/Fitch), 80% (S&P Required), 100% (Moody's First Trigger), 100% (Moody's Second Trigger); Treasury <= 1 year: 98.5%, 78.8%, 100%, 100%; Treasury 1-10 years: 89.9%, 71.9%, 100%, 94%; Treasury > 10 years: 83.9%, 67.1%, 100%, 88%",
+      "evidence_quote": "(A)\n  \n  \n  \nCash\n  \n  \n  \n \n  \n  \n  \n100\n  \n  \n  \n%\n  \n  \n  \n80\n  \n  \n  \n%\n  \n  \n  \n100\n  \n  \n  \n%\n  \n  \n  \n100\n  \n  \n  \n%"
+    }
+  }
+}

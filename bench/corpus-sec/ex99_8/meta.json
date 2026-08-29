@@ -1,0 +1,34 @@
+{
+  "source_url": "SEC EDGAR exhibit (public filing)",
+  "licence": "US federal government work, public domain",
+  "provenance": "SEC EDGAR exhibit or published ISDA form",
+  "original_filename": "ex99_8.htm",
+  "sha256": "f28ad2eae84baeed2f1f2a01fb91a48a25ea699a9f6e08fc683ac9496add586e",
+  "chars": 26827,
+  "classifier_score": 39,
+  "operative_terms": [
+    "delivery amount",
+    "return amount",
+    "credit support amount",
+    "valuation percentage",
+    "valuation agent",
+    "valuation date",
+    "minimum transfer amount",
+    "independent amount",
+    "eligible collateral",
+    "posted collateral",
+    "interest amount"
+  ],
+  "structural_headings": [
+    "security interest",
+    "credit support obligations",
+    "conditions precedent",
+    "dispute resolution",
+    "holding and using posted collateral",
+    "distributions and interest amount",
+    "additional representations",
+    "demands and notices"
+  ],
+  "distinct_paragraph_numbers": 6,
+  "admitted_because": "11 operative terms, 8 headings, 6 paragraph numbers"
+}

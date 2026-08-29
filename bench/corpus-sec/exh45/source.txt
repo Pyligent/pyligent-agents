@@ -1,0 +1,550 @@
+<DOCUMENT>
+<TYPE>EX-4.5
+<SEQUENCE>8
+<FILENAME>exh45.txt
+<TEXT>
+                                                                   EXHIBIT 4.5
+
+                                                           November 7, 2002
+
+
+World Financial Network Credit Card Master Note Trust
+c/o Chase Manhattan Bank USA, National Association
+500 Stanton Christiana Road
+OPS4, 3rd Floor
+Newark, DE 19713
+Attn:    Institutional Trust Services
+
+World Financial Network Credit Card Master Note Trust
+c/o JP Morgan Chase Bank
+450 West 33rd St.
+14th Floor
+New York, New York 10001
+Attn: Institutional Trust Services
+
+World Financial Network National Bank
+800 Techcenter Drive
+Gahanna, OH 43230
+Attn:  Treasurer
+
+
+                      AMENDMENT TO ISDA MASTER AGREEMENT
+                      ----------------------------------
+
+Dear Ladies/Gentlemen:
+
+
+     Reference is made to the ISDA Master Agreement, dated as of October 29,
+2002 and effective as of November 7, 2002, between JPMorgan Chase Bank
+("Morgan") and World Financial Network Credit Card Master Note Trust (the
+"Counterparty") (the "Agreement").
+
+     The parties hereby agree to amend the Agreement as follows:
+
+          1.  Amendment to definition of "Approved Credit Support
+          Document". Part 1, paragraph (o) of the Schedule to the
+          Agreement is modified so that the definition of the term
+          "Approved Credit Support Document" reads in its entirety as
+          follows:
+
+          " `Approved Credit Support Document' means a security
+          agreement in the form of the 1994 ISDA Credit Support Annex
+          (ISDA Agreements Subject to New York Law Only), as modified
+          by the Paragraph 13 thereto, which Paragraph 13 will be in
+          the form of Annex A to this Agreement;"
+
+          2.  Addition of Annex A to the Agreement. Annex A to this Amendment
+          Agreement shall be inserted immediately following the signature page
+          of the Schedule to the Agreement as Annex A to the Agreement.
+
+     This Amendment shall be governed by, and construed in accordance with the
+law specified as the Governing Law in the Schedule to the Agreement and will
+be effective as of the date of the Agreement.
+
+
+<PAGE>
+
+
+
+     In all other respects, the Agreement, as amended, shall remain in full
+force and effect.
+
+                                        Very truly yours,
+
+                                        JPMORGAN CHASE BANK
+
+
+
+                                        By:    /s/  James Dwyer
+                                               ----------------------------
+                                        Name:  James Dwyer
+                                        Title: Vice President
+
+Confirmed and agreed to as of the
+date first above written:
+
+WORLD FINANCIAL NETWORK CREDIT
+CARD MASTER NOTE TRUST
+
+By:  Chase Manhattan Bank USA, National Association,
+not in its individual capacity but solely as owner trustee
+
+
+
+By:    /s/ John J. Cashin
+       ---------------------------
+Name:  John J. Cashin
+Title: Vice President
+
+                                      2
+<PAGE>
+
+
+        ANNEX A TO THE AMENDMENT TO ISDA MASTER AGREEMENT, DATED AS OF
+       NOVEMBER 7, 2002 BETWEEN JPMORGAN CHASE BANK AND WORLD FINANCIAL
+                    NETWORK CREDIT CARD MASTER NOTE TRUST
+
+
+                                                                      ANNEX A
+                                                                      --------
+
+                                PARAGRAPH 13 TO
+                             CREDIT SUPPORT ANNEX
+
+                            to the Schedule to the
+                               Master Agreement
+
+       dated as of October 29, 2002 and effective as of November 7, 2002
+
+                                    between
+
+--------------------------------------------------------------------------------
+   JPMORGAN CHASE BANK                and       WORLD FINANCIAL NETWORK CREDIT
+        ("Morgan")                              CREDIT CARD MASTER NOTE
+                                                         TRUST
+                                                    ("Counterparty")
+--------------------------------------------------------------------------------
+
+Paragraph 13. Elections and Variables
+
+(a) Security Interest for "Obligations". The term "Obligations" as used in
+this Annex includes no additional obligations with respect to either party.
+
+(b)     Credit Support Obligations.
+
+        (i)    Delivery Amount, Return Amount and Credit Support Amount.
+
+               (A) "Delivery Amount" has the meaning specified in Paragraph
+               3(a).
+
+               (B) "Return Amount" has the meaning specified in Paragraph
+               3(b).
+
+               (C) "Credit Support Amount" shall not have the meaning
+               specified in Paragraph 3(b) and, instead, will have the
+               following meaning:
+
+               "Credit Support Amount" means, for any Valuation Date, (i) the
+               Secured Party's Modified Exposure for that Valuation Date minus
+               (ii) the Pledgor's Threshold; provided, however, that the
+               Credit Support Amount will be deemed to be zero whenever the
+               calculation of Credit Support Amount yields a number less than
+               zero.
+
+          (ii) Eligible Collateral. The following items will qualify as
+               "Eligible Collateral":
+
+
+
+
+
+
+                                      3
+<PAGE>
+
+
+
+--------------------------------------------------------------------------------
+                                                     Morgan        "Valuation
+                                                                    Percentage"
+--------------------------------------------------------------------------------
+(A)      USD Cash                                       X             100%
+--------------------------------------------------------------------------------
+(B)      Negotiable debt obligations issued by          X           98.75%
+         the U.S. Treasury Department having a
+         remaining maturity of one year or less
+         from the Valuation Date
+--------------------------------------------------------------------------------
+
+(C)      Negotiable debt obligations issued by the      X            91.7%
+         U.S. Treasury Department having a remaining
+         maturity of more than one year but less than
+         ten years from the Valuation Date
+
+--------------------------------------------------------------------------------
+(D)      Negotiable debt obligations issued by the      X            80.5%
+         U.S. Treasury Department having a remaining
+         maturity of ten years or more From the
+         Valuation Date
+--------------------------------------------------------------------------------
+(E)      Agency Securities having a remaining maturity  X           97.75%
+         of one year or less from the Valuation Date
+--------------------------------------------------------------------------------
+(F)      Agency Securities having a remaining maturity  X            90.0%
+         of more than one year but less than ten years
+         from the Valuation Date
+--------------------------------------------------------------------------------
+(G)      Agency Securities having a remaining           X            78.5%
+         maturity of ten years or more from the
+         Valuation Date
+--------------------------------------------------------------------------------
+(H)      USD denominated Commercial Paper rated         X            96.5%
+         A1/P1 by S&P and Moody's respectively, that
+        (a) settles within DTC, (b) is  not issued by
+         Morgan or any of its Affiliates and (c) has a
+         remaining maturity of 30 days or less from the
+         Valuation Date
+--------------------------------------------------------------------------------
+
+               For purposes of the foregoing:
+
+               (a) "Agency Securities" means negotiable debt obligations which
+               are fully guaranteed as to both principal and interest by the
+               Federal National Mortgage Association, the Government National
+               Mortgage Association or the Federal Home Loan Mortgage
+               Corporation, but excluding (i) interest only and principal only
+               securities and (ii) Collateralized Mortgage Obligations, Real
+               Estate Mortgage Investment Conduits and similar derivative
+               securities.
+
+               (b) "DTC" shall mean The Depository Trust & Clearing
+               Corporation, or its successor.
+
+                                      4
+<PAGE>
+
+
+               (c) "Moody's" shall mean Moody's Investors Service, Inc., or
+               its successor.
+
+               (d) "S&P" shall mean Standard & Poor's Ratings Group, or its
+               successor.
+
+               (e) Eligible Collateral of the type described in Paragraph
+               13(b)(ii)(H) may never constitute more than 20% of the total
+               Value of Posted Collateral.
+
+               (f) The Value of Posted Collateral consisting of Eligible
+               Collateral of the type described in Paragraph 13(b)(ii)(H) must
+               be divided equally among at least three issuers.
+
+
+       (iii)   Other Eligible Support. There shall be no "Other Eligible
+               Support" for purposes of this Annex, unless agreed in writing
+               between the parties.
+
+       (iv)    Thresholds.
+
+               (A) "Independent Amount" means zero.
+
+               (B) "Threshold" shall not apply with respect to the
+                    Counterparty and, with respect to Morgan, shall mean the
+                    amounts determined on the basis of the lower of the Credit
+                    Ratings set forth in the following table, provided, however,
+                    that if (i) Morgan has no Credit Rating, or (ii) an Event of
+                    Default has occurred and is continuing with respect to
+                    Morgan, Morgan's Threshold shall be U.S.$0:
+
+                    CREDIT RATING                      THRESHOLD
+                  (S&P /Moody's/Fitch)                   Morgan
+                  --------------------                   ------
+
+               S&P: A-1 or above.                        Infinity
+
+               Moody's (long-term senior unsecured
+               debt of Morgan): A1 or above.
+
+               Moody's (short-term senior unsecured
+               debt of Morgan): P-1 or above.
+
+               S&P: Below A-1.                           US$0
+
+               Moody's (long-term senior unsecured
+               debt of Morgan): Below A1 or A1 on
+               negative watch.
+
+               Moody's (short-term senior unsecured
+               debt of Morgan): Below P-1
+               or P-1 on negative watch.
+
+
+                                      5
+<PAGE>
+
+             As used herein:
+
+               "Credit Rating" means, with respect to (a) S&P, the rating
+               assigned by S&P to the short-term senior unsecured debt of
+               Morgan, and (b) Moody's, the rating assigned by Moody's to the
+               long-term senior unsecured debt of Morgan or to the short-term
+               senior unsecured debt of Morgan, as applicable.
+
+               (C) "Minimum Transfer Amount", with respect to a party on any
+                   Valuation Date, means U.S. $250,000.
+
+               (D) Rounding. The Delivery Amount and the Return Amount will be
+                   rounded up and down to the nearest integral multiple of
+                   $100,000, respectively.
+
+     (c) Valuation and Timing.
+
+         (i)  "Valuation Agent" means Morgan.
+
+         (ii)  "Valuation Date" means weekly on the last Local Business Day
+                of each week or more frequently if agreed in writing by the
+                parties.
+
+         (iii)  "Valuation Time" means the close of business in the city of
+                the Valuation Agent on the Valuation Date or date of
+                calculation, as applicable.
+
+         (iv)   "Notification Time" means 12:00 p.m., New York time, on a
+                Local Business Day.
+
+     (d) Conditions Precedent. With respect to Morgan, any Additional
+     Termination Event (if Morgan is the Affected Party with respect to such
+     Termination Event) will be a "Specified Condition".
+
+     (e) Substitution.
+
+         (i) "Substitution Date" has the meaning specified in Paragraph
+             4(d)(ii).
+
+        (ii) Consent. Inapplicable.
+
+     (f) Dispute Resolution.
+
+         (i)      "Resolution Time" means 1:00 p.m., New York time, on the
+                  Local Business Day following the date on which the notice is
+                  given that gives rise to a dispute under Paragraph 5.
+
+         (ii)     Value. For the purposes of Paragraphs 5(i)(C) and 5(ii), the
+                  Value of Posted Credit Support other than Cash will be
+                  calculated as follows:
+
+                  (A) with respect to any Eligible Collateral except Cash, the
+                  sum of (I) (x) the mean of the high bid and low asked prices
+                  quoted on such date by any principal market maker for such
+                  Eligible Collateral chosen by the Disputing Party, or (y) if
+                  no quotations are available from a principal market maker
+                  for such date, the mean of such high bid and low asked
+                  prices as of the first day prior to such date on which such
+
+                                      6
+<PAGE>
+
+                  quotations were available, plus (II) the accrued interest on
+                  such Eligible Collateral (except to the extent Transferred
+                  to a party pursuant to any applicable provision of this
+                  Agreement or included in the applicable price referred to in
+                  (I) of this clause (A)) as of such date; multiplied by the
+                  applicable Valuation Percentage.
+
+         (iii) Alternative. The provisions of Paragraph 5 will apply.
+
+     (g) Holding and Using Posted Collateral.
+
+         (i)      Eligibility to Hold Posted Collateral; Custodians.
+                  Counterparty and its Custodian will be entitled to hold
+                  Posted Collateral pursuant to Paragraph 6(b); provided that
+                  the following conditions applicable to it are satisfied:
+
+                  (1)   Counterparty is not a Defaulting Party and
+
+                  (2)   Posted Collateral may be held only in the following
+                        jurisdictions: New York State.
+
+                  Initially, the Custodian for Counterparty is: None
+
+          (ii)    Use of Posted Collateral. The provisions of Paragraph
+                  6(c) will not apply to Counterparty.
+
+     (h)  Distributions and Interest Amount.
+
+         (i)      Interest Rate. "Interest Rate" for any day means, the
+                  Federal Funds Overnight Rate. For the purposes hereof,
+                  "Federal Funds Overnight Rate" means, for any day, an
+                  interest rate per annum equal to the rate published as the
+                  Federal Funds Effective Rate that appears on Telerate Page
+                  118 for such day.
+
+         (ii)     Transfer of Interest Amount. The Transfer of the Interest
+                  Amount will be made monthly on the second Local Business Day
+                  of each calendar month.
+
+         (iii)    Alternative to Interest Amount. The provisions of Paragraph
+                  6(d)(ii) will apply.
+
+     (i) Additional Representation(s). Not Applicable.
+
+     (j) Other Eligible Support and Other Posted Support.
+
+          (i) "Value" with respect to Other Eligible Support and Other Posted
+              Support means: Not Applicable.
+
+         (ii) "Transfer" with respect to Other Eligible Support and Other
+              Posted Support means: Not Applicable
+
+     (k) Demands and Notices.
+
+
+
+
+                                      7
+<PAGE>
+
+     All demands, specifications and notices under this Annex will be made
+     pursuant to the Notices Section of this Agreement, unless otherwise
+     specified here:
+
+
+         Counterparty:
+
+
+
+
+         Morgan:
+
+
+
+     (l) Addresses for Transfers.
+
+         Counterparty: as set forth in notices to Morgan from time to time
+
+         Morgan:
+
+
+     (m) Other Provisions:
+
+              (i)  Modification to Paragraph 1: The following subparagraph (b)
+         is substituted for subparagraph (b) of this Annex:
+
+              (b) Secured Party and Pledgor. All references in this Annex to
+              the "Secured Party" will be to Counterparty and all
+              corresponding references to the "Pledgor" will be to Morgan.
+
+             (ii) Modification to Paragraph 2: The following Paragraph 2 is
+         substituted for Paragraph 2 of this Annex:
+
+             Paragraph 2. Security Interest. The Pledgor hereby pledges to
+             the Secured Party, as security for its Obligations, and grants
+             to the Secured Party a first priority continuing security
+             interest in, lien on and right of Set-Off against all Posted
+             Collateral Transferred to or received by the Secured Party
+             hereunder. Upon the Transfer by the Secured Party to the
+             Pledgor of Posted Collateral, the security interest and lien
+             granted hereunder on that Posted Collateral will be released
+             immediately and, to the extent possible, without any further
+             action by either party.
+
+               (iii) Modification to Paragraph 9: The following first clause
+          of Paragraph 9 is substituted for the first clause of Paragraph 9 of
+          this Annex:
+
+               Paragraph 9. Representations. The Pledgor represents to the
+               Secured Party (which representations will be deemed to be
+               repeated as of each date on which it Transfers Eligible
+               Collateral) that:
+
+
+                                      8
+<PAGE>
+
+               (iv)  Modifications to Paragraph 12: The following definitions
+          of "Pledgor" and "Secured Party" are substituted for the definitions
+          of those terms contained in Paragraph 12 of this Annex:
+
+               "Pledgor" means Morgan, when that party (i) receives a demand
+               for or is required to Transfer Eligible Credit Support under
+               Paragraph 3(a) or (ii) has Transferred Eligible Credit Support
+               under Paragraph 3(a).
+
+               "Secured Party" means Counterparty, when that party (i) makes a
+               demand for or is entitled to receive Eligible Credit Support
+               under Paragraph 3(a) or (ii) holds or is deemed to hold Posted
+               Credit Support.
+
+               (v) Addition to Paragraph 12: The following definitions of
+          "Modified Exposure" shall be added immediately after the definition
+          of the term "Minimum Transfer Amount" and immediately prior to the
+          definition of the term "Notification Time" in Paragraph 12 of this
+          Annex:
+
+               "Modified Exposure" means, for any Valuation Date, an amount
+               equal to the greater of (i) the Secured Party's Exposure for
+               that Valuation Date, (ii) the amount of the next scheduled
+               payment that is required to be made by Morgan pursuant to the
+               Transaction and (iii) one percent of the outstanding Notional
+               Amount of the Transaction.
+
+               (vi) Modification to Paragraph 12: Clause "(B)" of the
+          definition of "Value" will be substituted to read in its entirety as
+          follows:
+
+               "(B) a security, the bid price obtained by the Valuation Agent
+               from one of the Pricing Sources multiplied by the applicable
+               Valuation Percentage, if any;"
+
+               (vii) Addition to Paragraph 12: The following definition of
+          "Pricing Sources" shall be added immediately after the definition of
+          the term "Posted Credit Support" and immediately prior to the
+          definition of the term "Recalculation Date" in Paragraph 12 of this
+          Annex:
+
+               "Pricing Sources" means the sources of financial information
+               commonly known as Bloomberg, Bridge Information Services, Data
+               Resources Inc., Interactive Data Services, International
+               Securities Market Association, Merrill Lynch Securities Pricing
+               Service, Muller Data Corporation, Reuters, Wood Gundy, Trepp
+               Pricing, JJ Kenny, S&P and Telerate.
+
+
+
+                                      9
+<PAGE>
+
+
+
+
+
+Accepted and Agreed:
+
+JPMORGAN CHASE BANK
+
+
+
+By:  __________________________________
+Name:
+Title:
+
+
+
+WORLD FINANCIAL NETWORK CREDIT
+CARD MASTER NOTE TRUST
+
+By:  Chase Manhattan Bank USA, National Association,
+not in its individual capacity but solely as owner trustee
+
+
+
+By: _______________________________
+Name:
+Title:
+
+
+
+                                      10
+
+
+</TEXT>
+</DOCUMENT>

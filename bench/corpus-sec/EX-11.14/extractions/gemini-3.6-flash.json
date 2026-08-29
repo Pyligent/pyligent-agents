@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "United States Dollars (U.S. $)",
+      "evidence_quote": "United States Dollars (U.S. $)"
+    },
+    "eligible_currency": {
+      "value": "United States Dollars (U.S. $)",
+      "evidence_quote": "United States Dollars (U.S. $)"
+    },
+    "minimum_transfer_amount": {
+      "value": "US$250,000",
+      "evidence_quote": "US$250,000, provided, however, that if an Event of Default has occurred and is continuing with respect to a party, the Minimum Transfer Amount for such party shall be zero."
+    },
+    "rounding": {
+      "value": "Delivery Amount (VM) rounded up to the nearest integral multiple of 10,000 units of the Base Currency; Return Amount (VM) rounded down to the nearest integral multiple of 10,000 units of the Base Currency",
+      "evidence_quote": "the Delivery Amount (VM) will be rounded up to the nearest integral multiple of 10,000 units of the Base\nCurrency; and \n \n \n\n\n \n(2)\n \nthe Return Amount (VM) will be rounded down to the nearest integral multiple of 10,000 units of the Base\nCurrency."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "New York Law"
+    },
+    "party_a": {
+      "value": "JPMORGAN CHASE BANK, N.A.",
+      "evidence_quote": "JPMORGAN CHASE BANK, N.A."
+    },
+    "party_b": {
+      "value": "CMF WILLOWBRIDGE MASTER FUND L.P.",
+      "evidence_quote": "CMF WILLOWBRIDGE MASTER FUND L.P."
+    },
+    "valuation_percentage": {
+      "value": "100% for US-CASH; 99.5% for US-TBILL/US-TNOTE/US-TBOND/US-TIPS under 1 year, 98% for 1-5 years, 96% for 5-10 years, 96% for 10-30 years; 92% for US-STRIP",
+      "evidence_quote": "100"
+    }
+  }
+}

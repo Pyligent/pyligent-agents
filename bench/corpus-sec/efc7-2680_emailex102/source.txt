@@ -1,0 +1,731 @@
+<DOCUMENT>
+<TYPE>EX-10.2
+<SEQUENCE>4
+<FILENAME>efc7-2680_emailex102.txt
+<DESCRIPTION>THE CREDIT SUPPORT ANNEX.
+<TEXT>
+                                  EXHIBIT 10.2
+                                  ------------
+
+                           The Credit Support Annex.
+
+<PAGE>
+
+                                     ANNEX A
+
+
+                                     ISDA(R)
+                              CREDIT SUPPORT ANNEX
+                             to the Schedule to the
+                              ISDA Master Agreement
+                      dated as of November 29, 2007 between
+   Deutsche Bank AG, New York Branch (hereinafter referred to as "Party A" or
+                                   "Pledgor")
+                                       and
+    Deutsche Bank National Trust Company, not in its individual or corporate
+      capacity but solely as Supplemental Interest Trustee on behalf of the
+   Supplemental Interest Trust in respect of IndyMac INDA Mortgage Loan Trust
+                                    2007-AR8
+           (hereinafter referred to as "Party B" or "Secured Party").
+
+
+  For the avoidance of doubt, and notwithstanding anything to the contrary that
+    may be contained in the Agreement, this Credit Support Annex shall relate
+     solely to the Transaction documented in the Confirmation dated November
+        29, 2007, between Party A and Party B, Reference Number N727633N.
+
+
+Paragraph 13.  Elections and Variables.
+
+(a)   Security  Interest for  "Obligations".  The term  "Obligations" as used in
+      this Annex includes the following additional obligations:
+
+      With respect to Party A: not applicable.
+
+      With respect to Party B: not applicable.
+
+(b)   Credit Support Obligations.
+
+      (i)   Delivery Amount, Return Amount and Credit Support Amount.
+
+            (A)   "Delivery Amount" has the meaning specified in Paragraph 3(a),
+                  except that:
+
+                  (I)   the words "upon a demand made by the Secured Party on or
+                        promptly  following a  Valuation  Date" shall be deleted
+                        and replaced with the words "not later than the close of
+                        business on each Valuation Date",
+
+                  (II)  the sentence  beginning "Unless  otherwise  specified in
+                        Paragraph  13" and  ending  "(ii)  the  Value as of that
+                        Valuation  Date of all Posted Credit Support held by the
+                        Secured  Party."  shall be deleted in its  entirety  and
+                        replaced with the following:
+
+                        "The "Delivery Amount" applicable to the Pledgor for any
+                        Valuation Date will equal the greatest of
+
+                        (1)   the  amount  by which (a) the S&P  Credit  Support
+                              Amount for such Valuation Date exceeds (b) the S&P
+                              Value,  as of such  Valuation  Date, of all Posted
+                              Credit Support held by the Secured Party, and
+
+REFERENCE NUMBER: N727633N
+
+
+<PAGE>
+
+                        (2)   the amount by which (a) the Fitch  Credit  Support
+                              Amount for such  Valuation  Date  exceeds  (b) the
+                              Fitch Value,  as of such  Valuation  Date,  of all
+                              Posted Credit  Support held by the Secured  Party,
+                              and
+
+                  (III) if, on any Valuation Date, the Delivery Amount equals or
+                        exceeds  the  Pledgor's  Minimum  Transfer  Amount,  the
+                        Pledgor will  Transfer to the Secured  Party  sufficient
+                        Eligible  Credit  Support  to ensure  that,  immediately
+                        following  such transfer,  the Delivery  Amount shall be
+                        zero.
+
+            (B)   "Return  Amount" has the meaning  specified in Paragraph 3(b),
+                  except that:
+
+                  (I)   the sentence  beginning "Unless  otherwise  specified in
+                        Paragraph  13"  and  ending  "(ii)  the  Credit  Support
+                        Amount."  shall be deleted in its  entirety and replaced
+                        with the following:
+
+                        "The "Return Amount" applicable to the Secured Party for
+                        any Valuation Date will equal the least of
+
+                        (1)   the amount by which (a) the S&P Value,  as of such
+                              Valuation  Date, of all Posted Credit Support held
+                              by the  Secured  Party  exceeds (b) the S&P Credit
+                              Support Amount for such Valuation Date, and
+
+                        (2)   the  amount by which (a) the  Fitch  Value,  as of
+                              such Valuation  Date, of all Posted Credit Support
+                              held by the  Secured  Party  exceeds (b) the Fitch
+                              Credit Support Amount for such Valuation Date, and
+
+                  (II)  in no event  shall  the  Secured  Party be  required  to
+                        Transfer any Posted Credit Support under  Paragraph 3(b)
+                        if,  immediately  following such transfer,  the Delivery
+                        Amount would be greater than zero.
+
+            (C)   "Credit  Support  Amount"  shall not apply.  For  purposes  of
+                  calculating  any  Delivery  Amount  or Return  Amount  for any
+                  Valuation  Date,  reference  shall  be made to the S&P  Credit
+                  Support  Amount or the Fitch Credit  Support  Amount,  in each
+                  case  for such  Valuation  Date,  as  provided  in  Paragraphs
+                  13(b)(i)(A) and 13(b)(i)(B), above.
+
+      (ii)  Eligible Collateral.
+
+            On  any  date,  the  following   items  will  qualify  as  "Eligible
+            Collateral" (for the avoidance of doubt, all Eligible  Collateral to
+            be denominated in USD):
+
+                      S&P Approved    S&P Required
+                         Ratings         Ratings           Fitch
+                        Valuation       Valuation        Valuation
+     Collateral        Percentage      Percentage       Percentage
+     ----------        ----------      ----------       ----------
+(A) Cash                  100%             80%             100%
+
+(B) Fixed-rate
+    negotiable debt       98.0%           78.4%            99.5%
+    obligations
+
+REFERENCE NUMBER: N727633N
+
+
+<PAGE>
+
+    issued by the
+    U.S. Treasury
+    Department
+    having a
+    remaining
+    maturity on
+    such date of
+    not more than
+    one year
+
+(C) Fixed-rate
+    negotiable debt
+    obligations
+    issued by the
+    U.S. Treasury
+    Department
+    having a
+    remaining             92.6%           74.1%            93.9%
+    maturity on
+    such date of
+    more than one
+    year but not
+    more than ten
+    years
+
+(D) Fixed-rate
+    negotiable debt
+    obligations
+    issued by the
+    U.S. Treasury
+    Department
+    having a
+    remaining             84.6%           67.7%            92.7%
+    maturity on
+    such date of
+    more than ten
+    years but not
+    more than 15
+    years
+
+      (iii) Other Eligible Support.
+
+            The following items will qualify as "Other Eligible Support" for the
+            party specified:
+
+            Not applicable.
+
+      (iv)  Threshold.
+
+      (A)   "Independent Amount" means zero with respect to Party A and Party B.
+
+
+REFERENCE NUMBER: N727633N
+
+<PAGE>
+
+
+      (B)   "S&P  Threshold"  means,  with respect to Party A and any  Valuation
+            Date, if an S&P Approved Ratings Downgrade Event has occurred and is
+            continuing and such S&P Approved  Ratings  Downgrade  Event has been
+            continuing  (i) for at least 10 Local  Business  Days or (ii)  since
+            this Annex was executed, zero; otherwise, infinity.
+
+            "Fitch  Threshold"  means, with respect to Party A and any Valuation
+            Date, if a Fitch First Trigger  Downgrade  Event has occurred and is
+            continuing  and such Fitch First  Trigger  Downgrade  Event has been
+            continuing  (i) for at least 30  calendar  days or (ii)  since  this
+            Annex was executed, zero; otherwise, infinity.
+
+            "Threshold"  means,  with respect to Party B and any Valuation Date,
+            infinity.
+
+      (C)   "Minimum  Transfer  Amount" means USD 25,000 with respect to Party A
+            and Party B.
+
+      (D)   Rounding:  The  Delivery  Amount  will be rounded up to the  nearest
+            integral  multiple of USD 10,000.  The Return Amount will be rounded
+            down to the nearest integral multiple of USD 10,000.
+
+(c)   Valuation and Timing.
+
+      (i)   "Valuation Agent" means Party A; provided, however, that if an Event
+            of Default  shall have occurred with respect to which Party A is the
+            Defaulting  Party,  Party B shall  have the  right to  designate  as
+            Valuation Agent an independent party, reasonably acceptable to Party
+            A, the cost for which shall be borne by Party A. All calculations by
+            the Valuation  Agent must be made in accordance with standard market
+            practice,  including,  in the event of a dispute  as to the Value of
+            any Eligible  Credit  Support or Posted  Credit  Support,  by making
+            reference to quotations  received by the Valuation Agent from one or
+            more Pricing Sources.
+
+      (ii)  "Valuation  Date" means the first Local Business Day in each week on
+            which any of the S&P Threshold or the Fitch Threshold is zero.
+
+      (iii) "Valuation  Time"  means  the close of  business  in the city of the
+            Valuation Agent on the Local Business Day immediately  preceding the
+            Valuation Date or date of calculation, as applicable;  provided that
+            the   calculations  of  Value  and  Exposure  will  be  made  as  of
+            approximately  the same time on the same date.  The Valuation  Agent
+            will notify each party (or the other party,  if the Valuation  Agent
+            is a party) of its calculations not later than the Notification Time
+            on the applicable  Valuation Date (or in the case of Paragraph 6(d),
+            the Local  Business  Day  following  the day on which such  relevant
+            calculations are performed)."
+
+      (iv)  "Notification  Time"  means 11:00  a.m.,  New York time,  on a Local
+            Business Day.
+
+      (v)   External Verification.  Notwithstanding  anything to the contrary in
+            the definitions of Valuation Agent or Valuation Date, at any time at
+            which no  Relevant  Entity  has credit  ratings  from Fitch at least
+            equal to a Fitch  Intermediate  Trigger Downgrade Event has occurred
+            and is continuing, the Valuation Agent shall (A) calculate the Fitch
+            Value of Posted Credit Support and the Secured  Party's  Exposure on
+            each  Valuation  Date based on  internal  marks and (B) verify  such
+            calculations  with  external  marks  weekly by obtaining on the last
+            Local  Business Day of each calendar week one external mark for each
+            Transaction  to which this Annex  relates and for all Posted  Credit
+            Support.  Each external  mark in respect of a  Transaction  shall be
+            obtained from an independent Reference  Market-maker.  The Valuation
+            Agent  shall  obtain  these  external  marks  directly or through an
+            independent  third party,  in either case at no cost to Party B. The
+            Valuation Agent shall calculate on each Valuation Date (for purposes
+            of this paragraph, the last Local Business Day in each calendar week
+            shall be considered a Valuation Date) the Secured  Party's  Exposure
+            and the
+
+REFERENCE NUMBER: N727633N
+
+<PAGE>
+
+            Fitch  Value  of  Posted  Collateral  based  on the  greater  of the
+            Valuation Agent's internal marks and the external mark received.
+
+(d)   Conditions  Precedent  and  Secured  Party's  Rights  and  Remedies.   The
+      following Termination Events will be a "Specified Condition" for the party
+      specified  (that party being the Affected Party if the  Termination  Event
+      occurs  with  respect  to that  party):  With  respect  to  Party  A:  any
+      Additional  Termination  Event with  respect to which  Party A is the sole
+      Affected Party. With respect to Party B: None.
+
+(e)   Substitution.
+
+      (i)   "Substitution Date" has the meaning specified in Paragraph 4(d)(ii).
+
+      (ii)  Consent.  If  specified  here as  applicable,  then the Pledgor must
+            obtain the Secured Party's consent for any substitution  pursuant to
+            Paragraph 4(d): Inapplicable.
+
+(f)   Dispute Resolution.
+
+      (i)   "Resolution  Time"  means  1:00  p.m.  New  York  time on the  Local
+            Business Day  following  the date on which the notice of the dispute
+            is given under Paragraph 5.
+
+      (ii)  Value. Notwithstanding anything to the contrary in Paragraph 12, for
+            the purpose of Paragraphs 5(i)(C) and 5(ii), the S&P Value and Fitch
+            Value on any date,  of Eligible  Collateral  will be  calculated  as
+            follows:
+
+            For  Eligible   Collateral  other  than  Cash  listed  in  Paragraph
+            13(b)(ii): the sum of (A) the product of (1)(x) the bid price at the
+            Valuation  Time  for  such  securities  on  the  principal  national
+            securities  exchange on which such securities are listed,  or (y) if
+            such  securities are not listed on a national  securities  exchange,
+            the bid price for such  securities  quoted at the Valuation  Time by
+            any  principal  market  maker for such  securities  selected  by the
+            Valuation Agent, or (z) if no such bid price is listed or quoted for
+            such  date,  the bid price  listed or quoted (as the case may be) at
+            the  Valuation  Time for the day next  preceding  such date on which
+            such  prices  were  available  and  (2)  the  applicable   Valuation
+            Percentage  for  such  Eligible  Collateral,  and  (B)  the  accrued
+            interest on such securities (except to the extent Transferred to the
+            Pledgor pursuant to Paragraph 6(d)(ii) or included in the applicable
+            price  referred to in the  immediately  preceding  clause (A)) as of
+            such date.
+
+            For Cash,  the  amount  thereof  multiplied,  in the case of the S&P
+            Value, by the applicable S&P Valuation Percentage.
+
+      (iii) Alternative. The provisions of Paragraph 5 will apply.
+
+(g)   Holding and Using Posted Collateral.
+
+      (i)   Eligibility to Hold Posted Collateral;  Custodians.  Party B (or any
+            Custodian)  will be entitled to hold Posted  Collateral  pursuant to
+            Paragraph 6(b).
+
+            Party B may  appoint as  Custodian  (A) the entity  then  serving as
+            Supplemental  Interest  Trustee  or (B) any  entity  other  than the
+            entity then serving as Supplemental  Interest  Trustee if such other
+            entity (or, to the extent  applicable,  its parent company or credit
+            support  provider)  (i) shall then have credit  ratings from S&P and
+            Fitch at least equal to the Custodian Required Rating Threshold, and
+            (ii) is a depository  institution that (a) is subject to supervision
+            or examination by a federal or state  authority,  (b) has a combined
+            capital and surplus of at least $15 million and (c) is  qualified to
+            do  business  in New York.  If any entity  referred to in clause (B)
+            above is the Custodian for Party
+
+REFERENCE NUMBER: N727633N
+
+<PAGE>
+
+            B and such entity fails after its  appointment  as Custodian to meet
+            the Custodian Required Rating Threshold,  Party B shall replace such
+            Custodian with an entity meeting the applicable  requirements  above
+            within 60 days following such failure to meet the Custodian Required
+            Rating Threshold.
+
+            Initially,  the  Custodian  for  Party B is:  Supplemental  Interest
+            Trustee.
+
+      (ii)  Use of Posted Collateral.  The provisions of Paragraph 6(c) will not
+            apply to Party B or its Custodian;  provided, however, that if Party
+            A delivers  Posted  Collateral in book-entry  form,  then  Paragraph
+            6(c)(ii)  will apply to Party B and its  Custodian,  and Party B and
+            its Custodian shall have the rights specified in Paragraph 6(c)(ii).
+
+(h)   Distributions and Interest Amount.
+
+      (i)   Interest Rate. The "Interest  Rate" will be the actual interest rate
+            earned  on  Posted  Collateral  in the form of Cash  that is held by
+            Party B or its  Custodian.  Posted  Collateral  in the  form of Cash
+            shall be invested in such overnight (or redeemable  within two Local
+            Business Days of demand)  Permitted  Investments rated at least AAAm
+            or AAAm-G by S&P  (unless  (x) an Event of Default or an  Additional
+            Termination  Event has occurred with respect to which Party A is the
+            defaulting or sole Affected Party or (y) an Early  Termination  Date
+            has been designated,  in which case such Posted  Collateral shall be
+            held  uninvested).  Gains and  losses  incurred  in  respect  of any
+            investment  of Posted  Collateral  in the form of Cash in  Permitted
+            Investments as directed by Party A shall be for the account of Party
+            A.
+
+      (ii)  Transfer of Interest  Amount.  The Transfer of the  Interest  Amount
+            will be made on the second Local  Business Day  following the end of
+            each  calendar  month and on any other Local  Business  Day on which
+            Posted  Collateral in the form of Cash is Transferred to the Pledgor
+            pursuant to Paragraph 3(b); provided,  however,  that the obligation
+            of  Party B to  Transfer  any  Interest  Amount  to Party A shall be
+            limited to the extent  that  Party B has  earned and  received  such
+            funds and such funds are  available to Party B. The last sentence of
+            Paragraph  6(d)(ii) is hereby amended by adding the words  "actually
+            received by Party B but" after the words "Interest Amount or portion
+            thereof".
+
+      (iii) Alternative to Interest Amount. The provisions of Paragraph 6(d)(ii)
+            (as amended herein) will apply.
+
+      (iv)  Distributions.  Paragraph  6(d)(i)  shall be deleted in its entirety
+            and replaced with the following:
+
+            "Distributions.  Subject  to  Paragraph  4(a),  if Party B  receives
+            Distributions  on a Local  Business Day, it will Transfer to Party A
+            not later than the following Local Business Day any Distributions it
+            receives to the extent that a Delivery  Amount  would not be created
+            or increased by that Transfer,  as calculated by the Valuation Agent
+            (and the date of  calculation  will be deemed to be a Valuation Date
+            for this purpose)."
+
+(i)   Additional  Representation(s).  There are no additional representations by
+      either party.
+
+(j)   Other Eligible Support and Other Posted Support.
+
+      (i)   "Value"  with  respect to Other  Eligible  Support and Other  Posted
+            Support means: not applicable.
+
+      (ii)  "Transfer"  with respect to Other Eligible  Support and Other Posted
+            Support means: not applicable.
+
+REFERENCE NUMBER: N727633N
+
+<PAGE>
+
+(k)   Demands and Notices.  All demands,  specifications  and notices under this
+      Annex will be made  pursuant  to the  Notices  Section of this  Agreement,
+      except that any demand,  specification or notice shall be given to or made
+      at the following addresses, or at such other address as the relevant party
+      may from time to time designate by giving notice (in  accordance  with the
+      terms of this paragraph) to the other party:
+
+      If to Party A, at the address specified pursuant to the Notices Section of
+      this Agreement.
+
+      If to Party B, at the address specified pursuant to the Notices Section of
+      this Agreement.
+
+      If to Party  B's  Custodian:  at the  address  specified  pursuant  to the
+      Notices Section of this Agreement.
+
+(l)   Address  for  Transfers.  Each  Transfer  hereunder  shall  be made to the
+      address specified below or to an address specified in writing from time to
+      time by the party to which such Transfer will be made.
+
+      Party A account details for holding collateral
+
+              A/C With:            DB Trust Co. Americas, New York
+              Swift Code:          BKTRUUS33 / ABA 021001033
+              Favour of:           Deutsche Bank AG, New York
+              Account Number:      01 473 969
+              Reference:           (please provide)
+
+      Party B's Custodian account details for holding collateral:
+
+                                   Deutsche Bank Trust Co-Americas
+              ABA Number:          021-001-033
+              Account Number:      01419663
+              Account Name:        NYLTD Funds Control - Stars West
+              Ref:                 IndyMac INDA Mortgage Loan Trust 2007-AR8
+                                   (Swap Account)
+
+(m)   Other Provisions.
+
+      (i)   Collateral  Account.  Party B shall open and  maintain a  segregated
+            account, and hold, record and identify all Posted Collateral in such
+            segregated account.
+
+      (ii)  Agreement as to Single Secured Party and Single Pledgor. Party A and
+            Party B hereby agree that,  notwithstanding anything to the contrary
+            in this Annex,  (a) the term  "Secured  Party" as used in this Annex
+            means  only  Party B, (b) the term  "Pledgor"  as used in this Annex
+            means  only  Party A, (c) only Party A makes the pledge and grant in
+            Paragraph 2, the  acknowledgement in the final sentence of Paragraph
+            8(a) and the representations in Paragraph 9.
+
+      (iii) Calculation  of Value.  Paragraph 4(c) is hereby amended by deleting
+            the word "Value" and  inserting  in lieu  thereof "S&P Value,  Fitch
+            Value".  Paragraph  4(d)(ii) is hereby  amended by (A)  deleting the
+            words "a Value" and  inserting  in lieu  thereof "an S&P Value and a
+            Fitch Value" and (B) deleting the words "the Value" and inserting in
+            lieu  thereof  "S&P  Value  and  Fitch  Value".  Paragraph  5 (flush
+            language)  is  hereby  amended  by  deleting  the word  "Value"  and
+            inserting in lieu thereof "S&P Value or Fitch Value". Paragraph 5(i)
+            (flush  language) is hereby amended by deleting the word "Value" and
+            inserting  in lieu thereof  "S&P Value and Fitch  Value".  Paragraph
+            5(i)(C) is hereby  amended by deleting the word "the Value,  if" and
+            inserting in lieu thereof "any one or more of the S&P Value or Fitch
+            Value, as may be". Paragraph 5(ii) is hereby amended by (1) deleting
+            the first  instance of the words "the Value" and  inserting  in lieu
+            thereof  "any one or more of the S&P Value or Fitch  Value"  and (2)
+            deleting the second  instance of the words "the Value" and inserting
+            in lieu thereof "such disputed S&P Value or Fitch Value". Each of
+
+REFERENCE NUMBER: N727633N
+
+<PAGE>
+
+            Paragraph  8(b)(iv)(B)  and  Paragraph  11(a) is hereby  amended  by
+            deleting  the word "Value" and  inserting in lieu thereof  "least of
+            the S&P Value and Fitch Value".
+
+      (iv)  Form of  Annex.  Party A and Party B hereby  agree  that the text of
+            Paragraphs 1 through 12, inclusive,  of this Annex is intended to be
+            the printed form of ISDA Credit Support Annex (Bilateral Form - ISDA
+            Agreements  Subject to New York Law Only  version) as published  and
+            copyrighted  in  1994 by the  International  Swaps  and  Derivatives
+            Association, Inc.
+
+      (v)   Events of Default.  Paragraph 7 will not apply to cause any Event of
+            Default to exist with respect to Party B except that  Paragraph 7(i)
+            will  apply to Party B solely in  respect  of Party B's  obligations
+            under Paragraph 3(b) of the Credit Support Annex.
+
+      (vi)  Expenses.  Notwithstanding anything to the contrary in Paragraph 10,
+            the Pledgor will be responsible  for, and will reimburse the Secured
+            Party for, all transfer and other taxes and other costs  involved in
+            maintenance and any Transfer of Eligible Collateral.
+
+      (vii) Withholding.  Paragraph  6(d)(ii)  is hereby  amended  by  inserting
+            immediately  after "the Interest  Amount" in the fourth line thereof
+            the words "less any applicable withholding taxes."
+
+      (viii) Additional Definitions. As used in this Annex:
+
+            "Custodian  Required  Rating  Threshold"  means,  with respect to an
+            entity, (i) a short-term  unsecured and  unsubordinated  debt rating
+            from S&P of "A-1,"  or, if such  entity  does not have a  short-term
+            unsecured  and  unsubordinated  debt  rating  from S&P, a  long-term
+            unsecured and unsubordinated debt rating or counterparty rating from
+            S&P of "A+", and (ii) a long-term  unsecured and unsubordinated debt
+            rating  from  Fitch  of  "BBB"  and  a  short-term   unsecured   and
+            unsubordinated debt rating from Fitch of "F2".
+
+            "Exposure"  has the meaning  specified in Paragraph  12, except that
+            (1)  after  the word  "Agreement"  the  words  "(assuming,  for this
+            purpose only, that Part  1(f)(i)(A)-(E) of the Schedule is deleted)"
+            shall be inserted and (2) at the end of the  definition of Exposure,
+            the words "with terms that are, in all  material  respects,  no less
+            beneficial for Party B than those of this Agreement" shall be added.
+
+            "Fitch First Trigger  Downgrade Event" means that no Relevant Entity
+            has  credit  ratings  from Fitch at least  equal to the Fitch  First
+            Trigger Ratings Threshold.
+
+            "Fitch Credit Support Amount" means, for any Valuation Date:
+
+            (A)   if the Fitch  Threshold  for such  Valuation  Date is zero, an
+                  amount  equal to the sum of (1) 100.0% of the Secured  Party's
+                  Exposure  for such  Valuation  Date and (2) the sum,  for each
+                  Transaction to which this Annex relates, of the product of (i)
+                  the related  Fitch  Volatility  Cushion for such  Transaction,
+                  (ii)  the   Scale   Factor   (as   defined   in  the   related
+                  Confirmation),  if any, for such  Transaction  or, if no Scale
+                  Factor is applicable for such Transaction,  one, and (iii) the
+                  Notional Amount of such Transaction for the Calculation Period
+                  of such  Transaction  which includes such Valuation  Date, and
+                  (iv) 105%, or
+
+            (B)   if the Fitch  Threshold for such  Valuation  Date is infinity,
+                  zero.
+
+            "Fitch Intermediate  Ratings Threshold" means, with respect to Party
+            A,  the  guarantor  under  an  Eligible  Guarantee,  or an  Eligible
+            Replacement,  a long-term  unsecured and unsubordinated  debt rating
+            from Fitch of "BBB+" and a short-term  unsecured and  unsubordinated
+            debt rating from Fitch of "F2".
+
+REFERENCE NUMBER: N727633N
+
+<PAGE>
+
+            "Fitch Intermediate  Trigger Downgrade Event" means that no Relevant
+            Entity has  credit  ratings  from Fitch at least  equal to the Fitch
+            Intermediate Ratings Threshold.
+
+            "Fitch Valuation  Percentage" means, for any Valuation Date and each
+            item of Eligible Collateral,  the corresponding  percentage for such
+            Eligible   Collateral  in  the  column   headed   "Fitch   Valuation
+            Percentage".
+
+            "Fitch  Value"  means,  on any date and with respect to any Eligible
+            Collateral  other  than  Cash,  the  product  of (x) the  bid  price
+            obtained by the Valuation Agent for such Eligible Collateral and (y)
+            the Fitch  Valuation  Percentage  for such Eligible  Collateral  set
+            forth in paragraph 13(b)(ii).
+
+            "Fitch Volatility Cushion" means, for any Transaction, 0.19%.
+
+            "Local Business Day" means,  for purposes of this Annex:  any day on
+            which (A) commercial banks are open for business (including dealings
+            in foreign exchange and foreign  currency  deposits) in New York and
+            the  location  of Party  A,  Party B and any  Custodian,  and (B) in
+            relation to a Transfer of Eligible Collateral,  any day on which the
+            clearance  system  agreed  between the  parties for the  delivery of
+            Eligible   Collateral  is  open  for  acceptance  and  execution  of
+            settlement  instructions  (or in the case of a  Transfer  of Cash or
+            other  Eligible  Collateral for which  delivery is  contemplated  by
+            other means a day on which  commercial  banks are open for  business
+            (including dealings in foreign exchange and foreign deposits) in New
+            York and in the location of Party A, Party B and any Custodian).
+
+            "Next  Payment"  means,  in respect of each Next Payment  Date,  the
+            greater of (i) the  aggregate  amount of any payments due to be made
+            by Party A under  Section  2(a) on such Next  Payment  Date less the
+            aggregate  amount  of any  payments  due to be made by Party B under
+            Section 2(a) on such Next Payment Date (any such payments determined
+            based on rates prevailing the date of determination) and (ii) zero.
+
+            "Next  Payment  Date"  means  each date on which the next  scheduled
+            payment under any Transaction is due to be paid.
+
+            "Pricing  Sources"  means  the  sources  of  financial   information
+            commonly  known as  Bloomberg,  Bridge  Information  Services,  Data
+            Resources Inc., Interactive Data Services,  International Securities
+            Market Association, Merrill Lynch Securities Pricing Service, Muller
+            Data Corporation,  Reuters, Wood Gundy, Trepp Pricing, JJ Kenny, S&P
+            and Telerate.
+
+            "Remaining  Weighted  Average  Maturity"  means,  with  respect to a
+            Transaction,   the  expected  weighted  average  maturity  for  such
+            Transaction as determined by the Valuation Agent.
+
+            "S&P Approved Ratings Downgrade Event" means that no Relevant Entity
+            has  credit  ratings  from  S&P at least  equal to the S&P  Approved
+            Ratings Threshold.
+
+            "S&P Credit Support Amount" means, for any Valuation Date:
+
+            (A)   if the S&P Threshold for such Valuation Date is zero and it is
+                  not the case that an S&P Required Ratings  Downgrade Event has
+                  occurred and been  continuing  for at least 10 Local  Business
+                  Days, an amount equal to the Secured Party's Exposure;
+
+            (B)   if the S&P Threshold for such Valuation Date is zero and it is
+                  the case  that an S&P  Required  Ratings  Downgrade  Event has
+                  occurred and been  continuing  for at least 10 Local  Business
+                  Days, an amount equal to 125% of the Secured Party's Exposure;
+                  or
+
+REFERENCE NUMBER: N727633N
+
+<PAGE>
+
+            (C)   if the S&P  Threshold  for such  Valuation  Date is  infinity,
+                  zero.
+
+            "S&P Valuation  Percentage"  means, with respect to a Valuation Date
+            and each item of Eligible Collateral,
+
+            (A)   if the S&P Threshold for such Valuation Date is zero and it is
+                  not the case that a S&P Required  Ratings  Downgrade Event has
+                  occurred and been  continuing  for at least 10 Local  Business
+                  Days,   the   corresponding   percentage   for  such  Eligible
+                  Collateral  in  the  column   headed  "S&P  Approved   Ratings
+                  Valuation Percentage" or
+
+            (B)   if an S&P Required  Ratings  Downgrade  Event has occurred and
+                  been  continuing  for at  least 10 Local  Business  Days,  the
+                  corresponding  percentage for such Eligible  Collateral in the
+                  column headed "S&P Required Ratings Valuation Percentage".
+
+            "S&P  Value"  means,  on any date and with  respect to any  Eligible
+            Collateral,  (A) in the case of Eligible Collateral other than Cash,
+            the product of (x) the bid price obtained by the Valuation Agent for
+            such  Eligible  Collateral  and (y)  the  applicable  S&P  Valuation
+            Percentage  for such  Eligible  Collateral  set  forth in  paragraph
+            13(b)(ii) and (B) in the case of Cash, the amount thereof multiplied
+            by the applicable S&P Valuation Percentage.
+
+            "Transaction   Exposure"  means,   for  any  Transaction,   Exposure
+            determined as if such Transaction were the only Transaction  between
+            the Secured Party and the Pledgor.
+
+            "Transaction-Specific  Hedge" means any  Transaction  that is (i) an
+            interest  rate swap in respect of which (x) the  notional  amount of
+            the interest rate swap is "balance  guaranteed"  or (y) the notional
+            amount of the  interest  rate swap for any  Calculation  Period  (as
+            defined in the  related  Confirmation)  otherwise  is not a specific
+            dollar  amount that is fixed at the  inception  of the  Transaction,
+            (ii) an interest  rate cap,  (iii) an interest rate floor or (iv) an
+            interest rate swaption.
+
+            "Valuation  Percentage"  shall mean, for purposes of determining the
+            S&P Value or Fitch Value with respect to any Eligible  Collateral or
+            Posted Collateral,  the applicable S&P Valuation Percentage or Fitch
+            Valuation   Percentage  for  such  Eligible   Collateral  or  Posted
+            Collateral,  respectively,  in each case as set  forth in  Paragraph
+            13(b)(ii).
+
+            "Value"  shall mean,  in respect of any date,  the related S&P Value
+            and the related Fitch Value.
+
+                [Remainder of this page intentionally left blank]
+
+
+REFERENCE NUMBER: N727633N
+
+<PAGE>
+
+
+
+IN  WITNESS  WHEREOF,  the  parties  have  executed  this  Annex by  their  duly
+authorized representatives as of the date of the Agreement.
+
+<TABLE>
+<CAPTION>
+<S>                                                          <C>
+DEUTSCHE BANK AG, NEW YORK BRANCH                            DEUTSCHE  BANK   NATIONAL   TRUST   COMPANY,   NOT  IN  ITS
+                                                             INDIVIDUAL   OR   CORPORATE    CAPACITY   BUT   SOLELY   AS
+                                                             SUPPLEMENTAL    INTEREST   TRUSTEE   ON   BEHALF   OF   THE
+                                                             SUPPLEMENTAL  INTEREST  TRUST IN RESPECT  OF  INDYMAC  INDA
+                                                             MORTGAGE LOAN TRUST 2007-AR8
+
+By: /s/ Audrey Kong                                          By: /s/ Jennifer Hermansader
+   -----------------------------------------                    -----------------------------------------
+   Name    Audrey Kong                                          Name:   Jennifer Harmansader
+   Title:  Associate                                            Title:  Associate
+   Date:   November 29, 2007                                    Date:   November 29, 2007
+
+
+By: /s/ Costantino Palermo                                   By: /s/ Marion Hogan
+   -----------------------------------------                    -----------------------------------------
+   Name    Costantino Palermo                                   Name:   Marion Hogan
+   Title:  Associate                                            Title:  Associate
+   Date:   November 29, 2007                                    Date:   November 29, 2007
+
+
+</TABLE>
+
+
+REFERENCE NUMBER: N727633N
+</TEXT>
+</DOCUMENT>
