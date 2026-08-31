@@ -145,6 +145,23 @@ def parse_number(token: object) -> float | None:
     return -value if negative else value
 
 
+def format_number(value: float) -> str:
+    """Render a parsed number the way the document would have written it.
+
+    `f"{n:g}"` was doing this, and it is wrong twice over for financial amounts.
+    It switches to scientific notation above six digits, so a USD 10,000,000
+    threshold was reported as `1e+07`; and it keeps only six significant figures,
+    so 1,234,567.89 came back as `1.23457e+06` — a different number, off by more
+    than ten thousand.
+
+    That text is the product's headline sentence: "the cited text states X, not Y".
+    Printing X wrong there is worse than saying nothing.
+    """
+    if value == int(value) and abs(value) < 1e15:
+        return f"{int(value):,}"
+    return f"{value:,.2f}".rstrip("0").rstrip(".")
+
+
 def numbers_in(text: str) -> list[float]:
     """Every number the text states, in order."""
     out = []

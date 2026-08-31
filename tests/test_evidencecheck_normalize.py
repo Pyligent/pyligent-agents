@@ -170,3 +170,41 @@ def test_only_short_values_take_the_name_comparison_path(value, is_name):
     extraction look wrong.
     """
     assert looks_like_a_name(value) is is_name
+
+
+def test_large_amounts_are_not_reported_in_scientific_notation():
+    """`f"{n:g}"` reported a USD 10,000,000 threshold as `1e+07`.
+
+    This text is the product's headline sentence — "the cited text states X, not
+    Y" — and CSA thresholds are routinely millions, so the defect was in the most
+    visible string the tool produces.
+    """
+    from evidencecheck.normalize import format_number
+
+    assert format_number(10_000_000.0) == "10,000,000"
+    assert format_number(1_000_000.0) == "1,000,000"
+    assert format_number(50_000.0) == "50,000"
+    assert "e+" not in format_number(9.99e14)
+
+
+def test_formatting_does_not_lose_precision():
+    """`:g` keeps six significant figures, so 1,234,567.89 became 1.23457e+06.
+
+    That is a different number, off by more than ten thousand. A tool that reports
+    the document states one figure when it states another has inverted its own job.
+    """
+    from evidencecheck.normalize import format_number, parse_number
+
+    for original in ("1,234,567.89", "10,000,000", "999,999.5", "0.5"):
+        parsed = parse_number(original)
+        assert parsed is not None
+        assert parse_number(format_number(parsed)) == parsed, original
+
+
+def test_the_tool_reports_one_version():
+    """Two version strings from one distribution is a support conversation."""
+    import evidencecheck
+    from evidencecheck.report import Report
+
+    assert evidencecheck.__version__ == "0.2.0"
+    assert evidencecheck.__version__ in Report.__dataclass_fields__["tool"].default

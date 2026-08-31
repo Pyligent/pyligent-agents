@@ -18,6 +18,7 @@ from typing import Any
 from .normalize import (
     contains,
     dates_in,
+    format_number,
     looks_like_a_name,
     near_miss,
     numbers_in,
@@ -59,7 +60,7 @@ def _competing_numbers(value: Any, quote: str) -> list[str]:
         return []                       # §3.3 no number cited: inference, not repair
     if any(abs(n - target) < 1e-9 for n in found):
         return []
-    return [f"{n:g}" for n in found]
+    return [format_number(n) for n in found]
 
 
 def _competing_dates(value: Any, quote: str) -> list[str]:
@@ -131,7 +132,7 @@ def check_field(name: str, value: Any, quote: str, source: str) -> Finding | Non
 
 
 def check(source: str, fields: Mapping[str, Mapping[str, Any]], *,
-          tool: str = "evidence-check 0.1.0") -> Report:
+          tool: str = "evidence-check 0.2.0") -> Report:
     """Check an extraction against its source. No model, no network."""
     findings: list[Finding] = []
     notes: list[str] = []
