@@ -181,7 +181,7 @@ because neither given name matches, the pair is a competing value.
 ```json
 {
   "report_version": 1,
-  "tool": "evidence-check 0.1.0",
+  "tool": "evidence-check 0.2.0",
   "source": { "sha256": "…", "chars": 4821 },
   "summary": {
     "fields": 12, "findings": 2, "critical": 2,

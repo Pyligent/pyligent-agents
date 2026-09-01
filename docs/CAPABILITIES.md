@@ -27,7 +27,7 @@ which emits them as JSON for a model-risk review.
 
 **Examples.** Seven, from a one-call triage agent to a four-layer invoice intake.
 
-**Tested.** 444 tests offline in ~16 seconds with no credential, on Python 3.10–3.13
+**Tested.** Over 440 tests offline in ~16 seconds with no credential, on Python 3.10–3.13
 across Linux, macOS and Windows, plus one live model call in CI at a measured
 $0.0096 per run.
 

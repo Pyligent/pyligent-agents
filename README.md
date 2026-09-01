@@ -106,7 +106,7 @@ survives a crash. The collateral work above is an application of them, and the
 patterns generalise — [`docs/PATTERNS.md`](docs/PATTERNS.md) works them through
 on an ordinary support desk, away from the domain.
 
-**No required dependencies.** **No tools shipped.** **443 tests that run offline
+**No required dependencies.** **No tools shipped.** **over 440 tests that run offline
 in sixteen seconds with no API key** — plus one live-model test in CI, opt-in and
 costed at $0.0096 a run, because a deterministic suite cannot notice a provider
 retiring a model.
