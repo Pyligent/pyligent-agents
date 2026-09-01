@@ -18,13 +18,13 @@ from __future__ import annotations
 import argparse
 import importlib
 import json
-import os
 import sys
 from pathlib import Path
 
 from evidencecheck.console import use_utf8_stdout
 
 from . import PermissionTier, __version__, get_settings
+from .credentials import detect, gitignore_protects, guidance
 
 STEPS = [
     ("1", "Write the domain first, without a model",
@@ -342,16 +342,78 @@ def cmd_validation_pack(a) -> int:
     return 0
 
 
+def cmd_setup(_a) -> int:
+    """Tell someone what the library can see, and what to do about it.
+
+    Deliberately read-only. It never asks for a key, never accepts one, and never
+    writes one anywhere — the person at the keyboard sets it in their own shell,
+    where it belongs. A helper that takes a pasted secret and puts it in a file is
+    how secrets reach repositories.
+    """
+    use_utf8_stdout()
+    cred = detect()
+    s = get_settings()
+
+    _rule("pyligent-agents setup", "=")
+    print(f"  credential         {cred.summary}")
+    print(f"  backend requested  {s.backend}")
+
+    if cred.present:
+        print("  workspace id       "
+              + ("set" if cred.workspace else "not set (only needed for identity-linked keys)"))
+
+    protected = gitignore_protects()
+    if protected is None:
+        print("  .env in git        not a git repository")
+    elif protected:
+        print("  .env in git        ignored")
+    else:
+        print("  .env in git        NOT IGNORED — add `.env` to .gitignore before")
+        print("                     putting anything in it")
+
+    _rule("What will happen")
+    if cred.present:
+        print("  Real API calls will be made, and billed to that key.")
+        print("  Every run is capped: "
+              f"turns={s.max_turns}  usd={s.run_budget_usd}  "
+              f"seconds={s.run_budget_seconds}")
+        print()
+        print("  Verify it end to end — one small call, a few cents at most:")
+        print()
+        print("      PYLIGENT_LIVE_MODEL=1 pytest -m live -s")
+    elif s.backend == "anthropic":
+        print("  Nothing will work: the backend is set to `anthropic` but no")
+        print("  credential is configured, so the first call raises.")
+        print(guidance())
+    else:
+        print("  The deterministic backend runs in-process. Every test, demo, eval")
+        print("  and benchmark works with no credential and no spend — that is the")
+        print("  supported way to evaluate this project.")
+        print()
+        print("  To use a real model instead:")
+        print(guidance())
+    return 0
+
+
 def cmd_doctor(_a) -> int:
     s = get_settings()
     from .config import CONTEXT_WINDOW, PRICES
 
-    has_key = bool(os.getenv("ANTHROPIC_API_KEY") or os.getenv("ANTHROPIC_AUTH_TOKEN"))
+    cred = detect()
+    has_key = cred.present
     _rule("pyligent-agents doctor", "=")
     print(f"  version            {__version__}")
     print(f"  python             {sys.version.split()[0]}")
-    print(f"  backend            {s.backend}"
-          f"{'  (credential found)' if has_key else '  (no credential — scripted)'}")
+    # `auto` falls back to the scripted backend without a credential; an explicit
+    # `anthropic` does not — it builds the real client and fails at the first call.
+    # Reporting "scripted" for both told people they were safe when they were not.
+    if has_key:
+        note = f"  (credential in {cred.variable})"
+    elif s.backend == "anthropic":
+        note = "  (NO credential — calls will fail; run `pyligent-agents setup`)"
+    else:
+        note = "  (no credential — falls back to scripted)"
+    print(f"  backend            {s.backend}{note}")
     try:
         import anthropic  # noqa: F401  (presence probe, not a usage)
         print("  anthropic sdk      installed")
@@ -490,6 +552,8 @@ def main(argv: list[str] | None = None) -> int:
     sub = p.add_subparsers(dest="command", required=True)
 
     sub.add_parser("steps", help="the ten build steps").set_defaults(fn=cmd_steps)
+    sub.add_parser("setup", help="what credential the library can see, and how to set one"
+                   ).set_defaults(fn=cmd_setup)
     sub.add_parser("doctor", help="check config, credentials and pricing").set_defaults(fn=cmd_doctor)
 
     vp = sub.add_parser("validation-pack",

@@ -22,6 +22,7 @@ from ..core.types import (
     ToolUse,
     Usage,
 )
+from ..credentials import missing_credential_error
 
 # Below the model's minimum cacheable prefix a cache_control marker is a silent
 # no-op, so we skip it rather than pay a write for nothing.
@@ -69,7 +70,17 @@ class AnthropicLLM(LLMClient):
             # and are never sent — steer with the prompt instead.
             kwargs["output_config"] = {"effort": effort}
 
-        r = self._c.messages.create(**kwargs)
+        try:
+            r = self._c.messages.create(**kwargs)
+        except TypeError as exc:
+            # The SDK raises a TypeError, not an auth error, when no credential
+            # resolves. Its message is accurate and tells you nothing about how to
+            # fix it *here* — which variable, where to put it, or that this library
+            # never reads a .env file. Someone meeting this on their first run
+            # should not have to go and read the source to find out.
+            if "authentication method" in str(exc):
+                raise missing_credential_error() from exc
+            raise
 
         # Check the stop reason FIRST. A safety refusal returns HTTP 200 with an
         # empty content list; `content[0].text` raises an IndexError that then

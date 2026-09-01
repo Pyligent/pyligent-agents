@@ -5,6 +5,38 @@ All notable changes to this project are documented here. This project follows
 
 ## [Unreleased]
 
+### Added — credential setup that does not handle your credential
+
+- **`pyligent-agents setup`** reports which variable holds a credential, whether
+  `.env` is git-ignored, and what will actually happen on the next run. It is
+  read-only by design: it never asks for a key, never accepts one, and never
+  writes one anywhere. A helper that takes a pasted secret and puts it in a file
+  is how secrets reach repositories, and a library about verifiable claims should
+  not be that tool.
+- **The value is never printed** — not by `setup`, `doctor`, or any error — so
+  their output is safe to paste into an issue. Asserted by a test that plants a
+  known string and greps every surface for it.
+- **[`docs/CREDENTIALS.md`](docs/CREDENTIALS.md)**, which opens by saying you
+  probably do not need a key: every test, demo, eval and benchmark runs on the
+  deterministic backend for nothing.
+
+### Fixed — two things that misled a first-time user
+
+- **`doctor` claimed the scripted backend when the call would fail.** With
+  `PYLIGENT_AGENTS_BACKEND=anthropic` and no credential it printed
+  `(no credential — scripted)`, but that path does not fall back: it builds the
+  real client and raises at the first call. It told people they were on the safe
+  deterministic path when they were one call from an error.
+- **The missing-credential error was the SDK's**, a `TypeError` reading
+  *"Could not resolve authentication method"* — accurate, and silent on which
+  variable to set, where to put it, or that this library never reads `.env`. It
+  now names the variable, the shell profile, the console URL, and the zero-spend
+  alternative.
+- **`.env` is a trap worth naming.** Only `bench/` reads one; the library never
+  does. A key in an unread file looks exactly like no key, and the failure lands
+  somewhere unrelated.
+
+
 ### Added — a benchmark corpus of documents that *are* CSAs
 
 - **`bench/classify.py`** decides whether a filing *is* a Credit Support Annex

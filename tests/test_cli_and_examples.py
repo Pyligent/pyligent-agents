@@ -286,3 +286,34 @@ def test_the_subprocess_env_is_usable_on_this_platform():
     assert len(entries) == 2, f"PYTHONPATH did not split into two paths: {entries}"
     for entry in entries:
         assert Path(entry).is_dir(), f"not a directory: {entry!r}"
+
+
+def test_setup_guides_a_user_with_no_credential():
+    """The first command someone runs when a real model call fails."""
+    env = {k: v for k, v in ENV.items()}
+    env.pop("ANTHROPIC_API_KEY", None)
+    out = _cli("setup", env=env).stdout
+    assert "no credential found" in out
+    assert "ANTHROPIC_API_KEY" in out
+    assert "PYLIGENT_AGENTS_BACKEND=scripted" in out
+
+
+def test_setup_never_prints_the_credential_value():
+    """Presence, never the value — including in a report the user may paste."""
+    secret = "sk-ant-thisexactstringmustnotescape"
+    out = _cli("setup", env={**ENV, "ANTHROPIC_API_KEY": secret}).stdout
+    assert "found in ANTHROPIC_API_KEY" in out
+    assert secret not in out
+
+
+def test_doctor_does_not_claim_scripted_when_the_call_will_fail():
+    """`backend=anthropic` with no key builds the real client and fails at call time.
+
+    Reporting "no credential - scripted" for that case told people they were on the
+    safe deterministic path when they were one call away from a raw SDK TypeError.
+    """
+    env = {k: v for k, v in ENV.items()}
+    env.pop("ANTHROPIC_API_KEY", None)
+    out = _cli("doctor", env={**env, "PYLIGENT_AGENTS_BACKEND": "anthropic"}).stdout
+    assert "falls back to scripted" not in out
+    assert "NO credential" in out and "setup" in out

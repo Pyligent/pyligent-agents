@@ -22,8 +22,10 @@ which emits them as JSON for a model-risk review.
 | `evals` | Four personas, asymmetric scoring that never averages a false accept against a false refer, committed baselines, a `--check` regression gate | 14 |
 | `evidencecheck` | Standalone CLI and library. Reads `.txt`, `.html`, `.pdf`; understands seven extraction shapes; needs no model, no network, no ground truth | 6 |
 
-**Command line.** `pyligent-agents` (`steps`, `doctor`, `validation-pack`, `new`,
-`graph`, `runs`, `trace`) and `evidence-check`.
+**Command line.** `pyligent-agents` (`setup`, `steps`, `doctor`, `validation-pack`,
+`new`, `graph`, `runs`, `trace`) and `evidence-check`. `setup` reports what
+credential the library can see and what will happen because of it — see
+[CREDENTIALS.md](CREDENTIALS.md).
 
 **Examples.** Seven, from a one-call triage agent to a four-layer invoice intake.
 
