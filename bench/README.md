@@ -172,17 +172,35 @@ PYLIGENT_LIVE_MODEL=1 pytest -m live -s
 
 ## First run on the corpus
 
-`gemini-3.6-flash`, 97 documents, 654 fields, no failures.
+`gemini-3.6-flash`, 97 documents, nine schema fields per document.
 
 | | |
 |---|---|
-| evidence integrity | **99.5%** |
+| coverage — share of the schema attempted | 74.9% |
+| evidence integrity — of what it emitted | 99.5% |
+| **effective integrity — answered *and* supported** | **74.6%** |
 | fabricated | 2 |
 | silent repair | 0 |
-| placeholder | 0 |
 | empty value | 1 |
 
-Two things went wrong on the way to that number, and both are worth more than it.
+**Do not quote the 99.5% alone.** Its denominator is what the model chose to emit, so
+omitting a field you would have failed raises it: on a three-field document, dropping
+the one bad field moves integrity from 66.7% to 100%. Coverage is the correction, and
+effective integrity is the figure omission cannot inflate.
+
+Three things went wrong on the way to those numbers, and all are worth more than them.
+
+### The metric rewarded timidity
+
+Reported alone, evidence integrity is gameable: its denominator is the set of fields
+the extractor *chose* to answer. A model that attempts only the easy fields outscores
+one that attempts the hard ones. Found by an external reviewer, not by us.
+
+`run.py` now reports coverage, citation coverage, integrity and effective integrity,
+ordered by the last. It changes the ranking, not just the presentation: on the
+ten-document intersection all three models cover, `claude-sonnet-5` leads on integrity
+(100.0%) while `gemini-2.5-pro` leads on effective integrity (80.0% against 77.8%),
+because it attempted 86.7% of the schema against 77.8%.
 
 ### The checker accused correct work
 

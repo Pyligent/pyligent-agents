@@ -94,10 +94,12 @@ All notable changes to this project are documented here. This project follows
 - **`bench/build_corpus.py`** and a **97-document corpus** of SEC exhibits, each
   record carrying its source, licence, content hash, and the classifier evidence
   that admitted it.
-- **First scored run.** `gemini-3.6-flash`, 97 documents, 654 fields: **99.5%
-  evidence integrity**, 2 fabricated, 0 silent repair, 0 placeholder. Both
-  survivors are quotes stitched across a page break — real fragments joined over
-  page furniture — rather than inventions.
+- **First scored run.** `gemini-3.6-flash`, 97 documents: 74.9% coverage, 99.5%
+  integrity on what it emitted, **74.6% effective integrity** — the share of the
+  schema both answered and supported. The integrity figure must not be quoted
+  alone; see the coverage note below. Both surviving findings are quotes stitched
+  across a page break — real fragments joined over page furniture — rather than
+  inventions.
 
 ### Added — one live model call in CI
 
