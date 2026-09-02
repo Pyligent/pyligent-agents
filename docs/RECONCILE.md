@@ -109,6 +109,26 @@ export moved" from "we found drift" will page someone for the wrong reason.
 
 ---
 
+## How values are compared
+
+Tolerant about formatting, **strict about units**.
+
+| | |
+|---|---|
+| agree | `500000` · `500,000` · `USD 500,000` · `US$500,000` · `500,000 USD` |
+| agree | `100%` and `100` · `0` and `0.00` · `English law` and `english law` |
+| **differ** | `USD 500,000` and `EUR 500,000` — a redenomination is not a formatting difference |
+
+A unit stated on only one side is treated as compatible, because exports routinely
+carry a bare number in a column whose currency lives in the schema, and manufacturing
+a discrepancy from that is noise.
+
+A duplicated key in the export makes it ambiguous which row is authoritative for that
+counterparty. Those documents are named and skipped rather than resolved by whichever
+row happened to be last.
+
+---
+
 ## What this does not do
 
 - **It does not extract.** Bring your own extractions, from whatever pipeline you

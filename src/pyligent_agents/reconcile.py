@@ -26,6 +26,7 @@ Only the middle one is an exception an analyst should work.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from dataclasses import field as dc_field
 from typing import Any
@@ -61,26 +62,81 @@ DISCREPANCY = "discrepancy"
 UNVERIFIED = "unverified"
 
 
-def _comparable(value: Any) -> Any:
-    """Compare 500000, '500,000' and 'USD 500,000' as equal; leave text alone.
+# ISO codes and symbols we will treat as a stated unit. Restricted to a known list
+# rather than "any three uppercase letters", which would read CSA, MTA and VM as
+# currencies.
+_CURRENCY_CODES = {
+    "USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD", "SEK", "NOK", "DKK",
+    "HKD", "SGD", "CNY", "CNH", "MXN", "ZAR", "PLN", "CZK", "HUF", "KRW", "INR",
+    "BRL", "TRY", "ILS", "RUB", "THB", "TWD",
+}
+_SYMBOL_TO_CODE = {"$": "$", "£": "GBP", "€": "EUR", "¥": "JPY"}
+_CURRENCY_RE = re.compile(r"\b([A-Z]{3})\b|([$£€¥])")
+_NUMBER_RE = re.compile(r"-?\d+(?:\.\d+)?")
 
-    Deliberately narrow. Currency symbols and separators are formatting; anything
-    else that differs is a real difference and must survive to be reported.
-    """
+
+def _currency_of(value: Any) -> str | None:
+    """The currency a value states, or None when it states none."""
+    if not isinstance(value, str):
+        return None
+    text = value.upper().replace("US$", "USD ").replace("A$", "AUD ").replace("C$", "CAD ")
+    for code, symbol in _CURRENCY_RE.findall(text):
+        if code in _CURRENCY_CODES:
+            return code
+        if symbol:
+            return _SYMBOL_TO_CODE.get(symbol, symbol)
+    return None
+
+
+def _numeric(value: Any) -> float | None:
+    """The number a value states, ignoring units and separators."""
     if isinstance(value, bool) or value is None:
-        return value
+        return None
     if isinstance(value, (int, float)):
         return float(value)
-    number = parse_number(value)
-    if number is not None:
-        return float(number)
-    text = str(value)
-    for junk in ("£", "$", "€", "USD", "GBP", "EUR", "JPY", "CHF", ",", " "):
-        text = text.replace(junk, "")
+    parsed = parse_number(value)
+    if parsed is not None:
+        return float(parsed)
+    # Pull the number out rather than stripping units off, because units arrive in
+    # forms nobody enumerates: "US$250,000", "EUR250000", "250,000 USD". Stripping
+    # missed "US$" and made a value uncomparable, which reported a real match as a
+    # mismatch.
+    match = _NUMBER_RE.search(str(value).replace(",", ""))
+    if match is None:
+        return None
     try:
-        return float(text)
+        return float(match.group(0))
     except ValueError:
-        return str(value).strip().casefold()
+        return None
+
+
+def values_agree(ours: Any, theirs: Any) -> bool:
+    """Whether two stated values are the same term, formatted differently.
+
+    Tolerant about formatting, strict about units. `500000`, `'500,000'` and
+    `'USD 500,000'` are one term. **`'USD 500,000'` and `'EUR 500,000'` are not** —
+    an earlier version stripped currency before comparing and reported them as
+    agreeing, which silently disappeared one of the most material discrepancies a
+    collateral book can have. A tool that hides a currency change has done the exact
+    thing it exists to detect.
+
+    A unit stated on only one side is treated as compatible: exports routinely carry
+    a bare number in a column whose currency lives in the schema, and manufacturing
+    a discrepancy from that is noise, which ends trials just as fast.
+    """
+    if isinstance(ours, bool) or isinstance(theirs, bool):
+        return ours == theirs
+
+    left, right = _currency_of(ours), _currency_of(theirs)
+    if left and right and left != right:
+        return False                      # both stated a unit, and they differ
+
+    a, b = _numeric(ours), _numeric(theirs)
+    if a is not None and b is not None:
+        return a == b
+    if a is None and b is None:
+        return str(ours).strip().casefold() == str(theirs).strip().casefold()
+    return False                          # one is a number, the other is not
 
 
 @dataclass(frozen=True)
@@ -210,7 +266,7 @@ def reconcile(
                 name, UNVERIFIED, ours, theirs, clause, is_material, impact,
                 reason=unsupported[name],
             ))
-        elif _comparable(ours) == _comparable(theirs):
+        elif values_agree(ours, theirs):
             results.append(FieldResult(name, AGREES, ours, theirs, clause, is_material, impact))
         else:
             results.append(FieldResult(

@@ -377,3 +377,20 @@ def test_reconcile_will_not_accuse_a_system_on_invented_evidence(tmp_path):
     assert "UNVERIFIED" in result.stdout
     assert "MATERIAL" not in result.stdout
     assert result.returncode == 0, _why(result)
+
+
+def test_reconcile_refuses_to_pick_between_duplicate_export_rows(tmp_path):
+    """A repeated key makes the export ambiguous about that counterparty.
+
+    Letting the last row win produces a finding that depends on row order, which is
+    the kind of quiet data loss that turns into an argument with an ops team.
+    """
+    docs, ext, _ = _reconcile_fixture(tmp_path)
+    system = tmp_path / "dupe.csv"
+    system.write_text("document,threshold\nCP-001,0\nCP-001,5000000\n", encoding="utf-8")
+
+    result = _cli("reconcile", "--documents", str(docs), "--extractions", str(ext),
+                  "--system", str(system))
+    assert "appears more than once" in result.stderr
+    assert "MATERIAL" not in result.stdout, "reported a finding from an ambiguous row"
+    assert result.returncode == 2, _why(result)

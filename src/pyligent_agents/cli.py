@@ -416,12 +416,27 @@ def _load_system(path: Path) -> dict[str, dict[str, object]]:
     key = next((h for h in ("document", "document_id", "counterparty", "id")
                 if h in headers), headers[0])
     out: dict[str, dict[str, object]] = {}
+    seen: set[str] = set()
+    duplicates: set[str] = set()
     for row in rows:
         ident = (row.get(key) or "").strip()
         if not ident:
             continue
+        if ident in seen:
+            duplicates.add(ident)
+        seen.add(ident)
         out[ident] = {k: v for k, v in row.items()
                       if k != key and v not in (None, "")}
+
+    # A repeated key means the export is ambiguous about that counterparty, and the
+    # last row silently winning produces a finding that depends on row order. Which
+    # row is authoritative is not ours to guess: name them and leave them out, so
+    # the rest of the portfolio still reconciles.
+    for ident in sorted(duplicates):
+        out.pop(ident, None)
+        print(f"  {ident}: appears more than once in the export; skipped. Deduplicate "
+              f"it upstream — this tool will not choose which row is authoritative.",
+              file=sys.stderr)
     return out
 
 

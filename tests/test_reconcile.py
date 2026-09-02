@@ -115,3 +115,58 @@ def test_discrepancies_carry_impact_and_are_ordered_material_first():
     assert rec.material[0].impact
     body = render(rec)
     assert body.index("MATERIAL \u00b7 threshold") < body.index("minor \u00b7 governing_law")
+
+
+# --- value comparison: tolerant about format, strict about units ---------------
+
+def test_a_currency_change_is_never_hidden():
+    """The worst bug this file has had.
+
+    An earlier comparison stripped currency symbols before comparing, so
+    `USD 500,000` and `EUR 500,000` were reported as agreeing. A redenomination is
+    among the most material things that can happen to a collateral book, and the
+    tool made it disappear — performing, in its own comparison function, exactly the
+    silent repair it exists to detect.
+    """
+    from pyligent_agents.reconcile import values_agree
+
+    assert values_agree("USD 500,000", "EUR 500,000") is False
+    assert values_agree("$500,000", "£500,000") is False
+    assert values_agree("USD 500,000", "USD 250,000") is False
+
+    rec = reconcile(DOC, {"mta": {"value": "USD 500,000",
+                                  "quote": "The Minimum Transfer Amount is USD 500,000."}},
+                    {"mta": "EUR 500,000"})
+    assert len(rec.discrepancies) == 1, "a currency change was reported as agreement"
+
+
+def test_formatting_and_one_sided_units_still_agree():
+    """Strictness must not manufacture findings; noise ends trials too."""
+    from pyligent_agents.reconcile import values_agree
+
+    for a, b in [("USD 500,000", "500000"), ("500,000", "USD 500,000"),
+                 ("US$250,000", "USD 250,000"), ("A$100", "AUD 100"),
+                 ("250,000 USD", "USD 250,000"), ("EUR250000", "250000"),
+                 ("100%", "100"), ("0", "0.00"), ("1,234.56", "1234.56"),
+                 ("English law", "english law")]:
+        assert values_agree(a, b) is True, f"{a!r} vs {b!r} should agree"
+
+
+def test_us_dollar_prefix_is_read_as_a_number():
+    """`US$250,000` appears verbatim in the SEC corpus.
+
+    Stripping units by substitution missed the `US` in `US$`, leaving the value
+    unparseable — which reported a genuine match as a mismatch.
+    """
+    from pyligent_agents.reconcile import _numeric
+
+    assert _numeric("US$250,000") == 250_000.0
+    assert _numeric("250,000 USD") == 250_000.0
+    assert _numeric("nil") is None
+
+
+def test_a_number_never_agrees_with_prose():
+    from pyligent_agents.reconcile import values_agree
+
+    assert values_agree("500000", "not specified") is False
+    assert values_agree("infinity", "0") is False
