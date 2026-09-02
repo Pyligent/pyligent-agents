@@ -5,6 +5,46 @@ All notable changes to this project are documented here. This project follows
 
 ## [Unreleased]
 
+### Added — shadow reconciliation
+
+- **`pyligent-agents reconcile`** compares signed agreements against what a
+  collateral system holds, and writes nothing anywhere. Takes a directory of
+  agreements, the extractions your pipeline already produces, and the CSV your
+  system exports; emits a page per document and an exception report an analyst
+  works from. Read-only: no write path, no integration, no migration.
+- **A discrepancy is raised only when the extraction's own citation survives
+  checking.** A field whose quote is not in the document, or which states a
+  different value, is reported `unverified` — never as a claim that the system is
+  wrong. Telling an operations team their record contradicts a signed agreement on
+  the strength of an invented sentence is worse than silence: it spends the
+  credibility a shadow trial exists to build.
+- Exit codes are a contract for whoever schedules it: `0` clean, `1` findings a
+  human must work, `2` the run could not happen. A missing export returning the
+  same code as real drift would page someone for the wrong reason.
+- [`docs/RECONCILE.md`](docs/RECONCILE.md).
+
+### Fixed — the comparison was hiding a currency change
+
+- **`USD 500,000` and `EUR 500,000` compared equal.** Currency symbols were
+  stripped before the numbers were compared, so a redenomination — among the most
+  material things that can happen to a collateral book — was reported as
+  agreement. The comparison was performing, on itself, exactly the silent repair
+  this project exists to detect. It is now strict when both sides state a unit and
+  those units differ, and tolerant when only one side states one.
+- **`US$250,000` was unparseable**, so a genuine match was reported as a mismatch
+  — the opposite error, found while fixing the first. `US$` appears verbatim in
+  the SEC corpus. Numbers are extracted by pattern now, not by removing every unit
+  anyone might write.
+- **A duplicated key in an export was resolved by row order**, making a material
+  finding depend on which row came last. Duplicates are named and skipped;
+  which row is authoritative is not this tool's to guess.
+- **Export identifier columns** (`counterparty`, `book`, `desk`) were compared as
+  if they were stored terms, producing noise shaped like findings.
+- **A document where nothing overlapped reported agreement.** "The system matches
+  the agreement on every field compared" is vacuously true when zero fields were
+  compared, and is the one claim this project must never print.
+
+
 ### Added — credential setup that does not handle your credential
 
 - **`pyligent-agents setup`** reports which variable holds a credential, whether
