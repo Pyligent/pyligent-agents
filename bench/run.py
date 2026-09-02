@@ -29,12 +29,23 @@ CODES = ("FABRICATED_EVIDENCE", "SILENT_REPAIR", "PLACEHOLDER_VALUE",
          "MISSING_EVIDENCE", "EMPTY_VALUE")
 
 
+# The schema a run is scored against. Integrity alone is a share of what a model
+# CHOSE to emit, so a model that answers only the easy fields scores better than one
+# that attempts the hard ones. Coverage is the denominator that closes that hole, and
+# the two must always be read together.
+SCHEMA_FIELDS = ("base_currency", "eligible_currency", "threshold",
+                 "minimum_transfer_amount", "rounding", "governing_law",
+                 "party_a", "party_b", "valuation_percentage")
+
+
 @dataclass
 class Score:
     extractor: str
     documents: int = 0
-    fields: int = 0
+    fields: int = 0                           # fields the extractor emitted
     findings: int = 0
+    expected: int = 0                         # schema fields × documents attempted
+    cited: int = 0                            # emitted fields carrying a quote
     by_code: dict[str, int] = None            # type: ignore[assignment]
 
     def __post_init__(self) -> None:
@@ -42,9 +53,33 @@ class Score:
             self.by_code = dict.fromkeys(CODES, 0)
 
     @property
+    def coverage(self) -> float:
+        """Share of schema fields the extractor actually attempted.
+
+        Without this, integrity is trivially gamed: omit the field you would fail
+        and the score goes up. Measured on a three-field document, dropping the one
+        bad field moves integrity from 66.7% to 100%.
+        """
+        return 0.0 if not self.expected else self.fields / self.expected
+
+    @property
+    def citation_coverage(self) -> float:
+        """Share of emitted fields that cited anything at all."""
+        return 0.0 if not self.fields else self.cited / self.fields
+
+    @property
     def evidence_integrity(self) -> float:
-        """Share of fields with no finding against them. The headline."""
+        """Share of EMITTED fields with no finding against them.
+
+        Conditional on emission, and never to be reported alone. See `coverage`.
+        """
         return 1.0 if not self.fields else 1 - (self.findings / self.fields)
+
+    @property
+    def effective_integrity(self) -> float:
+        """Integrity weighted by coverage: the share of the SCHEMA that is both
+        answered and supported. One number that cannot be gamed by omission."""
+        return 0.0 if not self.expected else (self.fields - self.findings) / self.expected
 
     def rate(self, code: str) -> float:
         return 0.0 if not self.fields else self.by_code.get(code, 0) / self.fields
@@ -52,8 +87,14 @@ class Score:
     def to_dict(self) -> dict:
         return {
             "extractor": self.extractor, "documents": self.documents,
-            "fields": self.fields, "findings": self.findings,
+            "schema_fields_expected": self.expected,
+            "fields_emitted": self.fields,
+            "fields_cited": self.cited,
+            "findings": self.findings,
+            "coverage": round(self.coverage, 4),
+            "citation_coverage": round(self.citation_coverage, 4),
             "evidence_integrity": round(self.evidence_integrity, 4),
+            "effective_integrity": round(self.effective_integrity, 4),
             "by_code": self.by_code,
         }
 
@@ -67,6 +108,9 @@ def score_corpus(entries: list[Entry]) -> dict[str, Score]:
             report = check(source.text, extraction.fields)
             s.documents += 1
             s.fields += report.fields_checked
+            s.expected += len(SCHEMA_FIELDS)
+            s.cited += sum(1 for v in extraction.fields.values()
+                           if isinstance(v, dict) and str(v.get("quote") or "").strip())
             s.findings += len(report.findings)
             for code, n in report.by_code().items():
                 s.by_code[code] = s.by_code.get(code, 0) + n
@@ -80,20 +124,29 @@ def render(entries: list[Entry], scores: dict[str, Score]) -> str:
     out.append(f"  {len(entries)} document(s), {len(scores)} extractor(s). "
                f"No ground truth required.")
     out.append("")
-    out.append(f"  {'extractor':<22}{'integrity':>10}{'fields':>8}"
-               f"{'fabricated':>12}{'repair':>8}{'placeholder':>13}")
-    out.append("  " + "-" * 74)
-    for s in sorted(scores.values(), key=lambda x: -x.evidence_integrity):
+    out.append(f"  {'extractor':<20}{'coverage':>10}{'cited':>8}{'integrity':>11}"
+               f"{'effective':>11}{'fabricated':>12}{'repair':>8}")
+    out.append("  " + "-" * 76)
+    # Ordered by effective integrity: the one figure omission cannot inflate.
+    for s in sorted(scores.values(), key=lambda x: -x.effective_integrity):
         out.append(
-            f"  {s.extractor:<22}{s.evidence_integrity:>9.1%}{s.fields:>8}"
+            f"  {s.extractor:<20}{s.coverage:>9.1%}{s.citation_coverage:>8.0%}"
+            f"{s.evidence_integrity:>10.1%}{s.effective_integrity:>11.1%}"
             f"{s.by_code.get('FABRICATED_EVIDENCE', 0):>12}"
-            f"{s.by_code.get('SILENT_REPAIR', 0):>8}"
-            f"{s.by_code.get('PLACEHOLDER_VALUE', 0):>13}")
+            f"{s.by_code.get('SILENT_REPAIR', 0):>8}")
 
     out.append("")
-    out.append("  Integrity is the share of fields whose value is supported by a")
-    out.append("  citation that appears in the document. It is not accuracy: a")
-    out.append("  quote can be genuine, contain the value, and be the wrong clause.")
+    out.append("  coverage   share of the schema the extractor attempted at all")
+    out.append("  integrity  of what it DID emit, the share a citation supports")
+    out.append("  effective  coverage x integrity — the share of the schema both")
+    out.append("             answered and supported")
+    out.append("")
+    out.append("  Read integrity WITH coverage, never alone: omitting a field you")
+    out.append("  would have failed raises integrity and lowers coverage. Effective")
+    out.append("  integrity is the figure that omission cannot inflate.")
+    out.append("")
+    out.append("  None of these is accuracy. A quote can be genuine, contain the")
+    out.append("  value, and still be the wrong clause.")
 
     repairs = {n: s for n, s in scores.items() if s.by_code.get("SILENT_REPAIR")}
     if repairs:

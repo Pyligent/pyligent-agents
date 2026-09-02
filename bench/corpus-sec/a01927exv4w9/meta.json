@@ -1,6 +1,6 @@
 {
-  "source_url": "SEC EDGAR exhibit (public filing)",
-  "licence": "US federal government work, public domain",
+  "source_url": "SEC EDGAR filed exhibit \u2014 https://www.sec.gov/edgar",
+  "licence": "Filed exhibit, publicly accessible via SEC EDGAR and freely reusable under the Commission's access terms. Privately authored; not a US federal government work.",
   "provenance": "EDGAR filing marker '<TYPE>' present in the document",
   "original_filename": "a01927exv4w9.txt",
   "sha256": "c18a76b51ea844be6f53d33e9bf480b773e5f19d35af335e3d18ea684061a463",

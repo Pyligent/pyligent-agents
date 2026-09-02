@@ -98,7 +98,7 @@ def test_the_table_states_that_integrity_is_not_accuracy(tmp_path):
                                                    "quote": "Net total            824.99"}}}})
     entries = load_corpus(root)
     out = render(entries, score_corpus(entries))
-    assert "It is not accuracy" in out
+    assert "None of these is accuracy" in out
 
 
 def test_provenance_is_shown_so_synthetic_data_cannot_pass_as_real(tmp_path):
@@ -115,3 +115,50 @@ def test_provenance_is_shown_so_synthetic_data_cannot_pass_as_real(tmp_path):
 def test_a_missing_corpus_says_so(tmp_path):
     with pytest.raises(FileNotFoundError):
         load_corpus(tmp_path / "nope")
+
+
+# --- coverage: the denominator that stops integrity being gamed ----------------
+
+def test_omitting_a_field_you_would_fail_raises_integrity_but_lowers_coverage(tmp_path):
+    """Integrity alone rewards timidity, which is why it is never reported alone.
+
+    A model that answers only the easy fields scores better than one that attempts
+    the hard ones. Coverage restores the schema as the denominator, and effective
+    integrity combines them into a figure omission cannot inflate.
+    """
+    from run import SCHEMA_FIELDS
+
+    bold = {"fields": {
+        "threshold": {"value": "0",
+                      "quote": '"Threshold" means with respect to each party: USD 0.'},
+        "base_currency": {"value": "USD", "quote": "A CLAUSE THAT IS NOT PRESENT"},
+    }}
+    timid = {"fields": {
+        "threshold": {"value": "0",
+                      "quote": '"Threshold" means with respect to each party: USD 0.'},
+    }}
+    scores = score_corpus(load_corpus(build(tmp_path, {"bold": bold, "timid": timid})))
+
+    b, t_ = scores["bold"], scores["timid"]
+    assert t_.evidence_integrity > b.evidence_integrity, "timidity wins on integrity alone"
+    assert t_.coverage < b.coverage, "and loses on coverage — that is the point"
+    assert b.expected == t_.expected == len(SCHEMA_FIELDS)
+
+
+def test_effective_integrity_is_coverage_times_integrity(tmp_path):
+    payload = {"fields": {
+        "threshold": {"value": "0",
+                      "quote": '"Threshold" means with respect to each party: USD 0.'}}}
+    s = score_corpus(load_corpus(build(tmp_path, {"m": payload})))["m"]
+    assert abs(s.effective_integrity - s.coverage * s.evidence_integrity) < 1e-9
+
+
+def test_citation_coverage_counts_fields_that_cited_anything(tmp_path):
+    payload = {"fields": {
+        "threshold": {"value": "0",
+                      "quote": '"Threshold" means with respect to each party: USD 0.'},
+        "minimum_transfer_amount": {"value": "500000", "quote": ""},
+    }}
+    s = score_corpus(load_corpus(build(tmp_path, {"m": payload})))["m"]
+    assert s.fields == 2 and s.cited == 1
+    assert abs(s.citation_coverage - 0.5) < 1e-9

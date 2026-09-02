@@ -20,8 +20,8 @@ composed from them, plus at least one you write yourself:
 
 And the counterpart rule, learned the expensive way:
 
-> **A gate that cannot tell must pass, not fail.** When a check's precondition
-> does not hold, abstain. A gate that fires on "I cannot tell" turns every
+> **A gate that cannot tell must abstain — neither pass nor fail.** When a
+> check's precondition does not hold, it declines to vote. A gate that fires on "I cannot tell" turns every
 > unusual-but-valid document into a referral, and a queue full of correct
 > documents is how a control gets switched off. See ADR 0006 for the CSA gate
 > that asserted `MTA <= Threshold` and referred every standard VM CSA, where

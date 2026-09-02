@@ -45,7 +45,16 @@ SEC_MARKER = re.compile(
     r"<TYPE>|<SEQUENCE>|SEC-HEADER|<PAGE>|\bEX-\d|\bEX-99|\bExhibit\s+\d", re.I
 )
 
-PUBLIC_DOMAIN = "US federal government work, public domain"
+# An EX-4 or EX-10 exhibit is a privately authored contract that was FILED with the
+# SEC. It is publicly accessible and freely reusable under the Commission's access
+# terms, which is what makes this corpus redistributable — but it is not a work of
+# the federal government, and saying so was a legal claim we had no basis for.
+# https://www.sec.gov/about/webmaster-frequently-asked-questions
+PUBLIC_ACCESS = (
+    "Filed exhibit, publicly accessible via SEC EDGAR and freely reusable under "
+    "the Commission's access terms. Privately authored; not a US federal "
+    "government work."
+)
 
 
 def _is_public(path: Path, text: str) -> tuple[bool, str, str]:
@@ -69,7 +78,7 @@ def _is_public(path: Path, text: str) -> tuple[bool, str, str]:
     if not m:
         return False, "", ("excluded: no EDGAR filing marker, so its provenance and "
                            "licence cannot be established from the document itself")
-    return True, PUBLIC_DOMAIN, f"EDGAR filing marker {m.group(0)!r} present in the document"
+    return True, PUBLIC_ACCESS, f"EDGAR filing marker {m.group(0)!r} present in the document"
 
 
 def build(sources: list[Path], out: Path, *, limit: int) -> int:
