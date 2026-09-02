@@ -6,6 +6,7 @@ contributor does is run it.
 
 from __future__ import annotations
 
+import json
 import os
 import subprocess
 import sys
@@ -317,3 +318,62 @@ def test_doctor_does_not_claim_scripted_when_the_call_will_fail():
     out = _cli("doctor", env={**env, "PYLIGENT_AGENTS_BACKEND": "anthropic"}).stdout
     assert "falls back to scripted" not in out
     assert "NO credential" in out and "setup" in out
+
+
+def _reconcile_fixture(tmp_path):
+    """A document, its extraction, and a stored-terms export that has drifted."""
+    docs, ext = tmp_path / "docs", tmp_path / "ext"
+    docs.mkdir()
+    ext.mkdir()
+    (docs / "CP-001.txt").write_text(
+        'Paragraph 13. "Threshold" means with respect to each party: USD 0.',
+        encoding="utf-8")
+    (ext / "CP-001.json").write_text(json.dumps({"fields": {
+        "threshold": {"value": "0",
+                      "quote": '"Threshold" means with respect to each party: USD 0.'}}}),
+        encoding="utf-8")
+    (tmp_path / "system.csv").write_text(
+        "document,counterparty,threshold\nCP-001,Atlas Bank,5000000\n", encoding="utf-8")
+    return docs, ext, tmp_path / "system.csv"
+
+
+def test_reconcile_reports_drift_and_writes_an_exception_report(tmp_path):
+    docs, ext, system = _reconcile_fixture(tmp_path)
+    out = tmp_path / "exceptions.csv"
+    result = _cli("reconcile", "--documents", str(docs), "--extractions", str(ext),
+                  "--system", str(system), "--out", str(out))
+
+    assert "MATERIAL" in result.stdout and "threshold" in result.stdout
+    assert "Nothing was written" in result.stdout
+    # Exit 1 means "a human should look", so this can gate a scheduled run.
+    assert result.returncode == 1, _why(result)
+
+    rows = out.read_text(encoding="utf-8").splitlines()
+    assert rows[0].startswith("document,counterparty,field,state,material")
+    assert "CP-001" in rows[1] and "discrepancy" in rows[1]
+
+
+def test_reconcile_separates_broken_input_from_findings(tmp_path):
+    """Exit 2 is 'the run could not happen'; a cron job must tell them apart."""
+    docs, ext, _ = _reconcile_fixture(tmp_path)
+    missing = _cli("reconcile", "--documents", str(docs), "--extractions", str(ext),
+                   "--system", str(tmp_path / "absent.csv"))
+    assert missing.returncode == 2, _why(missing)
+
+    nodocs = _cli("reconcile", "--documents", str(tmp_path / "absent"),
+                  "--extractions", str(ext), "--system", str(tmp_path / "system.csv"))
+    assert nodocs.returncode == 2, _why(nodocs)
+
+
+def test_reconcile_will_not_accuse_a_system_on_invented_evidence(tmp_path):
+    """End to end, through the CLI, the property the whole command rests on."""
+    docs, ext, system = _reconcile_fixture(tmp_path)
+    (ext / "CP-001.json").write_text(json.dumps({"fields": {
+        "threshold": {"value": "0",
+                      "quote": "The Threshold shall at all times be nil."}}}),
+        encoding="utf-8")
+    result = _cli("reconcile", "--documents", str(docs), "--extractions", str(ext),
+                  "--system", str(system))
+    assert "UNVERIFIED" in result.stdout
+    assert "MATERIAL" not in result.stdout
+    assert result.returncode == 0, _why(result)

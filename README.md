@@ -492,6 +492,8 @@ It is **necessary, not sufficient**, and says so: roughly half of what a
 that is this command. The other half needs rules about your documents, which is
 what the gates above are. And a genuine quote can still be the wrong clause;
 every claim here is about *support*, never about truth.
+[`docs/RECONCILE.md`](docs/RECONCILE.md) compares signed agreements against
+what a collateral system holds, read-only;
 [`docs/CREDENTIALS.md`](docs/CREDENTIALS.md) covers setting an API key — and
 why you probably do not need one to evaluate this;
 [`docs/CAPABILITIES.md`](docs/CAPABILITIES.md) states what this can and cannot

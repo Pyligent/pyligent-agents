@@ -395,6 +395,149 @@ def cmd_setup(_a) -> int:
     return 0
 
 
+def _load_system(path: Path) -> dict[str, dict[str, object]]:
+    """Stored terms, keyed by document. CSV from an export, or JSON.
+
+    CSV is the format collateral systems actually export, so it is the one that
+    matters: a key column (`document`, `document_id`, `counterparty` or the first
+    column) and one column per stored term.
+    """
+    import csv as _csv
+
+    raw = path.read_text(encoding="utf-8", errors="replace")
+    if path.suffix.lower() == ".json" or raw.lstrip().startswith("{"):
+        data = json.loads(raw)
+        return {str(k): dict(v) for k, v in data.items() if isinstance(v, dict)}
+
+    rows = list(_csv.DictReader(raw.splitlines()))
+    if not rows:
+        return {}
+    headers = list(rows[0].keys())
+    key = next((h for h in ("document", "document_id", "counterparty", "id")
+                if h in headers), headers[0])
+    out: dict[str, dict[str, object]] = {}
+    for row in rows:
+        ident = (row.get(key) or "").strip()
+        if not ident:
+            continue
+        out[ident] = {k: v for k, v in row.items()
+                      if k != key and v not in (None, "")}
+    return out
+
+
+def _pair_up(documents: Path, extractions: Path | None) -> list[tuple[Path, Path]]:
+    """Match each document to its extraction by filename stem."""
+    docs = ([documents] if documents.is_file()
+            else sorted(f for f in documents.rglob("*")
+                        if f.suffix.lower() in {".htm", ".html", ".txt", ".pdf"}))
+    if extractions is None:
+        return [(d, d.with_suffix(".json")) for d in docs]
+    if extractions.is_file():
+        return [(d, extractions) for d in docs]
+    index = {f.stem: f for f in extractions.rglob("*.json")}
+    return [(d, index[d.stem]) for d in docs if d.stem in index]
+
+
+def cmd_reconcile(a) -> int:
+    """Compare signed agreements against stored terms. Writes nothing anywhere."""
+    use_utf8_stdout()
+    from evidencecheck.cli import normalise_extraction
+    from evidencecheck.sources import load as load_source
+
+    from .reconcile import reconcile, render
+
+    # Exit codes are a contract for whoever schedules this: 0 clean, 1 findings a
+    # human must work, 2 the run could not happen. Collapsing the last two into the
+    # first would page someone about discrepancies when the export simply moved.
+    system_path = Path(a.system)
+    if not system_path.exists():
+        print(f"stored terms not found: {a.system}", file=sys.stderr)
+        return 2
+    try:
+        system = _load_system(system_path)
+    except Exception as exc:  # noqa: BLE001 — a malformed export is a usage error
+        print(f"could not read {a.system}: {type(exc).__name__}: {exc}", file=sys.stderr)
+        return 2
+    if not system:
+        print(f"no stored terms found in {a.system}", file=sys.stderr)
+        return 2
+
+    documents_path = Path(a.documents)
+    if not documents_path.exists():
+        print(f"documents not found: {a.documents}", file=sys.stderr)
+        return 2
+
+    pairs = _pair_up(documents_path, Path(a.extractions) if a.extractions else None)
+    if not pairs:
+        print("no document/extraction pairs found. Extractions are matched to "
+              "documents by filename stem.", file=sys.stderr)
+        return 2
+
+    reports, material_total = [], 0
+    for doc_path, extraction_path in pairs:
+        if not extraction_path.exists():
+            continue
+        key = doc_path.stem
+        stored = system.get(key) or system.get(doc_path.name)
+        if stored is None:
+            continue                      # no stored terms for this one: not a finding
+
+        try:
+            source = load_source(doc_path)
+            fields = normalise_extraction(json.loads(
+                extraction_path.read_text(encoding="utf-8")))
+        except Exception as exc:  # noqa: BLE001 — one bad file must not stop the run
+            print(f"  {key}: could not read ({type(exc).__name__}: {exc})",
+                  file=sys.stderr)
+            continue
+
+        rec = reconcile(source.text, fields, stored,
+                        document=key, counterparty=str(stored.get("counterparty", "")))
+        reports.append(rec)
+        material_total += len(rec.material)
+        if not a.quiet:
+            print(render(rec))
+
+    if not reports:
+        print("nothing to reconcile: no document matched a row in the export.",
+              file=sys.stderr)
+        return 2
+
+    _rule("PORTFOLIO")
+    print(f"  documents reconciled   {len(reports)}")
+    print(f"  agreeing               {sum(1 for r in reports if r.agrees)}")
+    print(f"  with discrepancies     {sum(1 for r in reports if r.discrepancies)}")
+    print(f"  material discrepancies {material_total}")
+    unver = sum(len(r.unverified) for r in reports)
+    if unver:
+        print(f"  unverified fields      {unver}  (citation did not check out)")
+    print("\n  Nothing was written. No tool with an external effect was used.")
+
+    if a.out:
+        _write_exceptions(Path(a.out), reports)
+        print(f"\n  exceptions written to {a.out}")
+
+    # Non-zero when a human should look, so this can gate a nightly job.
+    return 1 if material_total else 0
+
+
+def _write_exceptions(path: Path, reports: list) -> None:
+    """One row per field needing attention. The file an analyst works from."""
+    import csv as _csv
+
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = _csv.writer(handle)
+        writer.writerow(["document", "counterparty", "field", "state", "material",
+                         "agreement_says", "system_says", "impact", "clause"])
+        for rec in reports:
+            for r in (*rec.material,
+                      *(x for x in rec.discrepancies if not x.material),
+                      *rec.unverified):
+                writer.writerow([rec.document, rec.counterparty, r.field, r.state,
+                                 "yes" if r.material else "no", r.ours, r.theirs,
+                                 r.impact, (r.clause or r.reason)[:300]])
+
+
 def cmd_doctor(_a) -> int:
     s = get_settings()
     from .config import CONTEXT_WINDOW, PRICES
@@ -552,6 +695,15 @@ def main(argv: list[str] | None = None) -> int:
     sub = p.add_subparsers(dest="command", required=True)
 
     sub.add_parser("steps", help="the ten build steps").set_defaults(fn=cmd_steps)
+    rc = sub.add_parser("reconcile",
+                        help="compare signed agreements against stored terms; writes nothing")
+    rc.add_argument("--documents", required=True, help="a document, or a directory of them")
+    rc.add_argument("--extractions", help="extraction JSON, or a directory matched by filename stem")
+    rc.add_argument("--system", required=True, help="stored terms: CSV export or JSON")
+    rc.add_argument("--out", help="write the exception report here, as CSV")
+    rc.add_argument("--quiet", action="store_true", help="portfolio summary only")
+    rc.set_defaults(fn=cmd_reconcile)
+
     sub.add_parser("setup", help="what credential the library can see, and how to set one"
                    ).set_defaults(fn=cmd_setup)
     sub.add_parser("doctor", help="check config, credentials and pricing").set_defaults(fn=cmd_doctor)
