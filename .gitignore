@@ -13,8 +13,33 @@ venv/
 *.db
 .DS_Store
 
-# Real filings are fetched, not committed: large, someone else's bytes, and a
-# corpus in git is a corpus nobody re-fetches when it goes stale. The synthetic
-# set IS committed, so CI can prove the harness runs with no credential.
+# Agent runtime state: a graph ledger, memory notes and run records. Local to
+# whoever ran it, and meaningless to anyone else.
+.trellis/
+
+# The benchmark corpus IS committed, deliberately.
+#
+# An earlier version of this file said the opposite — "real filings are fetched,
+# not committed" — while 291 files of real filings shipped in bench/corpus-sec.
+# A repository that documents a rule and visibly breaks it invites the reader to
+# discount every other control it claims, which for this project is the whole
+# asset.
+#
+# The rule is now the practice. 14MB buys something worth more than the bytes:
+# anyone can recompute the published evidence-integrity figure from a clean
+# clone, with no SEC access, no credential and no network. A benchmark nobody
+# can reproduce is a claim, and this project's entire argument is that its
+# claims are checkable.
+#
+# What is and is not here, precisely:
+#   bench/corpus-sec/        committed. 97 filings + extractions, 14MB.
+#   bench/corpus-synthetic/  committed, so CI proves the harness runs with no
+#                            credential. Its provenance line says "synthetic" in
+#                            every report, so it cannot be mistaken for a result.
+#   bench/corpus/            NOT committed. The original twelve-document,
+#                            three-model set is local-only, which means the
+#                            cross-model comparison cannot currently be
+#                            reproduced from a clone. Commit it or stop citing
+#                            it — do not leave it half-stated.
 bench/corpus/*/
 !bench/corpus/.gitkeep
