@@ -194,3 +194,31 @@ def test_omission_and_fabrication_score_the_same_and_that_is_deliberate(tmp_path
     assert k.by_code["FABRICATED_EVIDENCE"] == 2 and s.by_code["FABRICATED_EVIDENCE"] == 0, (
         "and the fabrication count is where the difference is visible"
     )
+
+
+def test_citing_nothing_does_not_score_better_than_citing_badly(tmp_path):
+    """The hole that `effective integrity` was described as not having.
+
+    A field carrying no citation cannot be flagged — there is nothing to check — so
+    counting `emitted - findings` made silence score better than invention: three
+    uncited values scored 33.3% where three fabricated ones scored 0%. A figure
+    advertised as ungameable by omission was gameable by omitting the citations.
+
+    Effective integrity now counts fields that cited something AND survived the
+    check, so an uncited field is worth exactly what it is worth: nothing.
+    """
+    good = {"threshold": {"value": "0",
+                          "quote": '"Threshold" means with respect to each party: USD 0.'}}
+    fabricated = {"threshold": {"value": "0", "quote": "A CLAUSE THAT IS NOT PRESENT"}}
+    uncited = {"threshold": {"value": "0"}}
+
+    scores = score_corpus(load_corpus(build(
+        tmp_path, {"sound": good, "fabricated": fabricated, "uncited": uncited})))
+
+    assert scores["uncited"].effective_integrity == 0.0, "silence scored as support"
+    assert scores["fabricated"].effective_integrity == 0.0
+    assert scores["sound"].effective_integrity > 0.0
+    # Integrity alone still flatters the uncited extractor — which is why the table
+    # prints citation coverage next to it.
+    assert scores["uncited"].evidence_integrity == 1.0
+    assert scores["uncited"].citation_coverage == 0.0

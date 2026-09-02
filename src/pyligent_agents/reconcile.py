@@ -110,6 +110,33 @@ def _numeric(value: Any) -> float | None:
         return None
 
 
+# Everything that is formatting rather than meaning: the number itself, currency
+# codes and symbols, percent, separators and punctuation. What survives is the
+# qualifying prose, and qualifying prose is a term, not a format.
+# A code may sit flush against its amount — "USD250,000", "EUR250000" — so the
+# boundary must admit a following digit as well as a word break. `\b` alone left
+# "USD" behind as a qualifier and made a real match look like a mismatch. The
+# lookahead keeps "EURO" intact, since O is neither a digit nor a boundary.
+_UNIT_NOISE = re.compile(
+    rf"[\d.,%\s$£€¥()\-–—:;]|(?:{'|'.join(_CURRENCY_CODES)})(?=\d|\b)", re.I
+)
+
+
+def _qualifier(value: Any) -> str:
+    """The words a value carries beyond its number and unit.
+
+    `USD 500,000` qualifies nothing. `USD 500,000 per Transaction` qualifies a great
+    deal, and an earlier version compared the two as equal because it read the number
+    and threw the rest away. So did `0` against `0 unless a Ratings Event occurs` —
+    which is the precise distinction ADR 0006 exists to protect, a zero threshold
+    being unconditional in one annex and trigger-dependent in another.
+    """
+    if not isinstance(value, str):
+        return ""
+    text = value.upper().replace("US$", "USD ").replace("A$", "AUD ").replace("C$", "CAD ")
+    return " ".join(_UNIT_NOISE.sub(" ", text).split())
+
+
 def values_agree(ours: Any, theirs: Any) -> bool:
     """Whether two stated values are the same term, formatted differently.
 
@@ -133,6 +160,11 @@ def values_agree(ours: Any, theirs: Any) -> bool:
 
     a, b = _numeric(ours), _numeric(theirs)
     if a is not None and b is not None:
+        # Same number is not the same term when one of them is qualified. Compare the
+        # surviving prose too, so "per Transaction", "basis points" or "unless a
+        # Ratings Event occurs" cannot be normalised out of existence.
+        if _qualifier(ours) != _qualifier(theirs):
+            return False
         return a == b
     if a is None and b is None:
         return str(ours).strip().casefold() == str(theirs).strip().casefold()

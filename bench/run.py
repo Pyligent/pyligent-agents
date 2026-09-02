@@ -46,6 +46,7 @@ class Score:
     findings: int = 0
     expected: int = 0                         # schema fields × documents attempted
     cited: int = 0                            # emitted fields carrying a quote
+    supported: int = 0                        # cited AND unflagged
     by_code: dict[str, int] = None            # type: ignore[assignment]
 
     def __post_init__(self) -> None:
@@ -83,6 +84,13 @@ class Score:
         exists, since integrity alone rewards a model for skipping the fields it
         would fail.
 
+        Counted as `supported / schema`, where a field is supported only if it
+        cited something AND nothing was found against it. An earlier version used
+        `(emitted - findings) / schema`, which had a hole: a field carrying no
+        citation cannot be flagged, so **emitting values with no quotes at all
+        scored better than emitting bad ones** — 33.3% against 0%. A metric
+        described as ungameable by omission was gameable by omitting the citations.
+
         **It deliberately does not distinguish a field that was never attempted from
         one that was answered with an invented citation.** Both leave the schema
         unsupported, and this figure counts supported schema:
@@ -102,7 +110,7 @@ class Score:
         the project's own lifecycle treats abstention as honest and guessing as
         not — reads that column. Do not report effective integrity without it.
         """
-        return 0.0 if not self.expected else (self.fields - self.findings) / self.expected
+        return 0.0 if not self.expected else self.supported / self.expected
 
     def rate(self, code: str) -> float:
         return 0.0 if not self.fields else self.by_code.get(code, 0) / self.fields
@@ -132,8 +140,11 @@ def score_corpus(entries: list[Entry]) -> dict[str, Score]:
             s.documents += 1
             s.fields += report.fields_checked
             s.expected += len(SCHEMA_FIELDS)
-            s.cited += sum(1 for v in extraction.fields.values()
-                           if isinstance(v, dict) and str(v.get("quote") or "").strip())
+            flagged = {f.field for f in report.findings}
+            cited_names = {n for n, v in extraction.fields.items()
+                           if isinstance(v, dict) and str(v.get("quote") or "").strip()}
+            s.cited += len(cited_names)
+            s.supported += len(cited_names - flagged)
             s.findings += len(report.findings)
             for code, n in report.by_code().items():
                 s.by_code[code] = s.by_code.get(code, 0) + n
