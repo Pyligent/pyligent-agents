@@ -162,3 +162,35 @@ def test_citation_coverage_counts_fields_that_cited_anything(tmp_path):
     s = score_corpus(load_corpus(build(tmp_path, {"m": payload})))["m"]
     assert s.fields == 2 and s.cited == 1
     assert abs(s.citation_coverage - 0.5) < 1e-9
+
+
+def test_omission_and_fabrication_score_the_same_and_that_is_deliberate(tmp_path):
+    """Effective integrity counts supported schema, so silence and invention tie.
+
+    A system emitting four sound fields and one emitting six of which two are
+    fabricated both leave four fields supported out of nine. The tie is arithmetic,
+    not an oversight, and it is left in place because a fabrication penalty would
+    require a coefficient nobody can derive — a worse property in a control than a
+    tie a reader can see and reason about.
+
+    The distinction lives in the FABRICATED_EVIDENCE count reported beside it. This
+    test exists so that nobody 'fixes' the tie without also deciding what to do about
+    that.
+    """
+    good = {
+        "threshold": {"value": "0",
+                      "quote": '"Threshold" means with respect to each party: USD 0.'},
+        "net_total": {"value": "824.99", "quote": "Net total            824.99"},
+    }
+    bad = {"value": "999", "quote": "A CLAUSE THAT DOES NOT EXIST ANYWHERE"}
+
+    sound = dict(good)
+    shaky = {**good, "rounding": bad, "party_a": bad}
+    scores = score_corpus(load_corpus(build(tmp_path, {"sound": sound, "shaky": shaky})))
+
+    s, k = scores["sound"], scores["shaky"]
+    assert s.effective_integrity == k.effective_integrity, "the documented tie"
+    assert s.evidence_integrity > k.evidence_integrity, "integrity still separates them"
+    assert k.by_code["FABRICATED_EVIDENCE"] == 2 and s.by_code["FABRICATED_EVIDENCE"] == 0, (
+        "and the fabrication count is where the difference is visible"
+    )

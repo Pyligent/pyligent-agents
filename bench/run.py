@@ -77,8 +77,31 @@ class Score:
 
     @property
     def effective_integrity(self) -> float:
-        """Integrity weighted by coverage: the share of the SCHEMA that is both
-        answered and supported. One number that cannot be gamed by omission."""
+        """Coverage x integrity: the share of the SCHEMA both answered and supported.
+
+        One number that omission cannot inflate — which is the whole reason it
+        exists, since integrity alone rewards a model for skipping the fields it
+        would fail.
+
+        **It deliberately does not distinguish a field that was never attempted from
+        one that was answered with an invented citation.** Both leave the schema
+        unsupported, and this figure counts supported schema:
+
+            4 emitted, 0 fabricated  ->  (4-0)/9 = 44.4%
+            6 emitted, 2 fabricated  ->  (6-2)/9 = 44.4%
+
+        That tie is real and is left in place on purpose. Penalising fabrication
+        harder would mean choosing a coefficient — twice? three times? — and a
+        weighting nobody can derive is a worse property in a control than a tie
+        anyone can see. The strength of this figure is that it is one line of
+        arithmetic a sceptic can recompute.
+
+        The distinction is not lost, only moved: `by_code['FABRICATED_EVIDENCE']` is
+        reported beside it in every table. A reader who cares whether the gap is
+        silence or invention — and for an institution that difference matters, since
+        the project's own lifecycle treats abstention as honest and guessing as
+        not — reads that column. Do not report effective integrity without it.
+        """
         return 0.0 if not self.expected else (self.fields - self.findings) / self.expected
 
     def rate(self, code: str) -> float:

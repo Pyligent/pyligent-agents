@@ -188,6 +188,27 @@ omitting a field you would have failed raises it: on a three-field document, dro
 the one bad field moves integrity from 66.7% to 100%. Coverage is the correction, and
 effective integrity is the figure omission cannot inflate.
 
+
+### What effective integrity deliberately does not distinguish
+
+It counts *supported schema*, so an unattempted field and a fabricated one weigh the
+same:
+
+```
+4 emitted, 0 fabricated  ->  (4-0)/9 = 44.4%
+6 emitted, 2 fabricated  ->  (6-2)/9 = 44.4%
+```
+
+The tie is arithmetic, not an oversight, and it stays. Penalising fabrication harder
+means choosing a coefficient — twice? three times? — and a weighting nobody can derive
+is a worse property in a control than a tie anyone can see. The value of this figure
+is that it is one line of arithmetic a sceptic can recompute.
+
+The distinction is not lost, only moved: the `fabricated` count sits beside it in
+every table. An institution *should* care whether a gap is silence or invention — this
+project's own lifecycle treats abstention as honest and guessing as not — so read the
+two together. **Never report effective integrity without the fabrication count.**
+
 Three things went wrong on the way to those numbers, and all are worth more than them.
 
 ### The metric rewarded timidity
