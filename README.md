@@ -715,5 +715,4 @@ all very welcome. The house rule:
 [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
 · [`SECURITY.md`](SECURITY.md)
 
-Apache-2.0 licensed. The patent grant is the reason: it is what legal and open-source review functions in regulated industries ask for, and it costs
-nothing to give.
+Apache-2.0 licensed. 
