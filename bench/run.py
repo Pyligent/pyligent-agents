@@ -170,19 +170,18 @@ def render(entries: list[Entry], scores: dict[str, Score]) -> str:
             f"{s.by_code.get('SILENT_REPAIR', 0):>8}")
 
     out.append("")
-    out.append("  coverage   share of the schema the extractor attempted at all")
-    out.append("  integrity  of what it DID emit, the share a citation supports")
-    out.append("  effective  the share of the schema both answered and supported —")
-    out.append("             counting only fields that cited something and survived")
-    out.append("             the check. Equals coverage x integrity when every emitted")
-    out.append("             field carries a citation, which is the ordinary case.")
+    out.append("  coverage   share of the schema fields the extractor answered")
+    out.append("  cited      share of answered fields that supplied a citation")
+    out.append("  integrity  share of answered fields whose citation is supported")
+    out.append("  effective  share of schema fields both answered and supported")
     out.append("")
-    out.append("  Read integrity WITH coverage, never alone: omitting a field you")
-    out.append("  would have failed raises integrity and lowers coverage. Effective")
-    out.append("  integrity is the figure that omission cannot inflate.")
+    out.append("  Report integrity together with coverage. Integrity is measured")
+    out.append("  only over the fields an extractor answered, so omitting a field")
+    out.append("  raises it. Effective integrity uses the full schema as its")
+    out.append("  denominator and is not affected by omission.")
     out.append("")
-    out.append("  None of these is accuracy. A quote can be genuine, contain the")
-    out.append("  value, and still be the wrong clause.")
+    out.append("  These figures measure evidential support, not accuracy. A citation")
+    out.append("  may be present and correct and still cite the wrong clause.")
 
     repairs = {n: s for n, s in scores.items() if s.by_code.get("SILENT_REPAIR")}
     if repairs:
@@ -194,9 +193,9 @@ def render(entries: list[Entry], scores: dict[str, Score]) -> str:
                        f"field(s) where the cited text names a different value "
                        f"({s.rate('SILENT_REPAIR'):.1%})")
         out.append("")
-        out.append("  These are the expensive ones. The citation is real, so every")
-        out.append("  check that asks 'did it cite something' passes. The discrepancy")
-        out.append("  the extraction was meant to surface is the thing it removed.")
+        out.append("  Review these first. The citation is present and verbatim, so")
+        out.append("  presence checks pass, but it states a value other than the one")
+        out.append("  extracted. The discrepancy has been removed rather than reported.")
 
     out.append("")
     out.append("CORPUS")

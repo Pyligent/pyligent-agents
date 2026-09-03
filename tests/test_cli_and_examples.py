@@ -344,7 +344,7 @@ def test_reconcile_reports_drift_and_writes_an_exception_report(tmp_path):
                   "--system", str(system), "--out", str(out))
 
     assert "MATERIAL" in result.stdout and "threshold" in result.stdout
-    assert "Nothing was written" in result.stdout
+    assert "read-only" in result.stdout.lower()
     # Exit 1 means "a human should look", so this can gate a scheduled run.
     assert result.returncode == 1, _why(result)
 

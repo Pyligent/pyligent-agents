@@ -229,8 +229,8 @@ def _wrap(text: str, width: int = 68) -> list[str]:
 
 def cmd_steps(_a) -> int:
     _rule("Building a production agent: ten steps", "=")
-    print("Steps 1-3 have no model in them at all. That is the point — most "
-          "agent\nfailures are domain and permission failures wearing an AI costume.")
+    print("Steps 1-3 involve no model. Most agent failures originate in domain\n"
+          "rules and permission boundaries rather than in the model itself.")
     for n, title, why in STEPS:
         print(f"\n  {n:>2}. {title}")
         for line in _wrap(why):
@@ -373,7 +373,7 @@ def cmd_setup(_a) -> int:
 
     _rule("What will happen")
     if cred.present:
-        print("  Real API calls will be made, and billed to that key.")
+        print("  Model calls will be made and billed to that key.")
         print("  Every run is capped: "
               f"turns={s.max_turns}  usd={s.run_budget_usd}  "
               f"seconds={s.run_budget_seconds}")
@@ -382,13 +382,13 @@ def cmd_setup(_a) -> int:
         print()
         print("      PYLIGENT_LIVE_MODEL=1 pytest -m live -s")
     elif s.backend == "anthropic":
-        print("  Nothing will work: the backend is set to `anthropic` but no")
-        print("  credential is configured, so the first call raises.")
+        print("  No model calls can be made: the backend is set to `anthropic`")
+        print("  but no credential is configured, so the first call will fail.")
         print(guidance())
     else:
-        print("  The deterministic backend runs in-process. Every test, demo, eval")
-        print("  and benchmark works with no credential and no spend — that is the")
-        print("  supported way to evaluate this project.")
+        print("  The deterministic backend runs in-process. All tests, demos,")
+        print("  evaluations and benchmarks run without a credential and without")
+        print("  incurring cost.")
         print()
         print("  To use a real model instead:")
         print(guidance())
@@ -583,7 +583,7 @@ def cmd_doctor(_a) -> int:
     print(f"                     cheap={s.cheap_model}")
     for m in (s.orchestrator_model, s.worker_model, s.cheap_model):
         known = m in PRICES
-        print(f"    {m:<24} {'priced' if known else 'UNPRICED — will bill at the dearest tier'}"
+        print(f"    {m:<24} {'priced' if known else 'UNPRICED — billed at the highest known rate'}"
               f"{'' if not known else f'  ${PRICES[m][0]}/${PRICES[m][1]} per MTok'}"
               f"{'' if m not in CONTEXT_WINDOW else f', window {CONTEXT_WINDOW[m]:,}'}")
     print(f"\n  governors          turns={s.max_turns}  usd={s.run_budget_usd}  "
@@ -611,9 +611,9 @@ def cmd_doctor(_a) -> int:
                 if m not in PRICES]
     if unpriced:
         _rule("Action")
-        print(f"  {len(unpriced)} model(s) have no price. They will not look free —")
-        print("  an unknown model is charged at the dearest tier we know about — but")
-        print("  a real number beats a safe guess:\n")
+        print(f"  {len(unpriced)} model(s) have no registered price. Usage is")
+        print("  estimated at the highest known rate, so cost is never understated.")
+        print("  Register the actual rates for accurate figures:\n")
         print("    from pyligent_agents import register_model")
         for m in unpriced:
             print(f'    register_model("{m}", price_in=..., price_out=..., context_window=...)')

@@ -69,9 +69,9 @@ def render(report: Report, source: Source, *, verbose: bool = False) -> str:
         lines.append(f"No findings. {report.fields_checked} field(s) checked "
                      f"against {source.ingested_by}.")
         lines.append("")
-        lines.append("Every value is supported by a citation that appears in the")
-        lines.append("document. This does not mean the values are correct — a real")
-        lines.append("quote can still be the wrong clause.")
+        lines.append("Each value is supported by a citation found in the document.")
+        lines.append("This confirms evidential support, not correctness: a citation")
+        lines.append("may be present and verbatim and still cite the wrong clause.")
         return "\n".join(lines)
 
     order = {CRITICAL: 0}
@@ -97,9 +97,8 @@ def render(report: Report, source: Source, *, verbose: bool = False) -> str:
                  f"field(s): {counts}")
     if any(f.code == "SILENT_REPAIR" for f in report.findings):
         lines.append("")
-        lines.append("SILENT_REPAIR is the one to look at first. The citation is")
-        lines.append("genuine and states a different value — a discrepancy the")
-        lines.append("extraction removed rather than reported.")
+        lines.append("Review SILENT_REPAIR findings first. The citation is present")
+        lines.append("and verbatim, but states a value other than the one extracted.")
     return "\n".join(lines)
 
 

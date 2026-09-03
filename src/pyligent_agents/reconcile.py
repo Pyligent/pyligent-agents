@@ -325,7 +325,7 @@ def render(rec: Reconciliation) -> str:
                f"({len(rec.material)} material)")
     if rec.unverified:
         out.append(f"  unverified       {len(rec.unverified)}  "
-                   f"— citation did not check out; read the document")
+                   f"(citation not confirmed; requires manual review)")
     out.append("")
 
     for r in sorted(rec.discrepancies, key=lambda r: not r.material):
@@ -341,18 +341,18 @@ def render(rec: Reconciliation) -> str:
     for r in rec.unverified:
         out.append(f"── UNVERIFIED · {r.field} " + "─" * max(3, 42 - len(r.field)))
         out.append(f"  {r.reason}")
-        out.append("  No exception raised: a citation that does not check out cannot")
-        out.append("  support a claim that the system is wrong.")
+        out.append("  No exception raised. A discrepancy is reported only when the")
+        out.append("  supporting citation is confirmed in the document.")
         out.append("")
 
     for note in rec.notes:
         out.append(f"  note: {note}")
     if not rec.results:
-        out.append("  NOTHING COMPARED — no field the system holds was extracted from")
-        out.append("  this document. This is not agreement; it is absence of evidence.")
+        out.append("  No fields compared. None of the stored terms was present in")
+        out.append("  the extraction, so no conclusion can be drawn for this document.")
     elif rec.agrees:
         out.append(f"  The system matches the agreement on all {len(rec.results)} "
                    "field(s) compared.")
     out.append("")
-    out.append("  Nothing was written. This process reads only.")
+    out.append("  No data was written. This process is read-only.")
     return "\n".join(out)

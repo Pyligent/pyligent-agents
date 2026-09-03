@@ -95,12 +95,12 @@ def test_comparing_nothing_is_not_agreement():
     rec = reconcile(DOC, {}, {"threshold": 0})
     assert not rec.results
     assert not rec.agrees, "claimed agreement having compared nothing"
-    assert "NOTHING COMPARED" in render(rec)
+    assert "No fields compared" in render(rec)
 
 
 def test_the_report_states_that_nothing_was_written():
     """A shadow run's core promise, in the artifact a reviewer reads."""
-    assert "Nothing was written" in render(reconcile(DOC, _fields(), {"threshold": 0}))
+    assert "read-only" in render(reconcile(DOC, _fields(), {"threshold": 0})).lower()
 
 
 def test_discrepancies_carry_impact_and_are_ordered_material_first():

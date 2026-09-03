@@ -98,7 +98,7 @@ def test_the_table_states_that_integrity_is_not_accuracy(tmp_path):
                                                    "quote": "Net total            824.99"}}}})
     entries = load_corpus(root)
     out = render(entries, score_corpus(entries))
-    assert "None of these is accuracy" in out
+    assert "not accuracy" in out
 
 
 def test_provenance_is_shown_so_synthetic_data_cannot_pass_as_real(tmp_path):

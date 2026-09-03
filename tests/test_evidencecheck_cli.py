@@ -112,7 +112,7 @@ def test_human_output_names_the_document_position(doc, tmp_path, capsys):
     main(["check", "--source", str(doc), "--extraction", str(ex)])
     out = capsys.readouterr().out
     assert "table t1, cell r1c2" in out
-    assert "SILENT_REPAIR is the one to look at first" in out
+    assert "Review SILENT_REPAIR findings first" in out
 
 
 def test_the_common_case_needs_no_subcommand(doc, tmp_path, capsys):
@@ -141,4 +141,4 @@ def test_a_clean_report_says_what_it_does_not_prove(doc, tmp_path, capsys):
     ex = write(tmp_path, {"base_currency": {
         "value": "USD", "quote": '"Base Currency" means United States Dollars (USD).'}})
     main(["check", "--source", str(doc), "--extraction", str(ex)])
-    assert "does not mean the values are correct" in capsys.readouterr().out
+    assert "not correctness" in capsys.readouterr().out
