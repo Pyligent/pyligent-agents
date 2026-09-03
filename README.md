@@ -15,15 +15,27 @@ wrong, and nothing in the margin system looks broken.
 This repository reads the agreement, derives the constraints, and shows you the
 disagreements with the clause that settles each one. It writes nothing.
 
+**To use it on your own documents:**
+
+```bash
+pip install pyligent-agents
+evidence-check contract.pdf extraction.json
+```
+
+**To see it work, or to reproduce the published figures:**
+
 ```bash
 git clone https://github.com/Pyligent/pyligent-agents
 cd pyligent-agents
-python examples/run.py shadow --drift
+python3 examples/run.py shadow --drift
 ```
 
-That command needs no installation and no API key. **New here? Start with
-[docs/GETTING-STARTED.md](docs/GETTING-STARTED.md)** — five minutes to a first
-result, then a path through the rest. [docs/](docs/) is indexed by task.
+The second needs no installation. Neither needs an API key. The package ships the
+code; the worked examples and the 97-document benchmark corpus live here in the
+repository, because a benchmark you cannot re-run is not evidence.
+
+**New here? Start with [docs/GETTING-STARTED.md](docs/GETTING-STARTED.md).**
+[docs/](docs/) is indexed by task.
 
 ```
 ── MATERIAL · threshold ───────────────────────────────────
