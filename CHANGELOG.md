@@ -95,7 +95,7 @@ All notable changes to this project are documented here. This project follows
   record carrying its source, licence, content hash, and the classifier evidence
   that admitted it.
 - **First scored run.** `gemini-3.6-flash`, 97 documents: 74.9% coverage, 99.5%
-  integrity on what it emitted, **74.6% effective integrity** — the share of the
+  integrity on what it emitted, **74.6% effective evidence integrity** — the share of the
   schema both answered and supported. The integrity figure must not be quoted
   alone; see the coverage note below. Both surviving findings are quotes stitched
   across a page break — real fragments joined over page furniture — rather than

@@ -178,7 +178,7 @@ PYLIGENT_LIVE_MODEL=1 pytest -m live -s
 |---|---|
 | coverage — share of the schema attempted | 74.9% |
 | evidence integrity — of what it emitted | 99.5% |
-| **effective integrity — answered *and* supported** | **74.6%** |
+| **effective evidence integrity — answered *and* supported** | **74.6%** |
 | fabricated | 2 |
 | silent repair | 0 |
 | empty value | 1 |
@@ -186,10 +186,10 @@ PYLIGENT_LIVE_MODEL=1 pytest -m live -s
 **Do not quote the 99.5% alone.** Its denominator is what the model chose to emit, so
 omitting a field you would have failed raises it: on a three-field document, dropping
 the one bad field moves integrity from 66.7% to 100%. Coverage is the correction, and
-effective integrity is the figure omission cannot inflate.
+effective evidence integrity is the figure omission cannot inflate.
 
 
-### What effective integrity deliberately does not distinguish
+### What effective evidence integrity deliberately does not distinguish
 
 It counts *supported schema*, so an unattempted field and a fabricated one weigh the
 same:
@@ -207,7 +207,7 @@ is that it is one line of arithmetic a sceptic can recompute.
 The distinction is not lost, only moved: the `fabricated` count sits beside it in
 every table. An institution *should* care whether a gap is silence or invention — this
 project's own lifecycle treats abstention as honest and guessing as not — so read the
-two together. **Never report effective integrity without the fabrication count.**
+two together. **Never report effective evidence integrity without the fabrication count.**
 
 Three things went wrong on the way to those numbers, and all are worth more than them.
 
@@ -217,10 +217,10 @@ Reported alone, evidence integrity is gameable: its denominator is the set of fi
 the extractor *chose* to answer. A model that attempts only the easy fields outscores
 one that attempts the hard ones. Found by an external reviewer, not by us.
 
-`run.py` now reports coverage, citation coverage, integrity and effective integrity,
+`run.py` now reports coverage, citation coverage, integrity and effective evidence integrity,
 ordered by the last. It changes the ranking, not just the presentation: on the
 ten-document intersection all three models cover, `claude-sonnet-5` leads on integrity
-(100.0%) while `gemini-2.5-pro` leads on effective integrity (80.0% against 77.8%),
+(100.0%) while `gemini-2.5-pro` leads on effective evidence integrity (80.0% against 77.8%),
 because it attempted 86.7% of the schema against 77.8%.
 
 ### The checker accused correct work

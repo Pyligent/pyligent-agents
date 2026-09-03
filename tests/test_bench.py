@@ -145,12 +145,31 @@ def test_omitting_a_field_you_would_fail_raises_integrity_but_lowers_coverage(tm
     assert b.expected == t_.expected == len(SCHEMA_FIELDS)
 
 
-def test_effective_integrity_is_coverage_times_integrity(tmp_path):
-    payload = {"fields": {
-        "threshold": {"value": "0",
-                      "quote": '"Threshold" means with respect to each party: USD 0.'}}}
-    s = score_corpus(load_corpus(build(tmp_path, {"m": payload})))["m"]
+def test_effective_integrity_equals_coverage_times_integrity_where_fields_are_cited(tmp_path):
+    """The identity holds whenever emitted fields carry citations — and only then.
+
+    Effective integrity is defined as supported/schema, not as the product. The two
+    coincide in every ordinary case, which makes the product a fair way to explain
+    it, but they part company in the one case the definition exists to handle: when
+    NO field cites anything, findings are suppressed by the report-level exception,
+    integrity reads 1.0, and the product would claim support that was never checked.
+
+    Asserting only the happy case would let someone "simplify" the implementation to
+    the product and reopen the hole, so both are asserted here.
+    """
+    cited = {"fields": {"threshold": {
+        "value": "0",
+        "quote": '"Threshold" means with respect to each party: USD 0.'}}}
+    uncited = {"fields": {"threshold": {"value": "0"},
+                          "net_total": {"value": "824.99"}}}
+    scores = score_corpus(load_corpus(build(tmp_path, {"m": cited, "u": uncited})))
+
+    s = scores["m"]
     assert abs(s.effective_integrity - s.coverage * s.evidence_integrity) < 1e-9
+
+    u = scores["u"]
+    assert u.coverage * u.evidence_integrity > 0, "the product would claim support"
+    assert u.effective_integrity == 0.0, "supported/schema correctly claims none"
 
 
 def test_citation_coverage_counts_fields_that_cited_anything(tmp_path):

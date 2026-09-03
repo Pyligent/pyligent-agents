@@ -108,7 +108,7 @@ class Score:
         reported beside it in every table. A reader who cares whether the gap is
         silence or invention — and for an institution that difference matters, since
         the project's own lifecycle treats abstention as honest and guessing as
-        not — reads that column. Do not report effective integrity without it.
+        not — reads that column. Do not report effective evidence integrity without it.
         """
         return 0.0 if not self.expected else self.supported / self.expected
 
@@ -161,7 +161,7 @@ def render(entries: list[Entry], scores: dict[str, Score]) -> str:
     out.append(f"  {'extractor':<20}{'coverage':>10}{'cited':>8}{'integrity':>11}"
                f"{'effective':>11}{'fabricated':>12}{'repair':>8}")
     out.append("  " + "-" * 76)
-    # Ordered by effective integrity: the one figure omission cannot inflate.
+    # Ordered by effective evidence integrity: the one figure omission cannot inflate.
     for s in sorted(scores.values(), key=lambda x: -x.effective_integrity):
         out.append(
             f"  {s.extractor:<20}{s.coverage:>9.1%}{s.citation_coverage:>8.0%}"
