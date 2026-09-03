@@ -142,3 +142,20 @@ def test_a_clean_report_says_what_it_does_not_prove(doc, tmp_path, capsys):
         "value": "USD", "quote": '"Base Currency" means United States Dollars (USD).'}})
     main(["check", "--source", str(doc), "--extraction", str(ex)])
     assert "not correctness" in capsys.readouterr().out
+
+
+def test_help_states_what_the_exit_codes_mean(capsys):
+    """A caller who tests only for non-zero treats findings as a broken run.
+
+    Exit 1 (findings) and exit 2 (the run could not happen) are different events,
+    and a CI script needs to tell them apart. Stating the codes only inside a flag
+    description was not enough: it says the exit code exists without saying what it
+    means.
+    """
+    with pytest.raises(SystemExit):
+        main(["--help"])
+    out = capsys.readouterr().out
+    assert "Exit codes:" in out
+    for code in ("0", "1", "2"):
+        assert f"  {code}   " in out, f"exit code {code} not documented"
+    assert "not a failure" in out

@@ -394,3 +394,13 @@ def test_reconcile_refuses_to_pick_between_duplicate_export_rows(tmp_path):
     assert "appears more than once" in result.stderr
     assert "MATERIAL" not in result.stdout, "reported a finding from an ambiguous row"
     assert result.returncode == 2, _why(result)
+
+
+def test_reconcile_help_states_what_the_exit_codes_mean():
+    """Same contract as evidence-check: a scheduled job must distinguish
+    'we found drift' from 'the export moved'."""
+    out = _cli("reconcile", "--help").stdout
+    assert "Exit codes:" in out
+    for code in ("0", "1", "2"):
+        assert f"  {code}   " in out, f"exit code {code} not documented"
+    assert "not a failure" in out

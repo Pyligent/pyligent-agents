@@ -217,4 +217,20 @@ functions. [CAPABILITIES.md](CAPABILITIES.md) describes the interface.
 
 **Why did a command exit non-zero?** For the checking commands, `1` means findings
 that need a person and `2` means the run could not happen. A non-zero exit is not
-necessarily an error.
+necessarily an error. `--help` states the codes for each command.
+
+In a script, distinguish them:
+
+```bash
+evidence-check contract.pdf extraction.json
+case $? in
+  0) echo "clean" ;;
+  1) echo "findings — review them" ;;
+  2) echo "the run failed — check the inputs" ; exit 1 ;;
+esac
+```
+
+Two things that will bite you in a shell. `$?` after a pipeline reports the *last*
+command, so `cmd | tail` gives you `tail`'s status, not `cmd`'s — capture it before
+piping. And testing `if ! cmd` treats findings as a failure, which is the opposite of
+what you usually want from a check.

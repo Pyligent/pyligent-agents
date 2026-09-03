@@ -710,8 +710,19 @@ def main(argv: list[str] | None = None) -> int:
     sub = p.add_subparsers(dest="command", required=True)
 
     sub.add_parser("steps", help="the ten build steps").set_defaults(fn=cmd_steps)
-    rc = sub.add_parser("reconcile",
-                        help="compare signed agreements against stored terms; writes nothing")
+    rc = sub.add_parser(
+        "reconcile",
+        help="compare signed agreements against stored terms; writes nothing",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=(
+            "Exit codes:\n"
+            "  0   no material discrepancies\n"
+            "  1   material discrepancies a person should review\n"
+            "  2   the run could not happen (missing export, unreadable input)\n"
+            "\n"
+            "Exit 1 is a result, not a failure. A scheduled job that tests only for\n"
+            "non-zero cannot tell 'we found drift' from 'the export moved'.\n"
+        ))
     rc.add_argument("--documents", required=True, help="a document, or a directory of them")
     rc.add_argument("--extractions", help="extraction JSON, or a directory matched by filename stem")
     rc.add_argument("--system", required=True, help="stored terms: CSV export or JSON")

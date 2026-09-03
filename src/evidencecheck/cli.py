@@ -145,6 +145,19 @@ def cmd_check(a: argparse.Namespace) -> int:
     return 0 if report.ok else 1
 
 
+# Stated in --help because a caller who tests only for non-zero will treat findings
+# as a broken run. The two are different events and scripts must be able to tell them
+# apart.
+EXIT_CODES = """Exit codes:
+  0   no findings
+  1   findings that need review
+  2   the run could not happen (missing file, unreadable input)
+
+Exit 1 is a result, not a failure. In a script, treat 2 as a broken run
+and 1 as findings to act on. Testing only for non-zero conflates them.
+"""
+
+
 def main(argv: list[str] | None = None) -> int:
     """Positional in the common case; the subcommand stays for scripts.
 
@@ -158,6 +171,8 @@ def main(argv: list[str] | None = None) -> int:
         prog="evidence-check",
         usage="evidence-check SOURCE EXTRACTION [--json] [--fail-on {critical,any,never}]",
         description="Which values in this extraction does the document not support?",
+        epilog=EXIT_CODES,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     p.add_argument("--version", action="version", version=f"evidence-check {__version__}")
     p.add_argument("source", nargs="?", help="the document: .txt, .html or .pdf")
