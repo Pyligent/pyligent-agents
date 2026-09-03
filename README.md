@@ -16,8 +16,14 @@ This repository reads the agreement, derives the constraints, and shows you the
 disagreements with the clause that settles each one. It writes nothing.
 
 ```bash
+git clone https://github.com/Pyligent/pyligent-agents
+cd pyligent-agents
 python examples/run.py shadow --drift
 ```
+
+That command needs no installation and no API key. **New here? Start with
+[docs/GETTING-STARTED.md](docs/GETTING-STARTED.md)** — five minutes to a first
+result, then a path through the rest. [docs/](docs/) is indexed by task.
 
 ```
 ── MATERIAL · threshold ───────────────────────────────────
