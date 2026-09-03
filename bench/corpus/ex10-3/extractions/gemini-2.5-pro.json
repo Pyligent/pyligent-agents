@@ -1,0 +1,54 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "USD",
+      "evidence_quote": "For purposes of calculating Exposure, USD shall be the Base and Termination Currency."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "Cash denominated in United States Dollars (\u201cUSD\u201d)"
+    },
+    "threshold": {
+      "value": "USD 0",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A: USD 0 (zero)."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A: USD 100,000;"
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest multiple of USD 10,000.",
+      "evidence_quote": "\u201cRounding\u201d means the Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest multiple of USD 10,000."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "FalconX Bravo, Inc.",
+      "evidence_quote": "FalconX Bravo, Inc.\n\n(\u201cParty A\u201d),"
+    },
+    "party_b": {
+      "value": "Pineapple Financial Inc.",
+      "evidence_quote": "Pineapple Financial Inc.\n\n(\u201cParty B\u201d)"
+    },
+    "valuation_percentage": {
+      "value": {
+        "Variation Margin": {
+          "Cash denominated in United States Dollars (\u201cUSD\u201d)": "100%",
+          "Securities (as defined below)": "99%"
+        },
+        "Non-Reg Initial Margin (Independent Amount)": {
+          "Cash denominated in United States Dollars (\u201cUSD\u201d)": "100%",
+          "USDC (\u201cUSDC\u201d)": "100%",
+          "Bitcoin (\u201cBTC\u201d)": "83.33%",
+          "Ethereum (\u201cETH\u201d)": "83.33%",
+          "Solana (\u201cSOL\u201d)": "70%",
+          "Securities (as defined below)": "99%",
+          "As agreed by the parties from time to time": "As determined by Party A"
+        }
+      },
+      "evidence_quote": "(ii) Eligible Collateral. The following items listed below as an \u201cAsset\u201d will qualify as \u201cEligible\nCollateral\u201d:\n\nVariation Margin\n\nAsset\u00a0\n    Valuation\n    Percentage\u00a0\n\n    Cash denominated\n    in United States Dollars (\u201cUSD\u201d)\u00a0\n    \u00a0100%\n\n    Securities (as defined below)\u00a0\n    \u00a099%\n\nNon-Reg\nInitial Margin (Independent Amount)\n\nThe\nfollowing will constitute Eligible Collateral for purposes of the Portfolio IA Requirement or a Transaction Independent Amount denominated\nin the Confirmation in USD\n\nAsset\u00a0\n    Valuation\n    Percentage\u00a0\n\n    Cash denominated\n    in United States Dollars (\u201cUSD\u201d)\u00a0\n    \u00a0100%\n\n    USDC (\u201cUSDC\u201d)\u00a0\n    \u00a0100%\n\n    Bitcoin (\u201cBTC\u201d)\u00a0\n    \u00a083.33%\n\n    Ethereum (\u201cETH\u201d)\u00a0\n    \u00a083.33%\n\n    Solana (\u201cSOL\u201d)\u00a0\n    \u00a070%\n\n    Securities (as defined below)\u00a0\n    \u00a099%\n\n    As agreed by the parties from time to time\u00a0\n    \u00a0As\n                                            determined by Party A"
+    }
+  }
+}

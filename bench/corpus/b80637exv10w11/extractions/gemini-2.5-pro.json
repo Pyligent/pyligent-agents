@@ -1,0 +1,40 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "USD",
+      "evidence_quote": "Cash: U.S. Dollars in depositary account form."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "Cash: U.S. Dollars in depositary account form."
+    },
+    "threshold": {
+      "value": "For Party A, the threshold is tiered based on credit rating, ranging from $0 to $40,000,000. For Party B, the threshold is $9,000,000.",
+      "evidence_quote": "\u201cThreshold\u201d means, for Party A: on any date of determination, (a) the amount\nset forth below opposite the lower of Party A\u2019s Credit Rating on that date, or (b) zero\nif on that date Party A does not have a Credit Rating or an Event of Default exists\nwith respect to Party A:\n\nThreshold\nCredit Rating (S&P)\nCredit Rating (Moody\u2019s)\n\n$40,000,000\nAAA\nAaa\n\n$30,000,000\nAA-, AA and AA+\nAa3, Aa2 and Aa1\n\n$20,000,000\nA and A+\nA2 and A1\n\n$15,000,000\nA-\nA3\n\n$10,000,000\nBBB+\nBaa1\n\nzero\nBBB or lower-\nBaa2 or lower\n\n\u201cThreshold\u201d means, for Party B: $9,000,000; provided that if an Event of Default\nexists with respect Party B, the Threshold shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": 100000,
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means, for a party on any date of determination,\n$100,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will be rounded down to the nearest integral multiple of $100,000.",
+      "evidence_quote": "Rounding: The Delivery Amount and the Return Amount will be rounded down to\nthe nearest integral multiple of $100,000."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "WACHOVIA BANK, NATIONAL ASSOCIATION",
+      "evidence_quote": "WACHOVIA BANK, NATIONAL ASSOCIATION (\u201cParty A\u201d)"
+    },
+    "party_b": {
+      "value": "WRIGHT EXPRESS CORPORATION",
+      "evidence_quote": "WRIGHT EXPRESS CORPORATION (\u201cParty B\u201d)"
+    },
+    "valuation_percentage": {
+      "value": "Cash: 100%; Treasury Bills/Notes/Bonds: 98%; Agency Securities/GNMA Certificates: 92%; Letters of Credit: 100% or 0% depending on conditions.",
+      "evidence_quote": "Valuation\nPercentage\n\n(A)\nCash: U.S. Dollars in depositary account form.\n100\n%\n\n(B)\nTreasury Bills: negotiable debt\nobligations issued by the U.S.\nTreasury Department having an\noriginal maturity at issuance of\nnot more than one year.\n98\n%\n\n(C)\nTreasury Notes: negotiable debt\nobligations issued by the U.S.\nTreasury Department having an\noriginal maturity at issuance of\nmore than one year but not more\nthan 10 years.\n98\n%\n\n(D)\nTreasury Bonds: negotiable debt\nobligations issued by the U.S.\nTreasury Department having an\noriginal maturity at issuance of\nmore than 10 years but not more\nthan 30 years.\n98\n%\n\n(E)\nAgency Securities: negotiable debt\nobligations of the Federal National\nMortgage Association (FNMA), Federal\nHome Loan Mortgage Corporation\n(FHLMC) having a remaining maturity\nof not more than 30 years.\n92\n%\n\n(F)\nGNMA Certificates. Mortgage-backed\npass-through certificates issued\nby private entities, evidencing\nundivided interests in pools of\nfirst lien mortgages or deeds of\ntrust on single family residences,\nguaranteed by the Government\nNational Mortgage Association\n(GNMA) with the full faith and\ncredit of the United States, and\nhaving an original maturity at\nissuance of not more than 30\nyears.\n92\n%\n\nValuation\nPercentage\n\nLetters of Credit\n100% unless either (i) a\nLetter of Credit Default shall\napply with respect to such\nLetter of Credit or (ii)\ntwenty (20) or fewer Local\nBusiness Days remain prior to\nthe expiration of such Letter\nof Credit, in which case the\nValuation Percentage shall be\n0."
+    }
+  }
+}

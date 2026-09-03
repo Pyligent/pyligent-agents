@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "threshold": {
+      "value": "Party A: infinity (subject to conditions); Party B: not specified (0 by default)",
+      "evidence_quote": "\u201cThreshold\u201d\n                  means, with respect to Party A, infinity, provided that if a Ratings\n                  Event\n                  or Collateralization Event has occurred and is continuing, the\n                  Threshold\n                  with respect to Party A shall be zero"
+    },
+    "minimum_transfer_amount": {
+      "value": "$100,000 (or $50,000 if aggregate Principal Balance of Certificates rated by S&P ceases to be more than $50,000,000)",
+      "evidence_quote": "\u201cMinimum\n                  Transfer Amount\u201d means,\n                  with respect to a party, $100,000; provided, however, that if the\n                  aggregate Principal Balance of the Certificates rated by S&P ceases to\n                  be more than $50,000,000, then the Minimum Transfer Amount shall\n                  mean\n                  $50,000."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to nearest $1,000; Return Amount rounded down to nearest $1,000",
+      "evidence_quote": "The\n                  Delivery Amount will be rounded up to the nearest integral multiple\n                  of\n                  $1,000 and the Return Amount will be rounded down to the nearest\n                  integral\n                  multiple of $1,000."
+    },
+    "party_a": {
+      "value": "Lehman Brothers Special Financing Inc.",
+      "evidence_quote": "LEHMAN\n                BROTHERS\nSPECIAL\n                FINANCING INC."
+    },
+    "party_b": {
+      "value": "The Bank of New York, not in its individual or corporate capacity but solely as Swap Contract Administrator and Corridor Contract Administrator for CWABS Asset-Backed Certificates Trust 2007-6",
+      "evidence_quote": "THE\n                BANK OF NEW YORK, not in its individual or corporate capacity but\n                solely\n                as Swap Contract Administrator and Corridor Contract Administrator\n                for\n                CWABS Asset-Backed Certificates Trust\n                2007-6"
+    },
+    "valuation_percentage": {
+      "value": "Percentage specified in Paragraph 13 (varies by collateral type, e.g., Cash in USD 100%; Treasury <1yr 98.5% S&P; Treasury 1-10yr 89.9% S&P; Treasury >10yr 83.9% S&P)",
+      "evidence_quote": "\u201cValuation\n                  Percentage\u201d means, for any item\n                  of Eligible Collateral, the\npercentage specified in Paragraph\n      13."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "fields": {
+    "minimum_transfer_amount": {
+      "value": "$100,000",
+      "evidence_quote": "\"Minimum Transfer Amount\" means, with respect to a party, $100,000; provided, however, that if the aggregate Principal Balance of the Certificates rated by S&P ceases to be more than $50,000,000, then the Minimum Transfer Amount shall mean $50,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up to the nearest integral multiple of $1,000 and the Return Amount will be rounded down to the nearest integral multiple of $1,000.",
+      "evidence_quote": "\"Rounding\".  The Delivery Amount will be rounded up to the nearest integral multiple of $1,000 and the Return Amount will be rounded down to the nearest integral multiple of $1,000."
+    },
+    "party_a": {
+      "value": "LEHMAN BROTHERS SPECIAL FINANCING INC.",
+      "evidence_quote": "LEHMAN BROTHERS SPECIAL FINANCING INC."
+    },
+    "party_b": {
+      "value": "THE BANK OF NEW YORK, not in its individual or corporate capacity but solely as Swap Contract Administrator and Corridor Contract Administrator for CWABS Asset-Backed Certificates Trust 2007-6",
+      "evidence_quote": "THE BANK OF NEW YORK, not in its individual or corporate capacity but solely as Swap Contract Administrator and Corridor Contract Administrator for CWABS Asset-Backed Certificates Trust 2007-6"
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "Cash in USD. 100% 100% 100%"
+    }
+  }
+}

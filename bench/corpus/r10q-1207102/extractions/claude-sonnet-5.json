@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "threshold": {
+      "value": "Party A: infinite; Party B: zero",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A:  infinite"
+    },
+    "minimum_transfer_amount": {
+      "value": "$750,000",
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Party A or Party B:  $750,000"
+    },
+    "rounding": {
+      "value": "Rounded up and down to nearest integral multiple of USD10,000",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up and down, in each case, to the nearest integral multiple of USD10,000, respectively."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "BARCLAYS BANK PLC",
+      "evidence_quote": "BARCLAYS BANK PLC"
+    },
+    "party_b": {
+      "value": "LEGG MASON, INC.",
+      "evidence_quote": "LEGG MASON, INC."
+    },
+    "valuation_percentage": {
+      "value": "Cash 100%; Treasury Securities (<=2yr) 99.25%; (2-5yr) 98.5%; (5-10yr) 97.25%; (>10yr) 97%",
+      "evidence_quote": "Cash\n[ X ]\n   100%"
+    }
+  }
+}

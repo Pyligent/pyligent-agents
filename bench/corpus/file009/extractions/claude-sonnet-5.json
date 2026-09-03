@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "threshold": {
+      "value": "If a Collateralization Event shall have occurred and be continuing, zero; otherwise, infinity.",
+      "evidence_quote": "\"THRESHOLD\" shall mean, if a Collateralization Event shall have occurred and be continuing, zero; otherwise, infinity."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000",
+      "evidence_quote": "shall be USD 100,000."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to nearest $10,000; Return Amount rounded down to nearest $10,000; Return Amount less than $10,000 rounded to zero.",
+      "evidence_quote": "If the Delivery Amount is a positive number, but not an integral multiple of $10,000, it will be rounded up to the nearest integral multiple of $10,000; if the Return Amount is a positive number, but not an integral multiple of $10,000, it will be rounded down to the nearest integral multiple of $10,000; if the Return Amount is less than $10,000, the Return Amount will be rounded to zero."
+    },
+    "party_a": {
+      "value": "Citibank, N.A.",
+      "evidence_quote": "CITIBANK, N.A."
+    },
+    "party_b": {
+      "value": "CD 2005-CD1 Commercial Mortgage Trust",
+      "evidence_quote": "CD 2005-CD1 COMMERCIAL MORTGAGE TRUST"
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "100%"
+    }
+  }
+}

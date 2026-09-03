@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "for the avoidance of doubt, all Eligible Collateral to be denominated in USD"
+    },
+    "threshold": {
+      "value": "Party A: zero or infinity depending on Collateral Event/S&P Required Ratings Downgrade Event; Party B: infinity",
+      "evidence_quote": "\u201cThreshold\u201d means, with respect to Party A and any Valuation Date, zero if (i) a Collateral Event has occurred and has been continuing (x) for at least 30 days or (y) since this Annex was executed, or (ii) a S&P Required Ratings Downgrade Event has occurred and is continuing; otherwise, infinity."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000 (USD 50,000 if aggregate Certificate Principal Balance and note principal balance ceases to exceed USD 50,000,000)",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means USD 100,000 with respect to Party A and Party B; provided, however, that if the aggregate Certificate Principal Balance and note principal balance of Certificates and Notes rated by S&P ceases to be more than USD 50,000,000, the \u201cMinimum Transfer Amount\u201d shall be USD 50,000."
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up to nearest USD 10,000; Return Amount rounded down to nearest USD 1,000",
+      "evidence_quote": "Rounding: The Delivery Amount will be rounded up to the nearest integral multiple of USD 10,000. The Return Amount will be rounded down to the nearest integral multiple of USD 1,000."
+    },
+    "governing_law": {
+      "value": "New York",
+      "evidence_quote": "ISDA Credit Support Annex (Bilateral Form - ISDA Agreements Subject to New York Law Only version) as published and copyrighted in 1994 by the International Swaps and Derivatives Association, Inc."
+    },
+    "party_a": {
+      "value": "Swiss Re Financial Products Corporation",
+      "evidence_quote": "Swiss Re Financial Products Corporation (hereinafter referred to as \u201cParty A\u201d or \u201cPledgor\u201d)"
+    },
+    "party_b": {
+      "value": "HSBC Bank USA, National Association, not in its individual capacity but solely as trustee on behalf of the Supplemental Interest Trust for Deutsche Alt-A Securities Mortgage Loan Trust, Series 2007-OA1, Mortgage Pass-Through Certificates, Series 2007-OA1",
+      "evidence_quote": "HSBC Bank USA, National Association, not in its individual capacity but solely as trustee on behalf of the Supplemental Interest Trust for Deutsche Alt-A Securities Mortgage Loan Trust, Series 2007-OA1, Mortgage Pass-Through Certificates, Series 2007-OA1 (the \u201cTrustee\u201d) (hereinafter referred to as \u201cParty B\u201d or \u201cSecured Party\u201d)."
+    },
+    "valuation_percentage": {
+      "value": "S&P Valuation Percentage, Moody's First Trigger Valuation Percentage, or Moody's Second Trigger Valuation Percentage for such Eligible Collateral or Posted Collateral, as set forth in Paragraph 13(b)(ii)/Schedule A",
+      "evidence_quote": "\u201cValuation Percentage\u201d shall mean, for purposes of determining the S&P Value, the Moody\u2019s First Trigger Value, or the Moody\u2019s Second Trigger Value with respect to any Eligible Collateral or Posted Collateral, the applicable S&P Valuation Percentage, Moody\u2019s First Trigger Valuation Percentage, or Moody\u2019s Second Trigger Valuation Percentage for such Eligible Collateral or Posted Collateral, respectively, in each case as set forth in Paragraph 13(b)(ii)."
+    }
+  }
+}

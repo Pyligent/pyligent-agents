@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "New York",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "FalconX Bravo, Inc.",
+      "evidence_quote": "FalconX Bravo, Inc.\n\n(\u201cParty A\u201d),"
+    },
+    "party_b": {
+      "value": "Pineapple Financial Inc.",
+      "evidence_quote": "Pineapple Financial Inc.\n\n(\u201cParty B\u201d)"
+    },
+    "threshold": {
+      "value": "USD 0 (zero)",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party A: USD 0 (zero).\n\n\u201cThreshold\u201d means with respect to Party B: USD 0 (zero)."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party A: USD 100,000; and\n\n\u201cMinimum Transfer Amount\u201d means with respect to Party B: USD 100,000"
+    },
+    "rounding": {
+      "value": "Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest multiple of USD 10,000",
+      "evidence_quote": "\u201cRounding\u201d means the Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest multiple of USD 10,000."
+    },
+    "valuation_percentage": {
+      "value": "Variation Margin Cash - 100%; Securities - 99% | Non-Reg Initial Margin Cash - 100%; USDC - 100%; BTC - 83.33%; ETH - 83.33%; SOL - 70%; Securities - 99%",
+      "evidence_quote": "Variation Margin\n\n\u00a0\n\nAsset\u00a0\nValuation\nPercentage\u00a0\n\nCash denominated\nin United States Dollars (\u201cUSD\u201d)\u00a0\n\u00a0100%\n\nSecurities (as defined below)\u00a0\n\u00a099%\n\n\nNon-Reg\nInitial Margin (Independent Amount)\n\n\u00a0\n\nThe\nfollowing will constitute Eligible Collateral for purposes of the Portfolio IA Requirement or a Transaction Independent Amount denominated\nin the Confirmation in USD\n\n\u00a0\n\nAsset\u00a0\nValuation\nPercentage\u00a0\n\nCash denominated\nin United States Dollars (\u201cUSD\u201d)\u00a0\n\u00a0100%\n\nUSDC (\u201cUSDC\u201d)\u00a0\n\u00a0100%\n\nBitcoin (\u201cBTC\u201d)\u00a0\n\u00a083.33%\n\nEthereum (\u201cETH\u201d)\u00a0\n\u00a083.33%\n\nSolana (\u201cSOL\u201d)\u00a0\n\u00a070%\n\nSecurities (as defined below)\u00a0\n\u00a099%"
+    }
+  }
+}

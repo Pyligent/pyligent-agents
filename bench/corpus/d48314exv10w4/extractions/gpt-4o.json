@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "New York",
+      "evidence_quote": "This Credit Support Annex is a Security Agreement under the New York UCC."
+    },
+    "party_a": {
+      "value": "BANK OF AMERICA, N.A.",
+      "evidence_quote": "BANK OF AMERICA, N.A. and\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 CENTEX CORPORATION (\"Party A\")"
+    },
+    "party_b": {
+      "value": "CENTEX CORPORATION",
+      "evidence_quote": "BANK OF AMERICA, N.A. and\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 CENTEX CORPORATION (\"Party B\")"
+    },
+    "threshold": {
+      "value": "Not Applicable",
+      "evidence_quote": "\"Threshold\", means with respect to Party A: Not Applicable; \"Threshold\", means with respect to Party B: Initially, not applicable; provided, however, if the long-term senior unsecured debt rating of Party B is less than \u201cBBB-\u201d by S&P and less than \u201cBaa3\u201d by Moody\u2019s, then the Threshold shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "$250,000",
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Party A: $250,000.\n\n\"Minimum Transfer Amount\" means with respect to Party B: $250,000."
+    },
+    "rounding": {
+      "value": "$10,000",
+      "evidence_quote": "Rounding. The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of $10,000, respectively."
+    },
+    "valuation_percentage": {
+      "value": "varied by asset",
+      "evidence_quote": "\"Eligible Collateral\" shall consist of those assets identified by the ICAD codes listed below, as they are defined in the Collateral Asset Definitions. Percentage shown is the Valuation Percentage applicable to the indicated combination of ICAD and Remaining Maturity.\n\nUS-CASH 100%\n\nUS-TBILL 99%\n\nUS-TNOTE 99%, 98%, 95%\n\nUS-TBOND 99%, 98%, 95%"
+    }
+  }
+}

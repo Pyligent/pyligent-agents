@@ -1,0 +1,20 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "the lawful currency of the United States of America",
+      "evidence_quote": "\u201cCash\u201d means the lawful currency of the United States of America."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "Deutsche Bank AG, New York",
+      "evidence_quote": "Deutsche Bank AG, New York (\u201cParty A\u201d)"
+    },
+    "party_b": {
+      "value": "CRIIMI Financing Co., Inc.",
+      "evidence_quote": "CRIIMI Financing Co., Inc. (\u201cParty B\u201d)"
+    }
+  }
+}

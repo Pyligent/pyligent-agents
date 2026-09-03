@@ -1,0 +1,42 @@
+{
+  "fields": {
+    "threshold": {
+      "value": "Not applicable",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Counterparty: Not applicable."
+    },
+    "minimum_transfer_amount": {
+      "value": "U.S.$250,000",
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Counterparty: (i) except with respect to Part 7, USD0, and (ii) with respect to Part 7, U.S.$250,000; provided that the Minimum Transfer Amount for Counterparty shall be zero upon the occurrence and during the continuance of an Event of Default, Potential Event of Default, Termination Event or Specified Condition with respect to such party."
+    },
+    "rounding": {
+      "value": "USD $100,000",
+      "evidence_quote": "Rounding. The Delivery Amount and the Return Amount will be rounded up and down to the nearest integral multiple of USD $100,000, respectively."
+    },
+    "party_a": {
+      "value": "J. ARON & COMPANY",
+      "evidence_quote": "J. ARON & COMPANY (\u201cAron\u201d)"
+    },
+    "party_b": {
+      "value": "Chesapeake Exploration Limited Partnership, Chesapeake Louisiana, L.P., Chesapeake Zapata, L.P.",
+      "evidence_quote": "EACH COUNTERPARY LISTED ON EXHIBIT A ATTACHED HERETO, jointly and severally,  (\u201cCounterparty\u201d)."
+    },
+    "valuation_percentage": [
+      {
+        "value": "100%",
+        "evidence_quote": "Cash 100%"
+      },
+      {
+        "value": "99.5%",
+        "evidence_quote": "(B)         Negotiable debt obligations issued by the U.S. Treasury Department having a remaining maturity of not more than one year (\"Treasury Bills\") and maturing not more than 180 days from the date of Transfer by the Pledgor to the Secured Party 99.5%"
+      },
+      {
+        "value": "99%",
+        "evidence_quote": "(C)         Negotiable debt obligations issued by the U.S. Treasury Department having a remaining       maturity of more than one year but not more than 10 years (\"Treasury Notes\") 99%"
+      },
+      {
+        "value": "99%",
+        "evidence_quote": "(D)         Negotiable debt obligations issued by the U.S. Treasury Department having a remaining       maturity of more than 10 years (\"Treasury Bonds\") 99%"
+      }
+    ]
+  }
+}

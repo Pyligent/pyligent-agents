@@ -1,0 +1,36 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "USD",
+      "evidence_quote": "For purposes of calculating Exposure, USD shall be the Base and Termination Currency."
+    },
+    "threshold": {
+      "value": "USD 0 (zero) for both Party A and Party B",
+      "evidence_quote": "\u201cThreshold\u201d\n    means with respect to Party A: USD 0 (zero)."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000 for both Party A and Party B",
+      "evidence_quote": "\u201cMinimum\nTransfer Amount\u201d means with respect to Party A: USD 100,000; and"
+    },
+    "rounding": {
+      "value": "Delivery Amount rounded up and Return Amount rounded down to nearest multiple of USD 10,000",
+      "evidence_quote": "\u201cRounding\u201d\n    means the Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest multiple of USD 10,000."
+    },
+    "governing_law": {
+      "value": "New York",
+      "evidence_quote": "(ISDA\n    Agreements Subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "FalconX Bravo, Inc.",
+      "evidence_quote": "FalconX\nBravo, Inc."
+    },
+    "party_b": {
+      "value": "Pineapple Financial Inc.",
+      "evidence_quote": "Pineapple\nFinancial Inc."
+    },
+    "valuation_percentage": {
+      "value": "Cash denominated in USD: 100%; Securities: 99%; USDC: 100%; Bitcoin: 83.33%; Ethereum: 83.33%; Solana: 70%",
+      "evidence_quote": "Cash denominated\n    in United States Dollars (\u201cUSD\u201d) \n     100%"
+    }
+  }
+}

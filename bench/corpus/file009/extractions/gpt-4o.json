@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "threshold": {
+      "value": "zero; otherwise, infinity",
+      "evidence_quote": "\"THRESHOLD\" shall mean, if a Collateralization Event shall have occurred and be continuing, zero; otherwise, infinity."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000",
+      "evidence_quote": "\"MINIMUM TRANSFER AMOUNT\" for purposes of computing a Delivery Amount pursuant to Paragraph 3(a), and for purposes of computing a Return Amount pursuant to Paragraph 3(b) shall be USD 100,000."
+    },
+    "rounding": {
+      "value": [
+        "rounded up to the nearest integral multiple of $10,000",
+        "rounded down to the nearest integral multiple of $10,000",
+        "rounded to zero"
+      ],
+      "evidence_quote": "ROUNDING. If the Delivery Amount is a positive number, but not an integral multiple of $10,000, it will be rounded up to the nearest integral multiple of $10,000; if the Return Amount is a positive number, but not an integral multiple of $10,000, it will be rounded down to the nearest integral multiple of $10,000; if the Return Amount is less than $10,000, the Return Amount will be rounded to zero."
+    },
+    "party_a": {
+      "value": "Citibank, N.A.",
+      "evidence_quote": "IN WITNESS WHEREOF, the parties hereto have executed this Annex as of the date first above written.\n\nCITIBANK, N.A."
+    },
+    "party_b": {
+      "value": "CD 2005-CD1 Commercial Mortgage Trust",
+      "evidence_quote": "CD 2005-CD1 COMMERCIAL MORTGAGE TRUST\n\n\nBy: LaSalle Bank National Association,\n    not in its individual capacity,\n    but solely as Trustee"
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "(A)  Cash                                  X       N/A              100%"
+    }
+  }
+}

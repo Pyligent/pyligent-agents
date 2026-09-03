@@ -36,10 +36,10 @@ venv/
 #   bench/corpus-synthetic/  committed, so CI proves the harness runs with no
 #                            credential. Its provenance line says "synthetic" in
 #                            every report, so it cannot be mistaken for a result.
-#   bench/corpus/            NOT committed. The original twelve-document,
-#                            three-model set is local-only, which means the
-#                            cross-model comparison cannot currently be
-#                            reproduced from a clone. Commit it or stop citing
-#                            it — do not leave it half-stated.
-bench/corpus/*/
-!bench/corpus/.gitkeep
+#   bench/corpus/            committed. The twelve-document, three-model set
+#                            behind the cross-model comparison. It was local-only
+#                            until a fresh-clone walkthrough showed the published
+#                            table could not be recomputed by a reader — which
+#                            made "every figure is recomputable" false for half
+#                            the results. Citing a number and withholding its
+#                            inputs is the thing this project argues against.

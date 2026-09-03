@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "threshold": {
+      "value": "Not Applicable (Aron) / Not applicable (Counterparty)",
+      "evidence_quote": "\"Threshold\" means with respect to Aron: Not Applicable."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD0 except with respect to Part 7, U.S.$250,000 (for both Aron and Counterparty)",
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Aron:  (i) except with respect to Part 7, USD0, and (ii) with respect to Part 7, U.S.$250,000"
+    },
+    "rounding": {
+      "value": "Rounded up and down to nearest integral multiple of USD $100,000",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up and down to the nearest integral multiple of USD $100,000, respectively."
+    },
+    "party_a": {
+      "value": "J. Aron & Company",
+      "evidence_quote": "J. ARON & COMPANY (\u201cAron\u201d)"
+    },
+    "party_b": {
+      "value": "Each Counterparty listed on Exhibit A, acting through Chesapeake Exploration Limited Partnership as Agent",
+      "evidence_quote": "EACH COUNTERPARY LISTED ON EXHIBIT A ATTACHED HERETO,"
+    },
+    "valuation_percentage": {
+      "value": "Cash 100%; Treasury Bills 99.5%; Treasury Notes 99%; Treasury Bonds 99%",
+      "evidence_quote": "(A)         Cash\n \n        \n            \n100%"
+    }
+  }
+}

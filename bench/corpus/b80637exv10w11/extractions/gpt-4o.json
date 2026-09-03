@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "New York",
+      "evidence_quote": "(ISDA Agreements Subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "WACHOVIA BANK, NATIONAL ASSOCIATION",
+      "evidence_quote": "WACHOVIA BANK, NATIONAL ASSOCIATION (\u201cParty A\u201d)"
+    },
+    "party_b": {
+      "value": "WRIGHT EXPRESS CORPORATION",
+      "evidence_quote": "WRIGHT EXPRESS CORPORATION (\u201cParty B\u201d)"
+    },
+    "threshold": {
+      "value": "$9,000,000",
+      "evidence_quote": "\u201cThreshold\u201d means, for Party B: $9,000,000; provided that if an Event of Default exists with respect Party B, the Threshold shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "$100,000",
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means, for a party on any date of determination, $100,000."
+    },
+    "rounding": {
+      "value": "$100,000",
+      "evidence_quote": "Rounding: The Delivery Amount and the Return Amount will be rounded down to the nearest integral multiple of $100,000."
+    },
+    "valuation_percentage": {
+      "value": "100%",
+      "evidence_quote": "Cash: U.S. Dollars in depositary account form.\n\n    \u00a0\n    YES\n\n    \u00a0\n    NO\n\n    \u00a0\n    \u00a0\n    100\n    %"
+    }
+  }
+}

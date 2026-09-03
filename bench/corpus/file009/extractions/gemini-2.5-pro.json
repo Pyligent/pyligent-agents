@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "USD",
+      "evidence_quote": "\"Credit Support Amount\" shall mean an amount in USD equal to the greater of (a) 2.5% (or\nsuch lower percentage as applicable pursuant to the then-current\nS&P published criteria) of the Notional Amount of the Transaction\non such date plus the Secured Party's Exposure and (b) an amount\nequal to the Floating Amount payable by Party A"
+    },
+    "threshold": {
+      "value": "if a Collateralization Event shall have occurred and be continuing, zero; otherwise, infinity.",
+      "evidence_quote": "\"THRESHOLD\" shall mean, if a Collateralization Event shall have\noccurred and be continuing, zero; otherwise, infinity."
+    },
+    "minimum_transfer_amount": {
+      "value": "USD 100,000",
+      "evidence_quote": "\"MINIMUM TRANSFER AMOUNT\" for purposes of computing a Delivery\n          Amount pursuant to Paragraph 3(a), and for purposes of computing a\n          Return Amount pursuant to Paragraph 3(b) shall be USD 100,000."
+    },
+    "rounding": {
+      "value": "If the Delivery Amount is a positive number, but not an integral multiple of $10,000, it will be rounded up to the nearest integral multiple of $10,000; if the Return Amount is a positive number, but not an integral multiple of $10,000, it will be rounded down to the nearest integral multiple of $10,000; if the Return Amount is less than $10,000, the Return Amount will be rounded to zero.",
+      "evidence_quote": "ROUNDING. If the Delivery Amount is a positive number, but not an\n          integral multiple of $10,000, it will be rounded up to the nearest\n          integral multiple of $10,000; if the Return Amount is a positive\n          number, but not an integral multiple of $10,000, it will be rounded\n          down to the nearest integral multiple of $10,000; if the Return Amount\n          is less than $10,000, the Return Amount will be rounded to zero."
+    },
+    "party_a": {
+      "value": "CITIBANK, N.A.",
+      "evidence_quote": "CITIBANK, N.A."
+    },
+    "party_b": {
+      "value": "CD 2005-CD1 COMMERCIAL MORTGAGE TRUST",
+      "evidence_quote": "CD 2005-CD1 COMMERCIAL MORTGAGE TRUST"
+    },
+    "valuation_percentage": {
+      "value": "Cash: 100%, Negotiable debt obligations issued by the U.S. Treasury Department with remaining maturity of less than one year: 100%, one year or greater but less than 10 years: 98%, 10 years or greater: 95%",
+      "evidence_quote": "                                   Schedule I\n\n                                        Party A   Party B   Valuation Percentage\n                                        -------   -------   --------------------\n(A)  Cash                                  X       N/A              100%\n\n(B) (x) Negotiable debt obligations\nissued by the U.S. Treasury\nDepartment (but excluding interest\nonly or principal only stripped\nsecurities) and in each case having a\nremaining maturity of:\n\n(i)  less than one year                    X       N/A              100%\n\n(ii)  one year or greater but less\nthan 10 years                              X       N/A               98%\n\n(iii)  10 years or greater                 X       N/A               95%"
+    }
+  }
+}

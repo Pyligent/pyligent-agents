@@ -1,0 +1,40 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "USD",
+      "evidence_quote": "\u201cCash\u201d means the lawful currency of the United States of America."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "US-CASH"
+    },
+    "threshold": {
+      "value": "Initially, not applicable; provided, however, if the long-term senior unsecured debt rating of Party B is less than \u201cBBB-\u201d by S&P and less than \u201cBaa3\u201d by Moody\u2019s, then the Threshold shall be zero.",
+      "evidence_quote": "\u201cThreshold\u201d, means with respect to Party B: Initially, not applicable;\nprovided, however, if the long-term senior unsecured debt rating of Party B\nis less than \u201cBBB-\u201d by S&P and less than \u201cBaa3\u201d by Moody\u2019s, then the\nThreshold shall be zero."
+    },
+    "minimum_transfer_amount": {
+      "value": 250000,
+      "evidence_quote": "\u201cMinimum Transfer Amount\u201d means with respect to Party B: $250,000."
+    },
+    "rounding": {
+      "value": "The Delivery Amount will be rounded up and the Return Amount will be rounded down to the nearest integral multiple of $10,000",
+      "evidence_quote": "Rounding. The Delivery Amount will be rounded up and the\nReturn Amount will be rounded down to the nearest integral multiple of $10,000,\nrespectively."
+    },
+    "governing_law": {
+      "value": "New York",
+      "evidence_quote": "This Credit Support Annex is a Security Agreement under the New York UCC."
+    },
+    "party_a": {
+      "value": "BANK OF AMERICA, N.A.",
+      "evidence_quote": "BANK\nOF AMERICA, N.A. \n \n\n  (\u201cParty\nA\u201d)"
+    },
+    "party_b": {
+      "value": "CENTEX CORPORATION",
+      "evidence_quote": "CENTEX\nCORPORATION\n \n\n  \n  (\u201cParty\nB\u201d)"
+    },
+    "valuation_percentage": {
+      "value": "US-CASH: 100%, US-TBILL: 99%, US-TNOTE: 99% (<=1yr), 98% (>1-5yr), 95% (>5-10yr), US-TBOND: 99% (<=1yr), 98% (>1-5yr), 95% (>5-10yr), 95% (>10yr)",
+      "evidence_quote": "Percentage shown is the Valuation Percentage applicable to the indicated combination\nof ICAD and Remaining Maturity.\n\n\n\n\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n\n\n\n\n    \u00a0\n    \u00a0\n    Remaining Maturity\n\n\n\n\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    More than one \n    \u00a0\n    More than five \n    \u00a0\n    \u00a0\n\n\n\n\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    \u00a0\n    (1) year up to \n    \u00a0\n    (5) years up to \n    \u00a0\n    \u00a0\n\n\n\n\n    \u00a0\n    \u00a0\n    One (1) year or\n    \u00a0\n    and including \n    \u00a0\n    and including ten\n    \u00a0\n    More than  ten \n\n\n\n\n    ICAD Code\n    \u00a0\n    under\n    \u00a0\n    five (5) years\n    \u00a0\n    (10) years\n    \u00a0\n    (10) years\n\n\n\n\n\n\n    \nUS-CASH\n\n    \u00a0\n    \u00a0\n    100\n    %\n    \u00a0\n    \u00a0\n    N/A\n    \u00a0\n    \u00a0\n    \u00a0\n    N/A\n    \u00a0\n    \u00a0\n    \u00a0\n    N/A\n    \u00a0\n\n\n\n\n    \nUS-TBILL\n\n    \u00a0\n    \u00a0\n    99\n    %\n    \u00a0\n    \u00a0\n    N/A\n    \u00a0\n    \u00a0\n    \u00a0\n    N/A\n    \u00a0\n    \u00a0\n    \u00a0\n    N/A\n    \u00a0\n\n\n\n\n    \nUS-TNOTE\n\n    \u00a0\n    \u00a0\n    99\n    %\n    \u00a0\n    \u00a0\n    98\n    %\n    \u00a0\n    \u00a0\n    95\n    %\n    \u00a0\n    \u00a0\n    N/A\n    \u00a0\n\n\n\n\n    \nUS-TBOND\n\n    \u00a0\n    \u00a0\n    99\n    %\n    \u00a0\n    \u00a0\n    98\n    %\n    \u00a0\n    \u00a0\n    95\n    %\n    \u00a0\n    \u00a0\n    95\n    %"
+    }
+  }
+}

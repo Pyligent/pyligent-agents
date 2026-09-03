@@ -1,0 +1,61 @@
+{
+  "fields": {
+    "base_currency": {
+      "value": "USD",
+      "evidence_quote": "\"Cash\" means the lawful currency of the United States of America."
+    },
+    "eligible_currency": {
+      "value": "USD",
+      "evidence_quote": "\"Cash\" means the lawful currency of the United States of America."
+    },
+    "threshold": {
+      "value": 0,
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party B: zero."
+    },
+    "minimum_transfer_amount": {
+      "value": 750000,
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Party A or Party B: \u00a0$750,000"
+    },
+    "rounding": {
+      "value": "The Delivery Amount and the Return Amount will be rounded up and down, in each case, to the nearest integral multiple of USD10,000, respectively.",
+      "evidence_quote": "Rounding. \u00a0The Delivery Amount and the Return Amount will be rounded up and down, in each case, to the nearest integral multiple of USD10,000, respectively."
+    },
+    "governing_law": {
+      "value": "New York Law",
+      "evidence_quote": "(ISDA Agreements subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "BARCLAYS BANK PLC",
+      "evidence_quote": "Party A: \u00a0BARCLAYS BANK PLC"
+    },
+    "party_b": {
+      "value": "LEGG MASON, INC.",
+      "evidence_quote": "Party B: \u00a0LEGG MASON, INC."
+    },
+    "valuation_percentage": {
+      "value": [
+        {
+          "asset": "Cash",
+          "percentage": 100
+        },
+        {
+          "asset": "negotiable debt obligations issued by the U.S. Treasury Department having a remaining term to maturity of not more than 2 years (\u201cTreasury Securities\u201d)",
+          "percentage": 99.25
+        },
+        {
+          "asset": "Treasury Securities having a remaining term to maturity of more than 2 years but not more than 5 years.",
+          "percentage": 98.5
+        },
+        {
+          "asset": "Treasury Securities having a remaining term to maturity of more than 5 years but not more than 10 years",
+          "percentage": 97.25
+        },
+        {
+          "asset": "Treasury Securities having a remaining term to maturity of more than ten years",
+          "percentage": 97
+        }
+      ],
+      "evidence_quote": "Party B\nValuation\nPercentage\n\n\n\n(A)\nCash\n[ X ]\n\u00a0\u00a0\u00a0100%\n\n\n\n(B)\nnegotiable debt obligations issued by the U.S. Treasury Department having a remaining term to maturity of not more than 2 years (\u201cTreasury Securities\u201d)\n[ X ]\n\u00a0\u00a099.25%\n\n\n\n(C)\nTreasury Securities having a remaining term to maturity of more than 2 years but not more than 5 years.\n[ X ]\n\u00a0\u00a0\u00a0\u00a098.5%\n\n\n\n(D)\nTreasury Securities having a remaining term to maturity of more than 5 years but not more than 10 years\n[ X ]\n\u00a0\u00a0\u00a0\u00a097.25%\n\n\n\n(E)\nTreasury Securities having a remaining term to maturity of more than ten years\n[ X ]\n\u00a0\u00a0\u00a0\u00a097%"
+    }
+  }
+}

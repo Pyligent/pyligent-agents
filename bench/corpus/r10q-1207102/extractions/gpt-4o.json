@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "governing_law": {
+      "value": "New York",
+      "evidence_quote": "(ISDA Agreements subject to New York Law Only)"
+    },
+    "party_a": {
+      "value": "BARCLAYS BANK PLC",
+      "evidence_quote": "BARCLAYS BANK PLC"
+    },
+    "party_b": {
+      "value": "LEGG MASON, INC.",
+      "evidence_quote": "LEGG MASON, INC."
+    },
+    "threshold": {
+      "value": "zero",
+      "evidence_quote": "\u201cThreshold\u201d means with respect to Party B: zero."
+    },
+    "minimum_transfer_amount": {
+      "value": "$750,000",
+      "evidence_quote": "\"Minimum Transfer Amount\" means with respect to Party A or Party B: $750,000,"
+    },
+    "rounding": {
+      "value": "USD10,000",
+      "evidence_quote": "The Delivery Amount and the Return Amount will be rounded up and down, in each case, to the nearest integral multiple of USD10,000, respectively."
+    },
+    "valuation_percentage": {
+      "value": "99.25%",
+      "evidence_quote": "negotiable debt obligations issued by the U.S. Treasury Department having a remaining term to maturity of not more than 2 years (\u201cTreasury Securities\u201d)\n\n[ X ]\n\n  99.25%"
+    }
+  }
+}
