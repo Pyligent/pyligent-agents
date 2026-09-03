@@ -204,7 +204,12 @@ def test_formatting_does_not_lose_precision():
 def test_the_tool_reports_one_version():
     """Two version strings from one distribution is a support conversation."""
     import evidencecheck
+
+    # Assert the invariant, not a literal: one distribution reports one version.
+    # Pinning the number here means every release fails a test that was never
+    # about the number.
+    import pyligent_agents
     from evidencecheck.report import Report
 
-    assert evidencecheck.__version__ == "0.2.0"
+    assert evidencecheck.__version__ == pyligent_agents.__version__
     assert evidencecheck.__version__ in Report.__dataclass_fields__["tool"].default

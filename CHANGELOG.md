@@ -5,6 +5,12 @@ All notable changes to this project are documented here. This project follows
 
 ## [Unreleased]
 
+Nothing yet.
+
+---
+
+## [0.3.0] — 2026-09-03
+
 ### Added — shadow reconciliation
 
 - **`pyligent-agents reconcile`** compares signed agreements against what a

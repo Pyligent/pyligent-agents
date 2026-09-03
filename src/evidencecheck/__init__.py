@@ -3,5 +3,5 @@
 from .checks import check, check_field
 from .report import CRITICAL, WARNING, Finding, Report
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __all__ = ["CRITICAL", "Finding", "Report", "WARNING", "check", "check_field"]
