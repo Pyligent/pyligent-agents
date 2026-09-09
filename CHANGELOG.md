@@ -5,6 +5,19 @@ All notable changes to this project are documented here. This project follows
 
 ## [Unreleased]
 
+Nothing yet.
+
+---
+
+## [0.4.0] — 2026-09-09
+
+### Changed — behaviour, for anyone resuming a crashed run
+
+- A node whose side effect was **claimed but never recorded** now stops the run
+  instead of executing again. Previously a resume re-ran it, which is the
+  duplicate this ledger exists to prevent. Existing state directories migrate on
+  open: rows written by the old code mean "this completed", and are read that way.
+
 ### Fixed — two claims that outran the code
 
 Both were raised in external review, and in both the code was changed to support
