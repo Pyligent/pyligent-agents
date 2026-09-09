@@ -1,4 +1,4 @@
-"""A small labelled dataset: 12 documents across three domains.
+"""A small labelled dataset across three domains: CSA, invoice and KYC.
 
 **Documents and gold labels are generated together from the same inputs.** That
 is the important design choice here. A dataset where the text is written by hand
@@ -10,9 +10,14 @@ Every case is a *document*, not a model behaviour. Model behaviours live in
 `personas.py`. Keeping them apart is what lets you run several systems over the
 same dataset and compare them.
 
-Balance: 6 clean, 6 flawed. Both classes are required — a set with no clean
-cases cannot detect a system that refers everything, which scores perfectly on
-safety and is useless.
+Both classes are required — a set with no clean cases cannot detect a system that
+refers everything, which scores perfectly on safety and is useless.
+
+The exact composition is asserted in
+`tests/test_evals.py::test_the_dataset_is_balanced_and_valid` and is deliberately
+not repeated here. It was, and it drifted: this docstring said 12 documents and a
+6/6 split long after the set held 15 and split 7/8. A count written twice is a
+count that will disagree with itself.
 """
 
 from __future__ import annotations
