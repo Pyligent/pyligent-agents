@@ -5,7 +5,50 @@ All notable changes to this project are documented here. This project follows
 
 ## [Unreleased]
 
-Nothing yet.
+### Fixed — two claims that outran the code
+
+Both were raised in external review, and in both the code was changed to support
+the claim rather than the claim weakened to match the code.
+
+- **A constraint now cites the clause that establishes *it*.** Eligibility and
+  valuation constraints took their provenance from the `base_currency` field, so
+  an invented asset class with an impossible valuation percentage certified with
+  `provenance_complete=True` — the citation was genuine and proved something
+  else. Each schedule row now carries its own quote, which must appear in the
+  source, mention the asset it describes, and contain its percentage. A row that
+  cannot be established is **not emitted**: it goes to `ConstraintPack.omitted`
+  with a reason, and any entry there blocks certification. Valuation percentages
+  outside `0 < pct <= 100` are refused rather than carried.
+- **The idempotency ledger claims a key before acting.** The runner checked the
+  ledger and then executed, so two workers could both read "not yet done" and
+  both proceed; the losing `INSERT` prevented a duplicate ledger row, not a
+  duplicate effect. Effect rows now have two stages — `claimed` before the
+  action, `recorded` after — so the primary key decides the race, and an action
+  whose outcome was never learned stops the run instead of being repeated. A
+  reported failure releases its claim and may be retried; an unknown outcome may
+  not. See [ADR 0003](docs/adr/0003-idempotency-ledger.md).
+
+### Changed — what the documents claim
+
+- `certify()` and its documentation now state what certification establishes and
+  what it leaves to a human: governing-clause selection, amendment precedence and
+  party attribution are not machine judgements here.
+- `ConstraintPack.unsupported` is described as what it is — a fixed marker scan
+  supporting "no known marker was detected", never "all material obligations are
+  represented". On the SEC corpus a marker matches in 97 of 97 documents.
+- `CAPABILITIES.md` gained an assurance table separating evidence integrity,
+  agreement interpretation and optimisation validation, and a boundary table
+  covering what is reproducible from the package, what is service work, what is
+  institution-specific, and what is unbuilt.
+- The benchmark now reports per-field coverage. Base currency was answered on
+  **4 of 97** documents; an aggregate of 74.9% does not show that.
+- New [docs/SHADOW-TRIAL.md](docs/SHADOW-TRIAL.md): the measures for a bounded
+  evaluation against real agreements, fixed before running one.
+
+### Added
+
+- Concurrency and interruption tests for the effect ledger, and the reviewer's
+  provenance case kept as a regression test. 495 tests.
 
 ---
 

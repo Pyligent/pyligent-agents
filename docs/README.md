@@ -11,6 +11,7 @@ API key.
 | Know what this can and cannot do | [CAPABILITIES.md](CAPABILITIES.md) |
 | Check whether an extraction's citations hold up | [SPEC-evidence-checks.md](SPEC-evidence-checks.md) |
 | Compare agreements against a system of record | [RECONCILE.md](RECONCILE.md) |
+| Plan an evaluation against my own agreements | [SHADOW-TRIAL.md](SHADOW-TRIAL.md) |
 | Configure an API key, or avoid needing one | [CREDENTIALS.md](CREDENTIALS.md) |
 | Test an agent I am building | [TESTING.md](TESTING.md) |
 | Build an agent step by step | [STEPS.md](STEPS.md) |

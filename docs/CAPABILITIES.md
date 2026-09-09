@@ -10,6 +10,45 @@ which emits them as JSON for a model-risk review.
 
 ---
 
+## Three kinds of assurance, and the boundary between them
+
+The word "verified" does most of the misleading in this field, because three
+different guarantees answer to it and only the first is cheap.
+
+| Assurance | What it establishes | What establishes it here |
+|---|---|---|
+| **Evidence integrity** | A citation is present, appears verbatim in the source, and states the value reported | `evidence-check`, the gates, the benchmark. Offline, reference-free, no labels |
+| **Agreement interpretation** | The right clause, party, amendment and effective terms were selected | **Nothing here.** A domain reviewer, against the agreement |
+| **Optimisation validation** | A proposed allocation satisfies the encoded constraints under stated assumptions | **Nothing here.** This repository stops at the constraint pack |
+
+The gap between rows two and three is the one that matters commercially:
+**validating an allocation against a set of constraints says nothing about
+whether those constraints faithfully represent the agreement.** A pack whose
+every constraint is genuinely quoted can still encode the wrong clause, and an
+optimiser will honour it exactly. The chain is only as strong as the row nobody
+in it can check by machine.
+
+---
+
+## Open source, service, and the space between
+
+Stated plainly because the practical question is not what the framework does, it
+is what remains between a reproducible demonstration and an operating
+environment.
+
+| | |
+|---|---|
+| **Reproducible from this package** | Both CLIs, the 23 gates, the constraint pack and its certification, the graph runtime with the effect ledger, the reconcile report, the scaffold, and the benchmark — offline, no API key, 495 tests |
+| **Supplied by Pyligent as a service** | Collateral operations work built on top of this boundary. Nothing in that offering is in this repository, and no capability should be assumed from the presence of the framework |
+| **Institution-specific, and unavoidably yours** | Gate calibration to your policy, your document inventory and its formats, your system of record, reviewer roles and the queue they work, and the model validation your second line will require |
+| **Research or planned** | Providers beyond Anthropic in the runtime, async, streaming, OpenTelemetry export, multi-tenant isolation — see *Unbuilt* below |
+
+The repository deliberately stops upstream of allocation. Anything downstream of
+the constraint pack — optimisation, settlement instruction, allocation
+recommendations — is out of scope here, and the seam is `examples/collateral`.
+
+---
+
 ## Shipped and exercised
 
 | Area | What you get | Exports |
@@ -56,7 +95,9 @@ Grouped by *why* it is absent, because that decides whether waiting is sensible.
 
 | | |
 |---|---|
-| **Relevance checking** | The citation check catches *fabricated* evidence, not *irrelevant* evidence. A genuine sentence that does not support the claim passes. |
+| **Relevance checking** | The citation check catches *fabricated* evidence, not *irrelevant* evidence. A genuine sentence that does not support the claim passes. The constraint pack narrows this for schedule rows — a row's quote must mention the asset and contain its percentage — which is necessary, not sufficient. |
+| **Clause inventory** | `ConstraintPack.unsupported` is a fixed marker scan. It supports "no known marker was detected", never "all material obligations are represented": it misses provisions worded unlike the list, and fires on mentions that create no unsupported condition — on the SEC corpus a marker matches in 97 of 97 documents. |
+| **Exactly-once external effects** | The effect ledger claims a key before acting, so a race is decided and an interrupted action becomes a run that stops rather than one that repeats. It cannot make the call itself exactly-once; that needs an idempotency key the destination system honours. See [ADR 0003](adr/0003-idempotency-ledger.md). |
 | **Accuracy** | Evidence integrity is not accuracy. Nothing here tells you an extracted value is *right* — only whether the document supports it. A quote can be real, contain the value, and be the wrong clause. |
 
 ### Scope — real, but not what this is
