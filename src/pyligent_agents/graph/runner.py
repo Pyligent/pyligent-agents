@@ -3,16 +3,26 @@
 The execution contract, in five lines:
 
 1. A node that already finished is **replayed from the checkpoint**, not re-run.
-2. A node with an idempotency key whose effect is already on the ledger is
-   **replayed from the ledger**, even if its checkpoint was lost.
+2. A node with an idempotency key **claims that key before it acts**. A key
+   already recorded is replayed from the ledger; a key already claimed stops
+   the run, because its outcome is unknown.
 3. A node writes "started" before it works and its result after, in that order.
 4. A failed node blocks its dependents; it does not let the graph invent a
    result to carry on with.
 5. A human gate **pauses** the run. Paused is not failed.
 
 Rules 1 and 2 are not redundant. Rule 1 covers an ordinary restart. Rule 2
-covers the nasty window where the side effect landed externally and the state
-write did not — the exact window in which a naive resume double-sends.
+covers the window where the side effect landed externally and the state write
+did not — the window in which a naive resume double-sends.
+
+**What rule 2 does and does not buy.** Claiming before acting is what lets the
+database decide a race; checking and then acting lets both workers win the
+check. And a claim that is never completed is a fact on disk, so an interrupted
+action becomes a run that stops and asks rather than one that quietly repeats.
+Neither makes the external call exactly-once. A process can die between the
+custodian accepting an instruction and the ledger learning of it, and no amount
+of care on this side of the wire closes that; it needs an idempotency key the
+destination system honours. ADR 0003 states the boundary.
 """
 
 from __future__ import annotations
@@ -163,11 +173,11 @@ class GraphRunner:
         """Execute one node. Returns None on success, else (status, message)."""
         rid = state.run_id
 
-        # --- rule 2: has this side effect already fired? ---
+        # --- rule 2: claim the key, then act. Never the other way round. ---
         key = node.idempotency(state) if node.idempotency else None
         if key is not None:
-            prior = self.store.get_effect(rid, key)
-            if prior is not None:
+            prior = self.store.claim_effect(rid, key, node.id)
+            if prior is not None and prior["status"] == "recorded":
                 state.record_output(node.id, prior["result"])
                 self._reinstate(node, state, prior["result"])
                 status[node.id] = NodeStatus.DONE.value
@@ -176,6 +186,26 @@ class GraphRunner:
                 self.store.span(rid, node.id, "replay",
                                 {"source": "effect_ledger", "key": key})
                 return None
+            if prior is not None:
+                # Claimed and never recorded. Either another worker is inside
+                # this action right now, or one died in it. Acting again is the
+                # single thing we must not do, and guessing which case it is
+                # would be exactly that guess. Stop, and say what to look at.
+                message = (
+                    f"effect '{key}' was claimed by node '{prior['node_id']}' and never "
+                    f"recorded. Its outcome is unknown, so it will not be retried "
+                    f"automatically. Confirm with the destination system whether it "
+                    f"happened, then complete or release the ledger entry."
+                )
+                status[node.id] = NodeStatus.FAILED.value
+                self.store.finish_node(rid, node.id, "failed", error=message)
+                self.store.span(rid, node.id, "effect_unresolved",
+                                {"key": key, "claimed_by": prior["node_id"],
+                                 "claimed_at": prior["ts"]})
+                self.h.ledger.error(message=f"node {node.id} stopped on an unresolved effect",
+                                    error=message)
+                self._compensate(state, status)
+                return ("failed", message)
 
         last_error = ""
         for attempt in range(1, node.retry.max_attempts + 1):
@@ -186,6 +216,11 @@ class GraphRunner:
                 output = node.execute(state, NodeContext(rid, self.h, attempt))
             except HumanApprovalRequired as pause:
                 # --- rule 5: paused is not failed. ---
+                # Approval is asked for BEFORE the effect fires, so nothing
+                # happened and the claim must not outlive the pause — holding it
+                # would make the resumed run refuse its own work.
+                if key is not None:
+                    self.store.release_effect(rid, key)
                 status[node.id] = NodeStatus.PAUSED.value
                 self.store.finish_node(rid, node.id, "paused", error=pause.prompt)
                 self.store.span(rid, node.id, "pause", {"prompt": pause.prompt,
@@ -201,13 +236,20 @@ class GraphRunner:
                     time.sleep(min(node.retry.backoff_s * (2 ** (attempt - 1)), 2.0))
                     continue
                 # --- rule 4: fail the node; do not invent a result. ---
+                # The action *reported* that it failed, so the claim is released
+                # and a later resume may try again. An action that never reported
+                # anything keeps its claim; that asymmetry is the guarantee.
+                if key is not None:
+                    self.store.release_effect(rid, key)
                 status[node.id] = NodeStatus.FAILED.value
                 self.store.finish_node(rid, node.id, "failed", error=last_error)
                 self.h.ledger.error(message=f"node {node.id} failed", error=last_error)
                 self._compensate(state, status)
                 return ("failed", last_error)
 
-            # Record the effect in the same moment we learn it happened.
+            # Completes the claim taken above, in the same moment we learn it
+            # happened. Between the claim and here is the window nothing on this
+            # side of the wire can close — it is left detectable, not denied.
             if key is not None:
                 self.store.record_effect(rid, key, node.id, output)
 

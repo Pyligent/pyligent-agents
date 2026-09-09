@@ -71,7 +71,7 @@ Then install for the rest:
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
-pytest                       # 484 tests, about 20 seconds
+pytest                       # 495 tests, about 20 seconds
 ```
 
 ---

@@ -350,8 +350,11 @@ multiples per leg, both legs the same direction, or conditional on anything),
 also return rounding_full_text containing the COMPLETE provision, untruncated.
 
 Return the eligible collateral schedule as `eligible_collateral`, each entry with
-`description` and `valuation_pct`. The document states VALUATION PERCENTAGES —
-transcribe them as printed. Do not convert them to haircuts.
+`description`, `valuation_pct` AND its own `evidence_quote` — the schedule line
+that lists that asset and that percentage, copied exactly. A row quoting a clause
+about something else is discarded, so a row you cannot quote is better omitted
+than guessed. The document states VALUATION PERCENTAGES — transcribe them as
+printed. Do not convert them to haircuts.
 
 For every field give the exact words from the document that establish it. Copy
 each quote character for character; quotes are checked against the source and an
@@ -360,7 +363,8 @@ rather than writing a placeholder.
 
 Respond with JSON only:
 {"fields": {"<name>": {"value": <value>, "evidence_quote": "<exact words>"}},
- "eligible_collateral": [{"description": "...", "valuation_pct": <n>}]}"""
+ "eligible_collateral": [{"description": "...", "valuation_pct": <n>,
+                          "evidence_quote": "<exact words>"}]}"""
 
 
 # ==========================================================================

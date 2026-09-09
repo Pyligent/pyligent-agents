@@ -121,7 +121,7 @@ def test_an_invented_amount_is_rejected(registry):
     assert "£257.99" in result.answer   # the real figure, fetched after push-back
 ```
 
-### 5. The side effect fires exactly once
+### 5. The side effect is not repeated across resumes
 
 ```python
 def test_the_customer_is_refunded_once(tmp_path, registry):
@@ -136,6 +136,14 @@ def test_the_customer_is_refunded_once(tmp_path, registry):
 
 This is the assertion worth putting in front of stakeholders. Run the workflow
 three times; count the refunds.
+
+It is also worth knowing what it does *not* cover. Three sequential resumes
+cannot observe the interval between "we are about to act" and "we acted", which
+is where two concurrent workers and a mid-action crash both live. Those need
+their own tests — `test_a_second_worker_inside_the_window_cannot_fire_the_same_effect`
+and `test_an_effect_claimed_but_never_recorded_stops_the_run` in
+`tests/test_graph.py` — and the absence of exactly those two is what let an
+overstated guarantee stand for a while. If you copy this pattern, copy all three.
 
 ---
 

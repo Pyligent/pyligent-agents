@@ -96,11 +96,17 @@ Paragraph 11. Elections and Variables
         fields["governing_law"] = governing_law
         quotes["governing_law"] = f"This Annex is governed by {governing_law}."
     return Built(text, fields, quotes, {"eligible_collateral": [
-        {"description": "Cash in the Base Currency", "valuation_pct": 100},
+        {"description": "Cash in the Base Currency", "valuation_pct": 100,
+         "evidence_quote":
+             "(A) Cash in the Base Currency ................................. 100%"},
         {"description": "US Treasury obligations, residual maturity up to 5 years",
-         "valuation_pct": 98},
+         "valuation_pct": 98,
+         "evidence_quote":
+             "(B) US Treasury obligations, residual maturity up to 5 years ... 98%"},
         {"description": "US Treasury obligations, residual maturity 5 to 10 years",
-         "valuation_pct": 96},
+         "valuation_pct": 96,
+         "evidence_quote":
+             "(C) US Treasury obligations, residual maturity 5 to 10 years ... 96%"},
     ]})
 
 

@@ -186,7 +186,31 @@ PYLIGENT_LIVE_MODEL=1 pytest -m live -s
 **Do not quote the 99.5% alone.** Its denominator is what the model chose to emit, so
 omitting a field you would have failed raises it: on a three-field document, dropping
 the one bad field moves integrity from 66.7% to 100%. Coverage is the correction, and
-effective evidence integrity is the figure omission cannot inflate.
+effective evidence integrity is the figure omission cannot inflate. **Report the five
+lines above together**, and never present evidence integrity as extraction accuracy —
+it is a claim about support, not about truth.
+
+These are committed extractions rescored offline, not a fresh model run. Anyone can
+recompute them; nobody has to trust them.
+
+### Where the missing quarter went
+
+Coverage is an average, and the average hides the shape. Per field, over the same
+97 documents:
+
+| field | answered |
+|---|---:|
+| `party_a`, `party_b` | 94 / 97 |
+| `threshold`, `minimum_transfer_amount`, `rounding`, `valuation_percentage` | 92 / 97 |
+| `governing_law` | 60 / 97 |
+| `eligible_currency` | 34 / 97 |
+| **`base_currency`** | **4 / 97** |
+
+The economically interesting terms are answered on most documents. **Base currency —
+the unit every other figure in the annex is denominated in — was answered on four.**
+A threshold without its currency is not a weaker answer than one with it; it is not an
+answer. An aggregate of 74.9% invites you to picture an even scatter of gaps, and the
+gap is nothing of the sort.
 
 
 ### What effective evidence integrity deliberately does not distinguish
@@ -208,6 +232,19 @@ The distinction is not lost, only moved: the `fabricated` count sits beside it i
 every table. An institution *should* care whether a gap is silence or invention — this
 project's own lifecycle treats abstention as honest and guessing as not — so read the
 two together. **Never report effective evidence integrity without the fabrication count.**
+
+### What these numbers still do not measure
+
+Everything above is reference-free, which is what makes it cheap and honest — and is
+also its ceiling. None of it establishes that an extraction is *right*. Deployment
+evidence needs a domain-reviewed evaluation that this benchmark does not attempt:
+whether the governing clause was the one selected, whether amendment precedence was
+resolved, whether the terms were attributed to the correct party, how many material
+false admissions survived every gate, and what the reviewer workload actually is per
+agreement. Those need labels, a reviewer, and a scope — see
+[docs/SHADOW-TRIAL.md](../docs/SHADOW-TRIAL.md) for the shape such an evaluation would
+take. Until it is run, treat these figures as a floor beneath a question they do not
+answer.
 
 Three things went wrong on the way to those numbers, and all are worth more than them.
 

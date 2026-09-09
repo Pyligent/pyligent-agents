@@ -256,3 +256,119 @@ def test_posting_an_invoice_twice_is_impossible(tmp_path, registry):
     s, r = _invoice_run(invoice_policy.good_policy, tmp_path, registry, "once")
     s.runner(invoice.build_graph(s.harness)).resume(r.run_id)
     assert_effects_fire_once(s, r.run_id, expected=1)
+
+
+# --- the window the ledger exists for ------------------------------------
+#
+# These four are the ones that would have caught the guarantee being stated
+# more strongly than the code delivered it. Every earlier idempotency test is a
+# sequential re-run, and a sequential re-run cannot observe the interval
+# between "we are about to act" and "we acted".
+
+
+def _effect_graph(fired: list[str], inner=None):
+    """One node with a side effect, and an optional hook fired mid-effect."""
+    def fn(state):
+        if inner is not None:
+            inner()
+        fired.append("fired")
+        return {"receipt": f"R-{len(fired)}"}
+
+    return Graph("effects").add(Step(
+        id="pay", fn=fn, provides=("receipt",),
+        idempotency=lambda s: idempotency_key("pay", order="A-1"),
+    )).validate()
+
+
+def test_a_second_worker_inside_the_window_cannot_fire_the_same_effect(tmp_path, registry):
+    """The race, made deterministic by nesting it.
+
+    The second worker runs *while* the first is inside the side effect — the
+    exact interval a check-then-act ledger cannot see, because the row it would
+    check is only written afterwards. Claiming the key first is what makes the
+    primary key decide this, once.
+    """
+    fired: list[str] = []
+    second: dict[str, object] = {}
+    entered = {"once": False}
+
+    def inner():
+        if entered["once"]:
+            return
+        entered["once"] = True
+        other = _refund_stack(tmp_path, registry)
+        second["result"] = other.runner(_effect_graph(fired)).start(
+            "pay", {}, run_id="gr-race")
+
+    s = _refund_stack(tmp_path, registry)
+    first = s.runner(_effect_graph(fired, inner)).start("pay", {}, run_id="gr-race")
+
+    assert fired == ["fired"], "the second worker fired the same effect again"
+    assert first.status == "completed"
+    assert second["result"].status == "failed"
+    assert "never recorded" in second["result"].error
+
+
+def test_an_effect_claimed_but_never_recorded_stops_the_run(tmp_path, registry):
+    """The process died between the custodian accepting and the ledger learning.
+
+    The old ledger had no way to represent this state, so a resume re-fired.
+    A claim that outlives its process is now a fact on disk, and the run stops
+    on it rather than guessing.
+    """
+    s = _refund_stack(tmp_path, registry)
+    assert s.store.claim_effect("gr-dead", idempotency_key("pay", order="A-1"), "pay") is None
+
+    fired: list[str] = []
+    result = s.runner(_effect_graph(fired)).start("pay", {}, run_id="gr-dead")
+
+    assert fired == [], "an action of unknown outcome must not be repeated"
+    assert result.status == "failed"
+    assert "outcome is unknown" in result.error
+    assert s.store.effects("gr-dead") == [], "an unresolved claim is not a result"
+
+
+def test_a_reported_failure_releases_the_claim_so_a_retry_can_run(tmp_path, registry):
+    """The asymmetry that makes the refusal above tolerable.
+
+    An action that *said* it failed did not happen, so its claim is released and
+    a later run may try again. An action that said nothing keeps its claim. The
+    difference between the two is the whole guarantee.
+    """
+    calls: list[int] = []
+
+    def fn(state):
+        calls.append(1)
+        if len(calls) == 1:
+            raise RuntimeError("declined by the processor")
+        return {"receipt": "R-2"}
+
+    def graph():
+        return Graph("effects").add(Step(
+            id="pay", fn=fn, provides=("receipt",),
+            idempotency=lambda s: idempotency_key("pay", order="A-2"),
+        )).validate()
+
+    s = _refund_stack(tmp_path, registry)
+    first = s.runner(graph()).start("pay", {}, run_id="gr-retry")
+    assert first.status == "failed"
+
+    again = _refund_stack(tmp_path, registry)
+    second = again.runner(graph()).start("pay", {}, run_id="gr-retry")
+    assert second.status == "completed"
+    assert calls == [1, 1]
+    assert [e["node_id"] for e in again.store.effects("gr-retry")] == ["pay"]
+
+
+def test_the_ledger_distinguishes_claimed_from_recorded(tmp_path, registry):
+    s = _refund_stack(tmp_path, registry)
+    store, key = s.store, idempotency_key("pay", order="A-3")
+
+    assert store.claim_effect("gr-1", key, "pay") is None
+    held = store.claim_effect("gr-1", key, "pay")
+    assert held is not None and held["status"] == "claimed" and held["result"] is None
+
+    store.record_effect("gr-1", key, "pay", {"receipt": "R-1"})
+    done = store.claim_effect("gr-1", key, "pay")
+    assert done is not None and done["status"] == "recorded"
+    assert done["result"] == {"receipt": "R-1"}

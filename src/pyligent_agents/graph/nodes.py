@@ -12,8 +12,12 @@ resume it and reason about its cost without executing it.
     ReduceNode  fan in; combine children into one output.
 
 Each node declares `requires` and `provides` so the graph can be validated
-before it runs, and each may declare an `idempotency` function so its side
-effect fires exactly once across any number of resumes.
+before it runs, and each may declare an `idempotency` function. Declaring one
+says "this node has an external side effect": the runner then claims the key
+before acting, replays a recorded effect instead of repeating it across any
+number of resumes, and stops rather than guessing when an earlier attempt
+claimed the key and never came back. It does not make the external call itself
+exactly-once — that needs the destination system. See ADR 0003.
 """
 
 from __future__ import annotations
