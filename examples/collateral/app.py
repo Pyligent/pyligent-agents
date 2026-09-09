@@ -106,7 +106,10 @@ _VM_EXTRACTION = {
             "evidence_quote": "This Annex is governed by English law."},
     },
     "eligible_collateral": [
-        {"description": "Cash in the Base Currency", "valuation_pct": 100},
+        # The schedule line itself, not the base-currency definition. A row is
+        # established by the line that lists it and its percentage.
+        {"description": "Cash in the Base Currency", "valuation_pct": 100,
+         "evidence_quote": "(A) Cash in the Base Currency ................................. 100%"},
     ],
 }
 
@@ -153,6 +156,9 @@ def render_run(bundle: dict, pack: ConstraintPack, report: ReconciliationReport)
     out.append("── CONSTRAINT PACK " + "─" * 50)
     out.append(f"  constraints derived : {record.constraint_count}")
     out.append(f"  every one traceable : {'yes' if record.provenance_complete else 'NO'}")
+    out.append(f"  could not establish : {record.omitted_count}")
+    for line in pack.omitted:
+        out.append(f"    · {line}")
     out.append(f"  certified for use   : {'yes' if record.certified else 'NO'}")
     for reason in record.reasons:
         out.append(f"    · {reason}")

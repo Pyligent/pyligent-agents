@@ -52,10 +52,12 @@ harness — *even when an approver is attached*, so the guarantee does not depen
 on how the stack happened to be built. The test is
 `test_shadow_mode_cannot_reach_a_tool_with_an_external_effect`.
 
-**Nothing is claimed without a clause.** Every constraint carries the verbatim
-agreement text behind it, already proved a substring of the source by the gates
-upstream. A finding a counterparty cannot check is an opinion with a number
-attached.
+**Nothing is claimed without a clause — its own.** Every constraint carries the
+verbatim agreement text behind it, already proved a substring of the source by
+the gates upstream, and an eligibility row cites the schedule line that lists it
+rather than a definition from elsewhere in the document. A finding a
+counterparty cannot check is an opinion with a number attached; a finding
+carrying somebody else's citation is worse, because it survives inspection.
 
 ---
 
@@ -67,8 +69,18 @@ attached.
 |---|---|
 | Is every constraint kind an optimiser needs present? | It cannot size a call |
 | Does every constraint cite a clause? | The recommendation is not defensible |
+| Does it cite the clause that establishes **it**? | The citation is real and proves something else |
 | Was every cited clause confirmed in the source? | Something was invented |
-| Is anything in the agreement **not** expressible? | A human must read it first |
+| Did anything the source implied fail to make it in? | The pack reads as complete and is not |
+| Did a known unsupported-term marker match? | A human must read it first |
+
+**What a certified pack establishes, exactly.** Every constraint quotes a clause
+that appears in the source and mentions what the constraint is about; the kinds
+an optimiser needs are present; nothing was dropped in silence; no known marker
+matched. **What it does not establish:** that the quoted clause is the
+*governing* one, that amendments and precedence were resolved, or that the
+agreement holds no unsupported term the marker list has never seen. Those are
+human judgements. Certification is a floor beneath them, not a substitute.
 
 That last row is the one usually skipped, and it is why `certify()` returns
 reasons rather than a boolean:
@@ -76,9 +88,11 @@ reasons rather than a boolean:
 ```
   constraints derived : 14
   every one traceable : yes
+  could not establish : 0
   certified for use   : NO
-    · 1 term(s) in the agreement are not expressible as constraints and must be
-      read by a human before this counterparty is optimised.
+    · 1 known marker(s) for terms that are not expressible as constraints
+      matched the source and must be read by a human before this counterparty
+      is optimised.
 ```
 
 A CSA contains terms no linear constraint set represents — a Valuation Agent's
@@ -88,6 +102,24 @@ the optimiser then solves the wrong problem with total confidence.
 
 `allow_unsupported=True` lets a human accept that risk explicitly. That is a
 different thing from never being told.
+
+**The marker scan is a tripwire, not an inventory.** It matches a fixed list of
+wordings on the source text, so it misses a provision phrased in a way the list
+has not seen, and it fires on a mention that creates no unsupported condition —
+on the SEC benchmark corpus at least one marker matches in 97 of 97 documents,
+median five. Both errors point the same way, towards asking a human, which is
+the bias to want here. What it supports is *"no known marker was detected."* It
+does not support *"all material obligations are represented"*, and a clause
+inventory — mapped, referred, excluded with a reason, unresolved — is the thing
+that would.
+
+**A row that cannot be quoted is dropped, and says so.** `ConstraintPack.omitted`
+carries every constraint the source implied but that could not be established,
+with the reason, and any entry in it blocks certification. An eligibility row
+with no quote of its own, a quote that does not mention the asset it claims to
+establish, a valuation percentage above 100, or a percentage that does not appear
+in its own clause — each becomes a line a human reads rather than a constraint an
+optimiser trusts.
 
 ---
 

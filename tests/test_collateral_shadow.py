@@ -109,14 +109,20 @@ def test_formatted_and_numeric_values_compare_equal():
 # --- constraints and certification ---------------------------------------
 
 
+_ROW_LINE = "(A) Cash in the Base Currency ... 100%"
+
+
 def _artifact(**fields):
     base = {"base_currency": "USD", "threshold": 0, "mta": 500_000}
     base.update(fields)
-    src = "source text"
+    src = f"source text {_ROW_LINE}"
     return {
         "document_id": "DOC-1", "_source_text": src,
         "fields": {k: {"value": v, "evidence_quote": src} for k, v in base.items()},
-        "eligible_collateral": [{"description": "Cash", "valuation_pct": 100}],
+        "eligible_collateral": [
+            {"description": "Cash in the Base Currency", "valuation_pct": 100,
+             "evidence_quote": _ROW_LINE},
+        ],
     }
 
 
@@ -149,7 +155,7 @@ def test_terms_that_cannot_be_expressed_are_declared_and_block_certification():
     """The honest failure. A pack that silently drops a term looks complete."""
     art = _artifact()
     art["_source_text"] = ("... the Valuation Agent shall determine ... "
-                           "a ratings trigger applies ...")
+                           f"a ratings trigger applies ... {_ROW_LINE}")
     for entry in art["fields"].values():
         entry["evidence_quote"] = art["_source_text"]
 
@@ -183,3 +189,62 @@ def test_the_pack_is_json_serialisable():
     import json
     pack = build_pack(_artifact())
     assert json.loads(pack.to_json())["document_id"] == "DOC-1"
+
+
+# --- a constraint must cite its own clause -------------------------------
+#
+# These four are the external reviewer's finding, kept as tests. Before it, the
+# eligibility and valuation constraints took their provenance from the
+# base-currency field, so an invented asset class with an impossible valuation
+# percentage certified with `provenance_complete=True`: the citation was real,
+# and established something else entirely.
+
+
+def _with_row(row, source_extra=""):
+    art = _artifact()
+    art["_source_text"] = art["_source_text"] + source_extra
+    art["eligible_collateral"] = [row]
+    return art
+
+
+def test_an_invented_asset_class_cannot_borrow_another_fields_clause():
+    """The reviewer's case, exactly."""
+    art = _with_row({"description": "Sovereign debt of Atlantis", "valuation_pct": 123,
+                     "evidence_quote": "source text"})
+    record = certify(build_pack(art))
+    assert not record.certified
+    assert not record.provenance_complete
+    assert any("does not mention it" in r for r in record.reasons)
+
+
+def test_a_row_with_no_clause_of_its_own_is_omitted_not_certified():
+    """Silence about a row is a gap a human reads, not a constraint."""
+    art = _with_row({"description": "Cash in the Base Currency", "valuation_pct": 100})
+    pack = build_pack(art)
+    assert pack.of_kind("eligibility") == []
+    assert any("carries no quote of its own" in o for o in pack.omitted)
+    assert not certify(pack).certified
+
+
+def test_a_valuation_percentage_over_one_hundred_is_refused():
+    """Over 100% values collateral above market. There is nothing to correct."""
+    art = _with_row({"description": "Cash in the Base Currency", "valuation_pct": 123,
+                     "evidence_quote": _ROW_LINE})
+    pack = build_pack(art)
+    assert pack.of_kind("valuation") == []
+    assert any("not a valuation percentage" in o for o in pack.omitted)
+
+
+def test_a_percentage_absent_from_its_own_quote_is_refused():
+    """The row is real and the clause is real; the number came from elsewhere."""
+    art = _with_row({"description": "Cash in the Base Currency", "valuation_pct": 98,
+                     "evidence_quote": _ROW_LINE})
+    pack = build_pack(art)
+    assert pack.of_kind("valuation") == []
+    assert any("does not appear in the clause cited" in o for o in pack.omitted)
+
+
+def test_a_declared_marker_is_not_a_completeness_proof():
+    """`unsupported` is a tripwire over known wordings, and says only that."""
+    pack = build_pack(_artifact())
+    assert any("all material obligations" in n for n in pack.notes)
